@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoSQL Workflow Factory | Haroun AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --panel: #1e293b;
+            --accent: #38bdf8;
+            --success: #4ade80;
+            --warning: #fbbf24;
+            --error: #f87171;
+            --text: #f8fafc;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 1.5rem;
+            text-align: center;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid #334155;
+        }
+
+        h1 { font-weight: 900; letter-spacing: -0.05rem; color: var(--accent); }
+
+        .main-stage {
+            flex-grow: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* The Pipeline */
+        .pipeline {
+            width: 80%;
+            height: 400px;
+            background: var(--panel);
+            border: 2px solid #334155;
+            border-radius: 20px;
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            overflow: hidden;
+        }
+
+        .section {
+            border-right: 1px solid #334155;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .section-title {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: #64748b;
+            margin-bottom: 1rem;
+        }
+
+        /* Ingestion Items */
+        .data-item {
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            font-weight: bold;
+            color: #000;
+            animation: flowIn 2s infinite;
+            position: relative;
+        }
+
+        @keyframes flowIn {
+            0% { transform: translateY(-100px); opacity: 0; }
+            20% { transform: translateY(0); opacity: 1; }
+            80% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateX(300px); opacity: 0; }
+        }
+
+        /* Processing Logic Viz */
+        .processor {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            position: relative;
+        }
+
+        .logic-viz {
+            width: 100%;
+            height: 100%;
+            padding: 1rem;
+        }
+
+        /* Storage Viz Styles */
+        .viz-kv { display: flex; flex-direction: column; gap: 5px; }
+        .kv-slot { height: 30px; border: 1px dashed #475569; border-radius: 4px; display: flex; align-items: center; padding: 0 10px; font-size: 0.6rem; }
+        
+        .viz-doc { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .doc-node { background: #334155; padding: 5px; border-radius: 4px; font-size: 0.5rem; }
+
+        .viz-col { display: flex; gap: 20px; }
+        .col-strip { width: 40px; height: 200px; background: #0f172a; border: 1px solid var(--accent); position: relative; }
+        .col-block { width: 100%; height: 20px; background: var(--accent); margin-top: 2px; }
+
+        .viz-graph { position: relative; width: 100%; height: 100%; }
+        .g-node { width: 30px; height: 30px; background: var(--warning); border-radius: 50%; position: absolute; }
+        .g-line { position: absolute; background: var(--warning); height: 1px; transform-origin: 0 0; }
+
+        /* Controls */
+        .controls {
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            background: #020617;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: 2px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.2s;
+        }
+
+        .btn.active {
+            background: var(--accent);
+            color: #000;
+        }
+
+        .explain-box {
+            position: absolute;
+            bottom: 120px;
+            width: 60%;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid var(--accent);
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NoSQL Workflow Factory</h1>
+        <p>Visualizing the Storage Process</p>
+    </header>
+
+    <div class="main-stage">
+        <div class="pipeline">
+            <!-- 1. INGESTION -->
+            <div class="section">
+                <span class="section-title">Data Ingestion</span>
+                <div id="ingest-stream">
+                    <div class="data-item">JSON<br>{id:1...}</div>
+                </div>
+            </div>
+
+            <!-- 2. PROCESSING & STORAGE -->
+            <div class="section">
+                <span class="section-title" id="logic-title">Processing: Key-Value</span>
+                <div class="processor" id="viz-container">
+                    <!-- Viz injected here -->
+                </div>
+            </div>
+
+            <!-- 3. QUERY PERFORMANCE -->
+            <div class="section" style="border: none;">
+                <span class="section-title">Query Result</span>
+                <div id="query-viz" style="font-family: 'JetBrains Mono'; font-size: 0.7rem; color: var(--success);">
+                    // Waiting for query...
+                </div>
+            </div>
+        </div>
+
+        <div class="explain-box" id="explain">
+            Select a model to see how it "masticates" and stores data differently!
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="btn active" onclick="switchModel('KV')">KEY-VALUE</button>
+        <button class="btn" onclick="switchModel('DOC')">DOCUMENT</button>
+        <button class="btn" onclick="switchModel('COL')">COLUMN-FAMILY</button>
+        <button class="btn" onclick="switchModel('GRAPH')">GRAPH</button>
+    </div>
+
+    <script>
+        const configs = {
+            KV: {
+                title: "Processing: Key-Value",
+                explain: "The data is hashed and put in a single slot. <b>Process:</b> It's a black box. Very fast but you can't search inside.",
+                viz: `<div class="logic-viz viz-kv">
+                        <div class="kv-slot">ID: 01 -> [BINARY BLOB]</div>
+                        <div class="kv-slot">ID: 02 -> [BINARY BLOB]</div>
+                        <div class="kv-slot">ID: 03 -> [BINARY BLOB]</div>
+                      </div>`,
+                query: "GET(id:01) -> 0.001ms<br>FIND(name='Haroun') -> ERROR: CANNOT READ BLOB"
+            },
+            DOC: {
+                title: "Processing: Document",
+                explain: "The JSON is parsed. <b>Process:</b> The DB reads the keys (name, age) and creates indexes for them.",
+                viz: `<div class="logic-viz viz-doc">
+                        <div class="doc-node">Index: 'name'</div>
+                        <div class="doc-node">Index: 'age'</div>
+                        <div class="doc-node">Doc_1.json</div>
+                        <div class="doc-node">Doc_2.json</div>
+                      </div>`,
+                query: "FIND(name='Haroun') -> SUCCESS!<br>Found in Doc_1.json"
+            },
+            COL: {
+                title: "Processing: Column-Family",
+                explain: "The row is split. <b>Process:</b> All names go to file A, all salaries go to file B. Optimized for analytics.",
+                viz: `<div class="logic-viz viz-col">
+                        <div class="col-strip"><div class="col-block"></div><div class="col-block"></div><small>Names</small></div>
+                        <div class="col-strip"><div class="col-block"></div><div class="col-block"></div><small>Salaries</small></div>
+                        <div class="col-strip"><div class="col-block"></div><div class="col-block"></div><small>Dates</small></div>
+                      </div>`,
+                query: "AVG(Salary) -> READS ONLY FILE B.<br>Ultra fast scan."
+            },
+            GRAPH: {
+                title: "Processing: Graph",
+                explain: "Instead of rows, it creates links. <b>Process:</b> It draws a physical pointer from User A to User B.",
+                viz: `<div class="logic-viz viz-graph">
+                        <div class="g-node" style="left:20%; top:20%"></div>
+                        <div class="g-node" style="left:70%; top:20%"></div>
+                        <div class="g-node" style="left:45%; top:70%"></div>
+                        <div class="g-line" style="width:120px; left:35%; top:35%; transform:rotate(10deg)"></div>
+                      </div>`,
+                query: "Find Friend of Friend -> Follow pointers.<br>NO JOINS needed."
+            }
+        };
+
+        function switchModel(m) {
+            document.querySelectorAll('.btn').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+
+            document.getElementById('logic-title').textContent = configs[m].title;
+            document.getElementById('explain').innerHTML = configs[m].explain;
+            document.getElementById('viz-container').innerHTML = configs[m].viz;
+            document.getElementById('query-viz').innerHTML = configs[m].query;
+        }
+
+        // Init
+        switchModel('KV');
+    </script>
+</body>
+</html>

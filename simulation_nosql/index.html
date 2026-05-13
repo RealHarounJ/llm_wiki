@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoSQL & CAP Simulator | Haroun AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0b10;
+            --card-bg: #161b22;
+            --primary: #58a6ff;
+            --secondary: #d2a8ff;
+            --accent: #3fb950;
+            --error: #f85149;
+            --text: #c9d1d9;
+            --text-dim: #8b949e;
+            --border: #30363d;
+            --font-main: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        header h1 {
+            font-weight: 800;
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-dim);
+            font-size: 1.1rem;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+        }
+
+        .panel {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        .panel-title {
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.05rem;
+        }
+
+        /* Input Controls */
+        .input-group {
+            margin-bottom: 1rem;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            margin-bottom: 0.4rem;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            background: #0d1117;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 0.8rem;
+            color: var(--text);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--primary);
+            border: none;
+            border-radius: 6px;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        button.secondary {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        /* CAP Toggle */
+        .cap-toggle {
+            display: flex;
+            background: #0d1117;
+            border-radius: 8px;
+            padding: 0.3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cap-option {
+            flex: 1;
+            text-align: center;
+            padding: 0.6rem;
+            cursor: pointer;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .cap-option.active {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        /* Simulation Area */
+        .simulation-grid {
+            display: grid;
+            grid-template-rows: auto 1fr;
+            gap: 2rem;
+        }
+
+        .nodes-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .node {
+            width: 140px;
+            height: 140px;
+            background: #161b22;
+            border: 2px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+            transition: 0.3s;
+        }
+
+        .node.active {
+            border-color: var(--accent);
+        }
+
+        .node.syncing {
+            border-color: var(--secondary);
+            animation: pulse 1s infinite;
+        }
+
+        .node.partitioned {
+            border-color: var(--error);
+            opacity: 0.6;
+        }
+
+        .node-label {
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        .node-status {
+            font-size: 0.7rem;
+            color: var(--text-dim);
+        }
+
+        .node-data-count {
+            font-size: 0.8rem;
+            margin-top: 0.4rem;
+            color: var(--secondary);
+        }
+
+        .connector {
+            position: absolute;
+            height: 2px;
+            background: var(--border);
+            z-index: 1;
+            width: 100%;
+            top: 50%;
+        }
+
+        .packet {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--secondary);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            display: none;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(210, 168, 255, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(210, 168, 255, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(210, 168, 255, 0);
+            }
+        }
+
+        /* Document List */
+        .document-viewer {
+            background: #0d1117;
+            border-radius: 8px;
+            padding: 1rem;
+            height: 300px;
+            overflow-y: auto;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+        }
+
+        .doc-item {
+            padding: 0.8rem;
+            border-bottom: 1px solid var(--border);
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .doc-id {
+            color: var(--secondary);
+            margin-bottom: 0.2rem;
+        }
+
+        .doc-content {
+            color: var(--text);
+        }
+
+        .status-msg {
+            padding: 1rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .status-msg.info {
+            background: rgba(88, 166, 255, 0.1);
+            color: var(--primary);
+            display: block;
+        }
+
+        .status-msg.error {
+            background: rgba(248, 81, 73, 0.1);
+            color: var(--error);
+            display: block;
+        }
+
+        .status-msg.success {
+            background: rgba(63, 185, 80, 0.1);
+            color: var(--accent);
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>NoSQL & CAP Simulator</h1>
+            <p>Mastering Distributed Data Information Systems</p>
+        </header>
+
+        <div class="dashboard">
+            <!-- Control Panel -->
+            <div class="panel">
+                <div class="panel-title">System Configuration</div>
+
+                <label style="font-size: 0.8rem; color: var(--text-dim);">Database Consistency Model</label>
+                <div class="cap-toggle">
+                    <div id="mode-ap" class="cap-option active" onclick="setMode('AP')">AP (Availability)</div>
+                    <div id="mode-cp" class="cap-option" onclick="setMode('CP')">CP (Consistency)</div>
+                </div>
+
+                <div class="input-group">
+                    <label>Document ID</label>
+                    <input type="text" id="doc-id" placeholder="e.g. user_101">
+                </div>
+
+                <div class="input-group">
+                    <label>JSON Payload (Flexible Schema)</label>
+                    <textarea id="doc-payload" rows="6" placeholder='{"name": "Haroun", "likes": 42}'></textarea>
+                </div>
+
+                <button onclick="writeDocument()">WRITE TO CLUSTER</button>
+                <button class="secondary" onclick="togglePartition()">TOGGLE NETWORK PARTITION</button>
+
+                <div id="status" class="status-msg"></div>
+            </div>
+
+            <!-- Visualization Panel -->
+            <div class="simulation-grid">
+                <div class="panel">
+                    <div class="panel-title">Cluster Visualization</div>
+                    <div class="nodes-container">
+                        <div class="connector"></div>
+                        <div id="packet-1" class="packet"></div>
+                        <div id="packet-2" class="packet"></div>
+
+                        <div id="node-a" class="node active">
+                            <span class="node-label">NODE A</span>
+                            <span class="node-status">Primary</span>
+                            <span id="count-a" class="node-data-count">0 docs</span>
+                        </div>
+
+                        <div id="node-b" class="node">
+                            <span class="node-label">NODE B</span>
+                            <span class="node-status">Replica</span>
+                            <span id="count-b" class="node-data-count">0 docs</span>
+                        </div>
+
+                        <div id="node-c" class="node">
+                            <span class="node-label">NODE C</span>
+                            <span class="node-status">Replica</span>
+                            <span id="count-c" class="node-data-count">0 docs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-title">Master Document Viewer (Global State)</div>
+                    <div id="viewer" class="document-viewer">
+                        <div style="color: var(--text-dim); text-align: center; margin-top: 4rem;">No data in cluster.
+                            Start writing...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let mode = 'AP';
+        let isPartitioned = false;
+        let clusterData = {
+            A: {}, B: {}, C: {}
+        };
+
+        function setMode(newMode) {
+            mode = newMode;
+            document.getElementById('mode-ap').classList.toggle('active', mode === 'AP');
+            document.getElementById('mode-cp').classList.toggle('active', mode === 'CP');
+            showStatus(`Switched to ${mode} mode.`, 'info');
+        }
+
+        function togglePartition() {
+            isPartitioned = !isPartitioned;
+            document.getElementById('node-c').classList.toggle('partitioned', isPartitioned);
+
+            if (isPartitioned) {
+                showStatus("NETWORK PARTITION! Node C is isolated.", "error");
+            } else {
+                showStatus("Network Restored. Syncing data...", "success");
+                syncCluster();
+            }
+        }
+
+        function showStatus(msg, type) {
+            const el = document.getElementById('status');
+            el.textContent = msg;
+            el.className = `status-msg ${type}`;
+            setTimeout(() => el.style.display = 'block', 10);
+        }
+
+        function writeDocument() {
+            const id = document.getElementById('doc-id').value || 'doc_' + Math.floor(Math.random() * 1000);
+            let payload;
+            try {
+                payload = JSON.parse(document.getElementById('doc-payload').value || '{"status": "online"}');
+            } catch (e) {
+                showStatus("Invalid JSON format!", "error");
+                return;
+            }
+
+            // In CP mode, we fail if partitioned
+            if (mode === 'CP' && isPartitioned) {
+                showStatus("WRITE FAILED: Consistency cannot be guaranteed during partition.", "error");
+                return;
+            }
+
+            // Primary Write (Node A)
+            clusterData.A[id] = payload;
+            updateCounts();
+            animatePacket('node-a', 'node-b');
+
+            setTimeout(() => {
+                clusterData.B[id] = payload;
+                updateCounts();
+                renderViewer();
+            }, 500);
+
+            if (!isPartitioned) {
+                animatePacket('node-b', 'node-c');
+                setTimeout(() => {
+                    clusterData.C[id] = payload;
+                    updateCounts();
+                    renderViewer();
+                }, 1000);
+            } else {
+                showStatus("Write accepted at A & B. Node C will sync eventually.", "info");
+            }
+
+            if (mode === 'AP') {
+                showStatus("Write Success (AP): Data accepted locally.", "success");
+            } else {
+                showStatus("Write Success (CP): All available nodes in sync.", "success");
+            }
+        }
+
+        function syncCluster() {
+            if (isPartitioned) return;
+
+            const nodeC = document.getElementById('node-c');
+            nodeC.classList.add('syncing');
+
+            setTimeout(() => {
+                // Merging data
+                clusterData.C = { ...clusterData.A };
+                updateCounts();
+                renderViewer();
+                nodeC.classList.remove('syncing');
+                showStatus("Cluster fully synchronized.", "success");
+            }, 1500);
+        }
+
+        function animatePacket(fromId, toId) {
+            const packet = document.getElementById('packet-1');
+            packet.style.display = 'block';
+            packet.style.left = '15%';
+
+            setTimeout(() => {
+                packet.style.transition = 'left 0.5s ease-in-out';
+                packet.style.left = '85%';
+            }, 50);
+
+            setTimeout(() => {
+                packet.style.display = 'none';
+                packet.style.transition = 'none';
+            }, 600);
+        }
+
+        function updateCounts() {
+            document.getElementById('count-a').textContent = `${Object.keys(clusterData.A).length} docs`;
+            document.getElementById('count-b').textContent = `${Object.keys(clusterData.B).length} docs`;
+            document.getElementById('count-c').textContent = `${Object.keys(clusterData.C).length} docs`;
+        }
+
+        function renderViewer() {
+            const viewer = document.getElementById('viewer');
+            viewer.innerHTML = '';
+
+            // Show data from Node A (as primary source)
+            const keys = Object.keys(clusterData.A);
+            if (keys.length === 0) {
+                viewer.innerHTML = '<div style="color: var(--text-dim); text-align: center; margin-top: 4rem;">No data in cluster.</div>';
+                return;
+            }
+
+            keys.forEach(key => {
+                const item = document.createElement('div');
+                item.className = 'doc-item';
+                item.innerHTML = `
+                    <div class="doc-id">ID: ${key}</div>
+                    <div class="doc-content">${JSON.stringify(clusterData.A[key])}</div>
+                `;
+                viewer.appendChild(item);
+            });
+        }
+    </script>
+</body>
+
+</html>

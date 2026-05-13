@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoSQL Models Universe | Haroun AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Fira+Code&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #05070a;
+            --card: #0f172a;
+            --primary: #38bdf8;
+            --secondary: #818cf8;
+            --accent: #10b981;
+            --border: #1e293b;
+            --text: #f1f5f9;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            padding: 2rem;
+        }
+
+        header { text-align: center; margin-bottom: 3rem; }
+        h1 { font-size: 2.5rem; font-weight: 800; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        .model-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .model-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s;
+        }
+
+        .model-card:hover { border-color: var(--primary); transform: translateY(-5px); }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .card-title { font-weight: 800; font-size: 1.2rem; color: var(--primary); }
+        .card-tag { font-size: 0.7rem; background: var(--border); padding: 0.2rem 0.6rem; border-radius: 20px; text-transform: uppercase; }
+
+        .simulation-box {
+            background: #020617;
+            border-radius: 12px;
+            height: 250px;
+            padding: 1rem;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+        }
+
+        /* Key-Value Styles */
+        .kv-input { width: 100%; background: #1e293b; border: none; padding: 0.5rem; color: #fff; border-radius: 4px; margin-bottom: 1rem; }
+        .kv-result { color: var(--secondary); }
+
+        /* Document Styles */
+        .doc-view { color: #94a3b8; }
+        .doc-highlight { color: var(--accent); font-weight: bold; }
+
+        /* Column Styles */
+        .col-table { width: 100%; border-collapse: collapse; font-size: 0.7rem; }
+        .col-table th, .col-table td { border: 1px solid var(--border); padding: 4px; text-align: left; }
+        .active-col { background: rgba(56, 189, 248, 0.2); border-color: var(--primary) !important; }
+
+        /* Graph Styles */
+        .graph-node {
+            width: 50px; height: 50px; background: var(--secondary); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            position: absolute; cursor: pointer; transition: 0.3s;
+            font-size: 0.6rem; font-weight: bold;
+        }
+        .graph-node:hover { transform: scale(1.1); box-shadow: 0 0 15px var(--secondary); }
+        .graph-edge { position: absolute; background: var(--border); height: 2px; transform-origin: 0 0; }
+
+        .btn {
+            background: var(--primary); color: #000; border: none; padding: 0.5rem 1rem;
+            border-radius: 6px; font-weight: 600; cursor: pointer; margin-top: 1rem;
+            width: 100%; font-size: 0.8rem;
+        }
+
+        .desc { font-size: 0.8rem; color: #94a3b8; margin-top: 1rem; line-height: 1.4; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NoSQL Universe</h1>
+        <p>Interactive Simulation of Data Models (Elmasri Ch. 24)</p>
+    </header>
+
+    <div class="model-grid">
+        <!-- 1. KEY-VALUE -->
+        <div class="model-card">
+            <div class="card-header">
+                <span class="card-title">Key-Value Store</span>
+                <span class="card-tag">Redis / DynamoDB</span>
+            </div>
+            <div class="simulation-box">
+                <input type="text" id="kv-key" class="kv-input" placeholder="Enter key (e.g. user:01)">
+                <div id="kv-display" class="kv-result">// Waiting for key...</div>
+            </div>
+            <button class="btn" onclick="simulateKV()">GET VALUE</button>
+            <p class="desc">The value is a "Black Box". You can't search for fields *inside* the value. You only get the whole blob.</p>
+        </div>
+
+        <!-- 2. DOCUMENT -->
+        <div class="model-card">
+            <div class="card-header">
+                <span class="card-title">Document Store</span>
+                <span class="card-tag">MongoDB</span>
+            </div>
+            <div class="simulation-box" id="doc-box">
+                <pre class="doc-view">{
+  "_id": "user_01",
+  <span class="doc-highlight">"name": "Haroun",</span>
+  "skills": ["SQL", "NoSQL"],
+  "stats": { "rank": 1 }
+}</pre>
+            </div>
+            <button class="btn" onclick="simulateDoc()">QUERY FIELD: 'name'</button>
+            <p class="desc">Database indexes internal fields. Different documents can have different fields (Flexible Schema).</p>
+        </div>
+
+        <!-- 3. COLUMN-FAMILY -->
+        <div class="model-card">
+            <div class="card-header">
+                <span class="card-title">Column-Family</span>
+                <span class="card-tag">Cassandra / HBase</span>
+            </div>
+            <div class="simulation-box">
+                <table class="col-table">
+                    <thead>
+                        <tr><th>RowKey</th><th id="th-name">Name</th><th id="th-sal">Salary</th><th id="th-loc">Location</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>001</td><td class="td-name">Alice</td><td class="td-sal">80k</td><td class="td-loc">NY</td></tr>
+                        <tr><td>002</td><td class="td-name">Bob</td><td class="td-sal">90k</td><td class="td-loc">SF</td></tr>
+                        <tr><td>003</td><td class="td-name">Eve</td><td class="td-sal">75k</td><td class="td-loc">LDN</td></tr>
+                    </tbody>
+                </table>
+                <div id="col-info" style="margin-top: 1rem; color: var(--accent); font-size: 0.7rem;"></div>
+            </div>
+            <button class="btn" onclick="simulateCol()">READ ONLY 'SALARY' COLUMN</button>
+            <p class="desc">Optimized for reading specific columns across billions of rows without loading unused data.</p>
+        </div>
+
+        <!-- 4. GRAPH -->
+        <div class="model-card">
+            <div class="card-header">
+                <span class="card-title">Graph Database</span>
+                <span class="card-tag">Neo4j</span>
+            </div>
+            <div class="simulation-box" id="graph-box">
+                <!-- Graph nodes will be here -->
+            </div>
+            <button class="btn" onclick="simulateGraph()">TRAVERSE RELATIONSHIPS</button>
+            <p class="desc">Relationships are first-class citizens. No JOINs. Pointers allow instant navigation of connections.</p>
+        </div>
+    </div>
+
+    <script>
+        // KV Simulation
+        function simulateKV() {
+            const key = document.getElementById('kv-key').value;
+            const display = document.getElementById('kv-display');
+            if (key === 'user:01') {
+                display.innerHTML = '<span style="color:#fff">SUCCESS!</span><br>BinaryBlob_0x1F2A...';
+            } else {
+                display.innerHTML = '<span style="color:red">ERROR 404:</span><br>Key not found. Try "user:01"';
+            }
+        }
+
+        // Document Simulation
+        function simulateDoc() {
+            const box = document.getElementById('doc-box');
+            box.style.border = '2px solid var(--accent)';
+            setTimeout(() => box.style.border = 'none', 1000);
+        }
+
+        // Column Simulation
+        function simulateCol() {
+            document.querySelectorAll('.td-sal, #th-sal').forEach(el => el.classList.add('active-col'));
+            document.getElementById('col-info').textContent = "DISK IO: Minimal. Only Salary data block was read.";
+            setTimeout(() => {
+                document.querySelectorAll('.active-col').forEach(el => el.classList.remove('active-col'));
+                document.getElementById('col-info').textContent = "";
+            }, 2000);
+        }
+
+        // Graph Simulation
+        const nodes = [
+            { id: 'Me', x: 100, y: 100 },
+            { id: 'Alice', x: 250, y: 50 },
+            { id: 'Bob', x: 250, y: 150 },
+            { id: 'Eve', x: 400, y: 100 }
+        ];
+
+        function initGraph() {
+            const box = document.getElementById('graph-box');
+            nodes.forEach(n => {
+                const div = document.createElement('div');
+                div.className = 'graph-node';
+                div.style.left = n.x + 'px';
+                div.style.top = n.y + 'px';
+                div.textContent = n.id;
+                div.id = 'node-' + n.id;
+                box.appendChild(div);
+            });
+            drawEdge('Me', 'Alice');
+            drawEdge('Me', 'Bob');
+            drawEdge('Alice', 'Eve');
+        }
+
+        function drawEdge(from, to) {
+            const f = nodes.find(n => n.id === from);
+            const t = nodes.find(n => n.id === to);
+            const box = document.getElementById('graph-box');
+            const edge = document.createElement('div');
+            edge.className = 'graph-edge';
+            const dx = t.x - f.x;
+            const dy = t.y - f.y;
+            const length = Math.sqrt(dx*dx + dy*dy);
+            const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+            edge.style.width = length + 'px';
+            edge.style.left = (f.x + 25) + 'px';
+            edge.style.top = (f.y + 25) + 'px';
+            edge.style.transform = `rotate(${angle}deg)`;
+            box.appendChild(edge);
+        }
+
+        function simulateGraph() {
+            const me = document.getElementById('node-Me');
+            const alice = document.getElementById('node-Alice');
+            const eve = document.getElementById('node-Eve');
+            
+            me.style.background = var(--accent);
+            setTimeout(() => {
+                alice.style.background = var(--accent);
+                setTimeout(() => {
+                    eve.style.background = var(--accent);
+                    alert("Found 'Friend of Friend' (Eve) in 0.01ms via pointers!");
+                }, 500);
+            }, 500);
+        }
+
+        initGraph();
+    </script>
+</body>
+</html>

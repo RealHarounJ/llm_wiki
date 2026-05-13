@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scalability Simulator | Haroun AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0d1117;
+            --card: #161b22;
+            --primary: #2f81f7;
+            --secondary: #79c0ff;
+            --accent: #3fb950;
+            --warning: #d29922;
+            --error: #f85149;
+            --border: #30363d;
+            --text: #c9d1d9;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 { font-weight: 800; font-size: 2.5rem; margin-bottom: 1rem; color: #fff; }
+        .subtitle { color: #8b949e; margin-bottom: 3rem; text-align: center; max-width: 600px; }
+
+        .main-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .side {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            min-height: 600px;
+        }
+
+        .side-header {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1rem;
+        }
+
+        .side-title { font-size: 1.5rem; font-weight: 700; color: var(--secondary); }
+        .side-desc { font-size: 0.9rem; color: #8b949e; margin-top: 0.5rem; }
+
+        /* Visualization Area */
+        .viz-area {
+            flex-grow: 1;
+            background: #0a0b10;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .server {
+            background: #21262d;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+
+        .server.vertical { width: 100px; height: 120px; }
+        .server.horizontal { width: 60px; height: 70px; font-size: 0.7rem; border-color: var(--accent); }
+        
+        .server.crashed {
+            border-color: var(--error) !important;
+            background: #3e1b1b;
+            animation: shake 0.5s infinite;
+        }
+
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+
+        .load-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--accent);
+            transition: height 0.3s;
+            opacity: 0.3;
+        }
+
+        /* Controls */
+        .controls { display: flex; gap: 1rem; }
+        button {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 6px;
+            background: var(--primary);
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover { filter: brightness(1.2); transform: translateY(-2px); }
+        button.secondary { background: #30363d; }
+        button:disabled { opacity: 0.3; cursor: not-allowed; }
+
+        .stats {
+            margin-top: 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+        }
+
+        .stat-item { display: flex; justify-content: space-between; }
+        .stat-label { color: #8b949e; }
+        .stat-val { color: #fff; }
+
+        .request {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+            top: -10px;
+        }
+
+        .limit-msg {
+            color: var(--error);
+            font-weight: 800;
+            text-align: center;
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Scalability Simulator</h1>
+    <p class="subtitle">Understand the core infrastructure trade-off: Buying a bigger server (SQL mindset) vs. Building a cluster (NoSQL mindset).</p>
+
+    <div class="main-container">
+        <!-- Vertical Side -->
+        <div class="side" id="side-v">
+            <div class="side-header">
+                <div class="side-title">Vertical Scaling</div>
+                <div class="side-desc">Upgrade a single machine (Scale UP)</div>
+            </div>
+            <div class="viz-area" id="viz-v">
+                <div id="v-server" class="server vertical">
+                    <div id="v-load" class="load-bar"></div>
+                    <span style="font-weight: 800;">SRV-1</span>
+                </div>
+            </div>
+            <div class="controls">
+                <button onclick="upgradeVertical()">UPGRADE CPU/RAM</button>
+                <button class="secondary" onclick="addLoad()">SEND TRAFFIC</button>
+            </div>
+            <div id="v-limit" class="limit-msg">HARDWARE LIMIT REACHED!</div>
+            <div class="stats">
+                <div class="stat-item"><span class="stat-label">Capacity:</span><span id="v-cap" class="stat-val">100 req/s</span></div>
+                <div class="stat-item"><span class="stat-label">Cost:</span><span id="v-cost" class="stat-val">$10/mo</span></div>
+                <div class="stat-item"><span class="stat-label">Load:</span><span id="v-load-val" class="stat-val">0%</span></div>
+                <div class="stat-item"><span class="stat-label">Status:</span><span id="v-status" class="stat-val" style="color: var(--accent);">HEALTHY</span></div>
+            </div>
+        </div>
+
+        <!-- Horizontal Side -->
+        <div class="side" id="side-h">
+            <div class="side-header">
+                <div class="side-title">Horizontal Scaling</div>
+                <div class="side-desc">Add more machines (Scale OUT)</div>
+            </div>
+            <div class="viz-area" id="viz-h">
+                <!-- Nodes will be added here -->
+                <div class="server horizontal"><span>NODE-1</span><div class="load-bar"></div></div>
+            </div>
+            <div class="controls">
+                <button style="background: var(--accent);" onclick="addHorizontalNode()">ADD NEW NODE</button>
+                <button class="secondary" onclick="addLoad()">SEND TRAFFIC</button>
+            </div>
+            <div class="stats">
+                <div class="stat-item"><span class="stat-label">Capacity:</span><span id="h-cap" class="stat-val">100 req/s</span></div>
+                <div class="stat-item"><span class="stat-label">Cost:</span><span id="h-cost" class="stat-val">$10/mo</span></div>
+                <div class="stat-item"><span class="stat-label">Load:</span><span id="h-load-val" class="stat-val">0%</span></div>
+                <div class="stat-item"><span class="stat-label">Status:</span><span id="h-status" class="stat-val" style="color: var(--accent);">HEALTHY</span></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let vLevel = 1;
+        let hNodes = 1;
+        let traffic = 0;
+        let vCrashed = false;
+        let hCrashed = false;
+
+        function upgradeVertical() {
+            if (vLevel >= 10) {
+                document.getElementById('v-limit').style.display = 'block';
+                return;
+            }
+            vLevel++;
+            const srv = document.getElementById('v-server');
+            srv.style.transform = `scale(${1 + vLevel*0.1})`;
+            updateStats();
+        }
+
+        function addHorizontalNode() {
+            hNodes++;
+            const viz = document.getElementById('viz-h');
+            const node = document.createElement('div');
+            node.className = 'server horizontal';
+            node.innerHTML = `<span>NODE-${hNodes}</span><div class="load-bar"></div>`;
+            viz.appendChild(node);
+            updateStats();
+        }
+
+        function addLoad() {
+            traffic += 50;
+            animateTraffic();
+            checkCrash();
+        }
+
+        function animateTraffic() {
+            // Visualize requests for Vertical
+            for(let i=0; i<5; i++) createPacket('viz-v');
+            for(let i=0; i<5; i++) createPacket('viz-h');
+        }
+
+        function createPacket(parent) {
+            const viz = document.getElementById(parent);
+            const p = document.createElement('div');
+            p.className = 'request';
+            p.style.left = Math.random() * 90 + '%';
+            viz.appendChild(p);
+            
+            let pos = -10;
+            let id = setInterval(() => {
+                if (pos >= 300) {
+                    clearInterval(id);
+                    p.remove();
+                } else {
+                    pos += 5;
+                    p.style.top = pos + 'px';
+                }
+            }, 10);
+        }
+
+        function updateStats() {
+            // Vertical Stats
+            const vCap = vLevel * 100;
+            const vCost = Math.pow(2, vLevel) * 5; // Exponential cost!
+            document.getElementById('v-cap').textContent = vCap + ' req/s';
+            document.getElementById('v-cost').textContent = '$' + vCost + '/mo';
+            
+            // Horizontal Stats
+            const hCap = hNodes * 100;
+            const hCost = hNodes * 10; // Linear cost!
+            document.getElementById('h-cap').textContent = hCap + ' req/s';
+            document.getElementById('h-cost').textContent = '$' + hCost + '/mo';
+        }
+
+        function checkCrash() {
+            const vCap = vLevel * 100;
+            const hCap = hNodes * 100;
+
+            const vLoad = Math.min(100, (traffic / vCap) * 100);
+            const hLoad = Math.min(100, (traffic / hCap) * 100);
+
+            document.getElementById('v-load-val').textContent = Math.round(vLoad) + '%';
+            document.getElementById('h-load-val').textContent = Math.round(hLoad) + '%';
+
+            document.getElementById('v-load').style.height = vLoad + '%';
+            document.querySelectorAll('#viz-h .load-bar').forEach(b => b.style.height = hLoad + '%');
+
+            if (vLoad >= 100 && !vCrashed) {
+                vCrashed = true;
+                document.getElementById('v-server').classList.add('crashed');
+                document.getElementById('v-status').textContent = 'CRASHED (OUTAGE)';
+                document.getElementById('v-status').style.color = 'var(--error)';
+            }
+
+            if (hLoad >= 100 && !hCrashed) {
+                hCrashed = true;
+                document.getElementById('h-status').textContent = 'OVERLOADED';
+                document.getElementById('h-status').style.color = 'var(--warning)';
+            }
+        }
+
+        // Automatic traffic decay
+        setInterval(() => {
+            if (traffic > 0) {
+                traffic -= 10;
+                if (traffic < 0) traffic = 0;
+                checkCrash();
+            }
+        }, 500);
+    </script>
+</body>
+</html>
