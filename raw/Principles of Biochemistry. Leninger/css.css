@@ -1,0 +1,7 @@
+a       { text-decoration: none ; color : RGB(0,66,66) }
+a:hover { text-decoration: underline; color : blue }
+h1      { color : RGB(0,110,077)}
+h2      { color : RGB(0,100,087)}
+h3      { color : RGB(0,090,097)}
+h4      { color : RGB(0,090,097)}
+body    { background: url("images\back02.jpg");    color: black}

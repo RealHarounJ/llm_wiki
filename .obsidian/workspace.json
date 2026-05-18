@@ -13,15 +13,156 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "llm_wiki-main/wiki/Concetti/NoSQL_Databases.md",
+                "file": "raw/extracted/Chapter_12.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "NoSQL_Databases"
+              "title": "Chapter_12"
+            }
+          },
+          {
+            "id": "1b2ba14f48d7ce6b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "raw/Conceptual Model ex.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Conceptual Model ex"
+            }
+          },
+          {
+            "id": "c9562b92b3daeffa",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "raw/esercizi sql.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "esercizi sql"
+            }
+          },
+          {
+            "id": "7ae55059804c5a59",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "raw/ex sql.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ex sql"
+            }
+          },
+          {
+            "id": "4a97779a045f660b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "index.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "index"
+            }
+          },
+          {
+            "id": "708f077cf8276116",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "raw/DATA Warehouse.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "DATA Warehouse"
+            }
+          },
+          {
+            "id": "f99b1500f7b48c8f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "raw/Data Mining.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Data Mining"
+            }
+          },
+          {
+            "id": "c20113bf9bbd300c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "raw/DATA Warehouse.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "DATA Warehouse"
+            }
+          },
+          {
+            "id": "5109832f51995ace",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "raw/Data Mining.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Data Mining"
+            }
+          },
+          {
+            "id": "375393cc632f2ace",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "raw/DATA Warehouse.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "DATA Warehouse"
+            }
+          },
+          {
+            "id": "c65a15eedc1bfb4e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "wiki/Sociologia/Q1_Digitalization_and_Labour_Market.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Q1_Digitalization_and_Labour_Market"
             }
           }
-        ]
+        ],
+        "currentTab": 10
       }
     ],
     "direction": "vertical"
@@ -78,7 +219,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "93cb500c5dbf2c67",
@@ -177,30 +318,48 @@
       "daily-notes:Apri nota del giorno": false,
       "templates:Inserisci modello": false,
       "command-palette:Apri riquadro comandi": false,
-      "bases:Crea nuova Base": false
+      "bases:Crea nuova Base": false,
+      "obsidian-importer:Open Importer": false,
+      "fit:Sync to GitHub": false
     }
   },
-  "active": "f54563db1bd12951",
+  "active": "a924451bd51b8018",
   "lastOpenFiles": [
-    "simulation_workflow/index.html",
-    "simulation_workflow",
-    "simulation_models/index.html",
-    "simulation_models",
-    "simulation_scalability/index.html",
-    "simulation_scalability",
-    "simulation_nosql/index.html",
-    "simulation_nosql",
-    "llm_wiki-main/wiki/Fonti/Fonte_Database_Systems_Elmasri.md",
-    "llm_wiki-main/wiki/Progetti/Master_Page_Data_Mining.md",
-    "llm_wiki-main/wiki/Concetti/Topic_7_8_CAPM_Cost_of_Capital.md",
-    "llm_wiki-main/wiki/Concetti/NoSQL_Databases.md",
-    "llm_wiki-main/wiki/Concetti/Topic_6_Risk_and_Return.md",
-    "llm_wiki-main/wiki/Master_Page_Corporate_Finance.md",
-    "llm_wiki-main/Valutazione_Aziendale.md",
-    "llm_wiki-main/OLAP.md",
-    "llm_wiki-main/raw/Note Taking & Research Assistant Powered by AI 2.md",
-    "llm_wiki-main/wiki/Concetti/Real_Options.md",
-    "llm_wiki-main/wiki/Concetti/Debt_Financing.md",
-    "raw"
+    "wiki/Concetti/Data_Warehouse.md",
+    "Labour Market Polarization.md",
+    "wiki/Sociologia/Q1_Digitalization_and_Labour_Market.md",
+    "RBTC.md",
+    "SBTC.md",
+    "wiki/Fonti/Fonte_Sociologia_Digitalizzazione.md",
+    "wiki/Sociologia/Q2_Digitalization_and_Welfare_State.md",
+    "wiki/Sociologia/Q3_Health_Care_and_Digitalization.md",
+    "wiki/Fonti/healthcare_db_sql.md",
+    "raw/0f11759b-2474-4fa7-af72-e4bd183b10fe_Chapter_18)_Digitalization_and_the_Politics_of_Health_Risks_in_Advanced_Democracies_Authors_Jensen_and_Kersbergen.pdf",
+    "wiki/Sociologia",
+    "raw/0f11759b-2474-4fa7-af72-e4bd183b10fe_Chapter_18)_Digitalization_and_the_Politics_of_Health_Risks_in_Advanced_Democracies_Authors_Jensen_and_Kersbergen.md",
+    "raw/395ef717-73e1-4cb0-8fe5-c5d34264af33_Chapter_15)_Digitalization_and_Automation._the_challenges_for_european_pension_policies.md",
+    "raw/b5c689c3-9a2b-4b74-b32b-a1610da7eb6a_Chapter_17_-_Transformation_of_Education_Policy_and_Governance_in_the_Digital_Era_.md",
+    "raw/f622fc49-8a32-46b5-bf7d-77a21e56ac5b_Chapter_13)_Political_and_Institutional_Limits_to_the_Rise_of_Platform_Work..md",
+    "raw/a0c377b8-a98d-4772-9dd1-0dac88a1caed_Chapter_3)Digitalization_and_theTransition_to_Services.md",
+    "raw/ff295213-12f9-420c-b1fd-11c5509fd4a2_Chapter_2)Digitalization_Automation_andtheWelfareState_What_DoWe(NotYet)Know.md",
+    "raw/f34ea5ce-de89-4318-9944-568a2a6e5023_Digitalization_and_the_Future_of_the_Democratic_Welfare_State.md",
+    "raw/d9eefd05-0af2-46a4-bccc-52ac2dff65d0_Chapter_20)_The_Politics_of_Tax_Policy_in_the_Digital_Age_By_Margarita_Gelepithis.md",
+    "raw/extracted/Chapter_7.md",
+    "raw/extracted/Chapter_2.md",
+    "wiki/Esercitazioni/Long_Term_Financial_Planning.md",
+    "raw/d9eefd05-0af2-46a4-bccc-52ac2dff65d0_Chapter_20)_The_Politics_of_Tax_Policy_in_the_Digital_Age_By_Margarita_Gelepithis.pdf",
+    "raw/a0c377b8-a98d-4772-9dd1-0dac88a1caed_Chapter_3)Digitalization_and_theTransition_to_Services.pdf",
+    "raw/b5c689c3-9a2b-4b74-b32b-a1610da7eb6a_Chapter_17_-_Transformation_of_Education_Policy_and_Governance_in_the_Digital_Era_.pdf",
+    "raw/ff295213-12f9-420c-b1fd-11c5509fd4a2_Chapter_2)Digitalization_Automation_andtheWelfareState_What_DoWe(NotYet)Know.pdf",
+    "raw/f622fc49-8a32-46b5-bf7d-77a21e56ac5b_Chapter_13)_Political_and_Institutional_Limits_to_the_Rise_of_Platform_Work..pdf",
+    "raw/395ef717-73e1-4cb0-8fe5-c5d34264af33_Chapter_15)_Digitalization_and_Automation._the_challenges_for_european_pension_policies.pdf",
+    "raw/f34ea5ce-de89-4318-9944-568a2a6e5023_Digitalization_and_the_Future_of_the_Democratic_Welfare_State.pdf",
+    "Notion",
+    "wiki/Esercitazioni/Capital_Budgeting_Simulation.md",
+    "wiki/Esercitazioni/Cash_Budgeting_Simulation.md",
+    "wiki/Concetti/Governance_e_Problemi_di_Agenzia.md",
+    "wiki/Concetti/Market_Efficiency_and_Financial_Intermediaries.md",
+    "wiki/Concetti/Debt_Financing_Overview.md",
+    "wiki/Concetti/Corporate_Governance_and_Lifecycle.md"
   ]
 }

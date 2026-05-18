@@ -1,3 +1,0 @@
-@echo off
-echo Avvio della Routine di Stretching Biohacking in corso...
-python "c:\Users\Haroun_Jaafar\Desktop\llm_wiki\stretching_timer.py"
