@@ -65,6 +65,18 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[GPT]] | Scheda base GPT |
 | [[Transformer_Architecture]] | Architettura Transformer |
 
+### Industrial Organization
+| File | Descrizione |
+|---|---|
+| [[IO_01_Microeconomics]] | Perfect competition, monopoly, DWL, discounting |
+| [[IO_02_Market_Structure]] | NACE, CR4, HHI, Lerner Index, Sunk costs |
+| [[IO_03_Game_Theory]] | Nash Equilibrium, Cournot vs Bertrand |
+| [[IO_04_Innovation_and_RD]] | Schumpeter, Spillovers, AI Paradox |
+| [[IO_05_Digital_Transformation]] | Internal effects, automation, data-driven decisions |
+| [[IO_06_Patents_and_IP]] | Patent data, AI patents, litigations vs oppositions |
+| [[IO_07_Platform_Economics]] | Network effects, multihoming, interoperability |
+| [[IO_08_Econometrics]] | OLS, R-squared, P-value, cross-sectional |
+
 ---
 
 ## 📁 wiki/Fonti/
@@ -95,6 +107,7 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[wiki/Master_Page_Corporate_Finance]] | Cruscotto esame CF — tabella topic + domande |
 | [[Master_Page_Data_Mining]] | Cruscotto studio Data Mining + domande esame |
 | [[Master_Page_AI_LLM]] | Cruscotto studio AI/LLM |
+| [[Master_Page_Industrial_Organization]] | Cruscotto esame Industrial Organization |
 
 ---
 

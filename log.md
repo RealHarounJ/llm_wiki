@@ -66,7 +66,7 @@ Registro **append-only** di tutte le operazioni sul Second Brain. Ogni entry seg
 
 ---
 
-## [2026-05-07] INGEST | Corporate finance.md — Libro Completo Professore
+## [2026-05-07] INGEST | Corporate finance.md ï¿½ Libro Completo Professore
 
 **Fonte raw:** `raw/Corporate finance.md` (326 KB)
 
@@ -81,8 +81,10 @@ Registro **append-only** di tutte le operazioni sul Second Brain. Ogni entry seg
 ## [2026-05-12] INGEST | Debt Financing & Real Options
 
 **Fonti raw:** 
-- aw/Note Taking & Research Assistant Powered by AI 2.md (Debt Financing)
-- aw/Note Taking & Research Assistant Powered by AI 1.md (Real Options)
+- 
+aw/Note Taking & Research Assistant Powered by AI 2.md (Debt Financing)
+- 
+aw/Note Taking & Research Assistant Powered by AI 1.md (Real Options)
 
 **File aggiornati:**
 - wiki/Concetti/Debt_Financing.md [NEW]
@@ -94,13 +96,14 @@ Registro **append-only** di tutte le operazioni sul Second Brain. Ogni entry seg
 - Tipologie di obbligazioni (Convertibili, Callable, Exotic).
 - Debito bancario e Commercial Paper.
 - Opzioni reali: espansione, abbandono, timing, produzione.
-- Alberi decisionali per flessibilità NPV.
+- Alberi decisionali per flessibilitï¿½ NPV.
 
 ---
 
 ## [2026-05-12] INGEST | NoSQL & Business Information Systems
 
-**Fonte raw:** aw/Fundamentals of Database Systems (Elmasri) Cap. 24
+**Fonte raw:** 
+aw/Fundamentals of Database Systems (Elmasri) Cap. 24
 
 **File aggiornati:**
 - wiki/Concetti/NoSQL_Databases.md [NEW]
@@ -116,29 +119,29 @@ Registro **append-only** di tutte le operazioni sul Second Brain. Ogni entry seg
 
 ## [2026-05-14] Ingest | haroun_academy.sql e healthcare_db.sql
 
-## [2026-05-16] INGEST | Sociologia — Digitalizzazione e Welfare State (8 Capitoli)
+## [2026-05-16] INGEST | Sociologia ï¿½ Digitalizzazione e Welfare State (8 Capitoli)
 
 **Fonte:** Libro "Digitalization and the Future of the Democratic Welfare State"
 **Capitoli ingested:** Cap. 2, 3, 13, 15, 18 + Introduzione
 
-**File creati — wiki/Fonti/:**
-- `Fonte_Sociologia_Digitalizzazione.md` — Scheda fonte completa con tutti i capitoli
+**File creati ï¿½ wiki/Fonti/:**
+- `Fonte_Sociologia_Digitalizzazione.md` ï¿½ Scheda fonte completa con tutti i capitoli
 
-**File creati — wiki/Sociologia/:**
-- `Q1_Digitalization_and_Labour_Market.md` — RBTC, SBTC, Labour Market Polarization, Platform Work (Picot)
-- `Q2_Digitalization_and_Welfare_State.md` — Pension systems, ADM/SyRI, UBI, Social Investment
-- `Q3_Health_Care_and_Digitalization.md` — Crowding Out Effect, Cultural Health Capital, Jensen & Kersbergen
+**File creati ï¿½ wiki/Sociologia/:**
+- `Q1_Digitalization_and_Labour_Market.md` ï¿½ RBTC, SBTC, Labour Market Polarization, Platform Work (Picot)
+- `Q2_Digitalization_and_Welfare_State.md` ï¿½ Pension systems, ADM/SyRI, UBI, Social Investment
+- `Q3_Health_Care_and_Digitalization.md` ï¿½ Crowding Out Effect, Cultural Health Capital, Jensen & Kersbergen
 
 **Wikilinks creati:** [[RBTC]], [[SBTC]], [[Labour Market Polarization]], [[Platform Work]], [[Universal Basic Income]], [[Crowding Out Effect]], [[Cultural Health Capital]], [[ADM Automated Decision-Making]], [[Pension Systems Three Pillars]], [[Social Investment State]]
 
 **Domande esame coperte:** Q1 Labour Market, Q2 Welfare State, Q3 Healthcare (Esame 12 Giugno 2024)
 
-## [2026-05-18] INGEST | Data Warehouse — Teoria Tecnica e Modelli
+## [2026-05-18] INGEST | Data Warehouse ï¿½ Teoria Tecnica e Modelli
 
 **Operazione:** Creazione e sintesi degli appunti di Data Warehouse a seguito della simulazione d'esame.
 **Fonte:** Sessione di studio interattiva + Appunti raw in DATA Warehouse.md
 
-**File creati — wiki/Concetti/:**
-- `Data_Warehouse.md` — Super Technical Theory (OLTP vs OLAP, Inmon, ETL, MDM, MOLAP/ROLAP/HOLAP, Star vs Snowflake Schema)
+**File creati ï¿½ wiki/Concetti/:**
+- `Data_Warehouse.md` ï¿½ Super Technical Theory (OLTP vs OLAP, Inmon, ETL, MDM, MOLAP/ROLAP/HOLAP, Star vs Snowflake Schema)
 
 **Wikilinks creati:** [[OLTP]], [[OLAP]], [[ETL]], [[Master Data Management]], [[MOLAP]], [[ROLAP]], [[HOLAP]], [[Star Schema]], [[Snowflake Schema]], [[Fact Constellation]]

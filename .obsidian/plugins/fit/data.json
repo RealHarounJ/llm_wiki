@@ -3,12 +3,12 @@
   "owner": "RealHarounJ",
   "repoOwner": "RealHarounJ",
   "avatarUrl": "https://avatars.githubusercontent.com/u/198085066?v=4",
-  "repo": "",
-  "branch": "",
+  "repo": "llm_wiki",
+  "branch": "main",
   "deviceName": "PC_Portatile",
-  "checkEveryXMinutes": 5,
+  "checkEveryXMinutes": 1,
   "autoSync": "on",
-  "notifyChanges": false,
-  "notifyConflicts": true,
+  "notifyChanges": true,
+  "notifyConflicts": false,
   "enableDebugLogging": true
 }

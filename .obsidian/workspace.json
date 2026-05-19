@@ -139,30 +139,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw/DATA Warehouse.md",
+                "file": "CLAUDE.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DATA Warehouse"
-            }
-          },
-          {
-            "id": "c65a15eedc1bfb4e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "wiki/Sociologia/Q1_Digitalization_and_Labour_Market.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Q1_Digitalization_and_Labour_Market"
+              "title": "CLAUDE"
             }
           }
         ],
-        "currentTab": 10
+        "currentTab": 9
       }
     ],
     "direction": "vertical"
@@ -235,16 +221,17 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "CLAUDE.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
+                "showSearch": true,
+                "searchQuery": "master",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Riferimenti"
+              "title": "Riferimenti a CLAUDE"
             }
           },
           {
@@ -307,8 +294,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -323,30 +309,36 @@
       "fit:Sync to GitHub": false
     }
   },
-  "active": "a924451bd51b8018",
+  "active": "375393cc632f2ace",
   "lastOpenFiles": [
-    "wiki/Concetti/Data_Warehouse.md",
+    "wiki/Esercitazioni/Esercizio_Decision_Tree_Loan.md",
+    "wiki/Concetti/IO_01_Microeconomics.md",
+    "wiki/Concetti/GPT_Models.md",
+    "wiki/Concetti/OLAP.md",
+    "wiki/Fonti/Fonte_Sociologia_Digitalizzazione.md",
     "Labour Market Polarization.md",
-    "wiki/Sociologia/Q1_Digitalization_and_Labour_Market.md",
     "RBTC.md",
     "SBTC.md",
-    "wiki/Fonti/Fonte_Sociologia_Digitalizzazione.md",
+    "raw/DATA Warehouse.md",
+    "wiki/Progetti/Master_Page_Industrial_Organization.md",
+    "wiki/Concetti/IO_08_Econometrics.md",
+    "wiki/Concetti/IO_02_Market_Structure.md",
+    "index.md",
+    "SQL_Language_Basics.md",
+    "wiki/README.md",
+    "wiki/Concetti/IO_07_Platform_Economics.md",
+    "Architettura_DBMS.md",
+    "wiki/Concetti/IO_06_Patents_and_IP.md",
+    "wiki/Concetti/IO_05_Digital_Transformation.md",
+    "log.md",
+    "wiki/Concetti/IO_04_Innovation_and_RD.md",
+    "wiki/Concetti/IO_03_Game_Theory.md",
+    "wiki/Sociologia/Q1_Digitalization_and_Labour_Market.md",
+    "wiki/Concetti/Data_Warehouse.md",
     "wiki/Sociologia/Q2_Digitalization_and_Welfare_State.md",
     "wiki/Sociologia/Q3_Health_Care_and_Digitalization.md",
-    "wiki/Fonti/healthcare_db_sql.md",
     "raw/0f11759b-2474-4fa7-af72-e4bd183b10fe_Chapter_18)_Digitalization_and_the_Politics_of_Health_Risks_in_Advanced_Democracies_Authors_Jensen_and_Kersbergen.pdf",
     "wiki/Sociologia",
-    "raw/0f11759b-2474-4fa7-af72-e4bd183b10fe_Chapter_18)_Digitalization_and_the_Politics_of_Health_Risks_in_Advanced_Democracies_Authors_Jensen_and_Kersbergen.md",
-    "raw/395ef717-73e1-4cb0-8fe5-c5d34264af33_Chapter_15)_Digitalization_and_Automation._the_challenges_for_european_pension_policies.md",
-    "raw/b5c689c3-9a2b-4b74-b32b-a1610da7eb6a_Chapter_17_-_Transformation_of_Education_Policy_and_Governance_in_the_Digital_Era_.md",
-    "raw/f622fc49-8a32-46b5-bf7d-77a21e56ac5b_Chapter_13)_Political_and_Institutional_Limits_to_the_Rise_of_Platform_Work..md",
-    "raw/a0c377b8-a98d-4772-9dd1-0dac88a1caed_Chapter_3)Digitalization_and_theTransition_to_Services.md",
-    "raw/ff295213-12f9-420c-b1fd-11c5509fd4a2_Chapter_2)Digitalization_Automation_andtheWelfareState_What_DoWe(NotYet)Know.md",
-    "raw/f34ea5ce-de89-4318-9944-568a2a6e5023_Digitalization_and_the_Future_of_the_Democratic_Welfare_State.md",
-    "raw/d9eefd05-0af2-46a4-bccc-52ac2dff65d0_Chapter_20)_The_Politics_of_Tax_Policy_in_the_Digital_Age_By_Margarita_Gelepithis.md",
-    "raw/extracted/Chapter_7.md",
-    "raw/extracted/Chapter_2.md",
-    "wiki/Esercitazioni/Long_Term_Financial_Planning.md",
     "raw/d9eefd05-0af2-46a4-bccc-52ac2dff65d0_Chapter_20)_The_Politics_of_Tax_Policy_in_the_Digital_Age_By_Margarita_Gelepithis.pdf",
     "raw/a0c377b8-a98d-4772-9dd1-0dac88a1caed_Chapter_3)Digitalization_and_theTransition_to_Services.pdf",
     "raw/b5c689c3-9a2b-4b74-b32b-a1610da7eb6a_Chapter_17_-_Transformation_of_Education_Policy_and_Governance_in_the_Digital_Era_.pdf",
@@ -354,12 +346,6 @@
     "raw/f622fc49-8a32-46b5-bf7d-77a21e56ac5b_Chapter_13)_Political_and_Institutional_Limits_to_the_Rise_of_Platform_Work..pdf",
     "raw/395ef717-73e1-4cb0-8fe5-c5d34264af33_Chapter_15)_Digitalization_and_Automation._the_challenges_for_european_pension_policies.pdf",
     "raw/f34ea5ce-de89-4318-9944-568a2a6e5023_Digitalization_and_the_Future_of_the_Democratic_Welfare_State.pdf",
-    "Notion",
-    "wiki/Esercitazioni/Capital_Budgeting_Simulation.md",
-    "wiki/Esercitazioni/Cash_Budgeting_Simulation.md",
-    "wiki/Concetti/Governance_e_Problemi_di_Agenzia.md",
-    "wiki/Concetti/Market_Efficiency_and_Financial_Intermediaries.md",
-    "wiki/Concetti/Debt_Financing_Overview.md",
-    "wiki/Concetti/Corporate_Governance_and_Lifecycle.md"
+    "Notion"
   ]
 }
