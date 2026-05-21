@@ -93,3 +93,6 @@ Il **Leasing** è un contratto tra l'**Owner** (Lessor/Locatore, chi possiede il
 2.  **Manutenzione:** Spesso inclusa o gestita dal proprietario.
 3.  **Vantaggi Fiscali (Tax Shield):** I canoni di leasing (specialmente la parte di interessi) sono deducibili. In alcuni Paesi, questo permette di aggirare i limiti di deducibilità imposti sul normale debito bancario.
 4.  **Protezione in caso di fallimento:** Se lo User fallisce, l'Owner può riprendersi l'asset molto più velocemente rispetto a una banca che deve fare causa per recuperare un prestito, perché l'Owner è già il proprietario legale del bene.
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

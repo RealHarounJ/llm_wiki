@@ -1,3 +1,10 @@
+---
+tags: [concept, theory]
+aliases: [IO 07 Platform Economics]
+date_created: 2026-05-21
+last_modified: 2026-05-21
+source_count: 1
+---
 # IO 07: Platform Economics (Lesson 16)
 
 ## Definitions
@@ -20,3 +27,7 @@ Mechanisms that allow multiple platforms to coexist ("Competition IN the market"
 2. **Multihoming**: Users can join multiple platforms simultaneously (e.g., owning multiple social media accounts).
 3. **Interoperability**: Users on platform A can interact with users on platform B.
 4. **Negative Network Effects**: Overcrowding or congestion (e.g., Airbnb).
+
+## Fonti
+* [[raw/f622fc49-8a32-46b5-bf7d-77a21e56ac5b_Chapter_13)_Political_and_Institutional_Limits_to_the_Rise_of_Platform_Work..md]]
+* [[wiki/Fonti/Fonte_Sociologia_Digitalizzazione.md]]

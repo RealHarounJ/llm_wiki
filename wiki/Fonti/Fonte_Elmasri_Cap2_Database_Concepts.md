@@ -1,13 +1,14 @@
 ---
-title: "Where teams and agents work together"
-source: "https://www.notion.so/Fundamentals-of-Database-Systems-2f4843e8337280ed9da6fe65eb396bb6"
-author:
-published:
-created: 2026-05-05
-description: "A collaborative AI workspace, built on your company context. Build and orchestrate agents right alongside your team's projects, meetings, and connected apps."
-tags:
-  - "clippings"
+tags: [database, DBMS-architecture, schema, three-schema, elmasri-navathe, study-notes]
+aliases: [Database System Concepts, Elmasri Chapter 2]
+date_created: 2026-05-21
+last_modified: 2026-05-21
+source_count: 1
 ---
+
+# ðŸ“– Database Systems - Capitolo 2: Database System Concepts and Architecture
+
+
 ## Fundamentals of Database Systems
 
 #### 1) Data model
@@ -403,3 +404,6 @@ Student\_number
 Section\_identifier
 
 ) UNIQUE (uno studente non può iscriversi due volte alla stessa sezione)
+
+## Fonti
+* [[raw/Fundamentals of Database Systems (Ramez Elmasri, Shamkant B. Navathe) (z-library.sk, 1lib.sk, z-lib.sk).md]]

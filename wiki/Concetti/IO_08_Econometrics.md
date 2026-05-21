@@ -1,3 +1,10 @@
+---
+tags: [concept, theory]
+aliases: [IO 08 Econometrics]
+date_created: 2026-05-21
+last_modified: 2026-05-21
+source_count: 1
+---
 # IO 08: Basic Econometrics (Lesson 11)
 
 ## Types of Data
@@ -22,3 +29,7 @@ Formula: $Y = \alpha + \beta X + \mu$
 - **Autocorrelation**: Observations are related over time.
 - **Heteroscedasticity**: Error variance is not constant.
 - **Misspecification**: Omitted variables or wrong functional form.
+
+## Fonti
+* [[raw/f622fc49-8a32-46b5-bf7d-77a21e56ac5b_Chapter_13)_Political_and_Institutional_Limits_to_the_Rise_of_Platform_Work..md]]
+* [[wiki/Fonti/Fonte_Sociologia_Digitalizzazione.md]]

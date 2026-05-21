@@ -1,13 +1,14 @@
 ---
-title: "Where teams and agents work together"
-source: "https://www.notion.so/Chapter-9-Relational-Database-Design-by-ER-and-EER-to-Relational-Mapping-319843e8337280ff8c0beb882a55bca6"
-author:
-published:
-created: 2026-05-05
-description: "A collaborative AI workspace, built on your company context. Build and orchestrate agents right alongside your team's projects, meetings, and connected apps."
-tags:
-  - "clippings"
+tags: [database, ER-mapping, EER-mapping, logical-design, schema-mapping, elmasri-navathe, study-notes]
+aliases: [ER to Relational Mapping, Elmasri Chapter 9]
+date_created: 2026-05-21
+last_modified: 2026-05-21
+source_count: 1
 ---
+
+# ðŸ“– Database Systems - Capitolo 9: Relational Database Design by ER- and EER-to-Relational Mapping
+
+
 ## Chapter 9)Relational Database Design by ER- and EER-to-Relational Mapping
 
 #### Mapping Cardinalities
@@ -1083,3 +1084,6 @@ Type
 ) ON DELETE SET DEFAULT
 
 ON UPDATE CASCADE O RESTRICT!;
+
+## Fonti
+* [[raw/Fundamentals of Database Systems (Ramez Elmasri, Shamkant B. Navathe) (z-library.sk, 1lib.sk, z-lib.sk).md]]

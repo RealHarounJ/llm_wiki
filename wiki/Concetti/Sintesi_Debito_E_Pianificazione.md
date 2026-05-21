@@ -1,3 +1,10 @@
+---
+tags: [concept, theory]
+aliases: [Sintesi Debito E Pianificazione]
+date_created: 2026-05-21
+last_modified: 2026-05-21
+source_count: 1
+---
 # 🎓 Sintesi: Dal Fabbisogno (EFN) alla Scelta del Debito
 
 Quando un'azienda ha un **EFN > 0**, deve pianificare la raccolta di liquidità esterna. Questa sintesi collega la pianificazione finanziaria con la scelta degli strumenti di debito.
@@ -29,3 +36,6 @@ Il costo del finanziamento ($r_D$ o $r_E$) dipende dalla posizione del creditore
 
 ---
 *Questa sintesi integra i concetti di EFN (Financial Planning) con la struttura del capitale e la gerarchia dei rimborsi.*
+
+## Fonti
+* [[raw/Note Taking & Research Assistant Powered by AI.md]]

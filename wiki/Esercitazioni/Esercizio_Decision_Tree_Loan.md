@@ -1,3 +1,10 @@
+---
+tags: [exercise, practice]
+aliases: [Esercizio Decision Tree Loan]
+date_created: 2026-05-21
+last_modified: 2026-05-21
+source_count: 1
+---
 # 📝 Esercizio: Costruzione Albero di Decisione (Loanworthy)
 
 Applichiamo l'algoritmo di costruzione di un albero di decisione utilizzando i dati tratti dalla sessione di studio.
@@ -38,3 +45,7 @@ Calcolando l'Information Gain per ogni attributo:
 
 ---
 *Vedi anche: [[Tecniche_di_Data_Mining]], [[Google_Gemini_Session]]*
+
+## Fonti
+* [[raw/f622fc49-8a32-46b5-bf7d-77a21e56ac5b_Chapter_13)_Political_and_Institutional_Limits_to_the_Rise_of_Platform_Work..md]]
+* [[wiki/Fonti/Fonte_Sociologia_Digitalizzazione.md]]

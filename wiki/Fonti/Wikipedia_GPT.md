@@ -27,3 +27,6 @@ A comprehensive overview of GPT models, their history, architecture, and impact.
 
 ---
 *Source file: [[Generative pre-trained transformer]]*
+
+## Fonti
+* [[wiki/Fonti/Wikipedia_GPT.md]]

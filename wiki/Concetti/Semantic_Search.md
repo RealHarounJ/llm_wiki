@@ -53,3 +53,6 @@ Database Vettoriale ← kNN Search → Top-k Documenti Simili
 - [[RAG]] — Semantic Search è il cuore del Retrieval in RAG
 - [[LLM_Changing_Search]]
 - [[GPT_Models]]
+
+## Fonti
+* [[wiki/Fonti/Wikipedia_GPT.md]]

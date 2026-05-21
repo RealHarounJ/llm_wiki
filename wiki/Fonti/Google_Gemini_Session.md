@@ -1,3 +1,10 @@
+---
+tags: [source, study-notes]
+aliases: [Google Gemini Session]
+date_created: 2026-05-21
+last_modified: 2026-05-21
+source_count: 1
+---
 # 🎓 Sessione di Studio: Data Mining & AI
 
 Trascrizione della sessione di studio focalizzata sulla classificazione, clustering e architetture dati.
@@ -17,3 +24,6 @@ Trascrizione della sessione di studio focalizzata sulla classificazione, cluster
 
 ---
 *Source: [[Google_Gemini]]*
+
+## Fonti
+* [[raw/Note Taking & Research Assistant Powered by AI.md]]

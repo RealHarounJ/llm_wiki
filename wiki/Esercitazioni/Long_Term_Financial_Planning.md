@@ -54,3 +54,6 @@ Ecco una simulazione Excel in inglese.
 1.  **The Goal:** "We use Long-Term Financial Planning to calculate the EFN (External Financing Needed) to support future sales growth."
 2.  **The Problem:** "If sales grow by 20%, our Total Assets must grow to 1,200. However, our internal financing (Retained Earnings) only generated 120 of new Equity. This brings our total Liabilities & Equity to only 1,120."
 3.  **The Solution:** "Since the Balance Sheet MUST balance (Assets = Liab + Equity), we have a deficit of 80. The company must raise **80$ of External Financing** (by issuing new long-term bonds or new shares) to buy the assets needed to support the 20% sales growth."
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

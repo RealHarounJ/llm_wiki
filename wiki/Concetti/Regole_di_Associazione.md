@@ -54,3 +54,6 @@ Regola trovata: `{Pannolini} → {Birra}` con Support=0.5, Confidence=1.0, Lift=
 - [[Clustering_KMeans]]
 - [[Classificazione_Decision_Tree]]
 - [[Data_Mining_Hub]]
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

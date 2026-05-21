@@ -76,3 +76,6 @@ I LLM stanno evolvendo in **Large Multimodal Models (LMM)** che:
 - [[RAG]]
 - [[Semantic_Search]]
 - [[LLM_Hub]]
+
+## Fonti
+* [[wiki/Fonti/Wikipedia_GPT.md]]

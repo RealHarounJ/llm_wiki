@@ -1,3 +1,10 @@
+---
+tags: [project, master-page]
+aliases: [Master Page Industrial Organization]
+date_created: 2026-05-21
+last_modified: 2026-05-21
+source_count: 1
+---
 # 🏭 Master Page — Industrial Organization
 
 **Corso:** Industrial Organization
@@ -34,3 +41,7 @@ Usa questa tabella per tracciare il tuo livello di preparazione sui concetti chi
 - [ ] Differenze tra *Patent Litigation* e *Patent Opposition*.
 - [ ] Cos'è un *Innovation-enabling technology* rispetto a un normale GPT.
 - [ ] Spiegare i tipi di *Spillovers* (geografici, settoriali, tecnologici).
+
+## Fonti
+* [[raw/f622fc49-8a32-46b5-bf7d-77a21e56ac5b_Chapter_13)_Political_and_Institutional_Limits_to_the_Rise_of_Platform_Work..md]]
+* [[wiki/Fonti/Fonte_Sociologia_Digitalizzazione.md]]

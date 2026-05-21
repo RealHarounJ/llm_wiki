@@ -1,13 +1,14 @@
 ---
-title: "Where teams and agents work together"
-source: "https://www.notion.so/Chapter-3-Data-Modeling-Using-the-Entity-Relationship-ER-Model-306843e83372803aaf46d11d5254bcfd"
-author:
-published:
-created: 2026-05-05
-description: "A collaborative AI workspace, built on your company context. Build and orchestrate agents right alongside your team's projects, meetings, and connected apps."
-tags:
-  - "clippings"
+tags: [database, ER-model, conceptual-design, entities, relationships, elmasri-navathe, study-notes]
+aliases: [ER Model Notes, Elmasri Chapter 3]
+date_created: 2026-05-21
+last_modified: 2026-05-21
+source_count: 1
 ---
+
+# ðŸ“– Database Systems - Capitolo 3: Data Modeling Using the Entity-Relationship (ER) Model
+
+
 ## Chapter 3 ) Data Modeling Using the Entity-Relationship (ER) Model
 
 ![](https://www.notion.so/image/attachment%3A94d37536-09d9-4317-93e9-dce02a5eca27%3AScreenshot_2026-02-13_160143.png?table=block&id=306843e8-3372-80ed-a5a8-ef080cc57c42&spaceId=04f085f0-9964-4790-bc1b-a8c98d8d5b8a&width=960&userId=192d872b-594c-8166-ae96-000202569c1b&cache=v2)
@@ -295,3 +296,6 @@ OFFERS
 OFFERS
 
 . Ad esempio, Rossi può insegnare Basi di Dati, Basi di Dati è offerto nel 1° semestre, e Rossi insegna nel 1° semestre... ma magari nel 1° semestre Rossi sta insegnando "Reti", mentre "Basi di Dati" lo sta tenendo il Prof. Bianchi!
+
+## Fonti
+* [[raw/Fundamentals of Database Systems (Ramez Elmasri, Shamkant B. Navathe) (z-library.sk, 1lib.sk, z-lib.sk).md]]

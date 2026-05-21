@@ -1,13 +1,14 @@
 ---
-title: "Where teams and agents work together"
-source: "https://www.notion.so/Chapter-4-Relational-Data-Model-30b843e8337280029109dec9b41aafe2"
-author:
-published:
-created: 2026-05-05
-description: "A collaborative AI workspace, built on your company context. Build and orchestrate agents right alongside your team's projects, meetings, and connected apps."
-tags:
-  - "clippings"
+tags: [database, relational-model, constraints, keys, primary-key, elmasri-navathe, study-notes]
+aliases: [Relational Model Notes, Elmasri Chapter 4]
+date_created: 2026-05-21
+last_modified: 2026-05-21
+source_count: 1
 ---
+
+# ðŸ“– Database Systems - Capitolo 4: The Relational Data Model and Relational Database Constraints
+
+
 ## Chapter 4) Relational Data Model
 
 First introduced by Ted Codd (in 1970)
@@ -193,3 +194,6 @@ AUDIOVISUAL\_MEDIA
 RESOURCE
 
 e ci hai spostato dentro gli attributi condivisi.![](https://www.notion.so/image/attachment%3A19b3e6e9-9bdc-423e-b4cf-649a640879a3%3A1.drawio.png?table=block&id=314843e8-3372-80bc-89f6-d17e9afad3f5&spaceId=04f085f0-9964-4790-bc1b-a8c98d8d5b8a&width=1310&userId=192d872b-594c-8166-ae96-000202569c1b&cache=v2)
+
+## Fonti
+* [[raw/Fundamentals of Database Systems (Ramez Elmasri, Shamkant B. Navathe) (z-library.sk, 1lib.sk, z-lib.sk).md]]

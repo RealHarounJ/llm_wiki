@@ -24,3 +24,7 @@ date_created: 2026-05-07
 | `Topics 7 & 8 - CAPM...` | CAPM, WACC, Beta |
 
 👉 **Cruscotto principale:** [[wiki/Master_Page_Corporate_Finance]]
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

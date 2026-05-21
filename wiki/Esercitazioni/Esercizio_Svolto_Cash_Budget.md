@@ -52,3 +52,7 @@ aliases: [Esercizio Budget di Cassa]
 **Vedi anche:**
 - [[Topic_3d_Cash_Budgeting]]
 - [[Gestione_del_Capitale_Circolante]]
+
+## Fonti
+* [[raw/f622fc49-8a32-46b5-bf7d-77a21e56ac5b_Chapter_13)_Political_and_Institutional_Limits_to_the_Rise_of_Platform_Work..md]]
+* [[wiki/Fonti/Fonte_Sociologia_Digitalizzazione.md]]

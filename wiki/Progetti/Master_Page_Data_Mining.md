@@ -55,3 +55,6 @@ Cruscotto centrale per lo studio di Data Mining e Database (Elmasri & Navathe).
 - **Sessione Gemini (Data Mining cap 28):** `wiki/Fonti/‎Google Gemini.md`
 - **Data Mining Techniques:** `wiki/Fonti/Data Mining Techniques.md`
 - **K-Means deep dive:** `wiki/Fonti/Data mining.md`
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

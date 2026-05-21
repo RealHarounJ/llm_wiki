@@ -47,3 +47,6 @@ Il menu della cucina celebra i sapori dell'Adriatico con un tocco contemporaneo.
 
 ---
 **Torna al:** [[Kiro_Kiro_Hub]]
+
+## Fonti
+* [[raw/Kiro Kiro.md]]

@@ -32,3 +32,7 @@ Conflitto tra **Principal** (Azionista) e **Agent** (Manager).
 - [[Topic_2_Financial_Analysis]]
 - [[Topic_5_NPV_Investment_Criteria]]
 - [[Fonte_Corporate_Finance_Book]]
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

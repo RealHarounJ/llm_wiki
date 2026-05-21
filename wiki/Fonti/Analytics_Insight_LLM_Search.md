@@ -26,3 +26,6 @@ Exploration of how LLM-based search transforms the web search paradigm.
 
 ---
 *Source file: [[How is LLM Changing Search on the Web]]*
+
+## Fonti
+* [[wiki/Fonti/Wikipedia_GPT.md]]

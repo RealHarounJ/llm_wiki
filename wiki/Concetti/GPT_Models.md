@@ -67,3 +67,6 @@ Tecnica di prompting in cui il modello genera **passi intermedi di ragionamento*
 - [[Transformer_Architecture]]
 - [[RAG]]
 - [[LLM_Changing_Search]]
+
+## Fonti
+* [[wiki/Fonti/Wikipedia_GPT.md]]

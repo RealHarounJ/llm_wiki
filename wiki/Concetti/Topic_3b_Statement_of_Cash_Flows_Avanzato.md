@@ -47,3 +47,7 @@ The ending cash must match the balance sheet figure.
 
 ---
 *Sources: [[Slides_Corporate_Finance_2025_2026]], [[Corporate_Finance]]*
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

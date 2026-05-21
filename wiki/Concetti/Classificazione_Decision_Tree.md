@@ -52,3 +52,6 @@ $$Gain(A) = I(s_1,...,s_n) - E(A)$$
 - [[Clustering_KMeans]]
 - [[Tecniche_di_Data_Mining]]
 - [[Fonte_Database_Systems_Elmasri]]
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

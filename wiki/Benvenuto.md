@@ -14,3 +14,6 @@ This is the **Haroun AI** vault — a *Second Brain* built on the Wiki Pattern.
 - Check the full index in `index.md`
 
 When you're ready, explore the wiki or add new sources to `raw/` to expand the knowledge base!
+
+## Fonti
+* [[raw/Note Taking & Research Assistant Powered by AI.md]]

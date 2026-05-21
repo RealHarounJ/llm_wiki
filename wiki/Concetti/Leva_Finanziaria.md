@@ -63,3 +63,7 @@ Combined effect of operating and financial leverage.
 
 ---
 *Sources: [[Corporate_Finance]]*
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

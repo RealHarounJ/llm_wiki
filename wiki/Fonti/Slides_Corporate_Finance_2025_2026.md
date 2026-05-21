@@ -27,3 +27,7 @@ These slides integrate and follow the textbook [[Corporate_Finance]].
 
 ---
 *Original source: `raw/Teaching materials of Corporate Finance-20260505/Corporate Finance A. Y. 2025.2026 - slides.pdf`*
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

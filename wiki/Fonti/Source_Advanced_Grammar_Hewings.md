@@ -10,3 +10,6 @@ date_created: 2026-04-30
 Reference and practice book for advanced learners of English (C1/C2).
 
 This acts as the ground truth for the English language wiki.
+
+## Fonti
+* [[raw/Note Taking & Research Assistant Powered by AI.md]]

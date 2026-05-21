@@ -32,3 +32,6 @@ OpenAI asserts that "GPT" is a brand. However, the USPTO has frequently declined
 
 ---
 *Sources: [[Wikipedia_GPT]], [[Analytics_Insight_LLM_Search]]*
+
+## Fonti
+* [[wiki/Fonti/Wikipedia_GPT.md]]

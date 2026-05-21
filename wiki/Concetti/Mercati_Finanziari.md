@@ -51,3 +51,7 @@ The **Efficient Market Hypothesis** (Fama, 1970) states that prices incorporate 
 
 ---
 *Sources: [[Corporate_Finance]]*
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

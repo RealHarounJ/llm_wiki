@@ -86,3 +86,6 @@ WHERE fatturato > (SELECT AVG(fatturato) FROM Clienti);
 - [[Modellazione_ER]]
 - [[Architettura_DBMS]]
 - [[Data_Mining_Hub]]
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

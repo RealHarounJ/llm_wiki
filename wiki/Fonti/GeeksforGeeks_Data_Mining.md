@@ -15,3 +15,6 @@ Technical breakdown of Data Mining methodologies, detailing the KDD steps and sp
 - [[Data_Mining]]
 - [[Tecniche_di_Data_Mining]]
 - [[Processo_KDD]]
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

@@ -66,3 +66,6 @@ I documenti lunghi vengono divisi in **chunks** (spezzoni) prima dell'indicizzaz
 - [[Semantic_Search]]
 - [[LLM_Hub]]
 - [[LLM_Changing_Search]]
+
+## Fonti
+* [[wiki/Fonti/Wikipedia_GPT.md]]

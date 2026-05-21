@@ -10,3 +10,6 @@ date_created: 2026-04-29
 Atlante anatomico regionale strutturale.
 
 Questa fonte funge da base di verità (ground truth) per i concetti espansi nella relativa Master Page.
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

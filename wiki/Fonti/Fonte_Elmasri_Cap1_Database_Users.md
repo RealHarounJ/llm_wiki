@@ -1,13 +1,14 @@
 ---
-title: "Where teams and agents work together"
-source: "https://www.notion.so/Chapter-1-Database-and-Database-Users-2f2843e83372801eb61cd4ae966bd02c"
-author:
-published:
-created: 2026-05-05
-description: "A collaborative AI workspace, built on your company context. Build and orchestrate agents right alongside your team's projects, meetings, and connected apps."
-tags:
-  - "clippings"
+tags: [database, DBMS, database-users, elmasri-navathe, study-notes]
+aliases: [Database Users Notes, Elmasri Chapter 1]
+date_created: 2026-05-21
+last_modified: 2026-05-21
+source_count: 1
 ---
+
+# ðŸ“– Database Systems - Capitolo 1: Databases and Database Users
+
+
 ## Chapter 1 Database and Database Users
 
 These are the foundational concepts. Do not move forward until these are clear.
@@ -57,3 +58,6 @@ The third concept is data abstraction. Abstraction means that users do not inter
 Once multiple users operate on the same data, another theoretical requirement emerges: transaction processing. A transaction is defined as a logical unit of work that must be executed completely or not at all. This concept ensures institutional reliability. If a hospital registers a patient admission, all related updates must succeed together; partial execution would violate institutional consistency. Closely connected to this is concurrency control, which guarantees that simultaneous transactions do not corrupt shared data. Concurrency is not an exceptional case; it is the normal condition of institutional systems.
 
 Finally, Chapter 1 introduces a sociotechnical perspective through the classification of database users. The system is not neutral; it reflects roles. Actors on the scene are those who design, control, and use the database content within the institution: administrators, designers, end users. Workers behind the scene are those who design and maintain the DBMS itself. This separation mirrors the division between institutional governance and technological infrastructure.
+
+## Fonti
+* [[raw/Fundamentals of Database Systems (Ramez Elmasri, Shamkant B. Navathe) (z-library.sk, 1lib.sk, z-lib.sk).md]]

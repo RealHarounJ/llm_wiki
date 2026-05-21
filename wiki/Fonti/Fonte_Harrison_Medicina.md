@@ -10,3 +10,6 @@ date_created: 2026-04-29
 Il testo di riferimento mondiale per la medicina interna e diagnostica.
 
 Questa fonte funge da base di verità (ground truth) per i concetti espansi nella relativa Master Page.
+
+## Fonti
+* [[raw/Note Taking & Research Assistant Powered by AI.md]]

@@ -98,3 +98,6 @@ sse = kmeans.inertia_  # SSW
 - [[Classificazione_Decision_Tree]] — algoritmo supervisionato comparabile
 - [[Regole_di_Associazione]]
 - [[Data_Mining_Hub]]
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

@@ -1,13 +1,14 @@
 ---
-title: "Where teams and agents work together"
-source: "https://www.notion.so/Chapter-5-The-Relational-Data-Model-and-Relational-Database-Constraints-30d843e8337280f1adf6c1ee6f224db6"
-author:
-published:
-created: 2026-05-05
-description: "A collaborative AI workspace, built on your company context. Build and orchestrate agents right alongside your team's projects, meetings, and connected apps."
-tags:
-  - "clippings"
+tags: [database, relational-algebra, relational-calculus, query-languages, elmasri-navathe, study-notes]
+aliases: [Relational Algebra Notes, Elmasri Chapter 5]
+date_created: 2026-05-21
+last_modified: 2026-05-21
+source_count: 1
 ---
+
+# ðŸ“– Database Systems - Capitolo 5: Basic Relational Algebra and Calculus
+
+
 ## Chapter 5)The Relational Data Model and Relational Database Constraints
 
 #### Constrainsts:
@@ -515,3 +516,6 @@ Referential integrity
 \> Loading JavaScript code…
 
 No constraint is violated, unless there is a domain constraint that restricts the maximum number of working hours
+
+## Fonti
+* [[raw/Fundamentals of Database Systems (Ramez Elmasri, Shamkant B. Navathe) (z-library.sk, 1lib.sk, z-lib.sk).md]]

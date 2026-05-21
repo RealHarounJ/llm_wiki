@@ -14,3 +14,6 @@ Il documento introduce i concetti base di [[SQL]] (Structured Query Language), i
 ## Concetti Estratti
 - [[SQL]]: Linguaggio standard per la gestione dei dati.
 - [[Database_Relazionali]]: Sistemi che archiviano dati in tabelle strutturate (righe/colonne).
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

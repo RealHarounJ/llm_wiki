@@ -42,3 +42,7 @@ $$PI = \frac{NPV}{I_0} + 1 = \frac{PV_{flussi}}{I_0}$$
 - [[Topic_4_Present_Values]]
 - [[Topic_6_Risk_and_Return]]
 - [[Topic_7_8_CAPM_Cost_of_Capital]]
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

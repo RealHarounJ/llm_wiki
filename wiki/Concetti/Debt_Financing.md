@@ -1,3 +1,10 @@
+---
+tags: [concept, theory]
+aliases: [Debt Financing]
+date_created: 2026-05-21
+last_modified: 2026-05-21
+source_count: 1
+---
 # Debt Financing
 
 Il debito è una delle due principali fonti di finanziamento esterno per un'azienda (l'altra è l'Equity). Si distingue principalmente per la scadenza, le garanzie e la priorità di rimborso.
@@ -45,3 +52,7 @@ Un manager finanziario deve valutare il debito in base a:
 
 ---
 *Fonte: Note Taking & Research Assistant Powered by AI 2.md*
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

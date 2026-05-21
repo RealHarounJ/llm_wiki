@@ -1,3 +1,10 @@
+---
+tags: [exercise, practice]
+aliases: [SQL Esempi Pratici]
+date_created: 2026-05-21
+last_modified: 2026-05-21
+source_count: 1
+---
 # 🚢 Esempi Pratici SQL (Database Navi)
 
 Questi esempi mostrano l'applicazione pratica dei vincoli di integrità e della mappatura delle entità deboli.
@@ -54,3 +61,6 @@ La tabella `VISITS` è un esempio di entità debole che lega una Nave a un Porto
 
 ---
 *Vedi anche: [[Mappatura_ER_Relazionale]]*
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

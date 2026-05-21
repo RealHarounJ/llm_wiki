@@ -60,3 +60,7 @@ Cruscotto centrale per la preparazione all'esame di Corporate Finance (A.Y. 2025
 - **Libro:** `raw/Corporate_Finance_ (1).pdf`
 - **Slides:** `raw/Teaching materials of Corporate Finance-20260505/Corporate Finance A. Y. 2025.2026 - slides.pdf`
 - **Excel simulatore:** `wiki/Progetti/CAPM_WACC_IRR_Simulator.xlsx`
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

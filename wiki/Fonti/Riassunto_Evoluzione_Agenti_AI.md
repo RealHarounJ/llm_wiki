@@ -22,3 +22,6 @@ Il testo descrive il passaggio epocale dai tradizionali chatbot reattivi basati 
 - [[Agenti Autonomi]]: Sistemi IA capaci di azione indipendente e uso di tool.
 - [[LLM]] (Large Language Models): I modelli tradizionali alla base dei vecchi chatbot.
 - [[Second Brain]]: Metodo per strutturare la memoria a lungo termine e conservare il valore delle interazioni.
+
+## Fonti
+* [[raw/Note Taking & Research Assistant Powered by AI.md]]

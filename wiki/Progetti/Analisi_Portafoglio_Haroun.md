@@ -118,3 +118,7 @@ Ristrutturare il portafoglio dividendo il capitale in due compartimenti chiari:
 *   [[Fonte_Reddit_Trading_Floor_AMA]] → Per l'analisi del comportamento e della volatilità dei singoli asset.
 *   *A Random Walk Down Wall Street* (Malkiel) → Fondamento della transizione verso ETF a gestione passiva.
 *   *The Intelligent Investor* (Graham) → Principio del Margine di Sicurezza e distinzione tra investimento e speculazione.
+
+## Fonti
+* [[raw/f622fc49-8a32-46b5-bf7d-77a21e56ac5b_Chapter_13)_Political_and_Institutional_Limits_to_the_Rise_of_Platform_Work..md]]
+* [[wiki/Fonti/Fonte_Sociologia_Digitalizzazione.md]]

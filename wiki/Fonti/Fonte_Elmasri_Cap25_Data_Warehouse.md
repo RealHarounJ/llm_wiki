@@ -1,13 +1,14 @@
 ---
-title: "Where teams and agents work together"
-source: "https://www.notion.so/Data-Warehouse-33c843e833728070b6a6f1c2fd9cb5a9"
-author:
-published:
-created: 2026-05-05
-description: "A collaborative AI workspace, built on your company context. Build and orchestrate agents right alongside your team's projects, meetings, and connected apps."
-tags:
-  - "clippings"
+tags: [database, data-warehouse, OLAP, ETL, MDM, multidimensional-model, elmasri-navathe, study-notes]
+aliases: [Data Warehousing Notes, Elmasri Chapter 25]
+date_created: 2026-05-21
+last_modified: 2026-05-21
+source_count: 1
 ---
+
+# ðŸ“– Database Systems - Capitolo 25: Data Warehousing and OLAP
+
+
 ## Data Warehouse
 
 Traditional databases are created to handle current operations, however, they present limits for long term analysis.
@@ -271,3 +272,6 @@ Distributed Warehouse: Offer several benefits like load balancing, scalability a
 Federated Warehouse:A decentralized confederation of autonomous Data Warehouses (often smaller, such as Data Marts), each with its own independent metadata repository.
 
 The piece concludes with a look at current trends. Companies are increasingly less satisfied with traditional systems. The rise of Big Data Analytics has led to the integration of technologies such as Hadoop, specialized graph databases, and key-value stores. The emergence of Data Virtualization platforms is also mentioned, which will allow the construction of purely logical Data Warehouses.
+
+## Fonti
+* [[raw/Fundamentals of Database Systems (Ramez Elmasri, Shamkant B. Navathe) (z-library.sk, 1lib.sk, z-lib.sk).md]]

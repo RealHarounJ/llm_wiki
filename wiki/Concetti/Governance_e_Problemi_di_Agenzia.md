@@ -42,3 +42,6 @@ La Corporate Governance è l'insieme di regole e processi che governano la gesti
 **Vedi anche:**
 - [[Struttura_del_Capitale]]
 - [[Efficienza_dei_Mercati]]
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

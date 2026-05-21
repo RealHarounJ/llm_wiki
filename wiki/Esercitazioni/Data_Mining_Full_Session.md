@@ -304,3 +304,6 @@ Raw Data (petabytes, distributed across hundreds of servers)
 ---
 
 *Session completed: 2026-05-19 | Source: Elmasri & Navathe Ch.28 + personal notes*
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

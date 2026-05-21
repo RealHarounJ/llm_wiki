@@ -38,3 +38,6 @@ Tutti i PDF, PPTX, XLS originali sono in `raw/` e non modificati.
 - `raw/Teaching materials of Corporate Finance-20260505/` — Materiale corso CF
 - `raw/Fundamentals of Database Systems *.pdf` — Libro Elmasri
 - `raw/Corporate_Finance_ (1).pdf` — Libro Berk & DeMarzo
+
+## Fonti
+* [[raw/Note Taking & Research Assistant Powered by AI.md]]

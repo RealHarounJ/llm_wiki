@@ -50,3 +50,7 @@ In perfect markets, capital structure is **irrelevant** to firm value. Real-worl
 
 ---
 *Sources: [[Corporate_Finance]]*
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

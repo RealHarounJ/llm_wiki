@@ -1,3 +1,10 @@
+---
+tags: [concept, theory]
+aliases: [Real Options]
+date_created: 2026-05-21
+last_modified: 2026-05-21
+source_count: 1
+---
 # Real Options (Opzioni Reali)
 
 Le **opzioni reali** conferiscono a un'azienda la flessibilità di modificare, adattare o prendere decisioni su un progetto di investimento in corso d'opera, al fine di migliorarne il Valore Attuale Netto (NPV) o mitigare potenziali perdite.
@@ -27,3 +34,7 @@ Per mappare queste opzioni e l'effetto delle decisioni future sui flussi di cass
 
 ---
 *Fonte: Note Taking & Research Assistant Powered by AI 1.md*
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

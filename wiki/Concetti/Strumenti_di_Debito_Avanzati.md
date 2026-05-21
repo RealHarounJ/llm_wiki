@@ -38,3 +38,6 @@ Contratto tra proprietario (**locatore**) e utilizzatore (**locatario**).
 **Vedi anche:**
 - [[Fonti_di_Finanziamento]]
 - [[Struttura_del_Capitale]]
+
+## Fonti
+* [[raw/Note Taking & Research Assistant Powered by AI.md]]

@@ -32,3 +32,6 @@ Hub centrale per i concetti legati ai Large Language Models e all'IA generativa.
 
 ## 🎯 Progetto
 - [[Master_Page_AI_LLM]] — Cruscotto di studio sull'AI
+
+## Fonti
+* [[wiki/Fonti/Wikipedia_GPT.md]]

@@ -77,3 +77,6 @@ Per algoritmi basati sulla distanza (come K-Means o KNN), è fondamentale la **S
 ---
 *Vedi anche: [[Data_Mining]], [[Processo_KDD]], [[Gerarchia_di_Classificazione]]*
 *Sources: [[Wikipedia]], [[GeeksforGeeks]]*
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

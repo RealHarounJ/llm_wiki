@@ -34,3 +34,6 @@ Le gerarchie vengono mappate in tabelle relazionali usando diverse strategie (St
 ---
 *Vedi anche: [[Enhanced_ER_Model]], [[Data_Warehouse]], [[OLAP]]*
 *Source: [[Database_Systems_Fundamentals]]*
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

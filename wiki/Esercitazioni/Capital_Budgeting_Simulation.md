@@ -58,3 +58,7 @@ Il **Net Present Value (NPV)** è la somma algebrica di tutti i Present Value (A
 *   NPV = -32.000 + 12.726 + 11.564 + 12.016 = **+ 4.306 €**
 
 Poiché l'**NPV > 0**, la decisione del manager è: **ACCEPT THE PROJECT**. Il valore dell'azienda per gli azionisti è aumentato di 4.306 €.
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

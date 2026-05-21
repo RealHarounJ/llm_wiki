@@ -1,3 +1,10 @@
+---
+tags: [concept, theory]
+aliases: [IO 06 Patents and IP]
+date_created: 2026-05-21
+last_modified: 2026-05-21
+source_count: 1
+---
 # IO 06: Patents and IP (Lessons 12, 13, 14, 15)
 
 ## Measuring Innovation
@@ -16,3 +23,7 @@ Analyzed across three dimensions:
 - **Litigation**: Judicial procedure (National Court). Aims to enforce rights, stop infringement, and get damages. Can happen anytime. High cost and duration (2-5 years).
 - **Opposition**: Administrative procedure (e.g., EPO). Aims to challenge/revoke a granted patent. Must be filed shortly after the grant. Lower cost and duration (1-2 years). Decisions apply jurisdiction-wide (all EPC states).
 - *Determinants of Opposition*: Higher patent value, large impact on follow-on innovation. High revocation probability if opposed by a cited patent owner or a domestic rival.
+
+## Fonti
+* [[raw/f622fc49-8a32-46b5-bf7d-77a21e56ac5b_Chapter_13)_Political_and_Institutional_Limits_to_the_Rise_of_Platform_Work..md]]
+* [[wiki/Fonti/Fonte_Sociologia_Digitalizzazione.md]]

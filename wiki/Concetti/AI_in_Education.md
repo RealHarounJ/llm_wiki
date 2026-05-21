@@ -42,3 +42,6 @@ UNESCO ha identificato competenze chiave che studenti e insegnanti devono svilup
 - [[GPT_Models]]
 - [[LLM_Hub]]
 - [[LLM_Changing_Search]]
+
+## Fonti
+* [[wiki/Fonti/Wikipedia_GPT.md]]

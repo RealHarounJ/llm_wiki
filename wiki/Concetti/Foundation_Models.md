@@ -26,3 +26,6 @@ Large models often display capabilities that are not present in smaller versions
 
 ---
 *Source: [[Wikipedia_GPT]]*
+
+## Fonti
+* [[wiki/Fonti/Wikipedia_GPT.md]]

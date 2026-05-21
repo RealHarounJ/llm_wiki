@@ -38,3 +38,6 @@ Una selezione di sushi fusion e special rolls preparati con materie prime fresch
 
 ---
 **Torna al:** [[Kiro_Kiro_Hub]]
+
+## Fonti
+* [[raw/Kiro Kiro.md]]

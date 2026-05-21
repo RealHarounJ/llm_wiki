@@ -38,3 +38,7 @@ $$\sigma^2_p = w_1^2\sigma_1^2 + w_2^2\sigma_2^2 + 2w_1w_2\sigma_{12}$$
 - [[Topic_7_8_CAPM_Cost_of_Capital]]
 - [[Topic_5_NPV_Investment_Criteria]]
 - [[Struttura_del_Capitale]]
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

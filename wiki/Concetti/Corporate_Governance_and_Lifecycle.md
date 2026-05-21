@@ -53,3 +53,6 @@ Il conflitto tra **Principals** (Azionisti/Proprietari) e **Agents** (Manager). 
 *   **E (Environmental):** Ambiente (emissioni, rifiuti).
 *   **S (Social):** Impatto sulla comunità e sui lavoratori.
 *   **G (Governance):** Struttura etica, trasparente e bilanciata tra manager e azionisti.
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

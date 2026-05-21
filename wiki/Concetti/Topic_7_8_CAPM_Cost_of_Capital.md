@@ -48,3 +48,7 @@ Il WACC è il tasso da usare per attualizzare i flussi di cassa di un progetto c
 - [[Topic_6_Risk_and_Return]]
 - [[Topic_5_NPV_Investment_Criteria]]
 - [[Struttura_del_Capitale]]
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]
