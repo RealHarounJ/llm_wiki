@@ -237,11 +237,50 @@ Questa guida raccoglie e risolve tutte le domande estratte dai tuoi appunti scri
 
 ### 1. Concept of Diversification, Covariance & Correlation Coefficient
 * **Diversificazione:** La riduzione del rischio specifico (idiosincratico) di un portafoglio investendo in asset che non si muovono in perfetta sintonia. Non riduce il rischio sistematico.
-* **Covarianza:** Misura come due titoli variano insieme:
-  $$Cov(R_1, R_2) = \sigma_{1,2}$$
-* **Covariance Matrix:** Matrice quadrata che elenca le covarianze tra tutte le coppie di titoli di un portafoglio (le varianze si trovano sulla diagonale).
-* **Correlation Coefficient ($\rho$):** Normalizza la covarianza tra -1 e +1:
-  $$\rho_{1,2} = \frac{\sigma_{1,2}}{\sigma_1 \cdot \sigma_2}$$
+* **Covarianza ($Cov(R_1, R_2)$ o $\sigma_{1,2}$):** Misura la direzione della relazione lineare tra i rendimenti di due titoli.
+  * Se $Cov > 0$, i titoli tendono a muoversi nella stessa direzione.
+  * Se $Cov < 0$, i titoli tendono a muoversi in direzioni opposte.
+* **Coefficiente di Correlazione ($\rho_{1,2}$):** Normalizza la covarianza per eliminare l'effetto dell'unità di misura, limitandone il valore tra $-1$ e $+1$:
+  $$\rho_{1,2} = \frac{Cov(R_1, R_2)}{\sigma_1 \cdot \sigma_2}$$
+  * **Relazione fondamentale:** $Cov(R_1, R_2) = \rho_{1,2} \cdot \sigma_1 \cdot \sigma_2$ (dove $\sigma_1$ e $\sigma_2$ sono le deviazioni standard dei singoli titoli).
+
+* **Calcolo del Rischio di un Portafoglio a 2 Titoli:**
+  Il rischio totale di un portafoglio è espresso dalla sua **Deviazione Standard ($\sigma_p$)**, che si ottiene facendo la radice quadrata della **Varianza del Portafoglio ($\sigma_p^2$)**.
+  
+  1. **Formulazione tramite la Covarianza:**
+     $$\sigma_p^2 = w_1^2 \sigma_1^2 + w_2^2 \sigma_2^2 + 2 w_1 w_2 Cov(R_1, R_2)$$
+  2. **Formulazione tramite la Correlazione (la più comune all'esame):**
+     $$\sigma_p^2 = w_1^2 \sigma_1^2 + w_2^2 \sigma_2^2 + 2 w_1 w_2 \rho_{1,2} \sigma_1 \sigma_2$$
+     $$\sigma_p = \sqrt{\sigma_p^2}$$
+     *(dove $w_1, w_2$ sono i pesi dei titoli nel portafoglio, con $w_1 + w_2 = 1.0$).*
+
+* **🧮 Esempio Numerico Svolto Passo-Passo (Ideale per l'Esame):**
+  Supponi di avere un portafoglio composto da due titoli, **Asset A** e **Asset B**, con i seguenti dati:
+  * Peso di A ($w_A$) = $40\% = 0.40$
+  * Peso di B ($w_B$) = $60\% = 0.60$
+  * Deviazione Standard di A ($\sigma_A$) = $20\% = 0.20$
+  * Deviazione Standard di B ($\sigma_B$) = $30\% = 0.30$
+  * Coefficiente di correlazione ($\rho_{A,B}$) = $0.30$
+
+  **Step 1: Calcolare la Covarianza ($Cov_{A,B}$)**
+  $$Cov(R_A, R_B) = \rho_{A,B} \cdot \sigma_A \cdot \sigma_B = 0.30 \cdot 0.20 \cdot 0.30 = 0.018$$
+
+  **Step 2: Calcolare la Varianza del Portafoglio ($\sigma_p^2$)**
+  $$\sigma_p^2 = (0.40)^2(0.20)^2 + (0.60)^2(0.30)^2 + 2(0.40)(0.60)(0.30)(0.20)(0.30)$$
+  $$\sigma_p^2 = 0.16(0.04) + 0.36(0.09) + 2(0.24)(0.018)$$
+  $$\sigma_p^2 = 0.0064 + 0.0324 + 2(0.00432) = 0.0064 + 0.0324 + 0.00864 = 0.04744$$
+
+  **Step 3: Calcolare la Deviazione Standard del Portafoglio ($\sigma_p$)**
+  $$\sigma_p = \sqrt{0.04744} \approx 0.2178 \text{ ovvero } 21.78\%$$
+  
+  * *Osservazione sulla diversificazione:* Se avessimo calcolato la media ponderata semplice delle deviazioni standard, avremmo ottenuto $0.4(20\%) + 0.6(30\%) = 26\%$. Grazie alla correlazione di $0.30$ (minore di $1.0$), la deviazione standard reale del portafoglio è solo del **$21.78\%$**. Il rischio è stato abbattuto!
+
+* **Covariance Matrix e Portafogli a $N$ Titoli:**
+  Per un portafoglio composto da $N$ titoli, la varianza si calcola sommando le covarianze pesate di tutte le possibili coppie di titoli:
+  $$\sigma_p^2 = \sum_{i=1}^N \sum_{j=1}^N w_i w_j \sigma_{i,j}$$
+  * In forma matriciale:
+    $$\sigma_p^2 = \mathbf{w}^T \mathbf{\Sigma} \mathbf{w}$$
+    * Dove $\mathbf{w}$ è il vettore colonna dei pesi e $\mathbf{\Sigma}$ è la **Covariance Matrix (Matrice di Covarianza)**: una matrice simmetrica in cui sulla diagonale principale troviamo le **varianze** dei singoli titoli ($\sigma_i^2$) e nelle altre celle troviamo le **covarianze** ($\sigma_{i,j}$).
 
 ### 2. Efficient Frontier of Markowitz
 * L'insieme dei portafogli ottimali che offrono il massimo rendimento atteso per un determinato livello di rischio (deviazione standard), o il minor rischio possibile per un determinato livello di rendimento atteso.
