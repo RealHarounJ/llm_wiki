@@ -44,6 +44,7 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Sintesi_Debito_E_Pianificazione]]           | Sintesi avanzata del debito e pianificazione                   |
 | [[Strumenti_di_Debito_Avanzati]]              | Analisi avanzata degli strumenti di debito                     |
 | [[Valutazione_Titoli]]                        | Valutazione titoli di debito ed azionari                       |
+| [[Domande_Esame_Corporate_Finance]]           | Guida alle domande d'esame dai quaderni (Q&A)                  |
 
 ### Data Mining & Database
 | File | Descrizione |
