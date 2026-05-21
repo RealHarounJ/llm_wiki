@@ -30,7 +30,7 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Teorema_Modigliani_Miller]]                 | MM I e II con e senza tasse                            |
 | [[Debt_Financing]]                            | Classificazione debito (Maturity, Seniority, Security) |
 | [[Real_Options]]                              | Opzioni di espansione, abbandono, timing, produzione   |
-| [[Valutazione_Aziendale]]                     | Metodi di valutazione aziendale e flussi di cassa      |
+| [[Hedge_Funds_and_Trading_Desks]]             | Fondazione Hedge Fund, Prime Brokerage, Buy-side vs Sell-side |
 
 ### Data Mining & Database
 | File | Descrizione |
@@ -48,8 +48,7 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Architettura_DBMS]] | Struttura interna DBMS, 3 livelli di astrazione |
 | [[Data_Warehouse]] | Schema stellare, fatti e dimensioni |
 | [[ETL_Process]] | Extract, Transform, Load |
-| [[OLAP]] | Slice, Dice, Drill-down, Roll-up |
-| [[NoSQL_Databases]] | CAP Theorem, BASE vs ACID, NoSQL Types |
+| [[NoSQL_Databases]] | Masterclass NoSQL: CAP, Consistent Hashing, Quorum (N,R,W), Vector Clocks |
 
 ### AI & LLM
 | File | Descrizione |
@@ -97,6 +96,10 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[haroun_academy_sql]] | Esercizio DDL Haroun Academy |
 | [[healthcare_db_sql]] | Esercizio DDL Healthcare |
 | [[Fonte_Data_Warehouse_Mining_Notes]] | Appunti Data Warehouse e Data Mining |
+| [[Fonte_Reddit_Hedge_Fund_Start]] | Delaware LP/LLC, BVI, VCC models for Hedge Fund startup |
+| [[Fonte_Investopedia_Hedge_Fund_Guide]] | Troy Segal's startup costs, COO importance, AUM scale levels |
+| [[Fonte_Reddit_Trading_Floor_AMA]] | Trading Floor AMA: prime services, Volcker rule, sell-side/buy-side |
+| [[Fonte_Presentazione_Gruppo_11]] | Slide comparazione digitalizzazione (Arabia Saudita / Corea) |
 
 ---
 
@@ -108,6 +111,7 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Master_Page_Data_Mining]] | Cruscotto studio Data Mining + domande esame |
 | [[Master_Page_AI_LLM]] | Cruscotto studio AI/LLM |
 | [[Master_Page_Industrial_Organization]] | Cruscotto esame Industrial Organization |
+| [[Analisi_Portafoglio_Haroun]] | Analisi quantitativa e strategica del portafoglio personale (Trading 212) |
 
 ---
 
@@ -119,6 +123,24 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Q1_Digitalization_and_Labour_Market]] | Domanda 1 Esame — Labour Market: RBTC, SBTC, Polarization, Platform Work |
 | [[Q2_Digitalization_and_Welfare_State]] | Domanda 2 Esame — Welfare State: Pensions, ADM/SyRI, UBI, Social Investment |
 | [[Q3_Health_Care_and_Digitalization]] | Domanda 3 Esame — Healthcare: Crowding Out, Cultural Health Capital |
+| [[Caso_Studio_Digitalizzazione_Comparata]] | Studio comparativo Arabia Saudita vs. Corea del Sud (Gruppo 11) |
+
+
+---
+
+## 📝 wiki/Esercitazioni/
+
+| File | Descrizione |
+|---|---|
+| [[Capital_Budgeting_Simulation]] | Simulazione di capital budgeting |
+| [[Cash_Budgeting_Simulation]] | Simulazione di cash budgeting |
+| [[Data_Mining_Full_Session]] | Sessione completa di studio sul Data Mining (Cap. 28 Elmasri) |
+| [[Esercizio_Conference_Review]] | Schema ER per il database di revisione conferenze (Esercizio 1) |
+| [[Esercizio_Decision_Tree_Loan]] | Esercizio svolto sul Decision Tree e Information Gain |
+| [[Esercizio_Svolto_Cash_Budget]] | Esercizio svolto di Cash Budgeting |
+| [[Esercizio_Svolto_NPV_Macchinario]] | Esercizio svolto di valutazione investimenti (NPV) |
+| [[Long_Term_Financial_Planning]] | Simulazione pianificazione finanziaria a lungo termine (EFN) |
+| [[SQL_Esempi_Pratici]] | Query ed esempi SQL per esercitazione |
 
 ---
 
@@ -126,9 +148,11 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 
 | File | Tipo | Descrizione |
 |---|---|---|
+| `rebalance_portfolio.py` | Python | Calcolatore di rebalancing mensile per PAC (Trading 212) |
 | `create_capm_wacc_irr.py` | Python | Simulatore CAPM, WACC, IRR |
 | `create_cash_budget.py` | Python | Generatore cash budget |
 | `stretching_timer.py` | Python | Timer stretching automatico |
 | `ikea_project.sql` | SQL | Schema DB progetto IKEA |
 | `streaming_musicale.sql` | SQL | Schema DB streaming musicale |
+| `yacht_charter.sql` | SQL | Schema DB simulazione Yacht Charter |
 | `ST_1_IO_Dataframe.py` | Python | Input/Output DataFrame |

@@ -100,6 +100,6 @@ When contrasted with traditional Western models, the comparative cases of Saudi 
 
 ---
 
-## ## Fonti
+## Fonti
 - [[Fonte_Presentazione_Gruppo_11]]
 - [[Fonte_Sociologia_Digitalizzazione]]
