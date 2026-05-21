@@ -143,6 +143,21 @@ Questa guida raccoglie e risolve tutte le domande estratte dai tuoi appunti scri
      * **Concetto:** È un **ponte evolutivo** tra l'EMH di Fama e la Behavioral Finance. Applica i principi della biologia evolutiva (competizione, mutazione, adattamento, selezione naturale) ai mercati finanziari.
      * **Meccanismo:** L'efficienza del mercato non è una proprietà statica (sì/no), ma varia dinamicamente in base all'ambiente di mercato e alla popolazione di investitori. In condizioni di stabilità, gli investitori si adattano e il mercato appare efficiente. In momenti di shock sistemici o crisi, i vecchi metodi falliscono, gli investitori agiscono d'impulso e il mercato diventa fortemente inefficiente fino a quando non avviene un nuovo adattamento.
 
+  4. **L'Approccio Filosofico della Conoscenza Dispersa — Friedrich Hayek**
+     * **Autorità:** Friedrich von Hayek (Premio Nobel 1974).
+     * **Concetto:** Il sistema dei prezzi è un **meccanismo di aggregazione della conoscenza**. 
+     * **Meccanismo:** Le informazioni sulla scarsità, le preferenze e la tecnologia sono disperse in milioni di individui e non possono essere mai accentrate. Il prezzo di mercato funge da segnale sintetico che coordina queste conoscenze frammentate. Anche se Hayek non parla di efficienza finanziaria in senso moderno, la sua teoria è la giustificazione filosofica originaria per cui i prezzi di mercato contengono più informazioni di quante ne possa possedere un singolo pianificatore o analista.
+
+  5. **La Teoria della Riflessività — George Soros**
+     * **Autorità:** George Soros (Celebre investitore e speculatore globale).
+     * **Concetto:** I mercati sono caratterizzati da **riflessività**, rendendoli intrinsecamente inefficienti e inclini a cicli di boom-bust autogovernati.
+     * **Meccanismo:** A differenza della visione di Fama in cui i prezzi riflettono passivamente i fondamentali sottostanti, Soros sostiene che le aspettative (spesso distorte) degli investitori influenzano attivamente i fondamentali stessi. Ad esempio, se gli investitori credono che un settore sia forte, prestano cassa alle imprese di quel settore, riducendo il loro rischio di default ed espandendo la loro attività, creando così una profezia auto-avverante che gonfia la bolla fino all'inevitabile scontro con la realtà.
+
+  6. **Il Concorso di Bellezza di Keynes (Speculative Markets) — John Maynard Keynes**
+     * **Autorità:** John Maynard Keynes (Padre della macroeconomia moderna).
+     * **Concetto:** I mercati finanziari assomigliano a un **concorso di bellezza sul giornale**.
+     * **Meccanismo:** Gli investitori non dedicano le loro energie a valutare il valore fondamentale di lungo termine degli asset (*enterprise*). Invece, cercano di prevedere cosa l'investitore medio crederà che l'investitore medio penserà (speculazione a breve termine di secondo o terzo grado). Questo rende i prezzi dei titoli fluttuanti su ondate di "Animal Spirits" (ottimismo/pessimismo irrazionale) piuttosto che su calcoli precisi dei flussi di cassa attesi, limitando fortemente l'efficienza allocativa.
+
 ---
 
 ## 📜 Area 3 — Debt Instruments & Bonds
