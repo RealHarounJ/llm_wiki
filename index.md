@@ -129,6 +129,7 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Fonte_Reddit_Hedge_Fund_Start]] | Delaware LP/LLC, BVI, VCC models for Hedge Fund startup |
 | [[Fonte_Investopedia_Hedge_Fund_Guide]] | Troy Segal's startup costs, COO importance, AUM scale levels |
 | [[Fonte_Reddit_Trading_Floor_AMA]] | Trading Floor AMA: prime services, Volcker rule, sell-side/buy-side |
+| [[Fonte_FinceptTerminal]] | FinceptTerminal Snapshot: global macroeconomics, sovereign yields, CDS risk |
 | [[Fonte_Presentazione_Gruppo_11]] | Slide comparazione digitalizzazione (Arabia Saudita / Corea) |
 | [[Fonte_Sociologia_Digitalizzazione]] | Digitalization and the Future of the Democratic Welfare State |
 | [[Fonte_Elmasri_Cap1_Database_Users]] | Elmasri Cap. 1 — Databases and Database Users |
