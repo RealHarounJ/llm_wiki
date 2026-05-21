@@ -136,12 +136,110 @@ aw/Fundamentals of Database Systems (Elmasri) Cap. 24
 
 **Domande esame coperte:** Q1 Labour Market, Q2 Welfare State, Q3 Healthcare (Esame 12 Giugno 2024)
 
-## [2026-05-18] INGEST | Data Warehouse � Teoria Tecnica e Modelli
+## [2026-05-18] INGEST | Data Warehouse  Teoria Tecnica e Modelli
 
 **Operazione:** Creazione e sintesi degli appunti di Data Warehouse a seguito della simulazione d'esame.
 **Fonte:** Sessione di studio interattiva + Appunti raw in DATA Warehouse.md
 
-**File creati � wiki/Concetti/:**
-- `Data_Warehouse.md` � Super Technical Theory (OLTP vs OLAP, Inmon, ETL, MDM, MOLAP/ROLAP/HOLAP, Star vs Snowflake Schema)
+**File creati  wiki/Concetti/:**
+- `Data_Warehouse.md`  Super Technical Theory (OLTP vs OLAP, Inmon, ETL, MDM, MOLAP/ROLAP/HOLAP, Star vs Snowflake Schema)
 
 **Wikilinks creati:** [[OLTP]], [[OLAP]], [[ETL]], [[Master Data Management]], [[MOLAP]], [[ROLAP]], [[HOLAP]], [[Star Schema]], [[Snowflake Schema]], [[Fact Constellation]]
+
+---
+
+## [2026-05-19] INGEST | Industrial Organization & Data Mining Chapter 28
+
+**Operazione:** Creazione delle schede di concetto per Industrial Organization (Lezioni 1-16) e della sessione di studio per Data Mining.
+**Fonti:** Slide corso IO, libro Richards et al. (2014) + Capitolo 28 Elmasri & Navathe (Data Mining).
+
+**File creati/modificati:**
+- `wiki/Progetti/Master_Page_Industrial_Organization.md` — Cruscotto dello studio di IO
+- `wiki/Concetti/IO_01_Microeconomics.md` ... `IO_08_Econometrics.md` — Concetti chiave delle lezioni
+- `wiki/Esercitazioni/Data_Mining_Full_Session.md` — Cheat sheet e sintesi teorica KDD, Apriori, Decision Trees, K-Means, BIRCH, Genetic Algorithms.
+- `index.md` — Aggiornato catalogo
+
+---
+
+## [2026-05-20] STUDY | Esercizio 1 — Conference Review Database (ER Schema)
+
+**Operazione:** Analisi dei requisiti e stesura del diagramma ER concettuale e logico per la gestione delle sottomissioni e revisioni articoli.
+**Fonte:** Esercizio 1 da traccia d'esame.
+
+**File creati/modificati:**
+- `wiki/Esercitazioni/Esercizio_Conference_Review.md` — Analisi dettagliata, diagramma ER Crow's Foot e Chen (Mermaid), schema logico e gestione vincoli.
+- `index.md` — Indicizzazione della sezione Esercitazioni.
+
+---
+
+## [2026-05-20] STUDY | Car Dealer Mapping, Netflix ER & NoSQL Advanced Masterclass
+
+**Operazione:** Risoluzione esercizio di mappatura avanzata (Car Dealer), modellazione ER streaming (Netflix), chiarimenti sui vincoli relazionali di integrità (PK/FK) e stesura della Masterclass sui database NoSQL avanzati.
+**Fonte:** Esercizio 2 da traccia d'esame, traccia Netflix ed Elmasri & Navathe Cap. 24.
+
+**File creati/modificati:**
+- `wiki/Esercitazioni/Esercizio_Car_Dealer_Mapping.md` — Mappatura EER a Relazionale passo-passo, opzione 8A per superclasse/sottoclassi, risoluzione della chiave primaria su relazione ternaria con partecipazione (1,1).
+- `wiki/Esercitazioni/Esercizio_Netflix_ER.md` — Requisiti, modello ER e schema relazionale per una piattaforma di streaming.
+- `wiki/Concetti/NoSQL_Databases.md` — Riscritto da zero in italiano per fungere da Masterclass NoSQL (Consistent Hashing, Ring Topology, Virtual Nodes, Quorum N-R-W e Orologi Vettoriali).
+- `index.md` — Aggiornati riferimenti e descrizioni catalogo.
+
+---
+
+## [2026-05-20] STUDY | SQL DML Operations and Data Warehouse Theory Quiz
+
+**Operazione:** Risoluzione interattiva di query DML (INSERT, UPDATE, DELETE) e ripasso dei concetti teorici fondamentali sul Data Warehouse.
+**Fonte:** Esercitazioni di SQL e quiz di teoria DWH (OLAP vs OLTP, ETL loading precedence, MDM Backflushing, Star vs Snowflake ROLAP, ed OLAP Operations).
+
+**File modificati:**
+- `log.md` — Aggiornato il registro delle sessioni di studio.
+
+---
+
+## [2026-05-20] INGEST | Hedge Funds & Group 11 Comparative Digitalization Case Study
+
+- **Fonti raw:** `raw/How can I start hedgefund.md`, `raw/Step-by-Step Guide to Starting a Hedge Fund.md`, `raw/I have worked on trading floor in investment banks for over a decade, ask me anything.md`, `raw/group_11_extracted.txt`.
+- **File creati:**
+  - `wiki/Fonti/Fonte_Reddit_Hedge_Fund_Start.md`
+  - `wiki/Fonti/Fonte_Investopedia_Hedge_Fund_Guide.md`
+  - `wiki/Fonti/Fonte_Reddit_Trading_Floor_AMA.md`
+  - `wiki/Concetti/Hedge_Funds_and_Trading_Desks.md`
+  - `wiki/Fonti/Fonte_Presentazione_Gruppo_11.md`
+  - `wiki/Sociologia/Caso_Studio_Digitalizzazione_Comparata.md`
+- **File modificati:**
+  - `wiki/Sociologia/Q1_Digitalization_and_Labour_Market.md` (integrato impatto RBTC coreano: -73k impieghi manifatturieri vs +492k servizi)
+  - `wiki/Sociologia/Q2_Digitalization_and_Welfare_State.md` (integrato AI Basic Act e "My Data" Welfare Portal coreani)
+  - `wiki/Sociologia/Q3_Health_Care_and_Digitalization.md` (integrato calo spesa istruzione -4.4% in Arabia Saudita come validazione di Crowding Out)
+  - `index.md` (indicizzato tutti i 6 nuovi file)
+  - `log.md` (questo file)
+
+---
+
+## [2026-05-20] STUDY | Analisi Quantitativa del Portafoglio di Haroun (Trading 212)
+
+- **Operazione:** Analisi e strutturazione del portafoglio personale di Trading 212, evidenziando i rischi di concentrazione e proponendo una strategia Core-Satellite basata sulla finanza classica.
+- **File creati:** `wiki/Progetti/Analisi_Portafoglio_Haroun.md` [NEW]
+- **File modificati:**
+  - `index.md` (registrato il nuovo progetto di analisi finanziaria)
+  - `log.md` (questo file)
+
+---
+
+## [2026-05-20] DEV | Creazione Script di Rebalancing Portafoglio Haroun
+
+- **Operazione:** Sviluppo di uno script Python locale per il calcolo del "No-Sell Rebalancing" per gli investimenti mensili ricorrenti del PAC, pre-popolato con le posizioni e i pesi reali e allineato ai target del modello Core-Satellite.
+- **File creati:** `wiki/Script/rebalance_portfolio.py` [NEW]
+- **File modificati:**
+  - `index.md` (indicizzato il nuovo script in libreria)
+  - `log.md` (questo file)
+
+---
+
+## [2026-05-21] STUDY | Interactive Sociology & C1 English Tutoring: Welfare State Dilemmas & Essays
+
+- **Operazione:** Sessione di studio interattiva e stesura di risposte d'esame complete in inglese accademico C1. Redatti i tre saggi d'esame completi ("Full Exam-Ready Essay Answers") per la Domanda 1 (Mercato del Lavoro: SBTC vs RBTC, polarizzazione, gig economy), la Domanda 2 (Welfare State: Veil of Ignorance, ADM, pensioni e sindacati, Social Investment vs UBI) e il Caso Studio Comparato del Gruppo 11 (Corea del Sud vs Arabia Saudita: Vision 2030, Baumol's Cost Disease, Crowding Out e AI Basic Act).
+- **File modificati:**
+  - `wiki/Sociologia/Q1_Digitalization_and_Labour_Market.md` (aggiunta la sezione di saggio d'esame completo ottimizzato in inglese C1)
+  - `wiki/Sociologia/Q2_Digitalization_and_Welfare_State.md` (aggiunto il saggio d'esame completo in inglese C1, più l'integrazione di tutte le risposte ottimizzate)
+  - `wiki/Sociologia/Caso_Studio_Digitalizzazione_Comparata.md` (aggiunto il saggio d'esame completo in inglese C1 con l'analisi empirica dettagliata della presentazione)
+  - `log.md` (questo file)
+
