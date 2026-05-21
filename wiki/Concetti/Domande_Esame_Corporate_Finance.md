@@ -128,13 +128,23 @@ Questa guida raccoglie e risolve tutte le domande estratte dai tuoi appunti scri
   $$\text{NWC} = \text{Current Assets} - \text{Current Liabilities}$$
   Misura la liquidità operativa dell'azienda ed esprime quanta parte delle attività correnti è finanziata con capitale stabile (L/T).
 
-### 3. ROE & Quick Ratio
+### 3. ROE, Quick Ratio & La Formula DuPont
 * **ROE (Return on Equity):**
   $$ROE = \frac{\text{Net Income}}{\text{Book Value of Equity}}$$
-  Misura la redditività del capitale investito dagli azionisti.
-* **Quick Ratio (Acid-Test):**
-  $$\text{Quick Ratio} = \frac{\text{Cash} + \text{Receivables}}{\text{Current Liabilities}}$$
-  Misura la capacità di coprire le passività a breve termine escludendo le scorte (che sono ritenute illiquide).
+  * *Perché usiamo il Net Income e non l'EBIT?* Perché il ROE misura il rendimento destinato **solo agli azionisti** (*residual claimants*). Dobbiamo quindi considerare il reddito al netto degli interessi pagati ai creditori e delle tasse (*Net Income*).
+* **DuPont Identity (Scomposizione del ROE):**
+  La formula DuPont scompone il ROE per identificare i motori della redditività aziendale.
+  * **Scomposizione a 3 Fasi (Standard):**
+    $$ROE = \frac{\text{Net Income}}{\text{Sales}} \times \frac{\text{Sales}}{\text{Assets}} \times \frac{\text{Assets}}{\text{Equity}}$$
+    $$ROE = \text{Net Profit Margin} \times \text{Asset Turnover} \times \text{Leverage (Equity Multiplier)}$$
+  * **Scomposizione a 5 Fasi (Avanzata - con il Debt Burden):**
+    $$ROE = \text{Tax Burden} \times \text{Debt Burden (Interest Burden)} \times \text{Operating Margin} \times \text{Asset Turnover} \times \text{Leverage}$$
+    $$ROE = \frac{\text{Net Income}}{EBT} \times \frac{EBT}{EBIT} \times \frac{EBIT}{\text{Sales}} \times \frac{\text{Sales}}{\text{Assets}} \times \frac{\text{Assets}}{\text{Equity}}$$
+    * **Debt Burden (Carico del Debito / Interest Burden):** Calcolato come $\frac{EBT}{EBIT}$. Misura quanta parte del profitto operativo ($EBIT$) viene "bruciata" dagli oneri finanziari. Se la società non ha debiti, il rapporto è $1.0$ (nessun carico). Se la società ha molti interessi da pagare, il rapporto si avvicina a $0$, riducendo il ROE complessivo.
+* **Quick Ratio (chiamato anche Acid-Test Ratio):**
+  $$\text{Quick Ratio} = \frac{\text{Cash} + \text{Marketable Securities} + \text{Receivables}}{\text{Current Liabilities}}$$
+  * *Perché escludiamo le scorte (Inventory)?* Sebbene le scorte facciano parte delle attività correnti (*Current Assets*), sono l'elemento **meno liquido**. Richiedono tempo per essere trasformate in prodotti finiti, vendute (creando crediti) e infine incassate in contanti. Il Quick Ratio misura la solvibilità a brevissimo termine contando solo gli asset prontamente convertibili in cassa.
+  * *Nota d'esame:* "Quick Ratio" e "Acid-Test" sono **sinonimi** (rappresentano lo stesso identico indice, da non confondere con il *Current Ratio* che invece include le scorte).
 
 ### 4. Interest Coverage Ratios & Turnover Ratios
 * **Interest Coverage Ratios:** Misurano la capacità di coprire gli oneri finanziari.
