@@ -178,6 +178,46 @@ Questa guida raccoglie e risolve tutte le domande estratte dai tuoi appunti scri
   1. **Nei flussi di cassa del progetto:** Il valore generato dall'asset nel suo miglior uso alternativo (es. se usiamo un terreno di proprietà per il progetto, dobbiamo inserire come *flusso in uscita* il prezzo a cui avremmo potuto venderlo o affittarlo).
   2. **Come tasso di sconto (Opportunity Cost of Capital):** Il rendimento a cui gli investitori rinunciano investendo nel progetto anziché in attività finanziarie alternative con lo stesso livello di rischio. È calcolato con il **CAPM** (per solo Equity) o il **WACC** (per l'intera impresa) ed è noto come **Hurdle Rate** dal punto di vista del manager.
 * **Cannibalization / Erosion (Cannibalizzazione o Erosione):** Un tipo specifico di esternalità negativa (side effect) in cui l'introduzione di un nuovo prodotto riduce le vendite e i flussi di cassa di un prodotto già esistente dell'azienda (es. il lancio di un nuovo modello di iPhone che cannibalizza le vendite di quello precedente). Questo calo dei flussi di cassa del vecchio prodotto è un costo incrementale reale che **deve essere sottratto** ai flussi di cassa del nuovo progetto.
+* **Collegamento Profondo (La Cannibalizzazione COME Costo Opportunità):**
+  * **La cannibalizzazione non è un concetto separato dall'Opportunity Cost; ne è una sua applicazione specifica!**
+  * **Asset-based Opportunity Cost:** Riguarda le risorse fisiche (es. usare un capannone di proprietà invece di affittarlo o venderlo). Rinunciamo a un flusso di cassa immobiliare/fisico.
+  * **Sales-based Opportunity Cost (Cannibalizzazione):** Riguarda il mercato e le vendite. Lanciando il nuovo Prodotto B, rinunciamo a una parte dei profitti operativi generati dal Prodotto A. È il costo opportunità delle vendite e della domanda di mercato.
+* **Excel-Style Placement (Esempio Pratico di Integrazione):**
+  Immagina di lanciare il **Prodotto B** (Nuovo Prodotto) che usa un capannone esistente (valore di mercato/vendita immediata di \$150,000 al netto delle tasse) e cannibalizza il **Prodotto A** (Prodotto Esistente), causando una perdita di \$100,000 di fatturato su A (Margine di Contribuzione del 60%, quindi \$60,000 di profitto perso).
+  Ecco come si collocano nel calcolo del **Free Cash Flow (FCF)**:
+
+  | Excel Line Item (Capital Budgeting Model) | Year 0 | Year 1 | Year 2 | Year 3 (Terminal) |
+  | :--- | :---: | :---: | :---: | :---: |
+  | **[1] New Product Revenues** | | \$500,000 | \$520,000 | \$540,000 |
+  | **[2] LESS: Cannibalization (Lost Revenues of Prod. A)** | | (\$100,000) | (\$105,000) | (\$110,000) |
+  | **[3] Incremental Revenues** | | **\$400,000** | **\$415,000** | **\$430,000** |
+  | [4] Operating Expenses (60% of New Revenues) | | (\$300,000) | (\$312,000) | (\$324,000) |
+  | [5] ADD: Cannibalization Saved Expenses (60%) | | \$60,000 | \$63,000 | \$66,000 |
+  | **[6] EBITDA** | | **\$160,000** | **\$166,000** | **\$172,000** |
+  | [7] Depreciation | | (\$50,000) | (\$50,000) | (\$50,000) |
+  | **[8] EBIT (Operating Income)** | | **\$110,000** | **\$116,000** | **\$122,000** |
+  | [9] Taxes (21%) | | (\$23,100) | (\$24,360) | (\$25,620) |
+  | **[10] NOPAT (Unlevered Net Income)** | | **\$86,900** | **\$91,640** | **\$96,380** |
+  | [11] ADD: Depreciation | | \$50,000 | \$50,000 | \$50,000 |
+  | **[12] Operating Cash Flow (OCF)** | | **\$136,900** | **\$141,640** | **\$146,380** |
+  | **[13] Capital Expenditures (Capex)** | (\$200,000) | | | |
+  | **[14] Opportunity Cost of Warehouse (Asset)** | **(\$150,000)** | | | **\$150,000** |
+  | [15] Change in Net Working Capital (NWC) | | (\$10,000) | (\$5,000) | \$15,000 |
+  | **[16] FREE CASH FLOW (FCF)** | **(\$350,000)** | **\$126,900** | **\$136,640** | **\$311,380** |
+
+  * *Nota sull'Asset:* L'**Opportunity Cost del Capannone** (\$150,000) viene inserito come **deflusso di cassa (outflow) al tempo 0**, poiché rinunciamo a venderlo oggi. Viene poi **recuperato al tempo 3 (inflow)** perché alla fine del progetto l'asset torna disponibile per altri usi o vendite.
+  * *Nota sulla Cannibalizzazione:* L'**impatto netto della cannibalizzazione** (Perdita di Ricavi \$100k - Risparmio Costi \$60k = -\$40k) riduce l'EBITDA operativo ogni anno. È un costo opportunità commerciale incorporato direttamente nel calcolo dell'**OCF**.
+
+* **⚠️ Regole per l'esame: Si possono inserire nei Costi Operativi (Operating Expenses)?**
+  * **1. Cannibalizzazione (Erosione): SÌ, ASSOLUTAMENTE.**
+    * Invece di modificare separatamente i Ricavi (riga [2]) e i Costi Variabili (riga [5]), puoi calcolare direttamente il **Margine di Contribuzione Perso** del vecchio Prodotto A:
+      $$\text{Net Cannibalization Loss} = \text{Lost Revenues} - \text{Saved Variable Expenses} = \$100,000 - \$60,000 = \$40,000$$
+    * Questo valore di \$40,000 può essere inserito direttamente come una voce a sé stante sotto le **Operating Expenses** (chiamata *"Erosion Expense"* o *"Cannibalization Cost"*). 
+    * *Risultato in Excel:* Il risultato finale su EBITDA, EBIT e OCF sarà **identico al 100%**. Entrambi i metodi sono accettati e matematicamente corretti.
+  * **2. Opportunity Cost dell'Asset: DIPENDE DALLA NATURA DEL COSTO.**
+    * **Caso A — Rendita Periodica (es. Affitto Perso): SÌ.** Se l'alternativa per l'asset era affittarlo a terzi per \$50,000/anno, puoi aggiungere \$50,000 come voce di costo sotto le **Operating Expenses** (es. *"Opportunity Rent Expense"*) in ogni anno del progetto. Questo ridurrà l'EBIT, le tasse e l'OCF.
+    * **Caso B — Valore di Vendita Immediato (Lump-sum): NO.** Se l'alternativa era vendere il capannone oggi per \$150,000 in un'unica soluzione, **NON puoi inserirlo nelle Operating Expenses**. La vendita di un asset è una transazione di capitale, non un costo operativo corrente. Deve essere trattato come deflusso al Tempo 0 (investimenti) e recuperato alla fine.
+    * **🚨 TRAPPOLA DA EVITARE (Double Counting):** Non inserire mai contemporaneamente il valore di vendita al Tempo 0 *E* la perdita di affitto nei costi operativi. Devi scegliere la **migliore alternativa esclusiva** (o vendi o affitti, non puoi fare entrambi!).
 
 ### 3. Sensitivity Analysis vs Scenario Analysis & Real Options
 * **Sensitivity Analysis (Analisi di Sensibilità):** Esamina come varia il NPV al variare di **una sola variabile alla volta** (es. solo i ricavi, mantenendo costanti spese e tasso di sconto). Identifica la variabile più critica.
