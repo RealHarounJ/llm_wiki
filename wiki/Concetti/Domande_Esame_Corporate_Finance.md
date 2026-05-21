@@ -367,12 +367,57 @@ Questa guida raccoglie e risolve tutte le domande estratte dai tuoi appunti scri
     * Dove $\mathbf{w}$ è il vettore colonna dei pesi e $\mathbf{\Sigma}$ è la **Covariance Matrix (Matrice di Covarianza)**: una matrice simmetrica in cui sulla diagonale principale troviamo le **varianze** dei singoli titoli ($\sigma_i^2$) e nelle altre celle troviamo le **covarianze** ($\sigma_{i,j}$).
 
 ### 2. Efficient Frontier of Markowitz
-* L'insieme dei portafogli ottimali che offrono il massimo rendimento atteso per un determinato livello di rischio (deviazione standard), o il minor rischio possibile per un determinato livello di rendimento atteso.
+* **Definizione:** La **Frontiera Efficiente di Markowitz** rappresenta l'insieme dei portafogli ottimali che offrono il **massimo rendimento atteso** ($E[R]$) per un determinato livello di rischio (misurato dalla deviazione standard, $\sigma$), o, equivalentemente, il **minor rischio possibile** per un determinato livello di rendimento atteso.
+
+* **📉 Diagramma della Frontiera Efficiente di Markowitz:**
+
+  ![Markowitz Efficient Frontier Chart](file:///C:/Users/jaafa/.gemini/antigravity/brain/9f142f55-c7cf-4e8f-bafa-74bb8df292ae/efficient_frontier_markowitz_1779394626445.png)
+
+* **Descrizione Dettagliata dei Componenti del Grafico (Exam Breakdown):**
+  1. **Gli Assi del Grafico:**
+     * **Asse Y (Verticale):** Rendimento atteso del portafoglio ($E[R_p]$).
+     * **Asse X (Orizzontale):** Rischio totale del portafoglio, misurato dalla **Deviazione Standard ($\sigma_p$)** (Volatilità).
+  2. **I Singoli Risky Assets (Titoli Individuali):**
+     * Sono rappresentati come punti sparsi *all'interno* (a destra) della curva della frontiera. Da soli, sono **inefficienti** perché un investitore può sempre costruire un portafoglio diversificato che offre un rendimento più alto per lo stesso rischio, o meno rischio per lo stesso rendimento.
+  3. **Il Feasible Set (Insieme Opportunità):**
+     * L'intera area compresa all'interno e lungo il bordo della curva iperbolica. Rappresenta tutte le combinazioni possibili di portafogli realizzabili combinando i titoli rischiosi sul mercato.
+  4. **Il Minimum Variance Portfolio (MVP):**
+     * È il **punto situato più a sinistra** della curva (la "punta" dell'iperbole). Rappresenta il portafoglio composto da asset rischiosi che ha in assoluto la **deviazione standard più bassa possibile** (il minor rischio possibile tra tutti i portafogli realizzabili).
+  5. **La Frontiera Efficiente (Il Ramo Superiore):**
+     * È unicamente la **metà superiore della curva iperbolica che parte dal Minimum Variance Portfolio (MVP) e va verso l'alto**.
+     * *Perché solo la parte superiore?* Perché per qualsiasi portafoglio situato sulla metà inferiore, esiste un portafoglio direttamente sopra di esso (sulla metà superiore) che ha lo stesso identico rischio ($\sigma$) ma un rendimento atteso ($E[R]$) strettamente superiore. La metà inferiore è quindi inefficiente.
+
+* **🔗 Integrazione con l'Asset Risk-Free (CML e Portafoglio Tangente):**
+  * Se introduciamo nel modello un **Asset Privo di Rischio (Risk-Free Asset)** con rendimento $r_f$ sull'asse Y:
+    1. La frontiera efficiente non è più una curva, ma diventa una linea retta chiamata **Capital Market Line (CML)**.
+    2. La CML parte da $r_f$ sull'asse Y ed è **tangente** alla curva iperbolica di Markowitz.
+    3. Il punto di tangenza si chiama **Tangency Portfolio (Portafoglio Tangente / Portafoglio di Mercato)**. Rappresenta la combinazione ottimale di soli asset rischiosi (quella che massimizza l'indice di Sharpe, cioè il rendimento extra per unità di rischio).
+    4. Tutti gli investitori razionali investiranno in una combinazione di asset risk-free e del Portafoglio Tangente (teorema di separazione di Tobin).
 
 ### 3. CAPM: Advantages & Disadvantages & Security Market Line (SML)
 * **CAPM Formula:**
   $$E[R_i] = r_f + \beta_i \cdot (E[R_m] - r_f)$$
   *(dove $r_f$ è il tasso risk-free, $\beta_i$ il rischio sistematico dell'asset $i$, e $E[R_m] - r_f$ il Market Risk Premium - MRP).*
+
+* **📐 Le Formule per Calcolare e Trovare il Beta ($\beta$):**
+  Esistono 4 metodi/formule per calcolare il Beta a seconda dei dati forniti all'esame:
+
+  1. **Definizione Statistica (La formula di regressione storica):**
+     Misura la covarianza dei rendimenti del titolo rispetto al mercato, normalizzata sulla varianza del mercato:
+     $$\beta_i = \frac{Cov(R_i, R_m)}{Var(R_m)} = \frac{\sigma_{i,m}}{\sigma_m^2}$$
+  2. **Formulazione tramite la Correlazione ($\rho_{i,m}$):**
+     Poiché $Cov(R_i, R_m) = \rho_{i,m} \cdot \sigma_i \cdot \sigma_m$, possiamo riscrivere il Beta come:
+     $$\beta_i = \rho_{i,m} \cdot \frac{\sigma_i}{\sigma_m}$$
+     *(mostra che il Beta è guidato dalla correlazione col mercato e dalla volatilità relativa del titolo).*
+  3. **Formula Algebrica dal CAPM (Risolvendo per Beta):**
+     Se conosci il rendimento atteso dell'asset, il tasso risk-free e il rendimento del mercato:
+     $$\beta_i = \frac{E[R_i] - r_f}{E[R_m] - r_f}$$
+  4. **Formule di Struttura Finanziaria (Levering / Unlevering Beta di Modigliani-Miller):**
+     * **Unlevering (Trovare il Beta Attivo/Operativo $\beta_U$ partendo dal Beta Azionario $\beta_E$):**
+       $$\beta_U = \frac{\beta_E}{1 + (1 - t)\frac{D}{E}}$$
+       *(assume che il debito sia privo di rischio, cioè $\beta_D = 0$).*
+     * **Levering (Trovare il Beta Azionario con Debito $\beta_L$ o $\beta_E$ partendo dal Beta Unlevered $\beta_U$):**
+       $$\beta_L = \beta_U \cdot \left[1 + (1 - t)\frac{D}{E}\right]$$
 
 * **Vantaggi del CAPM (Detailed & Academic):**
   1. **Focus sul Rischio Sistematico (Beta):** È il più grande contributo teorico del modello. Riconosce che in un portafoglio ben diversificato il rischio specifico (idiosincratico) viene eliminato. Pertanto, l'unico rischio che il mercato deve remunerare è il rischio sistematico ($\beta$) e non il rischio totale ($\sigma$).
