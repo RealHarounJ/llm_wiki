@@ -379,6 +379,16 @@ Questa guida raccoglie e risolve tutte le domande estratte dai tuoi appunti scri
 * **WACC:** 
   $$WACC = \frac{E}{D+E} \cdot r_E + \frac{D}{D+E} \cdot r_D \cdot (1-t)$$
   * Dove $E$ è il valore di mercato dell'Equity, $D$ il valore di mercato del debito, $r_E$ il costo dell'equity, $r_D$ il costo del debito, e $t$ l'aliquota fiscale sulle società (*corporate tax rate*).
+
+* **❓ Cosa succede se l'impresa non ha debito (Zero Debt / Unlevered Firm)? Usiamo comunque il CAPM?**
+  * **SÌ, ASSOLUTAMENTE.** Anche senza debito, il CAPM è lo strumento principale per calcolare il costo dell'equity ($r_E$).
+  * In un'impresa priva di debito (*Unlevered*):
+    1. **Il WACC collassa e coincide con il Costo dell'Equity:** Poiché $D = 0$, la formula del WACC diventa semplicemente:
+       $$WACC = \frac{E}{E} \cdot r_E + 0 = r_E$$
+    2. **Il Costo dell'Equity ($r_E$) è pari al Costo dell'Attivo ($r_U$):** L'unica fonte di finanziamento sono gli azionisti, quindi il rendimento richiesto dagli azionisti coincide con il rendimento richiesto dall'attività dell'impresa ($r_E = r_U$).
+    3. **Il Beta è il Beta Unlevered ($\beta_U$) o Asset Beta ($\beta_A$):** Il Beta calcolato tramite regressione di mercato misura esclusivamente il **rischio operativo** (*business risk*) dell'attività economica, poiché non c'è alcun rischio finanziario (rischio di default o di leva). La formula del CAPM è quindi:
+       $$r_E = r_U = r_f + \beta_U \cdot (E[R_m] - r_f)$$
+  * *Nota per l'esame:* Se l'impresa decide successivamente di emettere debito (*Leverage*), il suo Beta salirà a causa del rischio finanziario aggiuntivo (diventando **Beta Levered**, $\beta_L$), e di conseguenza anche il costo dell'equity ($r_E$) salirà, come descritto dalla **II Proposizione di Modigliani-Miller**.
 * **After-tax in WACC:** Gli interessi pagati sul debito sono deducibili fiscalmente (riducono l'imponibile fiscale dell'impresa). In termini economici, questo significa che **una parte degli interessi viene virtualmente "pagata" dallo Stato** sotto forma di minori tasse dovute. Di conseguenza, il costo netto effettivo del debito per l'azienda è inferiore rispetto al tasso richiesto dai creditori: si moltiplica $r_D$ per lo scudo fiscale $(1-t)$.
 * **Effetto della Leva Finanziaria sul WACC:**
   * **La Leva come Arma a Doppio Taglio (Double-Edged Sword):** La leva finanziaria (calcolata come Debito / Equity, $D/E$) amplifica i risultati dell'impresa. In periodi positivi (quando la società performa bene), l'uso del debito amplifica notevolmente il rendimento degli azionisti (ROE). Al contrario, in scenari pessimistici, l'azienda rischia di subire forti perdite poiché gli interessi sono costi fissi obbligatori da pagare indipendentemente dai risultati operativi.
