@@ -44,5 +44,5 @@ A $2M di AUM, i costi operativi e legali di un fondo standalone tradizionale man
 
 ---
 
-## ## Fonti
+## Fonti
 - [[How can I start hedgefund.md]] (raw)

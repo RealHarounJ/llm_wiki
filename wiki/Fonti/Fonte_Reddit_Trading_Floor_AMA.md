@@ -46,5 +46,5 @@ Scheda riassuntiva basata sulle risposte fornite da un trader esperto di investm
 
 ---
 
-## ## Fonti
+## Fonti
 - [[I have worked on trading floor in investment banks for over a decade, ask me anything.md]] (raw)

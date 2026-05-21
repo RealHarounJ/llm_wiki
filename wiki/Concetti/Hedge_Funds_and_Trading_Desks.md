@@ -127,7 +127,7 @@ Il vantaggio competitivo istituzionale risiede principalmente nell'accesso asimm
 
 ---
 
-## ## Fonti
+## Fonti
 - [[Fonte_Reddit_Hedge_Fund_Start]]
 - [[Fonte_Investopedia_Hedge_Fund_Guide]]
 - [[Fonte_Reddit_Trading_Floor_AMA]]

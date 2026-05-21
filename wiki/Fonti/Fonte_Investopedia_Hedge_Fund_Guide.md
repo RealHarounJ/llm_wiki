@@ -48,5 +48,5 @@ La capacità di attrarre investitori sofisticati ed istituzionali è legata a so
 
 ---
 
-## ## Fonti
+## Fonti
 - [[Step-by-Step Guide to Starting a Hedge Fund.md]] (raw)

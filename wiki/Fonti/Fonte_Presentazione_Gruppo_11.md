@@ -61,5 +61,5 @@ La presentazione evidenzia le deviazioni tra i casi empirici (Corea e Arabia) e 
 
 ---
 
-## ## Fonti
+## Fonti
 - [[group_11_extracted.txt]] (raw)

@@ -122,6 +122,7 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[UNESCO_AI_Education]] | UNESCO - AI and Education |
 | [[haroun_academy_sql]] | Esercizio DDL Haroun Academy |
 | [[healthcare_db_sql]] | Esercizio DDL Healthcare |
+| [[SQL_Overview_Summary]] | SQL Basics Summary |
 | [[Fonte_Ikea_SQL_Project]] | Ikea SQL Project Database Schema |
 | [[Fonte_Data_Warehouse_Mining_Notes]] | Appunti Data Warehouse e Data Mining |
 | [[Fonte_Reddit_Hedge_Fund_Start]] | Delaware LP/LLC, BVI, VCC models for Hedge Fund startup |
