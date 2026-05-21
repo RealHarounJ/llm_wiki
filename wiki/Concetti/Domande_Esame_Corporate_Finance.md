@@ -63,8 +63,17 @@ Questa guida raccoglie e risolve tutte le domande estratte dai tuoi appunti scri
 * Per valorizzare questa liquidità, prestano denaro acquistando obbligazioni societarie a lungo termine o finanziando grandi progetti infrastrutturali. Raramente prendono a prestito, se non per esigenze straordinarie di liquidità a breve termine.
 
 ### 3. What we mean with FinTech Revolution & FinTech Firms
-* **FinTech Revolution:** L'applicazione di tecnologie digitali avanzate (AI, blockchain, cloud computing, big data) ai servizi finanziari. 
-* **FinTech Firms:** Aziende tecnologiche che competono con le banche tradizionali offrendo pagamenti digitali istantanei, prestiti peer-to-peer (P2P), robo-advisory e crowdfunding, riducendo i costi di intermediazione.
+* **FinTech Revolution:** L'applicazione di tecnologie digitali avanzate (AI, blockchain, cloud computing, big data) ai servizi finanziari tradizionali per renderli più efficienti, veloci ed economici.
+* **FinTech Firms:** Aziende tecnologiche (spesso startup) che competono con le istituzioni finanziarie tradizionali disintermediando i servizi finanziari tradizionali.
+* **Le Principali Forme/Categorie di FinTech (FinTech Forms):**
+  1. **Neo-Banks / Challenger Banks (Digital Banking):** Banche interamente digitali prive di filiali fisiche che offrono conti correnti e carte a costi bassissimi con un'esperienza utente mobile eccellente (es. Revolut, N26, Chime, Bunq).
+  2. **Digital Payments & Remittances (PayTech):** Piattaforme che gestiscono pagamenti elettronici istantanei P2P o B2B e trasferimenti transfrontalieri rapidi riducendo a zero le commissioni bancarie (es. Stripe, Satispay, PayPal, Apple Pay, Wise).
+  3. **Alternative Lending (P2P & Crowd-Lending):** Piattaforme che collegano direttamente i richiedenti prestito (privati o PMI) con risparmiatori disposti a prestare denaro, bypassando completamente le banche tradizionali (es. LendingClub, October).
+  4. **Alternative Equity Financing (Equity Crowdfunding):** Portali autorizzati che permettono a startup e PMI di raccogliere capitale di rischio (*equity*) direttamente da una vasta platea di piccoli investitori online in cambio di quote societarie (es. Crowdcube, Kickstarter - per reward-based).
+  5. **Robo-Advisory & WealthTech (Digital Wealth Management):** Algoritmi e software automatizzati che gestiscono portafogli di investimento personalizzati (costruiti solitamente tramite ETF a basso costo) riducendo drasticamente le commissioni di gestione dei consulenti umani (es. Betterment, Wealthfront, Moneyfarm).
+  6. **InsurTech (Insurance Technology):** Applicazione della tecnologia al settore assicurativo (es. sensori IoT, AI, telematica) per offrire polizze personalizzate e liquidare i sinistri all'istante tramite app (es. Lemonade).
+  7. **RegTech (Regulatory Technology):** Soluzioni software che aiutano le banche e le imprese a rispettare le complesse normative finanziarie in modo automatizzato (es. antiriciclaggio/AML, verifica identità digitale/KYC).
+  8. **DeFi & Crypto (Decentralized Finance):** Piattaforme basate su blockchain e smart contract che replicano servizi finanziari complessi (trading, prestiti, derivati) in modo completamente decentralizzato e trasparente, senza alcun intermediario umano o istituzionale.
 
 ### 4. IPOs (Initial Public Offerings)
 * **Definizione:** Il processo con cui una società privata si quota in borsa per la prima volta, vendendo le proprie azioni al pubblico.
@@ -256,8 +265,32 @@ Questa guida raccoglie e risolve tutte le domande estratte dai tuoi appunti scri
 * Grafico che mostra il NPV di un progetto (sull'asse Y) in funzione di diversi tassi di sconto (sull'asse X). La curva interseca l'asse X nel punto in cui il tasso di sconto è esattamente pari all'**IRR**.
 
 ### 5. EVA (Economic Value Added)
-* Misura il surplus economico generato dall'azienda dopo aver coperto tutti i costi, incluso il costo opportunità del capitale investito:
+* **Definizione:** L'EVA (chiamato anche *Valore Aggiunto Economico* o *Profitto Economico*) misura il surplus economico reale generato da un'azienda dopo aver coperto tutti i suoi costi operativi e, soprattutto, **tutti i costi di finanziamento**, incluso il costo opportunità del capitale proprio (Equity).
+  
+* **Formula Fondamentale dell'EVA:**
+  $$EVA = NOPAT - (WACC \times \text{Capitale Investito})$$
   $$EVA = EBIT \times (1-t) - (WACC \times \text{Capitale Investito})$$
+
+* **I Componenti della Formula:**
+  1. **NOPAT (Net Operating Profit After Taxes):** Calcolato come $EBIT \times (1-t)$. Rappresenta il profitto operativo netto generato dall'azienda se fosse interamente finanziata tramite Equity (unlevered net income).
+  2. **Invested Capital (Capitale Investito):** La somma di tutte le risorse finanziarie investite stabilmente nell'impresa dai creditori e dagli azionisti. Può essere calcolato come:
+     $$\text{Capitale Investito} = \text{Net Working Capital} + \text{Net Fixed Assets (Immobilizzazioni Nette)}$$
+     *(oppure: Debito Finanziario + Equity - Cassa).*
+  3. **Capital Charge (Costo del Capitale in Valuta):** Calcolato come $\text{WACC} \times \text{Capitale Investito}$. Esprime il costo monetario (in dollari/euro) necessario per remunerare tutti i fornitori di capitale secondo il rischio da loro corso.
+
+* **La Formula Alternativa (The Spread Formula):**
+  $$EVA = (\text{ROIC} - \text{WACC}) \times \text{Capitale Investito}$$
+  * Dove **ROIC (Return on Invested Capital)** o **ROC (Return on Capital)** è calcolato come:
+    $$ROIC = \frac{NOPAT}{\text{Capitale Investito}}$$
+  * **Significato del Spread:** Questa formula evidenzia che un'azienda crea valore per gli investitori solo se il suo rendimento sul capitale è superiore al costo del capitale stesso ($\text{ROIC} > \text{WACC}$). 
+    * Se $\text{ROIC} > \text{WACC} \rightarrow$ Lo spread è positivo, l'impresa crea valore ($EVA > 0$).
+    * Se $\text{ROIC} < \text{WACC} \rightarrow$ Lo spread è negativo, l'impresa **distrugge valore** ($EVA < 0$), anche se presenta un utile contabile positivo!
+
+* **Perché l'EVA è superiore all'Utile Contabile (Net Income)?**
+  * **L'Utile Contabile (Net Income)** nel conto economico sottrae solo i costi operativi e gli oneri finanziari sul debito (interessi passivi). **Ignora completamente il costo del capitale proprio (Equity)**, trattando il capitale degli azionisti come se fosse "gratuito".
+  * **L'EVA (Economic Profit)** corregge questo limite. Sottrae sia il costo del debito sia il costo opportunità dell'equity ($r_E$), mostrando la vera ricchezza netta residua generata per gli azionisti.
+
+---
 
 ---
 
@@ -314,9 +347,22 @@ Questa guida raccoglie e risolve tutte le domande estratte dai tuoi appunti scri
 * L'insieme dei portafogli ottimali che offrono il massimo rendimento atteso per un determinato livello di rischio (deviazione standard), o il minor rischio possibile per un determinato livello di rendimento atteso.
 
 ### 3. CAPM: Advantages & Disadvantages & Security Market Line (SML)
-* **CAPM:** $E[R_i] = r_f + \beta_i \cdot (E[R_m] - r_f)$
-* **Vantaggi:** Semplice, elegante, ed esprime chiaramente che solo il rischio sistematico ($\beta$) deve essere remunerato dal mercato.
-* **Svantaggi:** Difficile stimare con precisione il Beta futuro; assume mercati perfetti e che gli investitori guardino solo a media e varianza.
+* **CAPM Formula:**
+  $$E[R_i] = r_f + \beta_i \cdot (E[R_m] - r_f)$$
+  *(dove $r_f$ è il tasso risk-free, $\beta_i$ il rischio sistematico dell'asset $i$, e $E[R_m] - r_f$ il Market Risk Premium - MRP).*
+
+* **Vantaggi del CAPM (Detailed & Academic):**
+  1. **Focus sul Rischio Sistematico (Beta):** È il più grande contributo teorico del modello. Riconosce che in un portafoglio ben diversificato il rischio specifico (idiosincratico) viene eliminato. Pertanto, l'unico rischio che il mercato deve remunerare è il rischio sistematico ($\beta$) e non il rischio totale ($\sigma$).
+  2. **Semplicità e Praticità d'Uso:** Richiede solo tre input di facile reperibilità sul mercato ($r_f$, $\beta$, $MRP$), rendendolo estremamente standardizzato e oggettivo.
+  3. **Superiorità rispetto al Dividend Discount Model (DDM / Gordon Model):** Il DDM richiede di stimare i dividendi futuri e un tasso di crescita costante ($g$), ed è inutilizzabile per aziende che non pagano dividendi o ad alta crescita (tech). Il CAPM, invece, si applica a **qualsiasi tipo di azienda o asset**, indipendentemente dalla sua politica dei dividendi.
+  4. **Hurdle Rate appropriato per il Capital Budgeting (Project-Specific WACC):** Permette alle imprese di calcolare il costo dell'equity specifico per un singolo progetto. Se un'azienda solida vuole investire in un settore rischioso, può usare il Beta di aziende comparabili di quel settore rischioso (*pure-play comparables*) invece del proprio WACC aziendale, evitando di sottostimare il rischio dell'investimento.
+  5. **Indipendenza dai Dati Contabili Interni:** Utilizza esclusivamente variabili di mercato, riducendo il rischio di manipolazioni contabili.
+
+* **Svantaggi e Limiti del CAPM:**
+  1. **Stima del Beta Storico vs. Beta Futuro:** Il Beta viene calcolato usando dati storici di mercato (regressione dei rendimenti passati). Tuttavia, il rischio futuro di un'azienda può variare drasticamente a causa di cambi di leva, ristrutturazioni o innovazioni.
+  2. **Stima del Market Risk Premium (MRP):** Non esiste un valore univoco concordato per il premio per il rischio di mercato atteso futuro, portando a stime soggettive.
+  3. **Assunzioni Irrealistiche (Mercati Perfetti):** Assume che gli investitori possano prendere e dare a prestito allo stesso tasso risk-free ($r_f$), che non vi siano tasse o costi di transazione, e che tutti abbiano aspettative omogenee.
+  4. **Sotto-remunerazione dei Rischi (Modelli Multifattoriali):** Come dimostrato da Fama e French, il CAPM ignora altri fattori di rischio sistematici importanti legati alla dimensione (*Size/SMB*) e alla tipologia dell'impresa (*Value vs. Growth/HML*).
 * **Security Market Line (SML):** La retta che rappresenta graficamente il CAPM (Rendimento su Y, Beta su X).
   * **Titoli sopra la SML (Sottovalutati / Undervalued):** Hanno un rendimento atteso superiore al rendimento richiesto dal CAPM ($\alpha > 0$). Essendo convenienti, gli investitori acquistano il titolo $\rightarrow$ la domanda aumenta $\rightarrow$ il prezzo sale $\rightarrow$ il rendimento futuro atteso si riduce fino a tornare sulla retta.
   * **Titoli sotto la SML (Sopravvalutati / Overvalued):** Hanno un rendimento atteso inferiore al rendimento richiesto dal CAPM ($\alpha < 0$). Essendo poco redditizi per il loro rischio, gli investitori vendono il titolo $\rightarrow$ l'offerta aumenta $\rightarrow$ il prezzo scende $\rightarrow$ il rendimento futuro atteso sale fino a tornare sulla retta.
