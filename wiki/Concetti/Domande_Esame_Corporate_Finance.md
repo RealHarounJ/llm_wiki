@@ -144,10 +144,19 @@ Questa guida raccoglie e risolve tutte le domande estratte dai tuoi appunti scri
   $$PI = \frac{\text{PV dei flussi di cassa futuri}}{\text{Investimento Iniziale}}$$
   Utile in caso di razionamento del capitale per selezionare i progetti a maggior valore relativo.
 
-### 2. Operating Cash Flow (OCF) & Sunk Costs in Capital Budgeting
-* **Calcolo OCF per Capital Budgeting:**
-  $$OCF = (Ricavi - Spese - Ammortamento) \times (1 - t) + Ammortamento$$
-* **Sunk Cost (Costo Sommerso):** Costo già sostenuto nel passato che non può essere recuperato. **Deve essere ignorato** nelle decisioni di capital budgeting poiché non è incrementale (es. spese di ricerca di mercato già pagate).
+### 2. Operating Cash Flow (OCF), Free Cash Flow (FCF) & Costs in Capital Budgeting
+* **Tre Approcci per il Calcolo dell'OCF:**
+  1. **Top-Down:** $OCF = \text{Ricavi} - \text{Spese Monetarie} - \text{Tasse}$ (esclude i costi non monetari come l'ammortamento).
+  2. **Bottom-Up:** $OCF = \text{Net Income} + \text{Ammortamento}$ (valido se le spese finanziarie/interessi sono ignorati nell'OCF, poiché considerati nel tasso di sconto WACC).
+  3. **Tax Shield Approach:** $OCF = (\text{Ricavi} - \text{Spese Monetarie}) \times (1 - t) + (\text{Ammortamento} \times t)$. Mostra chiaramente lo scudo fiscale dell'ammortamento.
+* **Calcolo del Free Cash Flow (FCF) per il Progetto:**
+  $$FCF = OCF - \text{Capex} - \Delta NWC$$
+  *(Capex = Spese per investimenti in attività fisse; $\Delta NWC$ = variazione del capitale circolante netto).*
+* **Sunk Cost (Costo Sommerso):** Costo già sostenuto nel passato che non può essere recuperato. **Deve essere completamente ignorato** poiché non è incrementale (es. spese passate di ricerca di mercato).
+* **Opportunity Cost (Costo Opportunità):**
+  1. **Nei flussi di cassa del progetto:** Il valore generato dall'asset nel suo miglior uso alternativo (es. se usiamo un terreno di proprietà per il progetto, dobbiamo inserire come *flusso in uscita* il prezzo a cui avremmo potuto venderlo o affittarlo).
+  2. **Come tasso di sconto (Opportunity Cost of Capital):** Il rendimento a cui gli investitori rinunciano investendo nel progetto anziché in attività finanziarie alternative con lo stesso livello di rischio. È calcolato con il **CAPM** (per solo Equity) o il **WACC** (per l'intera impresa) ed è noto come **Hurdle Rate** dal punto di vista del manager.
+* **Cannibalization / Erosion (Cannibalizzazione o Erosione):** Un tipo specifico di esternalità negativa (side effect) in cui l'introduzione di un nuovo prodotto riduce le vendite e i flussi di cassa di un prodotto già esistente dell'azienda (es. il lancio di un nuovo modello di iPhone che cannibalizza le vendite di quello precedente). Questo calo dei flussi di cassa del vecchio prodotto è un costo incrementale reale che **deve essere sottratto** ai flussi di cassa del nuovo progetto.
 
 ### 3. Sensitivity Analysis vs Scenario Analysis & Real Options
 * **Sensitivity Analysis (Analisi di Sensibilità):** Esamina come varia il NPV al variare di **una sola variabile alla volta** (es. solo i ricavi, mantenendo costanti spese e tasso di sconto). Identifica la variabile più critica.
