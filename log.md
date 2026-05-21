@@ -243,3 +243,25 @@ aw/Fundamentals of Database Systems (Elmasri) Cap. 24
   - `wiki/Sociologia/Caso_Studio_Digitalizzazione_Comparata.md` (aggiunto il saggio d'esame completo in inglese C1 con l'analisi empirica dettagliata della presentazione)
   - `log.md` (questo file)
 
+---
+
+## [2026-05-21] DEV | Vault Linting & Structural Cleanup
+
+- **Operazione:** Bonifica strutturale completa (linting) del vault Obsidian per eliminare ridondanze, allineare la struttura a quanto sancito da `CLAUDE.md`, rimuovere file vuoti o non tracciati e garantire la perfetta consistenza delle relazioni.
+- **Cartelle ed Elementi Eliminati:**
+  - Eliminata la cartella cache duplicata `_fit/` (2.117 file obsoleti generati da plugin esterni).
+  - Rimossa la cartella vuota `Notion/`.
+  - Eliminato il file corrotto duplicato `wiki/Fonti/‎Google Gemini.md` (ritagli di sessioni non strutturati).
+- **Riorganizzazione Fonti Notion (Database e Data Mining):**
+  - Rinominati e formattati 10 file grezzi in `wiki/Fonti/` (da `Where teams and agents work together*.md` e `data mining 1.md` a `Fonte_Elmasri_Cap*.md`), inserendo H1 significativi, correggendo l'HTML Notion, aggiungendo YAML frontmatter valido e agganciando la sezione `## Fonti` alla risorsa originaria `Fundamentals of Database Systems`.
+- **Creazione Nuove Pagine Concettuali:**
+  - `wiki/Concetti/ETL_Process.md` (Pipeline ETL, MDM, Golden Record, Backflushing).
+  - `wiki/Concetti/Transformer_Architecture.md` (Self-attention, Positional Encoding, Multi-head, Encoder-Decoder).
+  - `wiki/Concetti/Architettura_DBMS.md` (Architettura a tre schemi, indipendenza fisica/logica dei dati, ruoli DBA/designer).
+- **Automazione & Metadati:**
+  - Esecuzione di script custom PowerShell per normalizzare i frontmatter YAML (`tags`, `aliases`, `date_created`, `last_modified`, `source_count`) ed eliminare intestazioni orfane o malformate (es. raddoppio intestazioni `## ## Fonti`).
+- **Sincronizzazione Indici:**
+  - Aggiornato e allineato integralmente `index.md` con l'inclusione di tutti i 10 file Elmasri rinominati, 13 concetti di Corporate Finance prima non indicizzati, guide linguistiche (`wiki/Lingua/`), ristoranti (`wiki/Kiro_Kiro/`), schede esercitazione ed `ETL_Process`, `Transformer_Architecture`, `Architettura_DBMS`.
+- **Verifica Finale:**
+  - Eseguito `lint_check.ps1` ottenendo il **100% di conformità**: 0 file vuoti, 0 file orfani/non collegati, 0 dead link, 0 violazioni strutturali su 144 file markdown totali in `wiki/`.
+
