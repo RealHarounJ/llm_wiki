@@ -42,9 +42,13 @@ Questa guida raccoglie e risolve tutte le domande estratte dai tuoi appunti scri
 * **Importanza:** Riduce le asimmetrie informative e limita i comportamenti opportunistici dei manager. Tuttavia, il monitoraggio ha un costo (*monitoring costs*), che fa parte dei complessivi **costi di agenzia**.
 
 ### 6. Control Rights vs Cash Flow Rights
-* **Cash Flow Rights:** Diritto economico a ricevere una quota proporzionale dei flussi di cassa o dei dividendi generati dall'azienda.
-* **Control Rights:** Diritto di voto per eleggere il consiglio di amministrazione e approvare decisioni straordinarie. 
-* *Nota:* Nelle aziende con azioni speciali (es. a voto plurimo o senza voto) o strutture piramidali, i diritti di controllo possono superare ampiamente i diritti sui flussi di cassa, aumentando il rischio di espropriazione dei soci di minoranza.
+* **Cash Flow Rights:** Diritto economico proporzionale dell'azionista a ricevere i flussi di cassa residui o i dividendi generati dalla società.
+* **Control Rights:** Diritto di voto per eleggere il consiglio di amministrazione (CdA) e approvare decisioni straordinarie.
+* **Come vengono Separati (Separation of Rights):**
+  * **Dual-class Shares (Azioni a doppia classe):** Emissione di classi di azioni diverse con gli stessi diritti sui flussi di cassa ma diversi diritti di voto (es. azioni di Classe A con 1 voto, azioni di Classe B in mano ai fondatori con 10 voti).
+  * **Strutture Piramidali (Pyramidal Structures):** Catene societarie in cui un soggetto controlla una holding A, che controlla la holding B, che controlla la società operativa C. Questo consente al soggetto al vertice di controllare C pur possedendo solo una minima frazione reale del capitale di C (bassi cash flow rights, alti control rights).
+* **Perché preoccupa gli azionisti di minoranza (Minority Shareholders)?**
+  * Crea il **Conflitto di Agenzia Principal-Principal** (maggioranza vs minoranza). Chi controlla l'azienda ha il pieno potere decisionale ma subisce solo una minima parte delle perdite economiche. Questo incentiva l'estrazione di **benefici privati del controllo** o pratiche di **tunneling** (trasferimento di risorse a entità interamente controllate dal socio di maggioranza a danno dei soci di minoranza).
 
 ---
 
@@ -66,11 +70,17 @@ Questa guida raccoglie e risolve tutte le domande estratte dai tuoi appunti scri
 * **Definizione:** Il processo con cui una società privata si quota in borsa per la prima volta, vendendo le proprie azioni al pubblico.
 * **Scopo:** Raccogliere ingenti quantità di capitale per crescere e consentire ai soci fondatori/fondi di Venture Capital di liquidare il proprio investimento (*exit*).
 
-### 5. Sources of Collecting Capital of a Firm
+### 5. Sources of Collecting Capital of a Firm (and Manager Preferences)
+* **Preferenze del Manager (Control Dilution & Pecking Order):** I manager preferiscono evitare il finanziamento tramite *External Equity* (emissione di nuove azioni ordinarie) perché questo diluisce il potere di controllo dei soci esistenti e dei manager stessi, e lancia segnali negativi al mercato (asimmetria informativa). 
 * Le principali fonti di finanziamento sono:
-  * **Internal Equity:** Utili non distribuiti (*Retained Earnings*).
-  * **External Equity:** Emissione di nuove azioni comuni o privilegiate.
-  * **Debt:** Emissione di obbligazioni (*Bonds*), prestiti bancari o commercial paper.
+  * **Internal Equity:** Utili non distribuiti (*Retained Earnings*), considerati la prima scelta poiché privi di asimmetrie informative o costi di emissione.
+  * **External Debt (Prestiti e Debiti Esterni):** La scelta preferita rispetto alle nuove azioni. Si divide in:
+    * **Bank Loans (Prestiti Bancari):** 
+      * *Revolving Line of Credit:* Linea di credito flessibile che l'impresa può prelevare, rimborsare e riutilizzare in base al bisogno.
+      * *Syndicated Loan (Prestito Sindacato):* Un grande finanziamento erogato da un gruppo (sindacato) di banche coordinato da una banca capofila (*lead arranger*) per distribuire il rischio di credito.
+    * **Commercial Paper (Cambiali Finanziarie):** Titoli di debito a breve termine emessi direttamente dalle grandi imprese per coprire fabbisogni correnti (scadenza tipicamente inferiore a 270 giorni per evitare obblighi di registrazione governativi).
+    * **Medium-Term Notes (MTN):** Titoli di debito con scadenze flessibili a medio-lungo termine (spesso superiori a 270 giorni) che possono essere emessi in modo continuativo sul mercato.
+  * **External Equity:** Nuova emissione di azioni (ultima spiaggia per la teoria del pecking order).
   * **Hybrid:** Obbligazioni convertibili, azioni privilegiate.
 
 ---
