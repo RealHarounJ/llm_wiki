@@ -96,6 +96,7 @@ Questa guida raccoglie e risolve tutte le domande estratte dai tuoi appunti scri
 
 ### 3. What we mean by Call Provision
 * Clausola che dà all'emittente del bond il diritto (ma non l'obbligo) di rimborsare anticipatamente il debito prima della scadenza a un prezzo prefissato (*call price*). Viene esercitata se i tassi d'interesse di mercato scendono, consentendo all'azienda di rifinanziarsi a costi inferiori.
+* **Nota per l'esame:** Non confondere il *Callable Bond* con il *Convertible Bond*. Il callable bond **non si converte in azioni**; consente solo alla società di rimborsare anticipatamente il debito in **contanti (cash)**. La conversione in azioni è una caratteristica dei *convertible bonds*. Poiché la call provision svantaggia l'investitore (che subisce il rischio di reinvestimento), i callable bonds devono offrire cedole più alte rispetto a bond equivalenti non callable.
 
 ### 4. Bond Covenants
 * Clausole contrattuali inserite nell'accordo di emissione obbligazionaria per proteggere i creditori dai comportamenti rischiosi degli azionisti:
