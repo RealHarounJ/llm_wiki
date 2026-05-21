@@ -181,6 +181,8 @@ Questa guida raccoglie e risolve tutte le domande estratte dai tuoi appunti scri
 * **Vantaggi:** Semplice, elegante, ed esprime chiaramente che solo il rischio sistematico ($\beta$) deve essere remunerato dal mercato.
 * **Svantaggi:** Difficile stimare con precisione il Beta futuro; assume mercati perfetti e che gli investitori guardino solo a media e varianza.
 * **Security Market Line (SML):** La retta che rappresenta graficamente il CAPM (Rendimento su Y, Beta su X).
+  * **Titoli sopra la SML (Sottovalutati / Undervalued):** Hanno un rendimento atteso superiore al rendimento richiesto dal CAPM ($\alpha > 0$). Essendo convenienti, gli investitori acquistano il titolo $\rightarrow$ la domanda aumenta $\rightarrow$ il prezzo sale $\rightarrow$ il rendimento futuro atteso si riduce fino a tornare sulla retta.
+  * **Titoli sotto la SML (Sopravvalutati / Overvalued):** Hanno un rendimento atteso inferiore al rendimento richiesto dal CAPM ($\alpha < 0$). Essendo poco redditizi per il loro rischio, gli investitori vendono il titolo $\rightarrow$ l'offerta aumenta $\rightarrow$ il prezzo scende $\rightarrow$ il rendimento futuro atteso sale fino a tornare sulla retta.
 
 ### 4. Capital Market Line (CML) vs SML
 * **CML:** Rappresenta graficamente i portafogli composti dall'asset risk-free e dal portafoglio di mercato tangente.
@@ -188,7 +190,7 @@ Questa guida raccoglie e risolve tutte le domande estratte dai tuoi appunti scri
   * Si applica solo a **portafogli perfettamente diversificati**.
 * **SML:** Rappresenta il rendimento richiesto per qualsiasi titolo o portafoglio.
   * Asse X: **Rischio sistematico (Beta $\beta$)**.
-  * Si applica a **qualsiasi asset**, singolo o diversificato.
+  * Si applica a **qualsiasi asset**, singolo o diversificato (efficiente o inefficiente).
 
 ### 5. WACC & Why we use After-tax Interest
 * **WACC:** 
