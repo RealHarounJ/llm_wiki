@@ -204,7 +204,14 @@ Questa guida raccoglie e risolve tutte le domande estratte dai tuoi appunti scri
 ### 5. WACC & Why we use After-tax Interest
 * **WACC:** 
   $$WACC = \frac{E}{D+E} \cdot r_E + \frac{D}{D+E} \cdot r_D \cdot (1-t)$$
-* **After-tax in WACC:** Gli interessi pagati sul debito sono deducibili fiscalmente (riducono l'imponibile fiscale dell'impresa). Di conseguenza, il costo effettivo del debito per l'azienda è inferiore rispetto al tasso nominale richiesto dai creditori. Per questo si moltiplica $r_D$ per $(1-t)$.
+  * Dove $E$ è il valore di mercato dell'Equity, $D$ il valore di mercato del debito, $r_E$ il costo dell'equity, $r_D$ il costo del debito, e $t$ l'aliquota fiscale sulle società (*corporate tax rate*).
+* **After-tax in WACC:** Gli interessi pagati sul debito sono deducibili fiscalmente (riducono l'imponibile fiscale dell'impresa). In termini economici, questo significa che **una parte degli interessi viene virtualmente "pagata" dallo Stato** sotto forma di minori tasse dovute. Di conseguenza, il costo netto effettivo del debito per l'azienda è inferiore rispetto al tasso richiesto dai creditori: si moltiplica $r_D$ per lo scudo fiscale $(1-t)$.
+* **Effetto della Leva Finanziaria sul WACC:**
+  * **La Leva come Arma a Doppio Taglio (Double-Edged Sword):** La leva finanziaria (calcolata come Debito / Equity, $D/E$) amplifica i risultati dell'impresa. In periodi positivi (quando la società performa bene), l'uso del debito amplifica notevolmente il rendimento degli azionisti (ROE). Al contrario, in scenari pessimistici, l'azienda rischia di subire forti perdite poiché gli interessi sono costi fissi obbligatori da pagare indipendentemente dai risultati operativi.
+  * **Secondo Modigliani-Miller (con tasse):** Poiché il debito genera lo scudo fiscale, all'aumentare della leva finanziaria il WACC diminuisce continuamente e il valore dell'impresa cresce.
+  * **Secondo la Teoria del Trade-off:** 
+    * *Inizialmente:* Aumentare la leva finanziaria riduce il WACC grazie allo scudo fiscale.
+    * *Oltre il punto ottimo:* Se il debito diventa troppo alto, il rischio di **dissesto finanziario** (financial distress) aumenta esponenzialmente. L'effetto della leva si inverte amplificando il rischio di default. Sia $r_D$ che $r_E$ salgono bruscamente, facendo salire il WACC e scendere il valore aziendale. Esiste quindi una struttura ottima del capitale che bilancia questi due fattori.
 
 ### 6. Three-Factor Model (Fama-French)
 * Modello empirico che estende il CAPM aggiungendo altri due fattori di rischio sistematico storicamente remunerati dal mercato:
