@@ -1,124 +1,114 @@
-﻿---
-tags: [personal-finance, portfolio-analysis, wealth-generation, risk-management, finance]
+---
+tags: [personal-finance, portfolio-analysis, wealth-generation, risk-management, finance, Monte-Carlo]
 aliases: [Analisi Portafoglio Haroun, Analisi Trading 212]
 date_created: 2026-05-20
-last_modified: 2026-05-20
-source_count: 5
+last_modified: 2026-05-22
+source_count: 6
 ---
 
 # Analisi del Portafoglio di Haroun Jaafar (Trading 212)
 
-Questo documento fornisce un'analisi quantitativa e strategica dettagliata del portafoglio di Haroun Jaafar, basata sul report ufficiale di **Trading 212** del 19 maggio 2026. L'analisi applica i modelli teorici presenti nei libri della sua libreria `raw/` (Malkiel, Graham, Taleb, Shen, Berk & DeMarzo).
+Questo documento fornisce un'analisi quantitativa e strategica dettagliata del portafoglio di Haroun Jaafar, basata sui dati reali estratti il **22 maggio 2026** tramite le API di Trading 212. L'analisi integra i modelli teorici della sua libreria `raw/` (Malkiel, Graham, Taleb) e le simulazioni previsionali Monte Carlo per il lungo termine.
 
 ---
 
-## 📊 Panoramica del Portafoglio
+## 📊 Panoramica del Portafoglio (Aggiornato al 22/05/2026)
 
-*   **Valore Totale dell'Account:** **€1,986.18**
-*   **Liquidità (EUR fondi):** €0.04 (Portafoglio interamente allocato, tasso di efficienza del capitale vicino al 100%)
-*   **Rendimento Aperto Totale:** **€-32.64**
-*   **Numero di Posizioni Attive:** 18
+*   **Valore Totale dell'Account:** **€2.000,58** (In crescita rispetto a €1.986,18 del 19 maggio)
+*   **Capitale Totale Investito:** **€2.095,26**
+*   **Rendimento Aperto Totale:** **€-94,68** (-4,52%)
+*   **Effetto Cambio (FX Impact):** **€+9,51**
+*   **Numero di Posizioni Attive:** 19 (Aggiunto `[[SDIV]]` rispetto al 19 maggio)
 
 ### Tabella Dettagliata delle Posizioni (Ordinata per Peso)
 
-| Strumento | Ticker | Valuta | Valore (EUR) | Peso (%) | Prezzo Medio | Prezzo Corrente | P&L Aperto (EUR) | Rendimento (%) |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Freedom Holding Corp** | FIG | USD | €1,015.74 | **51.14%** | $29.17 | $24.44 | €-187.75 | -16.2% |
-| **Samsung GDR** | SMSN | USD | €210.56 | **10.60%** | $981.58 | $4572.00 | €+160.63 | **+365.8%** |
-| **iShares Global Clean Energy** | INRG | GBX | €120.89 | **6.09%** | 560.78p | 915.00p | €+45.00 | +63.2% |
-| **iShares MSCI World** | SWDA | GBX | €103.13 | **5.19%** | 10256.31p | 10462.00p | €+2.43 | +2.0% |
-| **iShares S&P 500 Info Tech** | IITU | GBX | €99.67 | **5.02%** | 2269.71p | 3605.00p | €+35.53 | +58.8% |
-| **Vanguard FTSE Developed World**| VHVG | GBP | €96.20 | **4.84%** | £102.21 | £109.06 | €+6.34 | +6.7% |
-| **Arqit Quantum** | ARQQ | USD | €62.51 | **3.15%** | $14.51 | $12.87 | €-7.69 | -11.3% |
-| **iShares MSCI Emerging Markets**| EIMI | USD | €60.61 | **3.05%** | $43.86 | $53.03 | €+10.69 | +20.9% |
-| **iShares Listed Private Equity**| IPRV | GBX | €50.59 | **2.55%** | 2664.50p | 2356.70p | €-7.39 | -11.5% |
-| **Coinbase Global** | COIN | USD | €50.02 | **2.52%** | $328.86 | $189.01 | €-39.84 | -42.5% |
-| **Adobe Inc** | ADBE | USD | €49.84 | **2.51%** | $258.92 | $255.70 | €-0.08 | -1.2% |
-| **Duolingo** | DUOL | USD | €32.17 | **1.62%** | $181.61 | $113.29 | €-19.12 | -37.6% |
-| **Eutelsat Communications** | ETL | EUR | €21.34 | **1.07%** | €6.64 | €2.85 | €-28.51 | -57.2% |
-| **Vanguard Global Value Factor** | VGVA | GBP | €9.57 | **0.48%** | £20.97 | £20.04 | €-0.41 | -4.4% |
-| **Apple Inc** | AAPL | USD | €1.25 | **0.06%** | $227.04 | $297.46 | €+0.30 | +31.0% |
-| **BlackRock** | BLK | USD | €1.05 | **0.05%** | $969.66 | $1086.21 | €+0.08 | +12.0% |
-| **Microsoft** | MSFT | USD | €0.99 | **0.05%** | $332.98 | $423.41 | €+0.14 | +27.2% |
-| **Agape ATP Corp** | ATPC | USD | €0.01 | **0.00%** | $1111.08 | $2.05 | €-2.99 | **-99.8%** |
+| Strumento | Ticker | Valore (EUR) | Peso (%) | Capitale Investito (EUR) | P&L Aperto (EUR) | Rendimento (%) | FX Impact (EUR) |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Figma (Freedom Holding Corp)** | FIG | €907,34 | **45,35%** | €1.203,49 | €-296,15 | -24,61% | €+15,44 |
+| **Samsung Electronics GDR** | SMSNl | €221,56 | **11,07%** | €49,93 | €+171,63 | **+343,74%** | €-4,47 |
+| **iShares Core MSCI World** | SWDAl | €159,65 | **7,98%** | €155,79 | €+3,86 | +2,48% | €+0,92 |
+| **iShares Global Clean Energy** | INRGl | €126,62 | **6,33%** | €75,89 | €+50,73 | +66,85% | €-1,46 |
+| **iShares S&P 500 Info Tech** | IITU | €102,15 | **5,11%** | €64,14 | €+38,01 | +59,26% | €-1,09 |
+| **Vanguard FTSE Developed World**| VHVGl | €97,69 | **4,88%** | €89,86 | €+7,83 | +8,71% | €+0,72 |
+| **Arqit Quantum** | CENH | €81,81 | **4,09%** | €70,20 | €+11,61 | +16,54% | €+0,66 |
+| **iShares Core MSCI EM IMI** | EIMIl | €76,94 | **3,85%** | €65,28 | €+11,66 | +17,86% | €+0,50 |
+| **Coinbase Global** | COIN | €51,37 | **2,57%** | €89,86 | €-38,49 | -42,83% | €-2,33 |
+| **iShares Listed Private Equity**| IPRVl | €50,10 | **2,50%** | €57,98 | €-7,88 | -13,59% | €-0,51 |
+| **Adobe Inc** | ADBE | €47,89 | **2,39%** | €49,92 | €-2,03 | -4,07% | €+0,83 |
+| **Duolingo** | DUOL | €30,36 | **1,52%** | €51,29 | €-20,93 | -40,81% | €+0,57 |
+| **Eutelsat Communications** | ETLp | €28,00 | **1,40%** | €49,85 | €-21,85 | -43,83% | €0,00 |
+| **Vanguard Global Value Factor** | VGVAl | €9,77 | **0,49%** | €9,98 | €-0,21 | -2,10% | €+0,08 |
+| **Global X Superdividend** | SDIVm | €6,01 | **0,30%** | €6,03 | €-0,02 | -0,33% | €0,00 |
+| **Apple Inc** | AAPL | €1,29 | **0,06%** | €0,95 | €+0,34 | +35,79% | €+0,01 |
+| **BlackRock** | BLK | €1,03 | **0,05%** | €0,97 | €+0,06 | +6,19% | €-0,03 |
+| **Microsoft** | MSFT | €0,99 | **0,05%** | €0,85 | €+0,14 | +16,47% | €-0,06 |
+| **Agape ATP Corp** | ATPC | €0,01 | **0,00%** | €3,00 | €-2,99 | -99,67% | €-0,26 |
 
 ---
 
-## 🔍 I 4 Grandi Rischi Strutturali del Portafoglio
+## 🔍 Stato dei Rischi e Cambiamenti Chiave
 
-Analizzando il portafoglio alla luce della teoria finanziaria classica e moderna (`[[Topic_6_Risk_and_Return]]`), emergono quattro criticità principali:
+Confrontando la situazione attuale con quella del 19 maggio (`[[Topic_6_Risk_and_Return]]`), si notano sviluppi cruciali:
 
-### 1. Rischio di Concentrazione Estremo (Single-Stock Risk)
-*   **Il Dato:** La singola azione **Freedom Holding Corp (FIG)** rappresenta il **51.14%** del tuo intero portafoglio (€1,015.74 su €1,986.18).
-*   **La Teoria (`[[Topic_6_Risk_and_Return]]`):** Burton G. Malkiel (*A Random Walk Down Wall Street*) spiega che il rischio totale di un asset si divide in:
-    1.  *Rischio Sistematico (di mercato):* non eliminabile.
-    2.  *Rischio Idiosincratico (della singola azienda):* eliminabile al 100% tramite la diversificazione.
-*   **L'Impatto:** Allocare il 51% su un'unica società finanziaria altamente volatile espone Haroun a un rischio di rovina enorme. Se Freedom Holding dovesse subire una crisi regolatoria, una svalutazione o un attacco ribassista (come già accaduto storicamente ad opera di short-seller), metà del tuo intero capitale verrebbe compromessa. Il mercato **non remunera** questo rischio in eccesso perché avresti potuto diversificarlo gratuitamente.
+### 1. Rischio di Concentrazione in Riduzione (Miglioramento)
+*   **Il Cambiamento:** Il peso di **Freedom Holding Corp (FIG)** è sceso dal **51,14%** al **45,35%**.
+*   **La Causa:** Questo miglioramento è dovuto sia alla correzione naturale del prezzo di FIG (che ha ridotto il suo controvalore a €907,34), sia alla tua eccellente scelta di **acquistare circa €50 di MSCI World (SWDA)** e **€15 di Emerging Markets (EIMI)**. Questo è l'approccio corretto descritto da Malkiel per diluire il rischio idiosincratico.
 
-### 2. Squilibrio tra "Core" e "Speculazione"
-*   **Il Dato:** Oltre il **60%** del portafoglio è composto da singoli titoli azionari ad alto beta o altamente speculativi (FIG, ARQQ, COIN, DUOL, ETL, ATPC). I grandi ETF diversificati a livello globale (SWDA, VHVG, EIMI) costituiscono solo il **13%** circa del totale.
-*   **La Teoria (Benjamin Graham — *The Intelligent Investor*):** Graham traccia una linea netta tra *investimento* (che promette la salvaguardia del capitale e un rendimento adeguato basato su analisi fondamentali rigide) e *speculazione*.
-*   **L'Impatto:** Titoli come **ATPC (Agape ATP)** evidenziano graficamente questo rischio: acquistato a un prezzo medio di oltre $1111, oggi scambia a $2.05, con una svalutazione del **-99.8%** (capitale virtualmente azzerato). Anche **ARQQ (Arqit Quantum)** e **COIN (Coinbase)** presentano forti perdite aperte dovute all'acquisto in fasi di euforia o a valutazioni non sostenibili da fondamentali solidi (mancanza di *Margine di Sicurezza*).
+### 2. Consolidamento del compartimento "Core"
+*   L'incremento su **SWDA** (MSCI World, salito al **7,98%** del portafoglio) ed **EIMI** (MSCI EM, salito al **3,85%**) comincia a delineare una solida base globale a gestione passiva, fondamentale per proteggere il tuo capitale sul lungo termine.
 
-### 3. Ridondanza e Sovrapposizione degli Asset (Overlap)
-*   **Il Dato:** Detieni contemporaneamente **SWDA** (iShares MSCI World) e **VHVG** (Vanguard FTSE Developed World).
-*   **La Teoria (`[[Topic_6_Risk_and_Return]]`):** Entrambi gli ETF replicano lo stesso identico sottostante: le grandi e medie imprese dei paesi sviluppati. SWDA contiene circa 1400 titoli (MSCI World Index), mentre VHVG ne contiene circa 2000 (FTSE Developed Index). La sovrapposizione delle holding principali (Apple, Microsoft, Nvidia, Amazon, Alphabet) è superiore al **95%**.
-*   **L'Impatto:** Avere entrambi gli ETF non aumenta la tua diversificazione reale; aumenta solo la complessità di gestione del portafoglio e i costi di transazione impliciti.
-
-### 4. Presenza di Micro-Posizioni ("Dust" Positions)
-*   **Il Dato:** Apple (AAPL - €1.25), BlackRock (BLK - €1.05) e Microsoft (MSFT - €0.99) pesano ciascuna meno dello **0.06%** sul portafoglio.
-*   **L'Impatto:** Queste posizioni sono puramente estetiche. Anche se Microsoft o Apple dovessero raddoppiare il loro valore (+100%), l'impatto sul tuo portafoglio totale sarebbe di appena 1 euro. Al contrario, queste frazioni di azioni generano disordine visivo e frammentazione del capitale che potrebbe essere consolidato in ETF globali.
+### 3. Eccezionale rimbalzo strategico su Arqit Quantum (ARQQ / CENH)
+*   La scommessa speculativa su **ARQQ** ha registrato un rally spettacolare da $12,87 a $16,75, portando la posizione a **€81,81** con una performance in attivo del **+16,54%** (+€11,61), che ha mitigato le perdite su altre posizioni speculative come Coinbase (COIN) e Duolingo (DUOL).
 
 ---
 
-## 📈 Le Note Positive: I Tuoi "Campioni" di Rendimento
+## 🔮 Previsioni e Simulazioni a Lungo Termine (Monte Carlo)
 
-Nonostante gli squilibri, ci sono eccezionali risultati individuali che dimostrano buone intuizioni temporali:
-1.  **Samsung GDR (SMSN):** Un incredibile **+365.8%** (profitto aperto di **€160.63**). Questo investimento ha generato un valore straordinario, compensando molte delle perdite speculative.
-2.  **iShares Global Clean Energy (INRG):** Un solido **+63.2%** (+€45.00), che evidenzia come il trend della transizione ecologica abbia pagato bene nel periodo di detenzione.
-3.  **iShares S&P 500 Info Tech (IITU):** Un eccellente **+58.8%** (+€35.53), cavalcando l'onda del boom tecnologico statunitense.
+Utilizzando il modello econometrico del **Moto Browniano Geometrico (GBM)** implementato nello script [projection_10k.py](file:///c:/Users/jaafa/Downloads/llm_wiki-main/wiki/Script/projection_10k.py), abbiamo simulato **50.000 scenari futuri** a 5 anni (60 mesi) per calcolare la traiettoria probabilistica del portafoglio.
 
----
+La simulazione assume un portafoglio diversificato globale con un rendimento annuo atteso del **8,62%** e una volatilità del **16%**, calibrati sui dati storici dei tuoi asset.
 
-## 🛠️ Piano d'Azione Strategico (Ispirato alla tua Libreria)
+### 🎯 Obiettivo: Raggiungere €10.000 di Capitale
 
-Per "migliorare il portafoglio e generare molta ricchezza" in modo sostenibile, non serve cercare soluzioni complesse, ma applicare con rigore matematico la finanza classica. Ecco una proposta di ristrutturazione in 3 fasi:
+La tabella seguente mostra dopo quanti mesi ciascuno scenario ha una **probabilità del 50% (mediana)** di raggiungere o superare l'obiettivo di €10.000:
 
-### Fase 1: Consolidamento e Riduzione del Rischio (Graham & Taleb)
-*   **Azione A: Ridurre gradualmente l'esposizione su Freedom Holding (FIG).** Portare FIG da un estremo 51% a una quota più gestibile (es. 5-10% del portafoglio) per azzerare il rischio di rovina sul capitale complessivo.
-*   **Azione B: Pulizia delle posizioni "Dust".** Vendere le micro-posizioni inferiori a €5 (AAPL, MSFT, BLK, ATPC) per ripulire visivamente e operativamente l'account.
-*   **Azione C: Eliminare la ridondanza degli ETF Developed.** Scegliere uno solo tra **SWDA** e **VHVG** in cui far confluire la liquidità. SWDA è storicamente più liquido, VHVG ha spesso commissioni leggermente inferiori (TER). Scegline uno e liquida l'altro.
+| Scenario | Contributo Mensile (PAC) | Alpha Quant Atteso | Mese al 50% di Probabilità | Tempo Stimato | Data Stimata | Valore Mediano a 5 Anni (60 mesi) |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **1. Passivo (Buy & Hold)** | €100 / mese | -- | **Mese 59** | ~4,9 anni | Marzo 2031 | **€10.212** |
+| **2. Quant Attivo (+Alpha)** | €100 / mese | +2% annuo | **Mese 56** | ~4,7 anni | Dicembre 2030 | **€10.862** |
+| **3. Quant Attivo + PAC x2** | **€200 / mese** | +2% annuo | **Mese 33** | **~2,8 anni** | Febbraio 2029 | **€18.589** |
+| **4. Quant Attivo + PAC x5** | **€500 / mese** | +2% annuo | **Mese 15** | **~1,2 anni** | Agosto 2027 | **€41.466** |
 
-### Fase 2: Transizione verso un Modello "Core-Satellite" (Malkiel)
-Ristrutturare il portafoglio dividendo il capitale in due compartimenti chiari:
+### 📈 Traiettorie dello Scenario Passivo Core (PAC €100/mese)
 
-```
-                  PORTAFOGLIO TOTALE (€1,986.18)
-                                │
-         ┌──────────────────────┴──────────────────────┐
-         ▼                                             ▼
-  CORE (70% - 80%)                              SATELLITE (20% - 30%)
-  Diversificazione Totale                       Speculazione Controllata
-  • 80% ETF MSCI World (SWDA o VHVG)            • Singoli stock (SMSN, ADBE)
-  • 20% ETF Emerging Markets (EIMI)             • Settoriali (IITU, INRG, IPRV)
-                                                • Scommesse speculative (ARQQ, COIN)
-```
+In uno scenario puramente passivo e diversificato con un PAC di €100/mese, ecco i valori probabilistici attesi nel tempo:
 
-*   **Il Core (70-80%):** Costituito solo da **SWDA** (o VHVG) ed **EIMI**. Questa è la tua "macchina da ricchezza passiva" a lungo termine. Copre oltre 3000 aziende in tutto il pianeta.
-*   **Il Satellite (20-30%):** Qui puoi allocare le tue idee a alto rendimento (come la fantastica posizione su Samsung, o le scommesse tecnologiche come Coinbase e Arqit), sapendo che anche se una di esse dovesse fallire (come ATPC), il tuo patrimonio complessivo rimarrà al sicuro.
-
-### Fase 3: Il Motore dell'Interesse Composto (Kristy Shen)
-*   **Il Piano di Accumulo (PAC):** Come spiegato in *Quit Like a Millionaire*, la ricchezza non si genera indovinando il prossimo titolo che farà +1000%, ma automatizzando il processo.
-*   **Automatizzazione:** Imposta un bonifico automatico ricorrente su Trading 212 ogni mese (es. €100 o €200, a seconda delle tue possibilità) e configuralo per acquistare automaticamente le quote del tuo "Core" (SWDA + EIMI). Questo metodo (chiamato *Dollar Cost Averaging*) azzera l'ansia da tempismo di mercato e sfrutta l'interesse composto sul lungo termine.
+*   **A 12 mesi (Maggio 2027):** Valore mediano atteso **€3.418** (Capitale investito: €3.220 | Guadagno atteso: +6,1%). Con il 90% di probabilità il portafoglio sarà compreso tra €2.769 e €4.252.
+*   **A 36 mesi (Maggio 2029):** Valore mediano atteso **€6.559** (Capitale investito: €5.620 | Guadagno atteso: +16,7%). Inizia ad esserci una probabilità del 2,1% di superare già i €10.000.
+*   **A 60 mesi (Aprile 2031):** Valore mediano atteso **€10.212** (Capitale investito: €8.020 | Guadagno netto mediano di **€2.192**, pari al **+27,3%** di profitto cumulato grazie all'interesse composto).
 
 ---
 
-## 📖 Fonti del Framework Analitico
-*   [[Fonte_Corporate_Finance_Book]] → Per l'ottimizzazione del portafoglio e la diversificazione del rischio idiosincratico.
-*   [[Fonte_Reddit_Trading_Floor_AMA]] → Per l'analisi del comportamento e della volatilità dei singoli asset.
-*   *A Random Walk Down Wall Street* (Malkiel) → Fondamento della transizione verso ETF a gestione passiva.
-*   *The Intelligent Investor* (Graham) → Principio del Margine di Sicurezza e distinzione tra investimento e speculazione.
+## 🛠️ Leva Quantitativa: Come Velocizzare il Traguardo?
+
+Per accelerare la crescita dal punto di vista matematico, abbiamo due leve principali:
+
+### Leva A: Aumentare il Contributo Mensile (La leva più potente)
+Raddoppiare il PAC a **€200/mese** riduce il tempo per raggiungere €10.000 da 59 mesi a **33 mesi (da 5 anni a meno di 3 anni!)**, aumentando il valore mediano a 5 anni fino a **€18.589**.
+
+### Leva B: Generare Alpha Quantitativo (Ottimizzazione del portafoglio)
+Applicando modelli quantitativi attivi per ottenere un extra-rendimento del **+2% annuo** (Alpha), riduciamo i tempi di attesa. Le strategie implementabili nel nostro framework includono:
+1.  **Fama-French 5-Factor Screening:** Selezione sistematica degli asset sottostanti in base a Size, Value e Profitability.
+2.  **Factor Momentum:** Rotazione mensile del capitale verso gli ETF/settori con il momentum a 6-12 mesi più forte.
+3.  **Dollar Cost Averaging Ottimizzato:** Incrementare l'importo del PAC nei mesi in cui la volatilità di mercato (VIX) è insolitamente alta (comprare a sconto durante il panico).
+
+---
+
+## 📖 Fonti del Framework Econometrico
+*   `[[Fonte_Corporate_Finance_Book]]` → Teoria del portafoglio e calcolo del Moto Browniano Geometrico per i rendimenti azionari.
+*   *Quit Like a Millionaire* (Kristy Shen) → Effetto dell'interesse composto e calcolo del PAC automatico.
+*   [projection_10k.py](file:///c:/Users/jaafa/Downloads/llm_wiki-main/wiki/Script/projection_10k.py) → Lo script Monte Carlo del nostro vault per le proiezioni quantitative.
 
 ## Fonti
-* [[raw/f622fc49-8a32-46b5-bf7d-77a21e56ac5b_Chapter_13)_Political_and_Institutional_Limits_to_the_Rise_of_Platform_Work..md]]
-* [[wiki/Fonti/Fonte_Sociologia_Digitalizzazione.md]]
+* [[wiki/Script/portfolio_status.py]]
+* [[wiki/Script/projection_10k.py]]
