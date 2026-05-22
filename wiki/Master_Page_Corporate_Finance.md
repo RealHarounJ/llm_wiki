@@ -1,4 +1,4 @@
----
+﻿---
 tags: [esame, dashboard, corporate-finance]
 aliases: [Cruscotto Esame, Preparazione Finale]
 ---
@@ -40,3 +40,7 @@ Verifica la tua comprensione usando i file interattivi:
 
 ---
 **Ultimo Aggiornamento Ingest:** 08/05/2026 (Inclusi tutti i file "Solution" e il manuale completo).
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

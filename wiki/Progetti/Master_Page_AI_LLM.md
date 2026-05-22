@@ -1,4 +1,4 @@
----
+﻿---
 tags: [ai, llm, master-page]
 aliases: [AI Master, LLM Master]
 date_created: 2026-05-07
@@ -49,3 +49,6 @@ Cruscotto centrale per lo studio dell'intelligenza artificiale e dei Large Langu
 - **AI in Education (UNESCO):** `raw/Artificial intelligence in education.md`
 - **K-Means (AI applic.):** `raw/7 Most Asked Questions on K-Means Clustering.md`
 - **Where teams and agents work together:** `wiki/Fonti/Where teams and agents work together *.md`
+
+## Fonti
+* [[wiki/Fonti/Wikipedia_GPT.md]]

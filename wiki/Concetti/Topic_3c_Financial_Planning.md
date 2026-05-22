@@ -1,4 +1,4 @@
----
+﻿---
 tags: [finanza, corporate-finance, financial-planning, efn]
 date_created: 2026-05-07
 source: "raw/Teaching materials of Corporate Finance-20260505/Topic 3c"
@@ -38,3 +38,7 @@ Il modello assume che **asset e passivi crescano proporzionalmente alle vendite*
 - [[Topic_3_Statement_of_Cash_Flows]]
 - [[Topic_3d_Cash_Budgeting]]
 - [[Topic_2_Financial_Analysis]]
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

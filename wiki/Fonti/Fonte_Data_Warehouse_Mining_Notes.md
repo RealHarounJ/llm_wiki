@@ -1,4 +1,4 @@
----
+﻿---
 tags: [fonte, data-warehouse, data-mining, appunti]
 date_created: 2026-05-14
 ---
@@ -19,3 +19,6 @@ date_created: 2026-05-14
 - Tipi di apprendimento: Classificazione, Clustering, Regole associative.
 
 👉 **Cruscotto principale:** [[Master_Page_Data_Mining]]
+
+## Fonti
+* [[raw/Note Taking & Research Assistant Powered by AI.md]]

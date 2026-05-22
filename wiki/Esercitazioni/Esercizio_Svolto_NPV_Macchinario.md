@@ -1,4 +1,4 @@
----
+﻿---
 tags: [esercitazione, npv, capital-budgeting, excel]
 aliases: [Esercizio NPV Macchinario]
 ---
@@ -40,3 +40,7 @@ $$OCF = (800 - 40 - 250) \cdot (1 - 0.35) + 250 = 331.5 + 250 = 581.5$$
 **Vedi anche:**
 - [[Topic_5_NPV_Investment_Criteria]]
 - [[Analisi_di_Sensibilita_e_Scenari]]
+
+## Fonti
+* [[raw/f622fc49-8a32-46b5-bf7d-77a21e56ac5b_Chapter_13)_Political_and_Institutional_Limits_to_the_Rise_of_Platform_Work..md]]
+* [[wiki/Fonti/Fonte_Sociologia_Digitalizzazione.md]]

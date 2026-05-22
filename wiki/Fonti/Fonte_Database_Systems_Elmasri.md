@@ -1,4 +1,4 @@
----
+﻿---
 tags: [fonte, database, data-mining, libro]
 date_created: 2026-05-07
 ---
@@ -23,3 +23,6 @@ date_created: 2026-05-07
 La sessione Gemini (`wiki/Fonti/‎Google Gemini.md`) contiene una simulazione estesa del Cap.28 con spiegazioni interattive e applicazione dell'algoritmo ID3 su dataset di esempio.
 
 👉 **Cruscotto principale:** [[Master_Page_Data_Mining]]
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

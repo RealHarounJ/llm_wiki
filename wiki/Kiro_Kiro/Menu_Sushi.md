@@ -1,4 +1,4 @@
----
+﻿---
 tags: [menu, sushi, kiro-kiro]
 aliases: [Sushi Menu, Sushi Kiro Kiro]
 ---
@@ -38,3 +38,6 @@ Una selezione di sushi fusion e special rolls preparati con materie prime fresch
 
 ---
 **Torna al:** [[Kiro_Kiro_Hub]]
+
+## Fonti
+* [[raw/Kiro Kiro.md]]

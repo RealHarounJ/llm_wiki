@@ -1,4 +1,4 @@
----
+﻿---
 tags: [finanza, corporate-finance, cash-budgeting, pianificazione]
 date_created: 2026-05-07
 source: "raw/Teaching materials of Corporate Finance-20260505/Topic 3d"
@@ -65,3 +65,7 @@ Se il cash budget mostra un deficit:
 - [[Topic_3c_Financial_Planning]]
 - [[Topic_3_Statement_of_Cash_Flows]]
 - [[Corporate_Finance_Hub]]
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

@@ -1,4 +1,4 @@
----
+﻿---
 tags: [ai, llm, semantic-search, embedding, nlp]
 date_created: 2026-05-07
 source: "raw/How is LLM Changing Search on the Web.md"
@@ -53,3 +53,6 @@ Database Vettoriale ← kNN Search → Top-k Documenti Simili
 - [[RAG]] — Semantic Search è il cuore del Retrieval in RAG
 - [[LLM_Changing_Search]]
 - [[GPT_Models]]
+
+## Fonti
+* [[wiki/Fonti/Wikipedia_GPT.md]]

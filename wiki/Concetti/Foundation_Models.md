@@ -1,4 +1,4 @@
----
+﻿---
 tags: [concept, AI, foundation-models]
 source_count: 1
 last_modified: 2026-05-05
@@ -26,3 +26,6 @@ Large models often display capabilities that are not present in smaller versions
 
 ---
 *Source: [[Wikipedia_GPT]]*
+
+## Fonti
+* [[wiki/Fonti/Wikipedia_GPT.md]]

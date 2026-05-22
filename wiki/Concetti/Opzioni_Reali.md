@@ -1,4 +1,4 @@
----
+﻿---
 tags: [finanza, capital-budgeting, real-options, decision-trees]
 date_created: 2026-05-11
 source: "raw/extracted/Chapter_10.md"
@@ -35,3 +35,7 @@ Strumento grafico per mappare le decisioni sequenziali e le incertezze nel tempo
 > [!TIP]
 > **NPV Strategico = NPV Statico + Valore delle Opzioni Reali**
 > Il valore di un progetto è spesso più alto di quello calcolato col semplice DCF perché il DCF ignora la capacità del manager di reagire agli eventi.
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

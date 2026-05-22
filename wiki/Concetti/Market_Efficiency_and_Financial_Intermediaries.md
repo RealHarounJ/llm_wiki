@@ -1,4 +1,4 @@
----
+﻿---
 tags: [corporate-finance, efficient-markets, equity, financial-intermediaries, exam-prep]
 aliases: [EMH, Market Efficiency, Mutual Funds, Decision Trees]
 ---
@@ -56,3 +56,6 @@ Raccolgono soldi dai risparmiatori e li allocano a chi ne ha bisogno (aziende, g
     *   *Vantaggi:* Gestione professionale e diversificazione anche per chi investe pochissimo (es. 1000€). Sono *open-ended*: puoi comprare o farti rimborsare le quote in qualsiasi momento in base al NAV (Net Asset Value).
 2.  **Pension Funds (Fondi Pensione):** Raccolgono soldi dai lavoratori durante la vita lavorativa per pagare una pensione. Il rischio dipende da come i gestori investono quei soldi.
 3.  **Banche e Assicurazioni:** Le banche prestano i depositi; le assicurazioni gestiscono i premi per coprire rischi futuri.
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

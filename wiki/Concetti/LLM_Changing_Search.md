@@ -1,4 +1,4 @@
----
+﻿---
 tags: [ai, llm, search, seo, web]
 date_created: 2026-05-07
 source: "raw/How is LLM Changing Search on the Web.md (Analytics Insight)"
@@ -76,3 +76,6 @@ I LLM stanno evolvendo in **Large Multimodal Models (LMM)** che:
 - [[RAG]]
 - [[Semantic_Search]]
 - [[LLM_Hub]]
+
+## Fonti
+* [[wiki/Fonti/Wikipedia_GPT.md]]

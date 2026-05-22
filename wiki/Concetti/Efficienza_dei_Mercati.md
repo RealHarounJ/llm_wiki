@@ -1,4 +1,4 @@
----
+﻿---
 tags: [finanza, mercati, efficienza]
 aliases: [Efficient Market Hypothesis, EMH]
 ---
@@ -34,3 +34,6 @@ Contrasta l'ipotesi di efficienza pura, evidenziando che gli investitori non son
 **Vedi anche:**
 - [[Valutazione_Titoli]]
 - [[Ciclo_di_Vita_e_Finanziamento]]
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

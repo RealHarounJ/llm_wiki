@@ -1,4 +1,4 @@
----
+﻿---
 tags: [source, AI, NLP, Wikipedia]
 last_modified: 2026-05-05
 original_file: "Generative pre-trained transformer.md"
@@ -27,3 +27,6 @@ A comprehensive overview of GPT models, their history, architecture, and impact.
 
 ---
 *Source file: [[Generative pre-trained transformer]]*
+
+## Fonti
+* [[wiki/Fonti/Wikipedia_GPT.md]]

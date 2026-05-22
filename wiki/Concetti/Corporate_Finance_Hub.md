@@ -1,4 +1,4 @@
----
+﻿---
 tags: [finanza, corporate-finance, hub]
 aliases: [Finanza Aziendale, Hub CF]
 date_created: 2026-05-07
@@ -56,3 +56,7 @@ Collegamento centrale di tutti i concetti di Corporate Finance. Usa questa pagin
 
 ## 🎯 Progetto
 - [[wiki/Master_Page_Corporate_Finance]] — Cruscotto esame e simulazioni
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

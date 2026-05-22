@@ -1,4 +1,4 @@
----
+﻿---
 tags: [data-mining, clustering, k-means, ml]
 date_created: 2026-05-07
 source: "wiki/Fonti/‎Google Gemini.md (Capitolo 28.4 Elmasri)"
@@ -49,3 +49,6 @@ L'algoritmo converge verso un **minimo locale** (non necessariamente globale).
 - [[Classificazione_Decision_Tree]]
 - [[Tecniche_di_Data_Mining]]
 - [[Fonte_Database_Systems_Elmasri]]
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

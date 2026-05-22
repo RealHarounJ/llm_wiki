@@ -1,4 +1,4 @@
----
+﻿---
 tags: [data-mining, database, sql, master-page, esame]
 aliases: [Data Mining Master, Database Master]
 date_created: 2026-05-07
@@ -55,3 +55,6 @@ Cruscotto centrale per lo studio di Data Mining e Database (Elmasri & Navathe).
 - **Sessione Gemini (Data Mining cap 28):** `wiki/Fonti/‎Google Gemini.md`
 - **Data Mining Techniques:** `wiki/Fonti/Data Mining Techniques.md`
 - **K-Means deep dive:** `wiki/Fonti/Data mining.md`
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

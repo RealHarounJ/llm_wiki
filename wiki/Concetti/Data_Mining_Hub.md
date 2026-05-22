@@ -1,4 +1,4 @@
----
+﻿---
 tags: [data-mining, database, sql, hub]
 aliases: [Data Mining Hub]
 date_created: 2026-05-07
@@ -37,3 +37,6 @@ Hub centrale per tutto ciò che riguarda la gestione dei dati, l'analisi e i dat
 
 ## 🎯 Progetto
 - [[Master_Page_Data_Mining]] — Cruscotto di studio e simulazioni
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

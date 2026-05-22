@@ -1,4 +1,4 @@
----
+﻿---
 tags: [ai, llm, gpt, transformer, storia]
 aliases: [GPT Models, ChatGPT, Foundation Models]
 date_created: 2026-05-07
@@ -67,3 +67,6 @@ Tecnica di prompting in cui il modello genera **passi intermedi di ragionamento*
 - [[Transformer_Architecture]]
 - [[RAG]]
 - [[LLM_Changing_Search]]
+
+## Fonti
+* [[wiki/Fonti/Wikipedia_GPT.md]]

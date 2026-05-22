@@ -1,4 +1,4 @@
----
+﻿---
 tags: [finanza, capital-budgeting, risk-analysis, sensitivity]
 date_created: 2026-05-11
 source: "raw/extracted/Chapter_10.md"
@@ -38,3 +38,6 @@ Misura la sensibilità del profitto alle variazioni delle vendite. Dipende dalla
 *   **Formula DOL (Degree of Operating Leverage):**
     $$DOL = \frac{\% \text{ variazione Profitti}}{\% \text{ variazione Vendite}}$$
 *   **Significato:** Un'azienda con alti costi fissi ha un DOL elevato: un piccolo calo di vendite causa un crollo dei profitti, ma un piccolo aumento causa un "killing" (guadagni massicci).
+
+## Fonti
+* [[raw/Note Taking & Research Assistant Powered by AI.md]]

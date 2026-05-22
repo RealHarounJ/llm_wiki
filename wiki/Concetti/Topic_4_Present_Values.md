@@ -1,4 +1,4 @@
----
+﻿---
 tags: [finanza, tvm, present-values, topic-4]
 date_created: 2026-05-07
 source: "raw/Teaching materials of Corporate Finance-20260505/Topic 4"
@@ -37,3 +37,7 @@ dove m = numero di capitalizzazioni annue.
 - [[Topic_5_NPV_Investment_Criteria]]
 - [[Topic_7_8_CAPM_Cost_of_Capital]]
 - [[Corporate_Finance_Hub]]
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

@@ -136,12 +136,179 @@ aw/Fundamentals of Database Systems (Elmasri) Cap. 24
 
 **Domande esame coperte:** Q1 Labour Market, Q2 Welfare State, Q3 Healthcare (Esame 12 Giugno 2024)
 
-## [2026-05-18] INGEST | Data Warehouse � Teoria Tecnica e Modelli
+## [2026-05-18] INGEST | Data Warehouse  Teoria Tecnica e Modelli
 
 **Operazione:** Creazione e sintesi degli appunti di Data Warehouse a seguito della simulazione d'esame.
 **Fonte:** Sessione di studio interattiva + Appunti raw in DATA Warehouse.md
 
-**File creati � wiki/Concetti/:**
-- `Data_Warehouse.md` � Super Technical Theory (OLTP vs OLAP, Inmon, ETL, MDM, MOLAP/ROLAP/HOLAP, Star vs Snowflake Schema)
+**File creati  wiki/Concetti/:**
+- `Data_Warehouse.md`  Super Technical Theory (OLTP vs OLAP, Inmon, ETL, MDM, MOLAP/ROLAP/HOLAP, Star vs Snowflake Schema)
 
 **Wikilinks creati:** [[OLTP]], [[OLAP]], [[ETL]], [[Master Data Management]], [[MOLAP]], [[ROLAP]], [[HOLAP]], [[Star Schema]], [[Snowflake Schema]], [[Fact Constellation]]
+
+---
+
+## [2026-05-19] INGEST | Industrial Organization & Data Mining Chapter 28
+
+**Operazione:** Creazione delle schede di concetto per Industrial Organization (Lezioni 1-16) e della sessione di studio per Data Mining.
+**Fonti:** Slide corso IO, libro Richards et al. (2014) + Capitolo 28 Elmasri & Navathe (Data Mining).
+
+**File creati/modificati:**
+- `wiki/Progetti/Master_Page_Industrial_Organization.md` — Cruscotto dello studio di IO
+- `wiki/Concetti/IO_01_Microeconomics.md` ... `IO_08_Econometrics.md` — Concetti chiave delle lezioni
+- `wiki/Esercitazioni/Data_Mining_Full_Session.md` — Cheat sheet e sintesi teorica KDD, Apriori, Decision Trees, K-Means, BIRCH, Genetic Algorithms.
+- `index.md` — Aggiornato catalogo
+
+---
+
+## [2026-05-20] STUDY | Esercizio 1 — Conference Review Database (ER Schema)
+
+**Operazione:** Analisi dei requisiti e stesura del diagramma ER concettuale e logico per la gestione delle sottomissioni e revisioni articoli.
+**Fonte:** Esercizio 1 da traccia d'esame.
+
+**File creati/modificati:**
+- `wiki/Esercitazioni/Esercizio_Conference_Review.md` — Analisi dettagliata, diagramma ER Crow's Foot e Chen (Mermaid), schema logico e gestione vincoli.
+- `index.md` — Indicizzazione della sezione Esercitazioni.
+
+---
+
+## [2026-05-20] STUDY | Car Dealer Mapping, Netflix ER & NoSQL Advanced Masterclass
+
+**Operazione:** Risoluzione esercizio di mappatura avanzata (Car Dealer), modellazione ER streaming (Netflix), chiarimenti sui vincoli relazionali di integrità (PK/FK) e stesura della Masterclass sui database NoSQL avanzati.
+**Fonte:** Esercizio 2 da traccia d'esame, traccia Netflix ed Elmasri & Navathe Cap. 24.
+
+**File creati/modificati:**
+- `wiki/Esercitazioni/Esercizio_Car_Dealer_Mapping.md` — Mappatura EER a Relazionale passo-passo, opzione 8A per superclasse/sottoclassi, risoluzione della chiave primaria su relazione ternaria con partecipazione (1,1).
+- `wiki/Esercitazioni/Esercizio_Netflix_ER.md` — Requisiti, modello ER e schema relazionale per una piattaforma di streaming.
+- `wiki/Concetti/NoSQL_Databases.md` — Riscritto da zero in italiano per fungere da Masterclass NoSQL (Consistent Hashing, Ring Topology, Virtual Nodes, Quorum N-R-W e Orologi Vettoriali).
+- `index.md` — Aggiornati riferimenti e descrizioni catalogo.
+
+---
+
+## [2026-05-20] STUDY | SQL DML Operations and Data Warehouse Theory Quiz
+
+**Operazione:** Risoluzione interattiva di query DML (INSERT, UPDATE, DELETE) e ripasso dei concetti teorici fondamentali sul Data Warehouse.
+**Fonte:** Esercitazioni di SQL e quiz di teoria DWH (OLAP vs OLTP, ETL loading precedence, MDM Backflushing, Star vs Snowflake ROLAP, ed OLAP Operations).
+
+**File modificati:**
+- `log.md` — Aggiornato il registro delle sessioni di studio.
+
+---
+
+## [2026-05-20] INGEST | Hedge Funds & Group 11 Comparative Digitalization Case Study
+
+- **Fonti raw:** `raw/How can I start hedgefund.md`, `raw/Step-by-Step Guide to Starting a Hedge Fund.md`, `raw/I have worked on trading floor in investment banks for over a decade, ask me anything.md`, `raw/group_11_extracted.txt`.
+- **File creati:**
+  - `wiki/Fonti/Fonte_Reddit_Hedge_Fund_Start.md`
+  - `wiki/Fonti/Fonte_Investopedia_Hedge_Fund_Guide.md`
+  - `wiki/Fonti/Fonte_Reddit_Trading_Floor_AMA.md`
+  - `wiki/Concetti/Hedge_Funds_and_Trading_Desks.md`
+  - `wiki/Fonti/Fonte_Presentazione_Gruppo_11.md`
+  - `wiki/Sociologia/Caso_Studio_Digitalizzazione_Comparata.md`
+- **File modificati:**
+  - `wiki/Sociologia/Q1_Digitalization_and_Labour_Market.md` (integrato impatto RBTC coreano: -73k impieghi manifatturieri vs +492k servizi)
+  - `wiki/Sociologia/Q2_Digitalization_and_Welfare_State.md` (integrato AI Basic Act e "My Data" Welfare Portal coreani)
+  - `wiki/Sociologia/Q3_Health_Care_and_Digitalization.md` (integrato calo spesa istruzione -4.4% in Arabia Saudita come validazione di Crowding Out)
+  - `index.md` (indicizzato tutti i 6 nuovi file)
+  - `log.md` (questo file)
+
+---
+
+## [2026-05-20] STUDY | Analisi Quantitativa del Portafoglio di Haroun (Trading 212)
+
+- **Operazione:** Analisi e strutturazione del portafoglio personale di Trading 212, evidenziando i rischi di concentrazione e proponendo una strategia Core-Satellite basata sulla finanza classica.
+- **File creati:** `wiki/Progetti/Analisi_Portafoglio_Haroun.md` [NEW]
+- **File modificati:**
+  - `index.md` (registrato il nuovo progetto di analisi finanziaria)
+  - `log.md` (questo file)
+
+---
+
+## [2026-05-20] DEV | Creazione Script di Rebalancing Portafoglio Haroun
+
+- **Operazione:** Sviluppo di uno script Python locale per il calcolo del "No-Sell Rebalancing" per gli investimenti mensili ricorrenti del PAC, pre-popolato con le posizioni e i pesi reali e allineato ai target del modello Core-Satellite.
+- **File creati:** `wiki/Script/rebalance_portfolio.py` [NEW]
+- **File modificati:**
+  - `index.md` (indicizzato il nuovo script in libreria)
+  - `log.md` (questo file)
+
+---
+
+## [2026-05-21] STUDY | Interactive Sociology & C1 English Tutoring: Welfare State Dilemmas & Essays
+
+- **Operazione:** Sessione di studio interattiva e stesura di risposte d'esame complete in inglese accademico C1. Redatti i tre saggi d'esame completi ("Full Exam-Ready Essay Answers") per la Domanda 1 (Mercato del Lavoro: SBTC vs RBTC, polarizzazione, gig economy), la Domanda 2 (Welfare State: Veil of Ignorance, ADM, pensioni e sindacati, Social Investment vs UBI) e il Caso Studio Comparato del Gruppo 11 (Corea del Sud vs Arabia Saudita: Vision 2030, Baumol's Cost Disease, Crowding Out e AI Basic Act).
+- **File modificati:**
+  - `wiki/Sociologia/Q1_Digitalization_and_Labour_Market.md` (aggiunta la sezione di saggio d'esame completo ottimizzato in inglese C1)
+  - `wiki/Sociologia/Q2_Digitalization_and_Welfare_State.md` (aggiunto il saggio d'esame completo in inglese C1, più l'integrazione di tutte le risposte ottimizzate)
+  - `wiki/Sociologia/Caso_Studio_Digitalizzazione_Comparata.md` (aggiunto il saggio d'esame completo in inglese C1 con l'analisi empirica dettagliata della presentazione)
+  - `log.md` (questo file)
+
+---
+
+## [2026-05-21] DEV | Vault Linting & Structural Cleanup
+
+- **Operazione:** Bonifica strutturale completa (linting) del vault Obsidian per eliminare ridondanze, allineare la struttura a quanto sancito da `CLAUDE.md`, rimuovere file vuoti o non tracciati e garantire la perfetta consistenza delle relazioni.
+- **Cartelle ed Elementi Eliminati:**
+  - Eliminata la cartella cache duplicata `_fit/` (2.117 file obsoleti generati da plugin esterni).
+  - Rimossa la cartella vuota `Notion/`.
+  - Eliminato il file corrotto duplicato `wiki/Fonti/‎Google Gemini.md` (ritagli di sessioni non strutturati).
+- **Riorganizzazione Fonti Notion (Database e Data Mining):**
+  - Rinominati e formattati 10 file grezzi in `wiki/Fonti/` (da `Where teams and agents work together*.md` e `data mining 1.md` a `Fonte_Elmasri_Cap*.md`), inserendo H1 significativi, correggendo l'HTML Notion, aggiungendo YAML frontmatter valido e agganciando la sezione `## Fonti` alla risorsa originaria `Fundamentals of Database Systems`.
+- **Creazione Nuove Pagine Concettuali:**
+  - `wiki/Concetti/ETL_Process.md` (Pipeline ETL, MDM, Golden Record, Backflushing).
+  - `wiki/Concetti/Transformer_Architecture.md` (Self-attention, Positional Encoding, Multi-head, Encoder-Decoder).
+  - `wiki/Concetti/Architettura_DBMS.md` (Architettura a tre schemi, indipendenza fisica/logica dei dati, ruoli DBA/designer).
+- **Automazione & Metadati:**
+  - Esecuzione di script custom PowerShell per normalizzare i frontmatter YAML (`tags`, `aliases`, `date_created`, `last_modified`, `source_count`) ed eliminare intestazioni orfane o malformate (es. raddoppio intestazioni `## ## Fonti`).
+- **Sincronizzazione Indici:**
+  - Aggiornato e allineato integralmente `index.md` con l'inclusione di tutti i 10 file Elmasri rinominati, 13 concetti di Corporate Finance prima non indicizzati, guide linguistiche (`wiki/Lingua/`), ristoranti (`wiki/Kiro_Kiro/`), schede esercitazione ed `ETL_Process`, `Transformer_Architecture`, `Architettura_DBMS`.
+- **Verifica Finale:**
+  - Eseguito `lint_check.ps1` ottenendo il **100% di conformità**: 0 file vuoti, 0 file orfani/non collegati, 0 dead link, 0 violazioni strutturali su 144 file markdown totali in `wiki/`.
+
+---
+
+## [2026-05-21] INGEST | Quantitative Portfolio Management — Ingestione Completa (Fasi 1, 2, 3, 4)
+
+- **Fonti raw:** `raw/Quantitative_Equity_Portfolio_Management_Chincarini.md`, `raw/Active_Portfolio_Management_Grinold_Kahn.md`
+- **File creati — wiki/Fonti/:**
+  - `Fonte_Chincarini_QEPM.md` — Scheda fonte completa per Ludwig Chincarini's QEPM (2023)
+  - `Fonte_Grinold_Kahn_APM.md` — Scheda fonte per Grinold & Kahn's Active Portfolio Management con dizionario bilingue di finanza quantitativa (Cinese ➔ Inglese)
+- **File creati — wiki/Concetti/:**
+  - **Fase 1 (Fundamentals & IR)**: 
+    - `Information_Ratio_IR.md` — Rigorosa trattazione teorica e matematica di ex-ante ed ex-post Information Ratio, confronto con Sharpe Ratio e standard empirici.
+    - `Fundamental_Law_of_Active_Management.md` — La legge fondamentale di Grinold nelle versioni base ed estesa con Transfer Coefficient ($TC$), Information Coefficient ($IC$) e Breadth ($BR$).
+  - **Fase 2 (Factor Modeling & Screening)**:
+    - `Z_Score_Stock_Screening.md` — Punteggi Z-score singoli ed aggregati, Winsorization, standardizzazione robusta MAD e conversione in rendimenti attesi.
+    - `Fundamental_Factor_Models_Advanced.md` — Regressione a fattori cross-sectional via OLS e MAD pesato, errori standard HAC (Newey-West), decomposizione del rischio attivo.
+  - **Fase 3 (Portfolio Optimization & Market Neutral)**:
+    - `Portfolio_Weights_Optimization.md` — Formulazione QP di media-varianza ed active risk (tracking error), vincoli reali, costi di transazione lineari e non lineari (market impact).
+    - `Market_Neutral_Portfolios.md` — Dollar neutrality vs Beta neutrality, 2-Alpha mojo, analisi della varianza e dell'IR in leva, Prime Brokerage, prestito titoli e Portable Alpha.
+  - **Fase 4 (Performance Attribution & Bayesian Alpha)**:
+    - `Bayesian_Portfolio_Mojo.md` — priorità bayesiana, quantificazione di prior qualitativi da stock screens/rankings/raccomandazioni (prior Chincarini), e il Modello di Black-Litterman matriciale.
+    - `Performance_Attribution_Active.md` — Decomposizione classica di Brinson-Hood-Beebower (BHB) e Brinson-Fachler (BF), e attribuzione quantitativa multi-fattoriale del rendimento attivo ex-post.
+- **File modificati:**
+  - `index.md` (registrate e indicizzate tutte le nuove fonti e note concettuali)
+  - `log.md` (questo file)
+
+---
+
+## [2026-05-21] INGEST | Bytewax Real-Time Datasets List
+
+- **Fonte raw:** `raw/bytewaxawesome-public-real-time-datasets A list of publicly available datasets with real-time data maintained by the team at bytewax.io.md`
+- **File creati — wiki/Fonti/:**
+  - `Fonte_Bytewax_Realtime_Datasets.md` — Scheda fonte con mappatura di feed per finanza quantitativa e sentiment
+- **File modificati:**
+  - `index.md` (registrata e indicizzata la nuova fonte nel catalogo centrale)
+  - `log.md` (questo file)
+
+---
+
+## [2026-05-21] DEV | Integrazione Polygon API Key e Script Market Data
+
+- **Operazione:** Configurazione delle credenziali API dell'utente e sviluppo dello script per l'ingestione e l'analisi quantitativa.
+- **File creati:**
+  - `.env` [NEW] — Contiene in modo sicuro la chiave API di Polygon.io.
+  - `wiki/Script/fetch_market_data.py` [NEW] — Script Python autoinstallante (standard library) per l'estrazione di dati storici e real-time e calcolo delle metriche statistiche MAD e Z-Score robusti.
+- **File modificati:**
+  - `index.md` (registrato il nuovo script nel catalogo centrale)
+  - `log.md` (questo file)

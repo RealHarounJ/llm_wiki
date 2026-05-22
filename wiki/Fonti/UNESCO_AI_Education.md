@@ -1,4 +1,4 @@
----
+﻿---
 tags: [source, AI, education, UNESCO]
 last_modified: 2026-05-05
 original_file: "Artificial intelligence in education.md"
@@ -24,3 +24,6 @@ UNESCO's guidance on the ethical use of AI to enhance learning, teaching, and as
 
 ---
 *Source file: [[Artificial intelligence in education]]*
+
+## Fonti
+* [[raw/Note Taking & Research Assistant Powered by AI.md]]

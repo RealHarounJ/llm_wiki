@@ -1,4 +1,4 @@
----
+﻿---
 tags: [fonte, finanza, corporate-finance, libro, professore]
 date_created: 2026-05-07
 last_modified: 2026-05-07
@@ -40,3 +40,7 @@ source_count: 1
 
 ## Note sul File
 Il file è stato caricato dall'utente in `raw/` il 2026-05-07. È un testo continuo (no PDF) che trascrive fedelmente il libro del corso con esempi numerici completi.
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

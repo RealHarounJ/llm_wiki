@@ -1,4 +1,4 @@
----
+﻿---
 tags: [data-mining, classificazione, decision-tree, ml]
 date_created: 2026-05-07
 source: "wiki/Fonti/‎Google Gemini.md (Capitolo 28.3 Elmasri)"
@@ -52,3 +52,6 @@ $$Gain(A) = I(s_1,...,s_n) - E(A)$$
 - [[Clustering_KMeans]]
 - [[Tecniche_di_Data_Mining]]
 - [[Fonte_Database_Systems_Elmasri]]
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

@@ -1,4 +1,4 @@
----
+﻿---
 tags: [sociologia, fonte, digitalization, labour-market, welfare-state, healthcare]
 aliases: [Libro Sociologia Digitalizzazione]
 date_created: 2026-05-16
@@ -40,3 +40,6 @@ source_count: 8
 → Vedi [[Q1_Digitalization_and_Labour_Market]]
 → Vedi [[Q2_Digitalization_and_Welfare_State]]
 → Vedi [[Q3_Health_Care_and_Digitalization]]
+
+## Fonti
+* [[raw/Note Taking & Research Assistant Powered by AI.md]]

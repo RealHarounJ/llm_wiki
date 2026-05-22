@@ -1,4 +1,4 @@
----
+﻿---
 tags: [data-mining, esercitazione, kdd, association-rules, classification, clustering, exam-prep]
 date_created: 2026-05-19
 source: Elmasri & Navathe — Chapter 28, Data Mining Concepts
@@ -304,3 +304,6 @@ Raw Data (petabytes, distributed across hundreds of servers)
 ---
 
 *Session completed: 2026-05-19 | Source: Elmasri & Navathe Ch.28 + personal notes*
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

@@ -1,4 +1,4 @@
----
+﻿---
 tags: [concept, finance, cash-flow]
 source_count: 1
 last_modified: 2026-05-05
@@ -67,3 +67,7 @@ An increase in WC **absorbs cash** → reduces FCF.
 
 ---
 *Sources: [[Corporate_Finance]]*
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

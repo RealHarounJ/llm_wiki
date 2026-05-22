@@ -30,7 +30,30 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Teorema_Modigliani_Miller]]                 | MM I e II con e senza tasse                            |
 | [[Debt_Financing]]                            | Classificazione debito (Maturity, Seniority, Security) |
 | [[Real_Options]]                              | Opzioni di espansione, abbandono, timing, produzione   |
-| [[Valutazione_Aziendale]]                     | Metodi di valutazione aziendale e flussi di cassa      |
+| [[Hedge_Funds_and_Trading_Desks]]             | Fondazione Hedge Fund, Prime Brokerage, Buy-side vs Sell-side |
+| [[Analisi_di_Sensibilita_e_Scenari]]          | Analisi di Sensibilità e Scenari nei Progetti di Investimento  |
+| [[Ciclo_di_Vita_e_Finanziamento]]             | Ciclo di vita aziendale e fonti di finanziamento               |
+| [[Corporate_Governance_and_Lifecycle]]        | Corporate Governance and Capital Lifecycle                    |
+| [[Debt_Financing_Overview]]                   | Overview of Debt Financing (Maturity, Seniority, Security)     |
+| [[Efficienza_dei_Mercati]]                    | Efficienza informativa dei mercati finanziari                  |
+| [[Fonti_di_Finanziamento]]                    | Fonti di Finanziamento e Scelta del Capitale                   |
+| [[Governance_e_Problemi_di_Agenzia]]          | Problemi di agenzia e allineamento interessi                   |
+| [[Market_Efficiency_and_Financial_Intermediaries]] | Financial Intermediaries and Market Efficiency             |
+| [[Opzioni_Reali]]                             | Opzioni Reali (Flessibilità Decisionale e Alberi Decisionali)   |
+| [[Pianificazione_Finanziaria_Lungo_Termine]]  | Pianificazione Finanziaria a Lungo Termine ed EFN              |
+| [[Sintesi_Debito_E_Pianificazione]]           | Sintesi avanzata del debito e pianificazione                   |
+| [[Strumenti_di_Debito_Avanzati]]              | Analisi avanzata degli strumenti di debito                     |
+| [[Valutazione_Titoli]]                        | Valutazione titoli di debito ed azionari                       |
+| [[Domande_Esame_Corporate_Finance]]           | Guida alle domande d'esame dai quaderni (Q&A)                  |
+| [[Information_Ratio_IR]]                      | Teoria, formule, Sharpe vs IR, ex-ante/ex-post                 |
+| [[Fundamental_Law_of_Active_Management]]      | Legge fondamentale di Grinold: basic ed extended, Breadth, TC  |
+| [[Fundamental_Factor_Models_Advanced]]        | Modelli a fattori avanzati, stime OLS/MAD e rischio attivo      |
+| [[Z_Score_Stock_Screening]]                  | Screening e classificazione quantitativa tramite Z-Score        |
+| [[Portfolio_Weights_Optimization]]            | Ottimizzazione dei pesi (QP), vincoli reali e costi transazione |
+| [[Market_Neutral_Portfolios]]                 | Portafogli neutrali (Dollar vs Beta), leva e 2-Alpha mojo       |
+| [[Bayesian_Portfolio_Mojo]]                   | Integrazione stime qualitative (Chincarini Prior, Black-Litterman) |
+| [[Performance_Attribution_Active]]            | Attribuzione ex-post (Brinson BHB/BF, scomposizione fattoriale)  |
+
 
 ### Data Mining & Database
 | File | Descrizione |
@@ -48,8 +71,7 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Architettura_DBMS]] | Struttura interna DBMS, 3 livelli di astrazione |
 | [[Data_Warehouse]] | Schema stellare, fatti e dimensioni |
 | [[ETL_Process]] | Extract, Transform, Load |
-| [[OLAP]] | Slice, Dice, Drill-down, Roll-up |
-| [[NoSQL_Databases]] | CAP Theorem, BASE vs ACID, NoSQL Types |
+| [[NoSQL_Databases]] | Masterclass NoSQL: CAP, Consistent Hashing, Quorum (N,R,W), Vector Clocks |
 
 ### AI & LLM
 | File | Descrizione |
@@ -85,18 +107,53 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 |---|---|
 | [[Fonte_Corporate_Finance_Book]] | Berk & DeMarzo — Corporate Finance |
 | [[Fonte_Slides_Corporate_Finance]] | Slide corso CF UNIVPM 2025/2026 |
+| [[Slides_Corporate_Finance_2025_2026]] | Slides Corporate Finance 2025/2026 UNIVPM |
+| [[Fonte_Corporate_Finance_Libro_Professore]] | Libro del Professore - Finanza Aziendale |
 | [[Fonte_Database_Systems_Elmasri]] | Fundamentals of Database Systems (Elmasri & Navathe) |
+| [[Database_Systems_Fundamentals]] | Database Systems Fundamentals overview |
 | [[Fonte_Biochimica_Lehninger]] | Lehninger Principles of Biochemistry |
-| [[Fonte_Database_Systems_Elmasri]] | Elmasri & Navathe |
 | [[Fonte_Nutrizione_Tucker]] | Modern Nutrition (Tucker) |
 | [[Fonte_Guyton_Fisiologia]] | Guyton & Hall Textbook Medical Physiology |
+| [[Fonte_Anatomia_Gardner]] | Gardner - Gray's Anatomy |
+| [[Fonte_Fitzpatrick_Dermatologia]] | Fitzpatrick's Dermatology |
+| [[Fonte_Harrison_Medicina]] | Harrison's Principles of Internal Medicine |
+| [[Fonte_Neumann_Chinesiologia]] | Neumann - Kinesiology of the Musculoskeletal System |
+| [[Fonte_Bosch_Automotive]] | Bosch Automotive Handbook |
+| [[Fonte_Heywood_Motori]] | Heywood - Internal Combustion Engine Fundamentals |
+| [[Fonte_Milliken_Dinamica]] | Milliken - Race Car Vehicle Dynamics |
 | [[Data Mining Techniques]] | Tecniche DM — scheda fonte |
 | [[wiki/Fonti/Data mining]] | Data mining sessione estesa |
+| [[GeeksforGeeks_Data_Mining]] | GeeksforGeeks Data Mining Concepts |
+| [[Wikipedia_Data_Mining]] | Wikipedia - Data Mining page |
 | [[Google_Gemini_Session]] | Sessione Gemini — simulazione cap.28 Elmasri |
 | [[Riassunto_Evoluzione_Agenti_AI]] | Evoluzione degli agenti AI |
+| [[Wikipedia_GPT]] | Wikipedia - Generative Pre-trained Transformer |
+| [[Analytics_Insight_LLM_Search]] | Analytics Insight - How is LLM Changing Search on the Web |
+| [[UNESCO_AI_Education]] | UNESCO - AI and Education |
 | [[haroun_academy_sql]] | Esercizio DDL Haroun Academy |
 | [[healthcare_db_sql]] | Esercizio DDL Healthcare |
+| [[SQL_Overview_Summary]] | SQL Basics Summary |
+| [[Fonte_Ikea_SQL_Project]] | Ikea SQL Project Database Schema |
 | [[Fonte_Data_Warehouse_Mining_Notes]] | Appunti Data Warehouse e Data Mining |
+| [[Fonte_Reddit_Hedge_Fund_Start]] | Delaware LP/LLC, BVI, VCC models for Hedge Fund startup |
+| [[Fonte_Investopedia_Hedge_Fund_Guide]] | Troy Segal's startup costs, COO importance, AUM scale levels |
+| [[Fonte_Reddit_Trading_Floor_AMA]] | Trading Floor AMA: prime services, Volcker rule, sell-side/buy-side |
+| [[Fonte_FinceptTerminal]] | FinceptTerminal Snapshot: global macroeconomics, sovereign yields, CDS risk |
+| [[Fonte_Presentazione_Gruppo_11]] | Slide comparazione digitalizzazione (Arabia Saudita / Corea) |
+| [[Fonte_Sociologia_Digitalizzazione]] | Digitalization and the Future of the Democratic Welfare State |
+| [[Fonte_Elmasri_Cap1_Database_Users]] | Elmasri Cap. 1 — Databases and Database Users |
+| [[Fonte_Elmasri_Cap2_Database_Concepts]] | Elmasri Cap. 2 — Database System Concepts and Architecture |
+| [[Fonte_Elmasri_Cap3_ER_Model]] | Elmasri Cap. 3 — Data Modeling using the ER Model |
+| [[Fonte_Elmasri_Cap4_Relational_Model]] | Elmasri Cap. 4 — Relational Data Model & Constraints |
+| [[Fonte_Elmasri_Cap5_Relational_Constraints]] | Elmasri Cap. 5 — Relational Algebra & Calculus |
+| [[Fonte_Elmasri_Cap6_Basics_SQL]] | Elmasri Cap. 6 — SQL Schema Definition, Constraints & Queries |
+| [[Fonte_Elmasri_Cap9_ER_Mapping]] | Elmasri Cap. 9 — Relational Database Design by ER-to-Relational Mapping |
+| [[Fonte_Elmasri_Cap9_DDL]] | Elmasri Cap. 9 DDL — Practical SQL DDL Mapping & Constraints |
+| [[Fonte_Elmasri_Cap25_Data_Warehouse]] | Elmasri Cap. 25 — Data Warehousing and OLAP |
+| [[Fonte_Elmasri_Cap28_Data_Mining]] | Elmasri Cap. 28 — Data Mining Concepts |
+| [[Fonte_Chincarini_QEPM]] | Quantitative Equity Portfolio Management (Chincarini, 2023) |
+| [[Fonte_Grinold_Kahn_APM]] | Active Portfolio Management (Grinold & Kahn, 2nd Ed) |
+| [[Fonte_Bytewax_Realtime_Datasets]] | Bytewax Realtime Datasets (GitHub community list, 2026) |
 
 ---
 
@@ -108,6 +165,7 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Master_Page_Data_Mining]] | Cruscotto studio Data Mining + domande esame |
 | [[Master_Page_AI_LLM]] | Cruscotto studio AI/LLM |
 | [[Master_Page_Industrial_Organization]] | Cruscotto esame Industrial Organization |
+| [[Analisi_Portafoglio_Haroun]] | Analisi quantitativa e strategica del portafoglio personale (Trading 212) |
 
 ---
 
@@ -119,6 +177,48 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Q1_Digitalization_and_Labour_Market]] | Domanda 1 Esame — Labour Market: RBTC, SBTC, Polarization, Platform Work |
 | [[Q2_Digitalization_and_Welfare_State]] | Domanda 2 Esame — Welfare State: Pensions, ADM/SyRI, UBI, Social Investment |
 | [[Q3_Health_Care_and_Digitalization]] | Domanda 3 Esame — Healthcare: Crowding Out, Cultural Health Capital |
+| [[Caso_Studio_Digitalizzazione_Comparata]] | Studio comparativo Arabia Saudita vs. Corea del Sud (Gruppo 11) |
+
+
+---
+
+## 📝 wiki/Esercitazioni/
+
+| File | Descrizione |
+|---|---|
+| [[Capital_Budgeting_Simulation]] | Simulazione di capital budgeting |
+| [[Cash_Budgeting_Simulation]] | Simulazione di cash budgeting |
+| [[Data_Mining_Full_Session]] | Sessione completa di studio sul Data Mining (Cap. 28 Elmasri) |
+| [[Esercizio_Conference_Review]] | Schema ER per il database di revisione conferenze (Esercizio 1) |
+| [[Esercizio_Decision_Tree_Loan]] | Esercizio svolto sul Decision Tree e Information Gain |
+| [[Esercizio_Svolto_Cash_Budget]] | Esercizio svolto di Cash Budgeting |
+| [[Esercizio_Svolto_NPV_Macchinario]] | Esercizio svolto di valutazione investimenti (NPV) |
+| [[Long_Term_Financial_Planning]] | Simulazione pianificazione finanziaria a lungo termine (EFN) |
+| [[SQL_Esempi_Pratici]] | Query ed esempi SQL per esercitazione |
+| [[Esercizio_Car_Dealer_Mapping]] | Esercizio di mappatura database Car Dealer |
+| [[Esercizio_Netflix_ER]] | Esercizio svolto ER Database Netflix |
+
+---
+
+## 🍱 wiki/Kiro_Kiro/
+
+| File | Descrizione |
+|---|---|
+| [[Kiro_Kiro_Hub]] | Hub Ristorante Kiro Kiro (Porto Recanati) |
+| [[Menu_Cucina]] | Menu Cucina - Ristorante Kiro Kiro |
+| [[Menu_Sushi]] | Menu Sushi - Ristorante Kiro Kiro |
+| [[Carta_dei_Vini]] | Carta dei Vini - Ristorante Kiro Kiro |
+
+---
+
+## 🇬🇧 wiki/Lingua/
+
+| File | Descrizione |
+|---|---|
+| [[Source_Advanced_Grammar_Hewings]] | Hewings - Advanced Grammar in Use |
+| [[Source_Master_IELTS_Writing]] | Masterclass IELTS Academic Writing Task 1 & 2 |
+| [[Source_Spoken_English_Fluency]] | Spoken English and Functional Grammar |
+| [[Source_Use_of_English_Masterclass]] | Use of English Masterclass C1/C2 |
 
 ---
 
@@ -126,9 +226,12 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 
 | File | Tipo | Descrizione |
 |---|---|---|
+| `rebalance_portfolio.py` | Python | Calcolatore di rebalancing mensile per PAC (Trading 212) |
 | `create_capm_wacc_irr.py` | Python | Simulatore CAPM, WACC, IRR |
 | `create_cash_budget.py` | Python | Generatore cash budget |
 | `stretching_timer.py` | Python | Timer stretching automatico |
 | `ikea_project.sql` | SQL | Schema DB progetto IKEA |
 | `streaming_musicale.sql` | SQL | Schema DB streaming musicale |
+| `yacht_charter.sql` | SQL | Schema DB simulazione Yacht Charter |
 | `ST_1_IO_Dataframe.py` | Python | Input/Output DataFrame |
+| `fetch_market_data.py` | Python | Ingestione dati di mercato in tempo reale da Polygon.io (Stocks, ETF, Forex, Gold) con calcolo MAD e Z-score robusti |

@@ -2,8 +2,8 @@
 tags: [sociology, digitalization, healthcare, exam-prep, crowding-out, health-risks]
 aliases: [Healthcare Digitalization, Health Risks, Cultural Health Capital]
 date_created: 2026-05-16
-last_modified: 2026-05-16
-source_count: 1
+last_modified: 2026-05-20
+source_count: 3
 ---
 
 # Q3: Health Care Systems and Digitalization
@@ -66,6 +66,11 @@ Lower socio-economic groups suffer DOUBLE PENALTY
 - Unemployment protection = **40-70% support** → politically vulnerable.
 - See also: [[Q2_Digitalization_and_Welfare_State]]
 
+### Evidenza Empirica: Il Caso dell'Arabia Saudita (Vision 2030)
+Un esempio reale e misurabile di questo meccanismo teorico è emerso nello studio comparativo sulla digitalizzazione dell'Arabia Saudita ([[Caso_Studio_Digitalizzazione_Comparata]]):
+- **Investimento Sanitario vs. Istruzione:** A fronte di massicci finanziamenti statali per la sanità digitale e infrastrutturale, la spesa pubblica per l'**istruzione ha subito un calo del -4.4%**.
+- **Spiegazione:** Poiché le risorse di bilancio dello Stato sono finite, il forte supporto politico e sociale alla sanità (politicamente intoccabile) ha finito per drenare e "spiazzare" risorse preziose destinate ad altri comparti del welfare (in questo caso, l'istruzione pubblica e la formazione), confermando empiricamente la dinamica di *crowding out*.
+
 ---
 
 ## 4. New Health Risks Created by Digitalization
@@ -99,3 +104,5 @@ Lower socio-economic groups suffer DOUBLE PENALTY
 
 ## Fonti
 - [[Fonte_Sociologia_Digitalizzazione]] → Cap. 18 (Jensen & Kersbergen — full chapter)
+- [[Fonte_Presentazione_Gruppo_11]] → Focus Arabia Saudita (Vision 2030)
+- [[Caso_Studio_Digitalizzazione_Comparata]] → Sezione Arabia Saudita

@@ -35,6 +35,13 @@ Technology targets **routine tasks**, not just low skills — regardless of educ
 > **Key Research Finding:** Frey & Osborne (2017) estimated **47% of US jobs** at high risk. The OECD (2018): **14% very high risk**, **32% high risk**.
 > Note: *Occupation-based* approaches (full jobs) overestimate risk vs *task-based* approaches (~9%).
 
+### 🌏 Evidenza Empirica: Il Caso della Corea del Sud
+La transizione digitale in Corea del Sud offre una validazione diretta del processo di polarizzazione indotto da [[RBTC]]:
+- **Boom del Terziario Avanzato:** Registrati **+492.000 occupati** nel settore dei servizi digitali.
+- **Contrazione dell'Industria Fisica:** Perdita netta di **-73.000 posti di lavoro** nel manifatturiero e **-125.000** nelle costruzioni per via della massiccia robotizzazione e automazione di fabbrica che sostituisce i ruoli di routine a medio-bassa qualifica.
+- **Divario di Genere:** La crisi colpisce prevalentemente comparti fisici tradizionali a prevalenza maschile, mentre l'occupazione femminile cresce trainata dal terziario avanzato.
+- Per l'analisi dettagliata, vedi [[Caso_Studio_Digitalizzazione_Comparata]].
+
 ---
 
 ## 3. [[Platform Work]] — Chapter 13 (Picot)
@@ -71,8 +78,15 @@ Technology targets **routine tasks**, not just low skills — regardless of educ
 
 ---
 
-## Exam Summary Sentence
-*"Digitalization transforms labour markets through SBTC (privileging high-skilled workers) and RBTC (eliminating routine tasks, hollowing out the middle class). This polarization fuels inequality, precarious platform work, and politically, the rise of populism. The welfare state responds primarily through social investment, though UBI is gaining traction as a more radical alternative."*
+## 🏆 Full Exam-Ready Essay Answer (C1 English)
+
+Digitalization acts as a primary catalyst in transforming contemporary labor market dynamics, which can be analyzed through two main theoretical perspectives: **Skill-Biased Technological Change (SBTC)** and **Routine-Biased Technological Change (RBTC)**. Traditional SBTC posits that technology privileges highly educated workers and substitutes manual, low-skilled labor, leading to rising wage inequality. However, this view fails to explain the widespread displacement of educated, white-collar workers. In contrast, the more disruptive RBTC framework argues that automation targets routine tasks rather than formal educational levels. Consequently, routine cognitive and manual tasks—such as clerical work, accounting, and basic administrative administration—are increasingly automated, while non-routine manual services and high-end analytical roles remain highly resilient.
+
+This selective displacement of routine tasks drives the process of **labor market polarization**, commonly referred to as the **"hollowing out" of the middle class**. While high-end management and creative analysis complement digital technologies and thrive, and low-end personal services remain difficult to automate, the middle-income segment dramatically shrinks. This polarization process is empirically validated by South Korea's digital transition, which saw a digital service expansion of **+492,000 jobs** alongside a net contraction of **-73,000 routine manufacturing jobs** due to intensive robotic automation.
+
+Furthermore, the displacement of routine labor has fueled the rise of **platform work** (the gig economy). According to Picot, platform work is a **"social product"** shaped by national institutional choices rather than an inevitable technological outcome. In the "segregated model" of Spain and Italy, platform work is driven by economic necessity due to weak social safety nets and high unemployment, whereas in countries like Finland, it serves as a voluntary choice. Under precarious gig arrangements, workers are deprived of standard social security, which contributes to the erosion of traditional labor rights.
+
+Politically, the economic insecurity resulting from routine job loss and polarization has profound democratic consequences. Affected middle-class workers who feel economically marginalized form a major voting bloc for radical populist movements, thereby **destabilizing democratic institutions** across OECD countries. In response, the welfare state has shifted toward the **"Social Investment State,"** focusing on retraining and human capital. However, affected workers often demand immediate income protection over long-term retraining, prompting growing support for radical redistributive models like Universal Basic Income (UBI).
 
 ---
 
@@ -80,3 +94,5 @@ Technology targets **routine tasks**, not just low skills — regardless of educ
 - [[Fonte_Sociologia_Digitalizzazione]] → Cap. 2 (RBTC, Polarization, Populism)
 - [[Fonte_Sociologia_Digitalizzazione]] → Cap. 3 (Deindustrialization, Baumol Problem, Bifurcation)
 - [[Fonte_Sociologia_Digitalizzazione]] → Cap. 13 (Picot — Platform Work)
+- [[Fonte_Presentazione_Gruppo_11]] → Sezione Corea del Sud (Caso Studio Comparato)
+- [[Caso_Studio_Digitalizzazione_Comparata]] (Analisi dei dati reali)

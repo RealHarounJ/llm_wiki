@@ -1,4 +1,4 @@
----
+﻿---
 tags: [finanza, corporate-finance, funding, pecking-order]
 date_created: 2026-05-08
 ---
@@ -47,3 +47,6 @@ Capitale raccolto tramite l'emissione di nuove quote di proprietà.
 - [[Struttura_del_Capitale]]
 - [[Topic_3c_Financial_Planning]] (EFN)
 - [[Leva_Finanziaria]]
+
+## Fonti
+* [[raw/Note Taking & Research Assistant Powered by AI.md]]

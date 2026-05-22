@@ -1,4 +1,4 @@
----
+﻿---
 tags: [source, database, SQL, curriculum]
 last_modified: 2026-05-05
 original_files:
@@ -30,3 +30,6 @@ The course emphasizes the **Database Approach**, which provides self-describing 
 
 ---
 *Source files: [[Where teams and agents work together]] (and variants 1-8)*
+
+## Fonti
+* [[raw/Note Taking & Research Assistant Powered by AI.md]]

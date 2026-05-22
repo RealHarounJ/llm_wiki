@@ -1,4 +1,4 @@
----
+﻿---
 tags: [vini, cantina, kiro-kiro]
 aliases: [Wine List, Carta Vini Kiro Kiro]
 ---
@@ -46,3 +46,6 @@ Una cantina ricercata che privilegia il territorio marchigiano senza dimenticare
 
 ---
 **Torna al:** [[Kiro_Kiro_Hub]]
+
+## Fonti
+* [[raw/Kiro Kiro.md]]

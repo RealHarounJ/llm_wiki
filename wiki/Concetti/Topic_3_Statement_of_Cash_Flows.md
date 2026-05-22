@@ -1,4 +1,4 @@
----
+﻿---
 tags: [finanza, cash-flow, topic-3]
 date_created: 2026-05-07
 source: "raw/Teaching materials of Corporate Finance-20260505/Topic 3a, 3b"
@@ -38,3 +38,7 @@ dove: S = Vendite, A = Asset sensibili alle vendite, L = Passivi sensibili, PM =
 - [[Topic_2_Financial_Analysis]]
 - [[Topic_3c_Financial_Planning]]
 - [[Topic_3d_Cash_Budgeting]]
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

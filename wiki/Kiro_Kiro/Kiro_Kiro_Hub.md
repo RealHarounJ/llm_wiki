@@ -1,4 +1,4 @@
----
+﻿---
 tags: [ristorante, porto-recanati, wiki, hub]
 aliases: [Ristorante Kiro Kiro, Kiro Kiro Hub]
 address: "Piazza della Marina 35, Porto Recanati (MC)"
@@ -21,3 +21,6 @@ Kiro Kiro si affaccia sul mare e offre una spettacolare vista sul Monte Conero. 
 
 ---
 *Wiki realizzata dai dati estratti dal sito ufficiale e dai materiali forniti.*
+
+## Fonti
+* [[raw/Kiro Kiro.md]]

@@ -1,4 +1,4 @@
----
+﻿---
 tags: [finanziamento, lifecycle, ipo]
 aliases: [Venture Capital, IPO]
 ---
@@ -28,3 +28,6 @@ Il processo di quotazione in borsa.
 **Vedi anche:**
 - [[Efficienza_dei_Mercati]]
 - [[Fintech_e_Innovazione]]
+
+## Fonti
+* [[raw/Note Taking & Research Assistant Powered by AI.md]]

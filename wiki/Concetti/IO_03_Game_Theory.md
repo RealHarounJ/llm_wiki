@@ -1,3 +1,10 @@
+﻿---
+tags: [concept, theory]
+aliases: [IO 03 Game Theory]
+date_created: 2026-05-21
+last_modified: 2026-05-21
+source_count: 1
+---
 # IO 03: Game Theory and Oligopoly Pricing (Lessons 4 & 5)
 
 ## Game Theory Basics
@@ -20,3 +27,7 @@
 - **Discontinuous Demand**: The firm with the lower price captures the entire market.
 - **Equilibrium (The Bertrand Paradox)**: Both firms price exactly at Marginal Cost ($P_1 = P_2 = MC$). Economic profits are zero.
 - **Implication**: Just two firms are sufficient to achieve perfect competition outcomes, highlighting the aggressive nature of price competition versus quantity competition.
+
+## Fonti
+* [[raw/f622fc49-8a32-46b5-bf7d-77a21e56ac5b_Chapter_13)_Political_and_Institutional_Limits_to_the_Rise_of_Platform_Work..md]]
+* [[wiki/Fonti/Fonte_Sociologia_Digitalizzazione.md]]

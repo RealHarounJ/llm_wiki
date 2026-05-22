@@ -1,4 +1,4 @@
----
+﻿---
 tags: [finanza, capm, wacc, costo-capitale, topic-7, topic-8]
 date_created: 2026-05-07
 source: "raw/Teaching materials of Corporate Finance-20260505/Topics 7 and 8"
@@ -48,3 +48,7 @@ Il WACC è il tasso da usare per attualizzare i flussi di cassa di un progetto c
 - [[Topic_6_Risk_and_Return]]
 - [[Topic_5_NPV_Investment_Criteria]]
 - [[Struttura_del_Capitale]]
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

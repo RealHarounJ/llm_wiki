@@ -1,4 +1,4 @@
----
+﻿---
 tags: [corporate-finance, cash-budgeting, working-capital, esercitazione, excel]
 aliases: [Cash Budget, Piano di Tesoreria]
 ---
@@ -51,3 +51,7 @@ Ecco una simulazione pratica stile esame, come la vedresti su un foglio Excel.
 1.  **Gennaio e Febbraio:** L'azienda genera Net Cash Flow positivo. Il Saldo Finale rimane sempre sopra il requisito minimo di 40.000 €. Non serve nessun finanziamento bancario.
 2.  **Marzo:** C'è una spesa straordinaria di 120.000 € (Acquisto Macchinario). Il Net Cash Flow crolla a -45.000 €.
 3.  **Il campanello d'allarme:** Il Saldo Finale a Marzo scenderebbe a soli 20.000 €. Poiché la politica aziendale impone di avere almeno 40.000 € in cassa, il manager sa già mesi prima che a Marzo dovrà chiedere una **Linea di Credito (Bank Loan)** di 20.000 € per tappare il buco e rispettare il limite minimo di cassa.
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

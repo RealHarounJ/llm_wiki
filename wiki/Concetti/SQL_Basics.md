@@ -1,4 +1,4 @@
----
+﻿---
 tags: [database, sql, basics]
 date_created: 2026-05-07
 source: "raw/SQL_Overview.md, wiki/Script/ikea_project.sql, wiki/Script/streaming_musicale.sql"
@@ -86,3 +86,6 @@ WHERE fatturato > (SELECT AVG(fatturato) FROM Clienti);
 - [[Modellazione_ER]]
 - [[Architettura_DBMS]]
 - [[Data_Mining_Hub]]
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

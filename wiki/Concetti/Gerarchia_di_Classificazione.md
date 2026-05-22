@@ -1,4 +1,4 @@
----
+﻿---
 tags: [concept, database, modeling, hierarchy]
 source_count: 1
 last_modified: 2026-05-05
@@ -34,3 +34,6 @@ Le gerarchie vengono mappate in tabelle relazionali usando diverse strategie (St
 ---
 *Vedi anche: [[Enhanced_ER_Model]], [[Data_Warehouse]], [[OLAP]]*
 *Source: [[Database_Systems_Fundamentals]]*
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

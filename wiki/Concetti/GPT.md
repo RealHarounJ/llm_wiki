@@ -1,4 +1,4 @@
----
+﻿---
 tags: [concept, AI, GPT, OpenAI]
 source_count: 2
 last_modified: 2026-05-05
@@ -32,3 +32,6 @@ OpenAI asserts that "GPT" is a brand. However, the USPTO has frequently declined
 
 ---
 *Sources: [[Wikipedia_GPT]], [[Analytics_Insight_LLM_Search]]*
+
+## Fonti
+* [[wiki/Fonti/Wikipedia_GPT.md]]

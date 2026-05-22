@@ -1,4 +1,4 @@
----
+﻿---
 tags: [source, AI, search, RAG]
 last_modified: 2026-05-05
 original_file: "How is LLM Changing Search on the Web.md"
@@ -26,3 +26,6 @@ Exploration of how LLM-based search transforms the web search paradigm.
 
 ---
 *Source file: [[How is LLM Changing Search on the Web]]*
+
+## Fonti
+* [[wiki/Fonti/Wikipedia_GPT.md]]

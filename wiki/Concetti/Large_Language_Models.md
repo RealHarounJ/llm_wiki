@@ -1,4 +1,4 @@
----
+﻿---
 tags: [concept, AI, LLM]
 source_count: 3
 last_modified: 2026-05-05
@@ -40,3 +40,6 @@ LLMs are trained on billions of words from massive datasets. They can perform di
 
 ---
 *Sources: [[Wikipedia_GPT]], [[Analytics_Insight_LLM_Search]], [[UNESCO_AI_Education]]*
+
+## Fonti
+* [[wiki/Fonti/Wikipedia_GPT.md]]

@@ -1,4 +1,4 @@
----
+﻿---
 tags: [source, wikipedia, data-mining]
 type: clipping
 ---
@@ -15,3 +15,6 @@ Comprehensive overview of Data Mining, including etymology, background, the KDD 
 - [[Data_Mining]]
 - [[Processo_KDD]]
 - [[Privacy_ed_Etica_Data_Mining]]
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

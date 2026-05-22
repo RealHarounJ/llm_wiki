@@ -1,4 +1,4 @@
----
+﻿---
 tags: [fonte, automotive]
 aliases: [Race Car Vehicle Dynamics]
 date_created: 2026-04-29
@@ -10,3 +10,6 @@ date_created: 2026-04-29
 Dinamica del veicolo, sospensioni e aderenza pneumatici.
 
 Questa fonte funge da base di verità (ground truth) per i concetti espansi nella relativa Master Page.
+
+## Fonti
+* [[raw/Note Taking & Research Assistant Powered by AI.md]]

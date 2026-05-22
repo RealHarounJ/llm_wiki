@@ -1,4 +1,4 @@
----
+﻿---
 tags: [topic, lecture, cash-flows]
 source_count: 2
 last_modified: 2026-05-05
@@ -56,3 +56,7 @@ Lists actual receipts and payments:
 
 ---
 *Sources: [[Slides_Corporate_Finance_2025_2026]], [[Corporate_Finance]]*
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

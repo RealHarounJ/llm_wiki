@@ -1,4 +1,4 @@
----
+﻿---
 tags: [data-mining, clustering, k-means, python, ml]
 date_created: 2026-05-07
 source: "raw/7 Most Asked Questions on K-Means Clustering.md (Towards Data Science - Aaron Zhu)"
@@ -98,3 +98,6 @@ sse = kmeans.inertia_  # SSW
 - [[Classificazione_Decision_Tree]] — algoritmo supervisionato comparabile
 - [[Regole_di_Associazione]]
 - [[Data_Mining_Hub]]
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

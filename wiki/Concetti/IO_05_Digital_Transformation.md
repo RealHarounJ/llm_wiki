@@ -1,3 +1,10 @@
+﻿---
+tags: [concept, theory]
+aliases: [IO 05 Digital Transformation]
+date_created: 2026-05-21
+last_modified: 2026-05-21
+source_count: 1
+---
 # IO 05: Digital Transformation and Internal Effects (Lessons 7 & 9)
 
 ## Digital Transformation Impacts
@@ -21,3 +28,7 @@ Digital tech fundamentally changes a firm from the inside *before* external spil
 ## Heterogeneity and Challenges
 - Not all firms benefit equally; managerial quality and workforce skills are strictly required (complementary capabilities).
 - **Challenges**: High implementation costs, employee resistance, the skills gap, and cybersecurity risks.
+
+## Fonti
+* [[raw/f622fc49-8a32-46b5-bf7d-77a21e56ac5b_Chapter_13)_Political_and_Institutional_Limits_to_the_Rise_of_Platform_Work..md]]
+* [[wiki/Fonti/Fonte_Sociologia_Digitalizzazione.md]]

@@ -1,4 +1,4 @@
----
+﻿---
 tags: [valutazione, titoli, bonds, stocks]
 aliases: [Valutazione Bond, Valutazione Azioni]
 ---
@@ -35,3 +35,6 @@ Nel valutare aziende o titoli con orizzonte infinito, si calcola il valore a una
 - [[Time_Value_of_Money]]
 - [[Valutazione_Aziendale]]
 - [[Efficienza_dei_Mercati]]
+
+## Fonti
+* [[raw/Note Taking & Research Assistant Powered by AI.md]]

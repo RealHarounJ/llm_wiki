@@ -1,4 +1,4 @@
----
+﻿---
 tags: [pianificazione, efn, forecasting]
 aliases: [Modelli di Pianificazione, Fabbisogno Esterno]
 ---
@@ -37,3 +37,6 @@ Sono proiezioni del bilancio futuro basate sui piani di crescita.
 - [[Topic_3c_Financial_Planning]]
 - [[Topic_3d_Cash_Budgeting]]
 - [[Gestione_del_Capitale_Circolante]]
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

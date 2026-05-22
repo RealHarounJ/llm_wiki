@@ -1,3 +1,10 @@
+﻿---
+tags: [concept, theory]
+aliases: [Modellazione ER]
+date_created: 2026-05-21
+last_modified: 2026-05-21
+source_count: 1
+---
 # 🗂️ Conceptual Database Modeling (ER)
 
 ## 1. Introduzione: L'Astrazione dei Dati
@@ -61,3 +68,6 @@ Si definisce tramite due vincoli fondamentali (Constraints):
 2.  **Weak Entities:** Hanno sempre una Partial Key (tratteggiata) e un identifying relationship (doppio rombo) `(1,1)` verso il padre.
 3.  **Relazioni su Relazioni:** Non puoi attaccare un'entità direttamente a un rombo (salvo nei modelli estesi tramite *Aggregation*).
 4.  **Mappatura FK in (Min, Max):** L'entità che ha un `Max = 1` verso la relazione, "cattura" la Foreign Key. Se entrambe hanno `Max = N`, si crea una nuova tabella.
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]

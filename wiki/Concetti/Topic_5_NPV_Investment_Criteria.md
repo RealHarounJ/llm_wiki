@@ -1,4 +1,4 @@
----
+﻿---
 tags: [finanza, capital-budgeting, npv, topic-5]
 date_created: 2026-05-07
 source: "raw/Teaching materials of Corporate Finance-20260505/Topic 5a-5e"
@@ -42,3 +42,7 @@ $$PI = \frac{NPV}{I_0} + 1 = \frac{PV_{flussi}}{I_0}$$
 - [[Topic_4_Present_Values]]
 - [[Topic_6_Risk_and_Return]]
 - [[Topic_7_8_CAPM_Cost_of_Capital]]
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

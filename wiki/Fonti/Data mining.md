@@ -1,4 +1,4 @@
----
+﻿---
 title: "Data mining"
 source: "https://en.wikipedia.org/wiki/Data_mining"
 author:
@@ -279,3 +279,6 @@ The following applications are available under proprietary licenses.
 [^42]: ["Fedlex"](https://www.fedlex.admin.ch/eli/cc/1993/1798_1798_1798/en#art_24_d). [Archived](https://web.archive.org/web/20211216160549/https://www.fedlex.admin.ch/eli/cc/1993/1798_1798_1798/en#art_24_d) from the original on 2021-12-16. Retrieved 2021-12-16.
 
 [^43]: ["Judge grants summary judgment in favor of Google Books – a fair use victory"](http://www.lexology.com/library/detail.aspx?g=a18c5b92-5a20-4d1d-a098-a3095046a88e). *Lexology.com*. Antonelli Law Ltd. 19 November 2013. [Archived](https://web.archive.org/web/20141129011031/http://www.lexology.com/library/detail.aspx?g=a18c5b92-5a20-4d1d-a098-a3095046a88e) from the original on 29 November 2014. Retrieved 14 November 2014.
+
+## Fonti
+* [[raw/Note Taking & Research Assistant Powered by AI.md]]

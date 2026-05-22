@@ -1,4 +1,4 @@
----
+﻿---
 tags: [finanza, corporate-finance, topic-1]
 date_created: 2026-05-07
 source: "raw/Teaching materials of Corporate Finance-20260505"
@@ -32,3 +32,7 @@ Conflitto tra **Principal** (Azionista) e **Agent** (Manager).
 - [[Topic_2_Financial_Analysis]]
 - [[Topic_5_NPV_Investment_Criteria]]
 - [[Fonte_Corporate_Finance_Book]]
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

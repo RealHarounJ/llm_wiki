@@ -1,4 +1,4 @@
----
+﻿---
 tags: [ai, llm, rag, retrieval, embedding]
 date_created: 2026-05-07
 source: "raw/How is LLM Changing Search on the Web.md, wiki/Fonti/Where teams and agents work together *.md"
@@ -66,3 +66,6 @@ I documenti lunghi vengono divisi in **chunks** (spezzoni) prima dell'indicizzaz
 - [[Semantic_Search]]
 - [[LLM_Hub]]
 - [[LLM_Changing_Search]]
+
+## Fonti
+* [[wiki/Fonti/Wikipedia_GPT.md]]

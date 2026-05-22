@@ -1,4 +1,4 @@
----
+﻿---
 tags: [fonte, finanza, corporate-finance, libro]
 date_created: 2026-05-07
 ---
@@ -20,3 +20,7 @@ date_created: 2026-05-07
 | Cap. 18-19 | Short-Term Planning | [[Topic_3_Statement_of_Cash_Flows]] |
 
 👉 **Cruscotto principale:** [[wiki/Master_Page_Corporate_Finance]]
+
+## Fonti
+* [[wiki/Fonti/Fonte_Corporate_Finance_Book.md]]
+* [[wiki/Fonti/Fonte_Slides_Corporate_Finance.md]]

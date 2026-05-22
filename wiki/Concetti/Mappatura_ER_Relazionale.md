@@ -1,3 +1,10 @@
+﻿---
+tags: [concept, theory]
+aliases: [Mappatura ER Relazionale]
+date_created: 2026-05-21
+last_modified: 2026-05-21
+source_count: 1
+---
 # 🗺️ Mappatura ER-Relazionale (I 9 Step)
 
 Processo per trasformare uno schema concettuale (ER/EER) in uno schema logico (Tabelle SQL).
@@ -25,3 +32,6 @@ Quando le superclassi hanno chiavi primarie diverse (es. Persona con SSN e Azien
 
 ---
 *Vedi anche: [[Modellazione_ER]], [[SQL_Esempi_Pratici]]*
+
+## Fonti
+* [[wiki/Fonti/Fonte_Database_Systems_Elmasri.md]]
