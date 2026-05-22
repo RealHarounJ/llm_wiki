@@ -53,6 +53,7 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Market_Neutral_Portfolios]]                 | Portafogli neutrali (Dollar vs Beta), leva e 2-Alpha mojo       |
 | [[Bayesian_Portfolio_Mojo]]                   | Integrazione stime qualitative (Chincarini Prior, Black-Litterman) |
 | [[Performance_Attribution_Active]]            | Attribuzione ex-post (Brinson BHB/BF, scomposizione fattoriale)  |
+| [[Gold_Speculation_Strategy]]                 | Strategia speculativa quantitativa sull'oro (Modello AMSR)       |
 
 
 ### Data Mining & Database
@@ -235,3 +236,6 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | `yacht_charter.sql` | SQL | Schema DB simulazione Yacht Charter |
 | `ST_1_IO_Dataframe.py` | Python | Input/Output DataFrame |
 | `fetch_market_data.py` | Python | Ingestione dati di mercato in tempo reale da Polygon.io (Stocks, ETF, Forex, Gold) con calcolo MAD e Z-score robusti |
+| `gold_swing_trader.py` | Python | Strategia speculativa quantitativa multi-day sull'oro spot con trend SMA, Robust Z-score (MAD) e sentiment notizie |
+| `AMSRGoldSpeculator.cs` | C# | Strategia quantitativa per NinjaTrader 8 (Futures Oro GC/MGC) basata su crossover SMA, Robust Z-Score (MAD) e bridge sentiment Python |
+

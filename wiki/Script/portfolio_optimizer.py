@@ -430,6 +430,11 @@ def print_forecast_table(label, result, total_eur):
 
 
 def main():
+    # Imposta encoding UTF-8 per l'output su console Windows
+    if sys.platform.startswith('win'):
+        import io
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
     random.seed(42)
 
     # ── Recupero portafoglio reale ──────────────────────────────────────────
@@ -472,7 +477,7 @@ def main():
 
     # ── Ottimizzazione Markowitz ─────────────────────────────────────────────
     print("⚡ Ottimizzazione Mean-Variance (Markowitz) in corso... (questo richiede qualche secondo)")
-    optimal_weights, best_sharpe = optimize_portfolio(params, n_iterations=15000)
+    optimal_weights, best_sharpe = optimize_portfolio(params, n_iterations=1000)
 
     # ── Parametri calibrati ─────────────────────────────────────────────────
     print_section("📐 PARAMETRI QUANTITATIVI CALIBRATI (Dati Reali 60 Giorni)")

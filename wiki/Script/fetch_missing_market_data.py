@@ -48,6 +48,11 @@ def fetch_polygon_history(ticker, polygon_key, days=60):
     return None
 
 def main():
+    # Imposta encoding UTF-8 per l'output su console Windows
+    if sys.platform.startswith('win'):
+        import io
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
     polygon_key = load_credentials()
     missing = ["IPRV", "BLK", "SMSN"]
     output_dir = "data"

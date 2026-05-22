@@ -85,6 +85,10 @@ def calculate_rebalancing(current_portfolio, targets, new_cash):
 
 if __name__ == "__main__":
     import os
+    # Imposta encoding UTF-8 per l'output su console Windows
+    if sys.platform.startswith('win'):
+        import io
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
     
     # Tentativo di recuperare il portafoglio live da Trading 212
     current_portfolio = None

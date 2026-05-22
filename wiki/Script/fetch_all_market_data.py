@@ -204,6 +204,11 @@ def calculate_metrics(results):
     }
 
 def main():
+    # Imposta encoding UTF-8 per l'output su console Windows
+    if sys.platform.startswith('win'):
+        import io
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
     print("🚀 Avvio Pipeline di Ingestione Dati di Mercato per tutti gli Asset...")
     t212_auth, polygon_key = load_credentials()
     

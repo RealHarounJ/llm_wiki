@@ -12,36 +12,37 @@ Questo documento fornisce un'analisi quantitativa e strategica dettagliata del p
 
 ---
 
-## 📊 Panoramica del Portafoglio (Aggiornato al 22/05/2026)
+## 📊 Panoramica del Portafoglio (Aggiornato al 22/05/2026 17:00)
 
-*   **Valore Totale dell'Account:** **€2.000,58** (In crescita rispetto a €1.986,18 del 19 maggio)
-*   **Capitale Totale Investito:** **€2.095,26**
-*   **Rendimento Aperto Totale:** **€-94,68** (-4,52%)
-*   **Effetto Cambio (FX Impact):** **€+9,51**
-*   **Numero di Posizioni Attive:** 19 (Aggiunto `[[SDIV]]` rispetto al 19 maggio)
+*   **Valore Totale dell'Account:** **€2.050,57** (In crescita rispetto a €2.000,58)
+*   **Capitale Totale Investito:** **€2.107,21**
+*   **Rendimento Aperto Totale:** **€-56,64** (-2,69%) — *Netto miglioramento rispetto al -4,52% precedente!*
+*   **Effetto Cambio (FX Impact):** **€+9,68**
+*   **Numero di Posizioni Attive:** 19 (Aggiunto `[[BP]]` e aggiornato `[[VGVAl]]` a Vanguard U.K. Gilt)
 
 ### Tabella Dettagliata delle Posizioni (Ordinata per Peso)
 
 | Strumento | Ticker | Valore (EUR) | Peso (%) | Capitale Investito (EUR) | P&L Aperto (EUR) | Rendimento (%) | FX Impact (EUR) |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Figma (Freedom Holding Corp)** | FIG | €907,34 | **45,35%** | €1.203,49 | €-296,15 | -24,61% | €+15,44 |
-| **Samsung Electronics GDR** | SMSNl | €221,56 | **11,07%** | €49,93 | €+171,63 | **+343,74%** | €-4,47 |
-| **iShares Core MSCI World** | SWDAl | €159,65 | **7,98%** | €155,79 | €+3,86 | +2,48% | €+0,92 |
-| **iShares Global Clean Energy** | INRGl | €126,62 | **6,33%** | €75,89 | €+50,73 | +66,85% | €-1,46 |
-| **iShares S&P 500 Info Tech** | IITU | €102,15 | **5,11%** | €64,14 | €+38,01 | +59,26% | €-1,09 |
-| **Vanguard FTSE Developed World**| VHVGl | €97,69 | **4,88%** | €89,86 | €+7,83 | +8,71% | €+0,72 |
-| **Arqit Quantum** | CENH | €81,81 | **4,09%** | €70,20 | €+11,61 | +16,54% | €+0,66 |
-| **iShares Core MSCI EM IMI** | EIMIl | €76,94 | **3,85%** | €65,28 | €+11,66 | +17,86% | €+0,50 |
-| **Coinbase Global** | COIN | €51,37 | **2,57%** | €89,86 | €-38,49 | -42,83% | €-2,33 |
-| **iShares Listed Private Equity**| IPRVl | €50,10 | **2,50%** | €57,98 | €-7,88 | -13,59% | €-0,51 |
-| **Adobe Inc** | ADBE | €47,89 | **2,39%** | €49,92 | €-2,03 | -4,07% | €+0,83 |
-| **Duolingo** | DUOL | €30,36 | **1,52%** | €51,29 | €-20,93 | -40,81% | €+0,57 |
-| **Eutelsat Communications** | ETLp | €28,00 | **1,40%** | €49,85 | €-21,85 | -43,83% | €0,00 |
-| **Vanguard Global Value Factor** | VGVAl | €9,77 | **0,49%** | €9,98 | €-0,21 | -2,10% | €+0,08 |
-| **Global X Superdividend** | SDIVm | €6,01 | **0,30%** | €6,03 | €-0,02 | -0,33% | €0,00 |
-| **Apple Inc** | AAPL | €1,29 | **0,06%** | €0,95 | €+0,34 | +35,79% | €+0,01 |
-| **BlackRock** | BLK | €1,03 | **0,05%** | €0,97 | €+0,06 | +6,19% | €-0,03 |
-| **Microsoft** | MSFT | €0,99 | **0,05%** | €0,85 | €+0,14 | +16,47% | €-0,06 |
+| **Figma (Freedom Holding Corp)** | FIG | €937,22 | **45,71%** | €1.203,49 | €-266,27 | -22,12% | €+15,17 |
+| **Samsung Electronics GDR** | SMSNl | €221,33 | **10,79%** | €49,93 | €+171,40 | **+343,28%** | €-4,48 |
+| **iShares Core MSCI World** | SWDAl | €160,15 | **7,81%** | €155,79 | €+4,36 | +2,80% | €+1,01 |
+| **iShares Global Clean Energy** | INRGl | €127,16 | **6,20%** | €75,89 | €+51,27 | +67,56% | €-1,41 |
+| **iShares S&P 500 Info Tech** | IITU | €102,77 | **5,01%** | €64,14 | €+38,63 | +60,23% | €-1,06 |
+| **Vanguard FTSE Developed World**| VHVGl | €98,02 | **4,78%** | €89,86 | €+8,16 | +9,08% | €+0,77 |
+| **Arqit Quantum** | CENH | €86,57 | **4,22%** | €70,20 | €+16,37 | +23,32% | €+0,64 |
+| **iShares Core MSCI EM IMI** | EIMIl | €77,31 | **3,77%** | €65,28 | €+12,03 | +18,43% | €+0,49 |
+| **Coinbase Global** | COIN | €50,08 | **2,44%** | €89,86 | €-39,78 | -44,27% | €-2,36 |
+| **iShares Listed Private Equity**| IPRVl | €49,90 | **2,43%** | €57,98 | €-8,08 | -13,94% | €-0,48 |
+| **Adobe Inc** | ADBE | €47,70 | **2,33%** | €49,92 | €-2,22 | -4,45% | €+0,82 |
+| **Duolingo** | DUOL | €30,17 | **1,47%** | €51,29 | €-21,12 | -41,18% | €+0,56 |
+| **Eutelsat Communications** | ETLp | €28,14 | **1,37%** | €49,85 | €-21,71 | -43,55% | €0,00 |
+| **BP PLC** | BP | €14,94 | **0,73%** | €14,95 | €-0,01 | -0,07% | €+0,02 |
+| **Vanguard U.K. Gilt (Acc)** | VGVAl | €9,80 | **0,48%** | €9,98 | €-0,18 | -1,80% | €+0,08 |
+| **Global X Superdividend** | SDIVm | €5,98 | **0,29%** | €6,03 | €-0,05 | -0,83% | €0,00 |
+| **Apple Inc** | AAPL | €1,31 | **0,06%** | €0,95 | €+0,36 | +37,89% | €+0,01 |
+| **BlackRock** | BLK | €1,04 | **0,05%** | €0,97 | €+0,07 | +7,22% | €-0,03 |
+| **Microsoft** | MSFT | €0,98 | **0,05%** | €0,85 | €+0,13 | +15,29% | €-0,07 |
 | **Agape ATP Corp** | ATPC | €0,01 | **0,00%** | €3,00 | €-2,99 | -99,67% | €-0,26 |
 
 ---

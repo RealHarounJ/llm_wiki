@@ -170,6 +170,11 @@ def display_portfolio(positions, endpoint_name):
     return portfolio_dict
 
 def main():
+    # Imposta encoding UTF-8 per l'output su console Windows
+    if sys.platform.startswith('win'):
+        import io
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
     api_auth = load_trading212_credentials()
     positions, ep_name = fetch_positions(api_auth)
     if positions is not None:

@@ -312,3 +312,27 @@ aw/Fundamentals of Database Systems (Elmasri) Cap. 24
 - **File modificati:**
   - `index.md` (registrato il nuovo script nel catalogo centrale)
   - `log.md` (questo file)
+
+---
+
+## [2026-05-22] DEV | Integrazione Strategia Speculativa Oro (AMSR)
+
+- **Operazione:** Progettazione, sviluppo e validazione della strategia quantitativa multi-day swing trading sull'oro spot (modello AMSR). Integrazione di feed storici (AurumRates) e macro-news sentiment (Google News RSS via NLP lessicale).
+- **File creati/modificati:**
+  - `wiki/Script/gold_swing_trader.py` [NEW] — Motore quantitativo con download prezzi, sentiment analysis lessicale, robust MAD-based Z-score, crossover trend, backtest storico completo e dashboard UTF-8.
+  - `wiki/Concetti/Gold_Speculation_Strategy.md` [NEW] — Nota metodologica Obsidian su crossover trend, gestione del rischio con stop loss dinamici e trailing stop MAD-based.
+  - `index.md` (indicizzati i nuovi file nel catalogo centrale)
+  - `log.md` (questo file)
+
+---
+
+## [2026-05-22] DEV | Collegamento Strategia AMSR a NinjaTrader 8 (Bridge Demo)
+
+- **Operazione:** Sviluppo del bridge di sentiment ed esportazione in tempo reale della strategia quantitativa sull'oro su NinjaTrader 8 (Demo). Scrittura di uno script C# NinjaScript nativo per i grafici e la gestione ordini.
+- **File creati/modificati:**
+  - `wiki/Script/AMSRGoldSpeculator.cs` [NEW] — Strategia NinjaScript C# per NinjaTrader 8. Calcola SMA crossover, robust MAD, Z-score ed integra il file bridge di sentiment.
+  - `wiki/Script/gold_swing_trader.py` (modificato per scrivere automaticamente `data/gold_sentiment.txt` ad ogni esecuzione).
+  - `index.md` (registrato il nuovo script C# nel catalogo centrale).
+  - `log.md` (questo file).
+
+

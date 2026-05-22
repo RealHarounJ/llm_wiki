@@ -206,6 +206,11 @@ def process_and_save_data(ticker, results):
     print(f"   (Totale record scritti: {len(prices)})\n")
 
 def main():
+    # Imposta encoding UTF-8 per l'output su console Windows
+    if sys.platform.startswith('win'):
+        import io
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
     print("🚀 Inizializzazione pipeline dati Polygon.io...")
     api_key = load_api_key()
     

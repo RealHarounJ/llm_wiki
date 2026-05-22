@@ -97,6 +97,11 @@ def place_market_order(auth, ticker, quantity, dry_run=True):
 
 
 def main():
+    # Imposta encoding UTF-8 per l'output su console Windows
+    if sys.platform.startswith('win'):
+        import io
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
     print("=" * 70)
     print("  🧹 FASE 1 — Pulizia Micro-Posizioni Portafoglio")
     print("=" * 70)
