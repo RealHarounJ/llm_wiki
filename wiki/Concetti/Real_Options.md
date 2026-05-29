@@ -1,4 +1,4 @@
-﻿---
+---
 tags: [concept, theory]
 aliases: [Real Options]
 date_created: 2026-05-21

@@ -1,4 +1,4 @@
-﻿---
+---
 tags: [esame, dashboard, corporate-finance]
 aliases: [Cruscotto Esame, Preparazione Finale]
 ---
@@ -25,8 +25,10 @@ Esercitati su questi modelli reali estratti dalle soluzioni ufficiali.
 - [[Esercizio_Svolto_Cash_Budget]] — Pianificazione della liquidità e fabbisogno a breve.
 - [[Pianificazione_Finanziaria_Lungo_Termine]] — Calcolo dell'**EFN** e Bilanci Pro-forma.
 
-### 📊 Fase 3: Strumenti Excel
-Verifica la tua comprensione usando i file interattivi:
+### 📊 Fase 3: Strumenti Interattivi & Excel
+Verifica la tua comprensione usando i file interattivi ed Excel:
+- [Simulatore Interattivo Web di Cash Budgeting](file:///c:/Users/jaafa/Downloads/llm_wiki-main/simulation_cash_budget/index.html) — Grafici dinamici, scenari d'esame e calcoli in tempo reale.
+- `wiki/Progetti/Short_Term_Cash_Budget.xlsx` — Foglio Excel precompilato.
 - `Capital_Budgeting_Model.xlsx`
 - `LongTerm_Financial_Planning.xlsx`
 

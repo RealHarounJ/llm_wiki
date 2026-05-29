@@ -196,6 +196,14 @@ def run_predictive_model(ticker, raw_data):
     print("="*70 + "\n")
 
 def main():
+    # Forza codifica UTF-8 per console Windows
+    if sys.platform.startswith('win'):
+        try:
+            sys.stdout.reconfigure(encoding='utf-8')
+        except AttributeError:
+            import io
+            sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
     print("🚀 Inizializzazione pipeline predittiva Alpha Vantage...")
     api_key = load_api_key()
     

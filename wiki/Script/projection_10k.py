@@ -7,11 +7,40 @@ Simulazione con contributi mensili variabili e scenari multipli.
 import math
 import random
 import datetime
+import sys
+
+# Forza codifica UTF-8 per console Windows
+if sys.platform.startswith('win'):
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except AttributeError:
+        import io
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 random.seed(42)
 
-# ── Parametri portafoglio attuale ──────────────────────────────────────────────
-CURRENT_VALUE = 2020.0  # €1,921 + €100 appena depositati
+# ── Caricamento dinamico del valore attuale dal portafoglio Trading 212 ─────────
+CURRENT_VALUE = 2211.25  # Fallback di produzione
+try:
+    from fetch_trading212_portfolio import load_trading212_credentials, fetch_positions
+    api_auth = load_trading212_credentials()
+    positions, ep_name = fetch_positions(api_auth)
+    if positions:
+        total_val = 0.0
+        for pos in positions:
+            val = pos.get("walletImpact", {}).get("currentValue")
+            if val is None:
+                val = pos.get("value")
+                if val is None:
+                    quantity = float(pos.get("quantity", 0.0))
+                    curr_price = float(pos.get("currentPrice", 0.0))
+                    val = quantity * curr_price
+            total_val += float(val)
+        CURRENT_VALUE = round(total_val, 2)
+        print(f"✅ Valore portafoglio Trading 212 in tempo reale caricato via API ({ep_name}): €{CURRENT_VALUE}")
+except Exception as e:
+    print(f"⚠️ Impossibile caricare il valore live da API ({e}). Utilizzo fallback: €{CURRENT_VALUE}")
+
 MONTHLY_CONTRIBUTION = 100.0  # PAC mensile
 TARGET = 10000.0
 

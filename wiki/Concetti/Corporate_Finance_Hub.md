@@ -1,4 +1,4 @@
-﻿---
+---
 tags: [finanza, corporate-finance, hub]
 aliases: [Finanza Aziendale, Hub CF]
 date_created: 2026-05-07

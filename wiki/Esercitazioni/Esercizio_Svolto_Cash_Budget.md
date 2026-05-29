@@ -1,4 +1,4 @@
-﻿---
+---
 tags: [esercitazione, cash-budgeting, liquidity, excel]
 aliases: [Esercizio Budget di Cassa]
 ---

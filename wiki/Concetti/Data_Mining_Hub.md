@@ -1,4 +1,4 @@
-﻿---
+---
 tags: [data-mining, database, sql, hub]
 aliases: [Data Mining Hub]
 date_created: 2026-05-07

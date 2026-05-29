@@ -1,4 +1,4 @@
-﻿---
+---
 tags: [database, data-warehouse, OLAP, ETL, MDM, multidimensional-model, elmasri-navathe, study-notes]
 aliases: [Data Warehousing Notes, Elmasri Chapter 25]
 date_created: 2026-05-21

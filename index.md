@@ -54,7 +54,15 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Bayesian_Portfolio_Mojo]]                   | Integrazione stime qualitative (Chincarini Prior, Black-Litterman) |
 | [[Performance_Attribution_Active]]            | Attribuzione ex-post (Brinson BHB/BF, scomposizione fattoriale)  |
 | [[Gold_Speculation_Strategy]]                 | Strategia speculativa quantitativa sull'oro (Modello AMSR)       |
+| [[Guida_Selezione_Prop_Firm]]                 | Valutazione quantitativa delle Prop Firm (EOD vs Trailing, regole di consistenza) |
+| [[Strategia_Lungo_Termine_Systematic]]         | Teoria sistematica a lungo termine (Starter System di Carver, Kelly e bias di Chan) |
+| [[Bridge_Esecuzione_Automatica]]               | Codici e blueprint tecnici per MT5 (Python) e NinjaTrader 8 (C#) |
 
+### Python & Data Analysis
+| File | Descrizione |
+| --- | --- |
+| [[Python_Data_Analysis]]                      | Guida completa all'analisi dei dati in Python (Pandas, NumPy, IPython) |
+| [[Lezione_1_NumPy_Vettorializzazione]]        | Lezione 1: NumPy, ndarray, contiguità di memoria, SIMD e regole di Broadcasting |
 
 ### Data Mining & Database
 | File | Descrizione |
@@ -155,6 +163,7 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Fonte_Chincarini_QEPM]] | Quantitative Equity Portfolio Management (Chincarini, 2023) |
 | [[Fonte_Grinold_Kahn_APM]] | Active Portfolio Management (Grinold & Kahn, 2nd Ed) |
 | [[Fonte_Bytewax_Realtime_Datasets]] | Bytewax Realtime Datasets (GitHub community list, 2026) |
+| [[Fonte_McKinney_Python_Data_Analysis]] | Python for Data Analysis (Wes McKinney) — data wrangling con Pandas, NumPy e IPython |
 
 ---
 
@@ -198,6 +207,9 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[SQL_Esempi_Pratici]] | Query ed esempi SQL per esercitazione |
 | [[Esercizio_Car_Dealer_Mapping]] | Esercizio di mappatura database Car Dealer |
 | [[Esercizio_Netflix_ER]] | Esercizio svolto ER Database Netflix |
+| [[Soluzioni_Domande_Corporate_Finance]] | Risposte complete e accademiche alle 55 domande ed esercitazione pratica d'esame |
+| [[Guida_Grafici_Formule_Esame]] | Blackboard Masterclass: Guida a tutti i grafici e formule dell'esame orale |
+
 
 ---
 
@@ -238,4 +250,20 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | `fetch_market_data.py` | Python | Ingestione dati di mercato in tempo reale da Polygon.io (Stocks, ETF, Forex, Gold) con calcolo MAD e Z-score robusti |
 | `gold_swing_trader.py` | Python | Strategia speculativa quantitativa multi-day sull'oro spot con trend SMA, Robust Z-score (MAD) e sentiment notizie |
 | `AMSRGoldSpeculator.cs` | C# | Strategia quantitativa per NinjaTrader 8 (Futures Oro GC/MGC) basata su crossover SMA, Robust Z-Score (MAD) e bridge sentiment Python |
+| `run_gold_paper_trading.py` | Python | Bot di auto-trading in tempo reale per conti demo MetaTrader 5 (MT5) con calcolo MAD, Z-score robusto, sentiment e kill-switch di emergenza |
+| `telegram_bridge.py` | Python | Ingestione automatica dei messaggi di testo Telegram inviati dall'utente |
+| `send_telegram.py` | Python | Invio di messaggi di risposta e comandi formattati al cellulare dell'utente via Telegram |
+| `telegram_listener.py` | Python | Listener ad alta frequenza (5s) per il controllo remoto immediato da smartphone via Telegram |
+
+---
+
+## 🌐 Simulazioni Interattive Web (HTML/JS)
+
+| Simulazione | Percorso | Descrizione |
+|---|---|---|
+| **Cash Budgeting Simulator** | [simulation_cash_budget/index.html](file:///c:/Users/jaafa/Downloads/llm_wiki-main/simulation_cash_budget/index.html) | Simulatore interattivo di flussi di cassa, riserva minima ed EFN a breve termine (Scenario d'esame) |
+| **NoSQL Universe** | [simulation_models/index.html](file:///c:/Users/jaafa/Downloads/llm_wiki-main/simulation_models/index.html) | Simulatore interattivo di modelli dati Key-Value, Document, Column-Family e Graph |
+| **NoSQL Operations** | [simulation_nosql/index.html](file:///c:/Users/jaafa/Downloads/llm_wiki-main/simulation_nosql/index.html) | Simulatore pratico di operazioni CRUD ed architetture NoSQL distribuite |
+| **Scalability & Load Balancing** | [simulation_scalability/index.html](file:///c:/Users/jaafa/Downloads/llm_wiki-main/simulation_scalability/index.html) | Simulatore di architetture distribuite, bilanciamento del carico e replicazione |
+| **Data Mining Workflows** | [simulation_workflow/index.html](file:///c:/Users/jaafa/Downloads/llm_wiki-main/simulation_workflow/index.html) | Simulatore dei workflow di data mining (ETL, classificazione, clustering) |
 

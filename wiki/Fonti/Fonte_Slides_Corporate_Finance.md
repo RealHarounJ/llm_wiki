@@ -1,4 +1,4 @@
-﻿---
+---
 tags: [fonte, finanza, corporate-finance, slides, universita]
 date_created: 2026-05-07
 ---

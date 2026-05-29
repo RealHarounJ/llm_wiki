@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Budgeting Simulator | Haroun Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #030712;
+            --card-bg: rgba(17, 24, 39, 0.7);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --primary: #0ea5e9;
+            --primary-glow: rgba(14, 165, 233, 0.15);
+            --secondary: #8b5cf6;
+            --secondary-glow: rgba(139, 92, 246, 0.15);
+            --success: #10b981;
+            --success-glow: rgba(16, 185, 129, 0.15);
+            --danger: #ef4444;
+            --danger-glow: rgba(239, 68, 68, 0.15);
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --text-muted: #6b7280;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-primary);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            min-height: 100vh;
+            padding: 2rem 1.5rem;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.05) 0%, transparent 40%);
+            background-attachment: fixed;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            background: rgba(14, 165, 233, 0.1);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            border: 1px solid rgba(14, 165, 233, 0.2);
+        }
+
+        h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 30%, #9ca3af 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+        }
+
+        header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Dashboard Grid Layout */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        @media (max-width: 1100px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Glassmorphic Cards */
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.6);
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #fff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 0.75rem;
+        }
+
+        .card-title span {
+            font-size: 1.5rem;
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-wrapper .prefix {
+            position: absolute;
+            left: 1rem;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            pointer-events: none;
+        }
+
+        .input-wrapper .suffix {
+            position: absolute;
+            right: 1rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            pointer-events: none;
+        }
+
+        input[type="number"], select {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--card-border);
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .has-prefix input {
+            padding-left: 2.2rem;
+        }
+
+        .has-suffix input {
+            padding-right: 2.2rem;
+        }
+
+        input[type="number"]:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-glow);
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        /* Main Workspace Container */
+        .workspace {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* Responsive Table Container */
+        .table-container {
+            overflow-x: auto;
+            border-radius: 16px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--card-border);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            text-align: right;
+        }
+
+        th, td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        th {
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+        }
+
+        th:first-child, td:first-child {
+            text-align: left;
+            position: sticky;
+            left: 0;
+            background: #0b0f19;
+            font-weight: 500;
+            min-width: 220px;
+        }
+
+        tbody tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* Styling Specific Rows */
+        .section-header {
+            background: rgba(255, 255, 255, 0.02) !important;
+            font-weight: 700 !important;
+            color: var(--primary) !important;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+        }
+
+        .section-header td {
+            border-bottom: 2px solid rgba(14, 165, 233, 0.2);
+            text-align: left !important;
+            padding-top: 1.5rem;
+        }
+
+        .total-row td {
+            font-weight: 700;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.03);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .highlight-row {
+            background: rgba(139, 92, 246, 0.04);
+        }
+
+        .highlight-row td {
+            font-weight: 700;
+            border-top: 1px solid rgba(139, 92, 246, 0.2);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .bold-row td {
+            font-weight: 700;
+        }
+
+        .editable-cell {
+            padding: 0.4rem;
+        }
+
+        .editable-cell input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            padding: 0.4rem 0.6rem;
+            border-radius: 6px;
+            color: #fff;
+            text-align: right;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+
+        .editable-cell input:focus {
+            background: rgba(0, 0, 0, 0.5);
+            border-color: var(--primary);
+            outline: none;
+        }
+
+        /* Status Pills */
+        .badge {
+            padding: 0.25rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .badge-success {
+            background: var(--success-glow);
+            color: var(--success);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .badge-danger {
+            background: var(--danger-glow);
+            color: var(--danger);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            animation: pulse-border 2s infinite;
+        }
+
+        @keyframes pulse-border {
+            0% { border-color: rgba(239, 68, 68, 0.2); }
+            50% { border-color: rgba(239, 68, 68, 0.6); }
+            100% { border-color: rgba(239, 68, 68, 0.2); }
+        }
+
+        /* Chart Visualizer */
+        .chart-card {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 900px) {
+            .chart-card {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .chart-container {
+            width: 100%;
+            height: 320px;
+            position: relative;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid var(--card-border);
+        }
+
+        .metrics-summary {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1.25rem;
+        }
+
+        .metric-tile {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            transition: var(--transition);
+        }
+
+        .metric-tile:hover {
+            transform: translateX(5px);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .metric-tile .label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        .metric-tile .value {
+            font-size: 1.75rem;
+            font-weight: 800;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .text-primary-color { color: var(--primary); }
+        .text-secondary-color { color: var(--secondary); }
+        .text-success-color { color: var(--success); }
+        .text-danger-color { color: var(--danger); }
+
+        /* Custom Interactive SVG Graph Elements */
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .chart-bar-inflow {
+            fill: url(#inflowGrad);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .chart-bar-outflow {
+            fill: url(#outflowGrad);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .chart-bar-inflow:hover, .chart-bar-outflow:hover {
+            opacity: 0.9;
+            filter: brightness(1.2);
+        }
+
+        .chart-line {
+            fill: none;
+            stroke: var(--success);
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            filter: drop-shadow(0px 4px 10px rgba(16, 185, 129, 0.3));
+            transition: var(--transition);
+        }
+
+        .chart-min-line {
+            fill: none;
+            stroke: var(--danger);
+            stroke-width: 1.5;
+            stroke-dasharray: 4 4;
+            opacity: 0.7;
+        }
+
+        .chart-axis {
+            stroke: rgba(255, 255, 255, 0.1);
+            stroke-width: 1;
+        }
+
+        .chart-text {
+            fill: var(--text-secondary);
+            font-size: 10px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .chart-text-value {
+            fill: #fff;
+            font-size: 9px;
+            font-family: 'JetBrains Mono', monospace;
+            text-anchor: middle;
+            font-weight: 600;
+        }
+
+        .tooltip {
+            position: absolute;
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            pointer-events: none;
+            display: none;
+            z-index: 10;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            color: #fff;
+        }
+
+        .scenario-loader {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+
+        .btn-scenario {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-scenario:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn-scenario.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: #000;
+            box-shadow: 0 4px 15px var(--primary-glow);
+        }
+
+        /* Explanations section */
+        .info-card {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .info-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .info-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .info-card ul {
+            margin-left: 1.2rem;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .info-card li {
+            margin-bottom: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Interactive Learning Tool</div>
+            <h1>Simulatore di Cash Budgeting</h1>
+            <p>Pianifica i flussi di cassa, rispetta il saldo minimo e individua in anticipo il fabbisogno di prestito a breve termine.</p>
+        </header>
+
+        <div class="scenario-loader">
+            <button class="btn-scenario active" id="btn-scen-1" onclick="loadScenario(1)">Scenario 1: Esercizio Svolto Trimestrale (Q1-Q4)</button>
+            <button class="btn-scenario" id="btn-scen-2" onclick="loadScenario(2)">Scenario 2: Esercitazione Pratica Mensile (Gen-Mar)</button>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Sidebar: Parameters -->
+            <aside class="card">
+                <div class="card-title">
+                    <span>⚙️</span> Parametri Generali
+                </div>
+                
+                <div class="form-group">
+                    <label for="beginning-cash">Saldo Iniziale Periodo 1</label>
+                    <div class="input-wrapper has-prefix has-suffix">
+                        <span class="prefix">€</span>
+                        <input type="number" id="beginning-cash" value="80" oninput="calculateBudget()">
+                        <span class="suffix">k</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="min-cash-req">Saldo Minimo Richiesto</label>
+                    <div class="input-wrapper has-prefix has-suffix">
+                        <span class="prefix">€</span>
+                        <input type="number" id="min-cash-req" value="20" oninput="calculateBudget()">
+                        <span class="suffix">k</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="collection-current">Incasso Corrente (Stesso Periodo)</label>
+                    <div class="input-wrapper has-suffix">
+                        <input type="number" id="collection-current" value="80" min="0" max="100" oninput="calculateBudget()">
+                        <span class="suffix">%</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="collection-next">Incasso Differito (Periodo Successivo)</label>
+                    <div class="input-wrapper has-suffix">
+                        <input type="number" id="collection-next" value="20" min="0" max="100" readonly>
+                        <span class="suffix">%</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="receivables-init">Crediti Periodo Precedente (Iniziali)</label>
+                    <div class="input-wrapper has-prefix has-suffix">
+                        <span class="prefix">€</span>
+                        <input type="number" id="receivables-init" value="35" oninput="calculateBudget()">
+                        <span class="suffix">k</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="payables-init">Debiti Periodo Precedente (Iniziali)</label>
+                    <div class="input-wrapper has-prefix has-suffix">
+                        <span class="prefix">€</span>
+                        <input type="number" id="payables-init" value="320" oninput="calculateBudget()">
+                        <span class="suffix">k</span>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h4>💡 Focus Teoria</h4>
+                    <p>Il <strong>Cash Budget</strong> risponde a tre domande chiave:</p>
+                    <ul>
+                        <li>Generiamo cassa o ne assorbiamo? (Net Cash Flow)</li>
+                        <li>Il nostro saldo scende sotto la riserva minima di sicurezza?</li>
+                        <li>Di quanto <strong>prestito bancario</strong> (EFN a breve) avremo bisogno per compensare il deficit?</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Main Panel: Workspace -->
+            <main class="workspace">
+                <!-- Interactive Charts -->
+                <div class="card chart-card">
+                    <div class="chart-container">
+                        <div class="tooltip" id="chart-tooltip"></div>
+                        <svg viewBox="0 0 500 280" preserveAspectRatio="xMidYMid meet">
+                            <defs>
+                                <linearGradient id="inflowGrad" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.8"/>
+                                    <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0.1"/>
+                                </linearGradient>
+                                <linearGradient id="outflowGrad" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.8"/>
+                                    <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.1"/>
+                                </linearGradient>
+                            </defs>
+                            
+                            <!-- Grid lines -->
+                            <line x1="50" y1="40" x2="470" y2="40" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                            <line x1="50" y1="90" x2="470" y2="90" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                            <line x1="50" y1="140" x2="470" y2="140" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                            <line x1="50" y1="190" x2="470" y2="190" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                            <line x1="50" y1="240" x2="470" y2="240" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                            
+                            <!-- Bars & Lines will be injected dynamically -->
+                            <g id="svg-content"></g>
+                        </svg>
+                    </div>
+
+                    <div class="metrics-summary">
+                        <div class="metric-tile">
+                            <span class="label">Totale Entrate Cumulate</span>
+                            <span class="value text-primary-color" id="sum-inflows">€0k</span>
+                        </div>
+                        <div class="metric-tile">
+                            <span class="label">Totale Uscite Cumulate</span>
+                            <span class="value text-secondary-color" id="sum-outflows">€0k</span>
+                        </div>
+                        <div class="metric-tile">
+                            <span class="label">Picco di Prestito Necessario</span>
+                            <span class="value text-danger-color" id="peak-borrowing">€0k</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Calculation Table -->
+                <div class="card">
+                    <div class="card-title">
+                        <span>📊</span> Modello di Calcolo Interattivo <span style="font-size: 0.8rem; font-weight: normal; color: var(--text-secondary); margin-left: auto;">(I valori nelle caselle tratteggiate sono modificabili)</span>
+                    </div>
+
+                    <div class="table-container">
+                        <table id="budget-table">
+                            <thead>
+                                <tr>
+                                    <th style="text-align: left;">Voce / Item (Migliaia di €)</th>
+                                    <th class="col-p1">P1</th>
+                                    <th class="col-p2">P2</th>
+                                    <th class="col-p3">P3</th>
+                                    <th class="col-p4">P4</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- A. VENDITE & INCASSI -->
+                                <tr class="section-header">
+                                    <td colspan="5">A. Entrate di Cassa (Cash Inflows)</td>
+                                </tr>
+                                <tr>
+                                    <td>Vendite Previste (Sales Forecast)</td>
+                                    <td class="editable-cell"><input type="number" id="sales-1" value="400" oninput="calculateBudget()"></td>
+                                    <td class="editable-cell"><input type="number" id="sales-2" value="350" oninput="calculateBudget()"></td>
+                                    <td class="editable-cell"><input type="number" id="sales-3" value="500" oninput="calculateBudget()"></td>
+                                    <td class="editable-cell"><input type="number" id="sales-4" value="400" oninput="calculateBudget()"></td>
+                                </tr>
+                                <tr>
+                                    <td>Incasso Vendite Periodo Corrente</td>
+                                    <td id="inflow-curr-1">0</td>
+                                    <td id="inflow-curr-2">0</td>
+                                    <td id="inflow-curr-3">0</td>
+                                    <td id="inflow-curr-4">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Incasso Crediti Periodo Precedente</td>
+                                    <td id="inflow-prev-1">35</td>
+                                    <td id="inflow-prev-2">0</td>
+                                    <td id="inflow-prev-3">0</td>
+                                    <td id="inflow-prev-4">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Altre Entrate / Disinvestimenti</td>
+                                    <td class="editable-cell"><input type="number" id="other-in-1" value="0" oninput="calculateBudget()"></td>
+                                    <td class="editable-cell"><input type="number" id="other-in-2" value="0" oninput="calculateBudget()"></td>
+                                    <td class="editable-cell"><input type="number" id="other-in-3" value="0" oninput="calculateBudget()"></td>
+                                    <td class="editable-cell"><input type="number" id="other-in-4" value="650" oninput="calculateBudget()"></td>
+                                </tr>
+                                <tr class="total-row">
+                                    <td>TOTALE ENTRATE</td>
+                                    <td id="tot-inflow-1">0</td>
+                                    <td id="tot-inflow-2">0</td>
+                                    <td id="tot-inflow-3">0</td>
+                                    <td id="tot-inflow-4">0</td>
+                                </tr>
+
+                                <!-- B. USCITE -->
+                                <tr class="section-header">
+                                    <td colspan="5">B. Uscite di Cassa (Cash Outflows)</td>
+                                </tr>
+                                <tr>
+                                    <td>Acquisti Previsti (Purchases)</td>
+                                    <td class="editable-cell"><input type="number" id="purch-1" value="200" oninput="calculateBudget()"></td>
+                                    <td class="editable-cell"><input type="number" id="purch-2" value="300" oninput="calculateBudget()"></td>
+                                    <td class="editable-cell"><input type="number" id="purch-3" value="500" oninput="calculateBudget()"></td>
+                                    <td class="editable-cell"><input type="number" id="purch-4" value="350" oninput="calculateBudget()"></td>
+                                </tr>
+                                <tr>
+                                    <td>Pagamento Fornitori (Differito)</td>
+                                    <td id="outflow-suppliers-1">320</td>
+                                    <td id="outflow-suppliers-2">0</td>
+                                    <td id="outflow-suppliers-3">0</td>
+                                    <td id="outflow-suppliers-4">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Spese Operative (Lavoro, affitti)</td>
+                                    <td class="editable-cell"><input type="number" id="opex-1" value="80" oninput="calculateBudget()"></td>
+                                    <td class="editable-cell"><input type="number" id="opex-2" value="70" oninput="calculateBudget()"></td>
+                                    <td class="editable-cell"><input type="number" id="opex-3" value="100" oninput="calculateBudget()"></td>
+                                    <td class="editable-cell"><input type="number" id="opex-4" value="80" oninput="calculateBudget()"></td>
+                                </tr>
+                                <tr>
+                                    <td>Investimenti in C/Capitale (Capex)</td>
+                                    <td class="editable-cell"><input type="number" id="capex-1" value="0" oninput="calculateBudget()"></td>
+                                    <td class="editable-cell"><input type="number" id="capex-2" value="0" oninput="calculateBudget()"></td>
+                                    <td class="editable-cell"><input type="number" id="capex-3" value="0" oninput="calculateBudget()"></td>
+                                    <td class="editable-cell"><input type="number" id="capex-4" value="1500" oninput="calculateBudget()"></td>
+                                </tr>
+                                <tr>
+                                    <td>Tasse, Interessi, Dividendi</td>
+                                    <td class="editable-cell"><input type="number" id="other-out-1" value="28" oninput="calculateBudget()"></td>
+                                    <td class="editable-cell"><input type="number" id="other-out-2" value="308" oninput="calculateBudget()"></td>
+                                    <td class="editable-cell"><input type="number" id="other-out-3" value="163" oninput="calculateBudget()"></td>
+                                    <td class="editable-cell"><input type="number" id="other-out-4" value="28" oninput="calculateBudget()"></td>
+                                </tr>
+                                <tr class="total-row">
+                                    <td>TOTALE USCITE</td>
+                                    <td id="tot-outflow-1">0</td>
+                                    <td id="tot-outflow-2">0</td>
+                                    <td id="tot-outflow-3">0</td>
+                                    <td id="tot-outflow-4">0</td>
+                                </tr>
+
+                                <!-- C. FLUSSI NETTI -->
+                                <tr class="section-header">
+                                    <td colspan="5">C. Sintesi dei Flussi e Analisi Fabbisogno</td>
+                                </tr>
+                                <tr class="bold-row">
+                                    <td>Surplus / Deficit Netto di Cassa</td>
+                                    <td id="net-cash-1">0</td>
+                                    <td id="net-cash-2">0</td>
+                                    <td id="net-cash-3">0</td>
+                                    <td id="net-cash-4">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Saldo Cassa Iniziale</td>
+                                    <td id="beginning-1">0</td>
+                                    <td id="beginning-2">0</td>
+                                    <td id="beginning-3">0</td>
+                                    <td id="beginning-4">0</td>
+                                </tr>
+                                <tr class="bold-row">
+                                    <td>Saldo Cassa Finale (Prima dei Finanziamenti)</td>
+                                    <td id="ending-before-1">0</td>
+                                    <td id="ending-before-2">0</td>
+                                    <td id="ending-before-3">0</td>
+                                    <td id="ending-before-4">0</td>
+                                </tr>
+                                <tr class="highlight-row">
+                                    <td>Fabbisogno Debito Cumulato (EFN a Breve)</td>
+                                    <td id="borrowing-1">0</td>
+                                    <td id="borrowing-2">0</td>
+                                    <td id="borrowing-3">0</td>
+                                    <td id="borrowing-4">0</td>
+                                </tr>
+                                <tr class="bold-row">
+                                    <td>Saldo Cassa Finale Rettificato (Post Finanziamenti)</td>
+                                    <td id="ending-after-1">0</td>
+                                    <td id="ending-after-2">0</td>
+                                    <td id="ending-after-3">0</td>
+                                    <td id="ending-after-4">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Stato Cassa rispetto al Minimo</td>
+                                    <td id="status-1">OK</td>
+                                    <td id="status-2">OK</td>
+                                    <td id="status-3">OK</td>
+                                    <td id="status-4">OK</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        let activeScenario = 1;
+
+        function loadScenario(scenId) {
+            activeScenario = scenId;
+            document.querySelectorAll('.btn-scenario').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`btn-scen-${scenId}`).classList.add('active');
+
+            const thP1 = document.querySelector('.col-p1');
+            const thP2 = document.querySelector('.col-p2');
+            const thP3 = document.querySelector('.col-p3');
+            const thP4 = document.querySelector('.col-p4');
+
+            if (scenId === 1) {
+                // Scenario 1: Esercizio Svolto Trimestrale
+                thP1.textContent = 'Q1';
+                thP2.textContent = 'Q2';
+                thP3.textContent = 'Q3';
+                thP4.textContent = 'Q4';
+
+                document.getElementById('beginning-cash').value = '80';
+                document.getElementById('min-cash-req').value = '20';
+                document.getElementById('collection-current').value = '80';
+                document.getElementById('receivables-init').value = '35';
+                document.getElementById('payables-init').value = '320';
+
+                // Sales
+                document.getElementById('sales-1').value = '400';
+                document.getElementById('sales-2').value = '350';
+                document.getElementById('sales-3').value = '500';
+                document.getElementById('sales-4').value = '400';
+
+                // Other In
+                document.getElementById('other-in-1').value = '0';
+                document.getElementById('other-in-2').value = '0';
+                document.getElementById('other-in-3').value = '0';
+                document.getElementById('other-in-4').value = '650';
+
+                // Purchases
+                document.getElementById('purch-1').value = '200';
+                document.getElementById('purch-2').value = '300';
+                document.getElementById('purch-3').value = '500';
+                document.getElementById('purch-4').value = '350';
+
+                // Opex
+                document.getElementById('opex-1').value = '80';
+                document.getElementById('opex-2').value = '70';
+                document.getElementById('opex-3').value = '100';
+                document.getElementById('opex-4').value = '80';
+
+                // Capex
+                document.getElementById('capex-1').value = '0';
+                document.getElementById('capex-2').value = '0';
+                document.getElementById('capex-3').value = '0';
+                document.getElementById('capex-4').value = '1500';
+
+                // Other Out
+                document.getElementById('other-out-1').value = '28';
+                document.getElementById('other-out-2').value = '308';
+                document.getElementById('other-out-3').value = '163';
+                document.getElementById('other-out-4').value = '28';
+
+                // Reset P4 column header styles
+                thP4.style.opacity = '1';
+                document.querySelectorAll('tr').forEach(tr => {
+                    if (tr.cells.length === 5) {
+                        tr.cells[4].style.opacity = '1';
+                    }
+                });
+            } else {
+                // Scenario 2: Esercitazione Pratica Mensile (Jan-Mar)
+                thP1.textContent = 'GEN';
+                thP2.textContent = 'FEB';
+                thP3.textContent = 'MAR';
+                thP4.textContent = 'APR (N/D)';
+
+                document.getElementById('beginning-cash').value = '50';
+                document.getElementById('min-cash-req').value = '40';
+                document.getElementById('collection-current').value = '50';
+                document.getElementById('receivables-init').value = '40';
+                document.getElementById('payables-init').value = '50';
+
+                // Sales
+                document.getElementById('sales-1').value = '100';
+                document.getElementById('sales-2').value = '150';
+                document.getElementById('sales-3').value = '200';
+                document.getElementById('sales-4').value = '0';
+
+                // Other In
+                document.getElementById('other-in-1').value = '0';
+                document.getElementById('other-in-2').value = '0';
+                document.getElementById('other-in-3').value = '0';
+                document.getElementById('other-in-4').value = '0';
+
+                // Purchases
+                document.getElementById('purch-1').value = '50';
+                document.getElementById('purch-2').value = '80';
+                document.getElementById('purch-3').value = '70';
+                document.getElementById('purch-4').value = '0';
+
+                // Opex
+                document.getElementById('opex-1').value = '30';
+                document.getElementById('opex-2').value = '40';
+                document.getElementById('opex-3').value = '30';
+                document.getElementById('opex-4').value = '0';
+
+                // Capex
+                document.getElementById('capex-1').value = '0';
+                document.getElementById('capex-2').value = '0';
+                document.getElementById('capex-3').value = '120';
+                document.getElementById('capex-4').value = '0';
+
+                // Other Out
+                document.getElementById('other-out-1').value = '0';
+                document.getElementById('other-out-2').value = '0';
+                document.getElementById('other-out-3').value = '0';
+                document.getElementById('other-out-4').value = '0';
+
+                // Hide P4 cells since scenario 2 has only 3 periods
+                thP4.style.opacity = '0.3';
+                document.querySelectorAll('tr').forEach(tr => {
+                    if (tr.cells.length === 5) {
+                        tr.cells[4].style.opacity = '0.3';
+                    }
+                });
+            }
+
+            calculateBudget();
+        }
+
+        function calculateBudget() {
+            // Read input controls
+            const begCashVal = parseFloat(document.getElementById('beginning-cash').value) || 0;
+            const minCashVal = parseFloat(document.getElementById('min-cash-req').value) || 0;
+            
+            const pctCurrent = parseFloat(document.getElementById('collection-current').value) || 0;
+            const pctNext = 100 - pctCurrent;
+            document.getElementById('collection-next').value = pctNext;
+
+            const recInit = parseFloat(document.getElementById('receivables-init').value) || 0;
+            const payInit = parseFloat(document.getElementById('payables-init').value) || 0;
+
+            const numPeriods = activeScenario === 1 ? 4 : 3;
+
+            // Arrays for dynamic columns
+            const sales = [];
+            const otherIn = [];
+            const purch = [];
+            const opex = [];
+            const capex = [];
+            const otherOut = [];
+
+            for (let i = 1; i <= 4; i++) {
+                sales.push(parseFloat(document.getElementById(`sales-${i}`).value) || 0);
+                otherIn.push(parseFloat(document.getElementById(`other-in-${i}`).value) || 0);
+                purch.push(parseFloat(document.getElementById(`purch-${i}`).value) || 0);
+                opex.push(parseFloat(document.getElementById(`opex-${i}`).value) || 0);
+                capex.push(parseFloat(document.getElementById(`capex-${i}`).value) || 0);
+                otherOut.push(parseFloat(document.getElementById(`other-out-${i}`).value) || 0);
+            }
+
+            // Calculation outputs
+            const inflowCurr = [];
+            const inflowPrev = [];
+            const totInflow = [];
+            const outflowSuppliers = [];
+            const totOutflow = [];
+            const netCash = [];
+            const beginningCash = [];
+            const endingBefore = [];
+            const borrowing = [];
+            const endingAfter = [];
+
+            let sumInflowsCum = 0;
+            let sumOutflowsCum = 0;
+            let maxBorrowing = 0;
+
+            // Calculate Period by Period
+            for (let t = 0; t < 4; t++) {
+                // A. Entrate
+                inflowCurr.push(sales[t] * (pctCurrent / 100));
+                
+                if (t === 0) {
+                    inflowPrev.push(recInit);
+                } else {
+                    inflowPrev.push(sales[t-1] * (pctNext / 100));
+                }
+                
+                totInflow.push(inflowCurr[t] + inflowPrev[t] + otherIn[t]);
+
+                // B. Uscite
+                if (t === 0) {
+                    outflowSuppliers.push(payInit);
+                } else {
+                    outflowSuppliers.push(purch[t-1]); // Deferred by 1 period
+                }
+
+                totOutflow.push(outflowSuppliers[t] + opex[t] + capex[t] + otherOut[t]);
+
+                // C. Net Flow
+                netCash.push(totInflow[t] - totOutflow[t]);
+
+                // Accumulate totals for active periods
+                if (t < numPeriods) {
+                    sumInflowsCum += totInflow[t];
+                    sumOutflowsCum += totOutflow[t];
+                }
+            }
+
+            // Calculate Ending Cash & Borrowing
+            let currentBegCash = begCashVal;
+            let currentDebt = 0;
+
+            for (let t = 0; t < 4; t++) {
+                beginningCash.push(currentBegCash);
+                
+                // Ending balance before any financing of THIS period (but carrying forward past cash)
+                const endBefore = currentBegCash + netCash[t];
+                endingBefore.push(endBefore);
+
+                // We want: EndingAfter = EndingBefore + NewBorrowing >= MinCash
+                // Debt needed is the difference between MinCash and EndingBefore (if EndingBefore < MinCash)
+                let debtNeeded = 0;
+                if (endBefore < minCashVal) {
+                    debtNeeded = minCashVal - endBefore;
+                }
+
+                borrowing.push(debtNeeded);
+                endingAfter.push(endBefore + debtNeeded);
+
+                // Set beginning of next period to Ending After
+                currentBegCash = endingAfter[t];
+
+                if (t < numPeriods) {
+                    if (debtNeeded > maxBorrowing) {
+                        maxBorrowing = debtNeeded;
+                    }
+                }
+            }
+
+            // Write results back to HTML
+            for (let t = 0; t < 4; t++) {
+                const idx = t + 1;
+                document.getElementById(`inflow-curr-${idx}`).textContent = inflowCurr[t].toFixed(1);
+                document.getElementById(`inflow-prev-${idx}`).textContent = inflowPrev[t].toFixed(1);
+                document.getElementById(`tot-inflow-${idx}`).textContent = totInflow[t].toFixed(1);
+                document.getElementById(`outflow-suppliers-${idx}`).textContent = outflowSuppliers[t].toFixed(1);
+                document.getElementById(`tot-outflow-${idx}`).textContent = totOutflow[t].toFixed(1);
+                
+                const netCell = document.getElementById(`net-cash-${idx}`);
+                netCell.textContent = (netCash[t] >= 0 ? '+' : '') + netCash[t].toFixed(1);
+                netCell.className = netCash[t] >= 0 ? 'text-success-color font-bold' : 'text-danger-color font-bold';
+
+                document.getElementById(`beginning-${idx}`).textContent = beginningCash[t].toFixed(1);
+                
+                const endBeforeCell = document.getElementById(`ending-before-${idx}`);
+                endBeforeCell.textContent = endingBefore[t].toFixed(1);
+                endBeforeCell.className = endingBefore[t] < minCashVal ? 'text-danger-color font-bold' : 'font-bold';
+
+                const borrowCell = document.getElementById(`borrowing-${idx}`);
+                borrowCell.textContent = borrowing[t] > 0 ? borrowing[t].toFixed(1) : '-';
+                borrowCell.className = borrowing[t] > 0 ? 'text-danger-color font-bold' : '';
+
+                document.getElementById(`ending-after-${idx}`).textContent = endingAfter[t].toFixed(1);
+
+                const statusCell = document.getElementById(`status-${idx}`);
+                if (endingBefore[t] < minCashVal) {
+                    statusCell.innerHTML = `<span class="badge badge-danger">⚠️ DEFICIT (Rif. €${borrowing[t].toFixed(0)}k)</span>`;
+                } else {
+                    statusCell.innerHTML = `<span class="badge badge-success">✅ OK</span>`;
+                }
+            }
+
+            // Write metrics tiles
+            document.getElementById('sum-inflows').textContent = `€${sumInflowsCum.toFixed(0)}k`;
+            document.getElementById('sum-outflows').textContent = `€${sumOutflowsCum.toFixed(0)}k`;
+            document.getElementById('peak-borrowing').textContent = maxBorrowing > 0 ? `€${maxBorrowing.toFixed(0)}k` : 'Nessuno';
+
+            // Draw SVG graph
+            drawGraph(numPeriods, totInflow, totOutflow, endingAfter, minCashVal);
+        }
+
+        function drawGraph(numPeriods, inflows, outflows, endingCash, minCash) {
+            const svgContent = document.getElementById('svg-content');
+            svgContent.innerHTML = '';
+
+            const periodLabels = activeScenario === 1 ? ['Q1', 'Q2', 'Q3', 'Q4'] : ['GEN', 'FEB', 'MAR'];
+            
+            // Find max scale
+            let maxVal = minCash;
+            for (let i = 0; i < numPeriods; i++) {
+                if (inflows[i] > maxVal) maxVal = inflows[i];
+                if (outflows[i] > maxVal) maxVal = outflows[i];
+                if (endingCash[i] > maxVal) maxVal = endingCash[i];
+            }
+            maxVal = Math.ceil(maxVal / 100) * 100; // Round up to nearest 100
+            if (maxVal === 0) maxVal = 100;
+
+            const scaleY = (val) => 240 - (val / maxVal) * 200;
+
+            // Draw axis markers
+            for (let tick = 0; tick <= 5; tick++) {
+                const val = (maxVal / 5) * tick;
+                const y = scaleY(val);
+                
+                const gridLine = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                gridLine.setAttribute("x1", "50");
+                gridLine.setAttribute("y1", y);
+                gridLine.setAttribute("x2", "470");
+                gridLine.setAttribute("y2", y);
+                gridLine.setAttribute("stroke", "rgba(255, 255, 255, 0.05)");
+                gridLine.setAttribute("stroke-width", "1");
+                svgContent.appendChild(gridLine);
+
+                const tickText = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                tickText.setAttribute("x", "40");
+                tickText.setAttribute("y", y + 3);
+                tickText.setAttribute("class", "chart-text");
+                tickText.setAttribute("text-anchor", "end");
+                tickText.textContent = `€${val.toFixed(0)}k`;
+                svgContent.appendChild(tickText);
+            }
+
+            // Draw bars and line points
+            const colWidth = (420 / numPeriods);
+            const linePoints = [];
+
+            for (let i = 0; i < numPeriods; i++) {
+                const xCenter = 50 + i * colWidth + colWidth / 2;
+                
+                // Period labels
+                const lbl = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                lbl.setAttribute("x", xCenter);
+                lbl.setAttribute("y", "260");
+                lbl.setAttribute("class", "chart-text");
+                lbl.setAttribute("text-anchor", "middle");
+                lbl.style.fontWeight = 'bold';
+                lbl.textContent = periodLabels[i];
+                svgContent.appendChild(lbl);
+
+                // Bar Inflow
+                const hIn = (inflows[i] / maxVal) * 200;
+                const barIn = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                barIn.setAttribute("class", "chart-bar-inflow");
+                barIn.setAttribute("x", xCenter - colWidth * 0.35);
+                barIn.setAttribute("y", 240 - hIn);
+                barIn.setAttribute("width", colWidth * 0.3);
+                barIn.setAttribute("height", hIn);
+                barIn.setAttribute("rx", "6");
+                barIn.addEventListener('mouseenter', (e) => showTooltip(e, `Entrate ${periodLabels[i]}: €${inflows[i].toFixed(1)}k`));
+                barIn.addEventListener('mouseleave', hideTooltip);
+                svgContent.appendChild(barIn);
+
+                // Bar Outflow
+                const hOut = (outflows[i] / maxVal) * 200;
+                const barOut = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                barOut.setAttribute("class", "chart-bar-outflow");
+                barOut.setAttribute("x", xCenter + colWidth * 0.05);
+                barOut.setAttribute("y", 240 - hOut);
+                barOut.setAttribute("width", colWidth * 0.3);
+                barOut.setAttribute("height", hOut);
+                barOut.setAttribute("rx", "6");
+                barOut.addEventListener('mouseenter', (e) => showTooltip(e, `Uscite ${periodLabels[i]}: €${outflows[i].toFixed(1)}k`));
+                barOut.addEventListener('mouseleave', hideTooltip);
+                svgContent.appendChild(barOut);
+
+                // Line point for ending cash balance (after financing)
+                const yCash = scaleY(endingCash[i]);
+                linePoints.push(`${xCenter},${yCash}`);
+            }
+
+            // Draw line for ending cash
+            const cashLine = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            cashLine.setAttribute("class", "chart-line");
+            cashLine.setAttribute("d", `M ${linePoints.join(' L ')}`);
+            svgContent.appendChild(cashLine);
+
+            // Draw interactive dots on the line
+            for (let i = 0; i < numPeriods; i++) {
+                const [cx, cy] = linePoints[i].split(',');
+                const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                dot.setAttribute("cx", cx);
+                dot.setAttribute("cy", cy);
+                dot.setAttribute("r", "5");
+                dot.setAttribute("fill", "#10b981");
+                dot.setAttribute("stroke", "#030712");
+                dot.setAttribute("stroke-width", "2");
+                dot.style.cursor = 'pointer';
+                dot.addEventListener('mouseenter', (e) => showTooltip(e, `Cassa Finale ${periodLabels[i]}: €${endingCash[i].toFixed(1)}k`));
+                dot.addEventListener('mouseleave', hideTooltip);
+                svgContent.appendChild(dot);
+            }
+
+            // Draw minimum cash limit threshold line
+            const yMin = scaleY(minCash);
+            const minLine = document.createElementNS("http://www.w3.org/2000/svg", "line");
+            minLine.setAttribute("class", "chart-min-line");
+            minLine.setAttribute("x1", "50");
+            minLine.setAttribute("y1", yMin);
+            minLine.setAttribute("x2", "470");
+            minLine.setAttribute("y2", yMin);
+            svgContent.appendChild(minLine);
+
+            const minLabel = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            minLabel.setAttribute("x", "465");
+            minLabel.setAttribute("y", yMin - 5);
+            minLabel.setAttribute("class", "chart-text text-danger-color");
+            minLabel.setAttribute("text-anchor", "end");
+            minLabel.style.fill = "#ef4444";
+            minLabel.style.fontWeight = "bold";
+            minLabel.style.fontSize = "8px";
+            minLabel.textContent = `RISERVA MINIMA: €${minCash}k`;
+            svgContent.appendChild(minLabel);
+        }
+
+        function showTooltip(event, text) {
+            const tooltip = document.getElementById('chart-tooltip');
+            tooltip.style.display = 'block';
+            tooltip.innerHTML = text;
+            
+            const rect = event.target.getBoundingClientRect();
+            const parentRect = event.target.parentElement.getBoundingClientRect();
+            
+            tooltip.style.left = (event.clientX - parentRect.left + 15) + 'px';
+            tooltip.style.top = (event.clientY - parentRect.top - 15) + 'px';
+        }
+
+        function hideTooltip() {
+            const tooltip = document.getElementById('chart-tooltip');
+            tooltip.style.display = 'none';
+        }
+
+        // Initialize on load
+        loadScenario(1);
+    </script>
+</body>
+</html>

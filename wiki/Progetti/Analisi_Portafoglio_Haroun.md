@@ -12,12 +12,12 @@ Questo documento fornisce un'analisi quantitativa e strategica dettagliata del p
 
 ---
 
-## 📊 Panoramica del Portafoglio (Aggiornato al 22/05/2026 17:00)
+## 📊 Panoramica del Portafoglio (Aggiornato al 29/05/2026 21:30)
 
-*   **Valore Totale dell'Account:** **€2.050,57** (In crescita rispetto a €2.000,58)
+*   **Valore Totale dell'Account:** **€2.211,25** (In crescita rispetto a €2.050,57)
 *   **Capitale Totale Investito:** **€2.107,21**
-*   **Rendimento Aperto Totale:** **€-56,64** (-2,69%) — *Netto miglioramento rispetto al -4,52% precedente!*
-*   **Effetto Cambio (FX Impact):** **€+9,68**
+*   **Rendimento Aperto Totale:** **€+104,04** (+4.94%) — *Il portafoglio ha rotto al rialzo, superando la barriera del breakeven ed entrando ufficialmente in attivo!*
+*   **Effetto Cambio (FX Impact):** **€-1,61**
 *   **Numero di Posizioni Attive:** 19 (Aggiunto `[[BP]]` e aggiornato `[[VGVAl]]` a Vanguard U.K. Gilt)
 
 ### Tabella Dettagliata delle Posizioni (Ordinata per Peso)
@@ -67,7 +67,7 @@ Confrontando la situazione attuale con quella del 19 maggio (`[[Topic_6_Risk_and
 
 Utilizzando il modello econometrico del **Moto Browniano Geometrico (GBM)** implementato nello script [projection_10k.py](file:///c:/Users/jaafa/Downloads/llm_wiki-main/wiki/Script/projection_10k.py), abbiamo simulato **50.000 scenari futuri** a 5 anni (60 mesi) per calcolare la traiettoria probabilistica del portafoglio.
 
-La simulazione assume un portafoglio diversificato globale con un rendimento annuo atteso del **8,62%** e una volatilità del **16%**, calibrati sui dati storici dei tuoi asset.
+La simulazione assume un portafoglio diversificato globale con un rendimento annuo atteso del **8,62%** e una volatilità del **16%**, calibrati sui dati storici dei tuoi asset, partendo dal valore attuale live di **€2.208,74**.
 
 ### 🎯 Obiettivo: Raggiungere €10.000 di Capitale
 
@@ -75,18 +75,18 @@ La tabella seguente mostra dopo quanti mesi ciascuno scenario ha una **probabili
 
 | Scenario | Contributo Mensile (PAC) | Alpha Quant Atteso | Mese al 50% di Probabilità | Tempo Stimato | Data Stimata | Valore Mediano a 5 Anni (60 mesi) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **1. Passivo (Buy & Hold)** | €100 / mese | -- | **Mese 59** | ~4,9 anni | Marzo 2031 | **€10.212** |
-| **2. Quant Attivo (+Alpha)** | €100 / mese | +2% annuo | **Mese 56** | ~4,7 anni | Dicembre 2030 | **€10.862** |
-| **3. Quant Attivo + PAC x2** | **€200 / mese** | +2% annuo | **Mese 33** | **~2,8 anni** | Febbraio 2029 | **€18.589** |
-| **4. Quant Attivo + PAC x5** | **€500 / mese** | +2% annuo | **Mese 15** | **~1,2 anni** | Agosto 2027 | **€41.466** |
+| **1. Passivo (Buy & Hold)** | €100 / mese | -- | **Mese 58** | ~4,8 anni | Marzo 2031 | **€10.486** |
+| **2. Quant Attivo (+Alpha)** | €100 / mese | +2% annuo | **Mese 54** | ~4,5 anni | Novembre 2030 | **€11.165** |
+| **3. Quant Attivo + PAC x2** | **€200 / mese** | +2% annuo | **Mese 32** | **~2,7 anni** | Gennaio 2029 | **€18.890** |
+| **4. Quant Attivo + PAC x5** | **€500 / mese** | +2% annuo | **Mese 15** | **~1,2 anni** | Agosto 2027 | **€41.771** |
 
 ### 📈 Traiettorie dello Scenario Passivo Core (PAC €100/mese)
 
 In uno scenario puramente passivo e diversificato con un PAC di €100/mese, ecco i valori probabilistici attesi nel tempo:
 
-*   **A 12 mesi (Maggio 2027):** Valore mediano atteso **€3.418** (Capitale investito: €3.220 | Guadagno atteso: +6,1%). Con il 90% di probabilità il portafoglio sarà compreso tra €2.769 e €4.252.
-*   **A 36 mesi (Maggio 2029):** Valore mediano atteso **€6.559** (Capitale investito: €5.620 | Guadagno atteso: +16,7%). Inizia ad esserci una probabilità del 2,1% di superare già i €10.000.
-*   **A 60 mesi (Aprile 2031):** Valore mediano atteso **€10.212** (Capitale investito: €8.020 | Guadagno netto mediano di **€2.192**, pari al **+27,3%** di profitto cumulato grazie all'interesse composto).
+*   **A 12 mesi (Maggio 2027):** Valore mediano atteso **€3.621** (Capitale investito: €3.409 | Guadagno atteso: **+6,2%**). Con il 90% di probabilità il portafoglio sarà compreso tra €2.925 e €4.516.
+*   **A 36 mesi (Maggio 2029):** Valore mediano atteso **€6.794** (Capitale investito: €5.809 | Guadagno atteso: **+17,0%**). La probabilità di superare i €10.000 è del 3,2%.
+*   **A 60 mesi (Maggio 2031):** Valore mediano atteso **€10.486** (Capitale investito: €8.209 | Guadagno netto mediano di **€2.277**, pari al **+27,7%** di profitto cumulato grazie all'interesse composto).
 
 ---
 

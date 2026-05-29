@@ -335,4 +335,280 @@ aw/Fundamentals of Database Systems (Elmasri) Cap. 24
   - `index.md` (registrato il nuovo script C# nel catalogo centrale).
   - `log.md` (questo file).
 
+---
+**File creati  wiki/Concetti/:**
+- `Data_Warehouse.md`  Super Technical Theory (OLTP vs OLAP, Inmon, ETL, MDM, MOLAP/ROLAP/HOLAP, Star vs Snowflake Schema)
+
+**Wikilinks creati:** [[OLTP]], [[OLAP]], [[ETL]], [[Master Data Management]], [[MOLAP]], [[ROLAP]], [[HOLAP]], [[Star Schema]], [[Snowflake Schema]], [[Fact Constellation]]
+
+---
+
+## [2026-05-19] INGEST | Industrial Organization & Data Mining Chapter 28
+
+**Operazione:** Creazione delle schede di concetto per Industrial Organization (Lezioni 1-16) e della sessione di studio per Data Mining.
+**Fonti:** Slide corso IO, libro Richards et al. (2014) + Capitolo 28 Elmasri & Navathe (Data Mining).
+
+**File creati/modificati:**
+- `wiki/Progetti/Master_Page_Industrial_Organization.md` — Cruscotto dello studio di IO
+- `wiki/Concetti/IO_01_Microeconomics.md` ... `IO_08_Econometrics.md` — Concetti chiave delle lezioni
+- `wiki/Esercitazioni/Data_Mining_Full_Session.md` — Cheat sheet e sintesi teorica KDD, Apriori, Decision Trees, K-Means, BIRCH, Genetic Algorithms.
+- `index.md` — Aggiornato catalogo
+
+---
+
+## [2026-05-20] STUDY | Esercizio 1 — Conference Review Database (ER Schema)
+
+**Operazione:** Analisi dei requisiti e stesura del diagramma ER concettuale e logico per la gestione delle sottomissioni e revisioni articoli.
+**Fonte:** Esercizio 1 da traccia d'esame.
+
+**File creati/modificati:**
+- `wiki/Esercitazioni/Esercizio_Conference_Review.md` — Analisi dettagliata, diagramma ER Crow's Foot e Chen (Mermaid), schema logico e gestione vincoli.
+- `index.md` — Indicizzazione della sezione Esercitazioni.
+
+---
+
+## [2026-05-20] STUDY | Car Dealer Mapping, Netflix ER & NoSQL Advanced Masterclass
+
+**Operazione:** Risoluzione esercizio di mappatura avanzata (Car Dealer), modellazione ER streaming (Netflix), chiarimenti sui vincoli relazionali di integrità (PK/FK) e stesura della Masterclass sui database NoSQL avanzati.
+**Fonte:** Esercizio 2 da traccia d'esame, traccia Netflix ed Elmasri & Navathe Cap. 24.
+
+**File creati/modificati:**
+- `wiki/Esercitazioni/Esercizio_Car_Dealer_Mapping.md` — Mappatura EER a Relazionale passo-passo, opzione 8A per superclasse/sottoclassi, risoluzione della chiave primaria su relazione ternaria con partecipazione (1,1).
+- `wiki/Esercitazioni/Esercizio_Netflix_ER.md` — Requisiti, modello ER e schema relazionale per una piattaforma di streaming.
+- `wiki/Concetti/NoSQL_Databases.md` — Riscritto da zero in italiano per fungere da Masterclass NoSQL (Consistent Hashing, Ring Topology, Virtual Nodes, Quorum N-R-W e Orologi Vettoriali).
+- `index.md` — Aggiornati riferimenti e descrizioni catalogo.
+
+---
+
+## [2026-05-20] STUDY | SQL DML Operations and Data Warehouse Theory Quiz
+
+**Operazione:** Risoluzione interattiva di query DML (INSERT, UPDATE, DELETE) e ripasso dei concetti teorici fondamentali sul Data Warehouse.
+**Fonte:** Esercitazioni di SQL e quiz di teoria DWH (OLAP vs OLTP, ETL loading precedence, MDM Backflushing, Star vs Snowflake ROLAP, ed OLAP Operations).
+
+**File modificati:**
+- `log.md` — Aggiornato il registro delle sessioni di studio.
+
+---
+
+## [2026-05-20] INGEST | Hedge Funds & Group 11 Comparative Digitalization Case Study
+
+- **Fonti raw:** `raw/How can I start hedgefund.md`, `raw/Step-by-Step Guide to Starting a Hedge Fund.md`, `raw/I have worked on trading floor in investment banks for over a decade, ask me anything.md`, `raw/group_11_extracted.txt`.
+- **File creati:**
+  - `wiki/Fonti/Fonte_Reddit_Hedge_Fund_Start.md`
+  - `wiki/Fonti/Fonte_Investopedia_Hedge_Fund_Guide.md`
+  - `wiki/Fonti/Fonte_Reddit_Trading_Floor_AMA.md`
+  - `wiki/Concetti/Hedge_Funds_and_Trading_Desks.md`
+  - `wiki/Fonti/Fonte_Presentazione_Gruppo_11.md`
+  - `wiki/Sociologia/Caso_Studio_Digitalizzazione_Comparata.md`
+- **File modificati:**
+  - `wiki/Sociologia/Q1_Digitalization_and_Labour_Market.md` (integrato impatto RBTC coreano: -73k impieghi manifatturieri vs +492k servizi)
+  - `wiki/Sociologia/Q2_Digitalization_and_Welfare_State.md` (integrato AI Basic Act e "My Data" Welfare Portal coreani)
+  - `wiki/Sociologia/Q3_Health_Care_and_Digitalization.md` (integrato calo spesa istruzione -4.4% in Arabia Saudita come validazione di Crowding Out)
+  - `index.md` (indicizzato tutti i 6 nuovi file)
+  - `log.md` (questo file)
+
+---
+
+## [2026-05-20] STUDY | Analisi Quantitativa del Portafoglio di Haroun (Trading 212)
+
+- **Operazione:** Analisi e strutturazione del portafoglio personale di Trading 212, evidenziando i rischi di concentrazione e proponendo una strategia Core-Satellite basata sulla finanza classica.
+- **File creati:** `wiki/Progetti/Analisi_Portafoglio_Haroun.md` [NEW]
+- **File modificati:**
+  - `index.md` (registrato il nuovo progetto di analisi finanziaria)
+  - `log.md` (questo file)
+
+---
+
+## [2026-05-20] DEV | Creazione Script di Rebalancing Portafoglio Haroun
+
+- **Operazione:** Sviluppo di uno script Python locale per il calcolo del "No-Sell Rebalancing" per gli investimenti mensili ricorrenti del PAC, pre-popolato con le posizioni e i pesi reali e allineato ai target del modello Core-Satellite.
+- **File creati:** `wiki/Script/rebalance_portfolio.py` [NEW]
+- **File modificati:**
+  - `index.md` (indicizzato il nuovo script in libreria)
+  - `log.md` (questo file)
+
+---
+
+## [2026-05-21] STUDY | Interactive Sociology & C1 English Tutoring: Welfare State Dilemmas & Essays
+
+- **Operazione:** Sessione di studio interattiva e stesura di risposte d'esame complete in inglese accademico C1. Redatti i tre saggi d'esame completi ("Full Exam-Ready Essay Answers") per la Domanda 1 (Mercato del Lavoro: SBTC vs RBTC, polarizzazione, gig economy), la Domanda 2 (Welfare State: Veil of Ignorance, ADM, pensioni e sindacati, Social Investment vs UBI) e il Caso Studio Comparato del Gruppo 11 (Corea del Sud vs Arabia Saudita: Vision 2030, Baumol's Cost Disease, Crowding Out e AI Basic Act).
+- **File modificati:**
+  - `wiki/Sociologia/Q1_Digitalization_and_Labour_Market.md` (aggiunta la sezione di saggio d'esame completo ottimizzato in inglese C1)
+  - `wiki/Sociologia/Q2_Digitalization_and_Welfare_State.md` (aggiunto il saggio d'esame completo in inglese C1, più l'integrazione di tutte le risposte ottimizzate)
+  - `wiki/Sociologia/Caso_Studio_Digitalizzazione_Comparata.md` (aggiunto il saggio d'esame completo in inglese C1 con l'analisi empirica dettagliata della presentazione)
+  - `log.md` (questo file)
+
+---
+
+## [2026-05-21] DEV | Vault Linting & Structural Cleanup
+
+- **Operazione:** Bonifica strutturale completa (linting) del vault Obsidian per eliminare ridondanze, allineare la struttura a quanto sancito da `CLAUDE.md`, rimuovere file vuoti o non tracciati e garantire la perfetta consistenza delle relazioni.
+- **Cartelle ed Elementi Eliminati:**
+  - Eliminata la cartella cache duplicata `_fit/` (2.117 file obsoleti generati da plugin esterni).
+  - Rimossa la cartella vuota `Notion/`.
+  - Eliminato il file corrotto duplicato `wiki/Fonti/‎Google Gemini.md` (ritagli di sessioni non strutturati).
+- **Riorganizzazione Fonti Notion (Database e Data Mining):**
+  - Rinominati e formattati 10 file grezzi in `wiki/Fonti/` (da `Where teams and agents work together*.md` e `data mining 1.md` a `Fonte_Elmasri_Cap*.md`), inserendo H1 significativi, correggendo l'HTML Notion, aggiungendo YAML frontmatter valido e agganciando la sezione `## Fonti` alla risorsa originaria `Fundamentals of Database Systems`.
+- **Creazione Nuove Pagine Concettuali:**
+  - `wiki/Concetti/ETL_Process.md` (Pipeline ETL, MDM, Golden Record, Backflushing).
+  - `wiki/Concetti/Transformer_Architecture.md` (Self-attention, Positional Encoding, Multi-head, Encoder-Decoder).
+  - `wiki/Concetti/Architettura_DBMS.md` (Architettura a tre schemi, indipendenza fisica/logica dei dati, ruoli DBA/designer).
+- **Automazione & Metadati:**
+  - Esecuzione di script custom PowerShell per normalizzare i frontmatter YAML (`tags`, `aliases`, `date_created`, `last_modified`, `source_count`) ed eliminare intestazioni orfane o malformate (es. raddoppio intestazioni `## ## Fonti`).
+- **Sincronizzazione Indici:**
+  - Aggiornato e allineato integralmente `index.md` con l'inclusione di tutti i 10 file Elmasri rinominati, 13 concetti di Corporate Finance prima non indicizzati, guide linguistiche (`wiki/Lingua/`), ristoranti (`wiki/Kiro_Kiro/`), schede esercitazione ed `ETL_Process`, `Transformer_Architecture`, `Architettura_DBMS`.
+- **Verifica Finale:**
+  - Eseguito `lint_check.ps1` ottenendo il **100% di conformità**: 0 file vuoti, 0 file orfani/non collegati, 0 dead link, 0 violazioni strutturali su 144 file markdown totali in `wiki/`.
+
+---
+
+## [2026-05-21] INGEST | Quantitative Portfolio Management — Ingestione Completa (Fasi 1, 2, 3, 4)
+
+- **Fonti raw:** `raw/Quantitative_Equity_Portfolio_Management_Chincarini.md`, `raw/Active_Portfolio_Management_Grinold_Kahn.md`
+- **File creati — wiki/Fonti/:**
+  - `Fonte_Chincarini_QEPM.md` — Scheda fonte completa per Ludwig Chincarini's QEPM (2023)
+  - `Fonte_Grinold_Kahn_APM.md` — Scheda fonte per Grinold & Kahn's Active Portfolio Management con dizionario bilingue di finanza quantitativa (Cinese ➔ Inglese)
+- **File creati — wiki/Concetti/:**
+  - **Fase 1 (Fundamentals & IR)**: 
+    - `Information_Ratio_IR.md` — Rigorosa trattazione teorica e matematica di ex-ante ed ex-post Information Ratio, confronto con Sharpe Ratio e standard empirici.
+    - `Fundamental_Law_of_Active_Management.md` — La legge fondamentale di Grinold nelle versioni base ed estesa con Transfer Coefficient ($TC$), Information Coefficient ($IC$) e Breadth ($BR$).
+  - **Fase 2 (Factor Modeling & Screening)**:
+    - `Z_Score_Stock_Screening.md` — Punteggi Z-score singoli ed aggregati, Winsorization, standardizzazione robusta MAD e conversione in rendimenti attesi.
+    - `Fundamental_Factor_Models_Advanced.md` — Regressione a fattori cross-sectional via OLS e MAD pesato, errori standard HAC (Newey-West), decomposizione del rischio attivo.
+  - **Fase 3 (Portfolio Optimization & Market Neutral)**:
+    - `Portfolio_Weights_Optimization.md` — Formulazione QP di media-varianza ed active risk (tracking error), vincoli reali, costi di transazione lineari e non lineari (market impact).
+    - `Market_Neutral_Portfolios.md` — Dollar neutrality vs Beta neutrality, 2-Alpha mojo, analisi della varianza e dell'IR in leva, Prime Brokerage, prestito titoli e Portable Alpha.
+  - **Fase 4 (Performance Attribution & Bayesian Alpha)**:
+    - `Bayesian_Portfolio_Mojo.md` — priorità bayesiana, quantificazione di prior qualitativi da stock screens/rankings/raccomandazioni (prior Chincarini), e il Modello di Black-Litterman matriciale.
+    - `Performance_Attribution_Active.md` — Decomposizione classica di Brinson-Hood-Beebower (BHB) e Brinson-Fachler (BF), e attribuzione quantitativa multi-fattoriale del rendimento attivo ex-post.
+- **File modificati:**
+  - `index.md` (registrate e indicizzate tutte le nuove fonti e note concettuali)
+  - `log.md` (questo file)
+
+---
+
+## [2026-05-21] INGEST | Bytewax Real-Time Datasets List
+
+- **Fonte raw:** `raw/bytewaxawesome-public-real-time-datasets A list of publicly available datasets with real-time data maintained by the team at bytewax.io.md`
+- **File creati — wiki/Fonti/:**
+  - `Fonte_Bytewax_Realtime_Datasets.md` — Scheda fonte con mappatura di feed per finanza quantitativa e sentiment
+- **File modificati:**
+  - `index.md` (registrata e indicizzata la nuova fonte nel catalogo centrale)
+  - `log.md` (questo file)
+
+---
+
+## [2026-05-21] DEV | Integrazione Polygon API Key e Script Market Data
+
+- **Operazione:** Configurazione delle credenziali API dell'utente e sviluppo dello script per l'ingestione e l'analisi quantitativa.
+- **File creati:**
+  - `.env` [NEW] — Contiene in modo sicuro la chiave API di Polygon.io.
+  - `wiki/Script/fetch_market_data.py` [NEW] — Script Python autoinstallante (standard library) per l'estrazione di dati storici e real-time e calcolo delle metriche statistiche MAD e Z-Score robusti.
+- **File modificati:**
+  - `index.md` (registrato il nuovo script nel catalogo centrale)
+  - `log.md` (questo file)
+
+---
+
+## [2026-05-22] DEV | Integrazione Strategia Speculativa Oro (AMSR)
+
+- **Operazione:** Progettazione, sviluppo e validazione della strategia quantitativa multi-day swing trading sull'oro spot (modello AMSR). Integrazione di feed storici (AurumRates) e macro-news sentiment (Google News RSS via NLP lessicale).
+- **File creati/modificati:**
+  - `wiki/Script/gold_swing_trader.py` [NEW] — Motore quantitativo con download prezzi, sentiment analysis lessicale, robust MAD-based Z-score, crossover trend, backtest storico completo e dashboard UTF-8.
+  - `wiki/Concetti/Gold_Speculation_Strategy.md` [NEW] — Nota metodologica Obsidian su crossover trend, gestione del rischio con stop loss dinamici e trailing stop MAD-based.
+  - `index.md` (indicizzati i nuovi file nel catalogo centrale)
+  - `log.md` (questo file)
+
+---
+
+## [2026-05-22] DEV | Collegamento Strategia AMSR a NinjaTrader 8 (Bridge Demo)
+
+- **Operazione:** Sviluppo del bridge di sentiment ed esportazione in tempo reale della strategia quantitativa sull'oro su NinjaTrader 8 (Demo). Scrittura di uno script C# NinjaScript nativo per i grafici e la gestione ordini.
+- **File creati/modificati:**
+  - `wiki/Script/AMSRGoldSpeculator.cs` [NEW] — Strategia NinjaScript C# per NinjaTrader 8. Calcola SMA crossover, robust MAD, Z-score ed integra il file bridge di sentiment.
+  - `wiki/Script/gold_swing_trader.py` (modificato per scrivere automaticamente `data/gold_sentiment.txt` ad ogni esecuzione).
+  - `index.md` (registrato il nuovo script C# nel catalogo centrale).
+  - `log.md` (questo file).
+
+---
+
+## [2026-05-22] EXERCISE | Esercitazione Corporate Finance - Soluzioni Complete
+
+- **Operazione:** Risoluzione rigorosa, accademica e definitiva di tutte le domande del file grezzo `questions corporate finance.md`. Scrittura del modulo del caso pratico "Vega Corporation" (Blocco 6) con attualizzazioni a leva (WACC 8.6%) e unlevered (Equity 13%), calcolo dell'Operating Cash Flow, variazione del capitale circolante e dimostrazione della conservazione dell'IRR al variare della struttura finanziaria.
+- **File creati/modificati:**
+  - `wiki/Esercitazioni/Soluzioni_Domande_Corporate_Finance.md` (Completato con l'inserimento dell'intero Blocco 6, tabelle di sconto LaTeX ed analisi di sensitività/struttura finanziaria).
+  - `index.md` (Aggiornato il catalogo per indicizzare la nuova risorsa sotto la sezione wiki/Esercitazioni/).
+  - `log.md` (Questo file).
+
+---
+
+## [2026-05-24] INGEST & STUDY | Systematic Trading & Prop Firm Automation Skill
+
+- **Operazione:** Ingestione del manuale "Leveraged Trading" di Robert Carver (`raw/input.md`) e sintesi delle sezioni chiave di "Quantitative Trading" di Ernest Chan. Creazione della Skill completa per Obsidian per guidare la selezione di Prop Firm vantaggiose, l'impostazione di strategie sistematiche di lungo termine (Starter System, Volatility Target, drawdown management) e la stesura dell'architettura per l'esecuzione automatizzata (MT5 Python API e NinjaTrader 8 C# file bridge). Sviluppo del simulatore prop firm e del bot reale per MT5 in demo.
+- **File creati/modificati:**
+  - `wiki/Concetti/Guida_Selezione_Prop_Firm.md` [NEW] — Checklist quantitativa e formule per drawdown e coerenza nelle Prop Firm.
+  - `wiki/Concetti/Strategia_Lungo_Termine_Systematic.md` [NEW] — Blueprint strategico basato su Carver (Starter System, risk target) e Chan (look-ahead bias, data-snooping, survivorship bias).
+  - `wiki/Concetti/Bridge_Esecuzione_Automatica.md` [NEW] — Blueprint di esecuzione con codici pronti per MT5 (Python) e NinjaTrader 8 (C#) con kill-switch di emergenza.
+  - `wiki/Script/run_gold_paper_trading.py` [NEW] — Bot autonomo in tempo reale per conti demo MetaTrader 5 (MT5) con calcolo Z-score robusto, sentiment e drawdown kill-switch. Modificato successivamente per forzare la codifica UTF-8 su Windows ed implementare l'Auto-Avvio automatico del terminale da percorso standard.
+  - `scratch/simulate_prop_challenge.py` [NEW] — Simulatore storico ed in tempo reale per challenge prop da $50k su oro futures.
+  - `index.md` (aggiornato l'indice centrale includendo le nuove risorse quantitative e script).
+  - `log.md` (questo file).
+- **Risoluzione Problemi ed Ottimizzazioni (Bug Fix & Auto-Launch):**
+  - Risolto errore di codifica `UnicodeEncodeError` in Windows console forzando la codifica `utf-8` all'avvio dello script `run_gold_paper_trading.py` per garantire stabilità su caratteri speciali ed emoji.
+  - Integrata funzionalità di Auto-Avvio automatica in `run_gold_paper_trading.py` per scansionare il sistema del cliente, localizzare `terminal64.exe` in `C:\Program Files\MetaTrader 5\terminal64.exe` e lanciarlo automaticamente all'occorrenza.
+  - Riavviato con successo il bot in background con l'ambiente Anaconda Python corretto, ora stabile e operativo.
+  - Aggiornate le credenziali del conto demo MT5 su richiesta dell'utente (nuovo Login: `10011042813`, Password: `_6XmOxUc`), strutturando lo script in modo pulito con costanti globali all'inizio per facilitare future modifiche.
+  - Esteso lo script `run_gold_paper_trading.py` per renderlo **completamente multi-asset ed agnostico**: ora rileva dinamicamente le specifiche di contratto MT5 (tramite `trade_contract_size` per ricalcolare i lotti al volo su BTCUSD, XAUUSD o indici), rileva automaticamente la keyword corretta per raschiare il sentiment delle news (es. "bitcoin" o "gold") e adatta tutte le stringhe di log. Impostato l'asset attivo su `BTCUSD` su richiesta dell'utente per testare il bot nel weekend.
+  - Risolto errore `❌ Errore nel recupero delle candele storiche da MT5` implementando l'auto-selezione ed attivazione automatica del simbolo attivo (es. `BTCUSD`) in Market Watch all'avvio dello script, affiancata da un loop di riprova (retry loop) con delay per tollerare la latenza di sincronizzazione dei dati storici del terminale MT5.
+  - Ripristinato il simbolo attivo su `XAUUSD` (Oro) mantenendo l'infrastruttura dinamica pronta per la riapertura dei mercati di domani mattina.
+- **Sviluppo Moduli Quant Analyst (Fase 1: Stato Persistente):**
+  - Progettato ed implementato il sistema di **Stato Persistente di Produzione (`state.json`)** in `run_gold_paper_trading.py` per garantire la massima resilienza contro crash e riavvii improvvisi del PC.
+  - Sviluppata logica di auto-sincronizzazione all'avvio che rileva automaticamente eventuali trade aperti su MT5 riconciliandoli con lo stato locale.
+  - Integrato modulo di riconciliazione automatica delle posizioni chiuse (SL/TP) tramite interrogazione dello storico dei deal di MT5 (`history_deals_get`), con calcolo automatico in tempo reale del PnL giornaliero e del conteggio trade per rispettare le regole di coerenza.
+- **Sviluppo Moduli Quant Analyst (Fase 2: Notifiche Telegram):**
+  - Progettato e implementato il modulo nativo di **Notifiche Telegram** in `run_gold_paper_trading.py` utilizzando esclusivamente le librerie standard di Python (`urllib.request` e `json`) per evitare dipendenze esterne.
+  - Creati template di messaggi in formato HTML premium per notificare in tempo reale sul cellulare: Avvio del Bot (Heartbeat), Segnali d'ingresso LONG (BUY) con prezzi precisi di SL/TP e rischio, Segnali d'ingresso SHORT (SELL), Chiusura posizioni con PnL del trade e profitto giornaliero accumulato, e l'attivazione del Kill-Switch di emergenza per drawdown.
+  - Aggiunti parametri di configurazione facoltativi `TELEGRAM_TOKEN` e `TELEGRAM_CHAT_ID` all'inizio del file per una configurazione immediata da parte dell'utente.
+  - Inserito con successo il **Token Bot Telegram** fornito dall'utente (`8215784991:AAE-780dQk3pZZVSY22Cfq_nXBlyZjT-q1dA`), correggendo automaticamente lo spazio di copia-incolla con un trattino basso (`_`) conforme agli standard API di Telegram.
+- **Sviluppo Moduli Quant Analyst (Fase 3: Trailing Stop Volatilità):**
+  - Progettato e implementato il modulo di **Trailing Stop Loss Dinamico basato su Volatilità (MAD)** in `run_gold_paper_trading.py`.
+  - Configurato l'aggiornamento automatico dello SL a una distanza di sicurezza rigida di `2.0 * std_mad` dal prezzo corrente, muovendo il livello solo a favore del trade (in alto per BUY, in basso per SELL) per bloccare i profitti.
+  - Implementata una soglia minima di scostamento pari a `0.5 * std_mad` per evitare micro-modifiche eccessive ed evitare il rate-limiting del broker.
+  - Collegato l'aggiornamento dello SL alle notifiche Telegram per ricevere messaggi istantanei sul cellulare ad ogni modifica significativa.
+
+---
+
+## [2026-05-29] INGEST | Python for Data Analysis (Wes McKinney)
+
+- **Operazione:** Ingestione ed elaborazione del libro "Python for Data Analysis" di Wes McKinney per la creazione della sezione dedicata all'analisi dei dati in Python nel Second Brain.
+- **File creati:**
+  - `wiki/Fonti/Fonte_McKinney_Python_Data_Analysis.md` [NEW] — Scheda fonte completa con capitoli, temi e strutture dati trattate.
+  - `wiki/Concetti/Python_Data_Analysis.md` [NEW] — Guida di riferimento concettuale e tecnica a NumPy (vettorizzazione, ndarray), Pandas (Series, DataFrame, data cleaning, wrangling, GroupBy) e calcoli temporali quantitativi (rolling MAD, Z-score).
+- **File modificati:**
+  - `index.md` (registrate e indicizzate le nuove risorse scientifiche nell'indice centrale).
+  - `log.md` (questo file).
+
+---
+
+## [2026-05-29] DEV | Creazione Telegram Remote Bridge per Studio e Controllo Remoto
+
+- **Operazione:** Sviluppo del modulo bridge di controllo bidirezionale Telegram per permettere all'utente di studiare, lanciare ed esplorare script sul PC fisso direttamente dal proprio smartphone.
+- **File creati:**
+  - `wiki/Script/telegram_bridge.py` [NEW] — Script per l'ingestione ed elaborazione dei messaggi inviati dall'utente al Bot Telegram.
+  - `wiki/Script/send_telegram.py` [NEW] — Utility per inviare messaggi di risposta formattati in HTML al canale dell'utente.
+  - `wiki/Script/telegram_listener.py` [NEW] — Listener real-time ad alta reattività (5s) basato su loop e terminazione per scatenare il Reactive Wakeup.
+- **File modificati:**
+  - `index.md` (registrati i nuovi script nella sezione wiki/Script/).
+  - `log.md` (questo file).
+
+---
+
+## [2026-05-29] STUDY | Lezione 1 — NumPy e Vettorializzazione
+
+- **Operazione:** Avviata la prima lezione dell'insegnamento di Analisi Dati Quantitativi.
+- **File creati:**
+  - `wiki/Concetti/Lezione_1_NumPy_Vettorializzazione.md` [NEW] — Lezione teorica e pratica approfondita su dynamic boxing, arrays contigui in memoria, ottimizzazione cache L1/L2, SIMD, regole di Broadcasting ed un'applicazione finanziaria vettorializzata per il calcolo del Max Drawdown.
+- **File modificati:**
+  - `index.md` (registrato il nuovo concetto nel catalogo sotto la sezione Python & Data Analysis)
+  - `log.md` (questo file)
 
