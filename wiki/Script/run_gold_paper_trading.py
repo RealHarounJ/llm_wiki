@@ -45,8 +45,8 @@ MT5_PASSWORD = "_6XmOxUc"        # Password del conto di trading
 MT5_SERVER = "MetaQuotes-Demo"  # Server del broker MT5
 
 SYMBOL = "XAUUSD"               # Simbolo attivo: XAUUSD (Oro spot)
-RISK_PER_TRADE_USD = 200.0      # Rischio fisso per trade ($200, pari al 10% del buffer)
-KILLSWITCH_LOSS_USD = 1500.0    # Soglia di blocco di sicurezza (4% del conto o $1.500 su challenge da $50k)
+RISK_PER_TRADE_USD = 500.0      # Rischio Fast-Pass challenge ($500, pari all'1.0% del conto)
+KILLSWITCH_LOSS_USD = 1000.0    # Soglia di blocco giornaliero ($1.000, pari al 2% del conto)
 MAGIC_NUMBER = 888168           # Magic Number unico per tracciare le posizioni del bot AMSR
 
 # NOTIFICHE TELEGRAM (FACOLTATIVE)

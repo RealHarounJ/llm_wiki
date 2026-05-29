@@ -54,6 +54,7 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Bayesian_Portfolio_Mojo]]                   | Integrazione stime qualitative (Chincarini Prior, Black-Litterman) |
 | [[Performance_Attribution_Active]]            | Attribuzione ex-post (Brinson BHB/BF, scomposizione fattoriale)  |
 | [[Gold_Speculation_Strategy]]                 | Strategia speculativa quantitativa sull'oro (Modello AMSR)       |
+| [[Strategie_Reddit_Algotrading_Oro]]          | Strategie quantitative sull'oro basate sulle discussioni di r/algotrading |
 | [[Guida_Selezione_Prop_Firm]]                 | Valutazione quantitativa delle Prop Firm (EOD vs Trailing, regole di consistenza) |
 | [[Strategia_Lungo_Termine_Systematic]]         | Teoria sistematica a lungo termine (Starter System di Carver, Kelly e bias di Chan) |
 | [[Bridge_Esecuzione_Automatica]]               | Codici e blueprint tecnici per MT5 (Python) e NinjaTrader 8 (C#) |

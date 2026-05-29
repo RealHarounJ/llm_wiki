@@ -612,3 +612,15 @@ aw/Fundamentals of Database Systems (Elmasri) Cap. 24
   - `index.md` (registrato il nuovo concetto nel catalogo sotto la sezione Python & Data Analysis)
   - `log.md` (questo file)
 
+---
+
+## [2026-05-29] STUDY | Strategie Oro r/algotrading
+
+- **Operazione:** Scansione e sintesi delle migliori strategie quantitative per il trading dell'Oro (XAUUSD / GC) discusse sulla community r/algotrading.
+- **File creati:**
+  - `wiki/Concetti/Strategie_Reddit_Algotrading_Oro.md` [NEW] — Studio approfondito su Intraday Mean Reversion (Robust Z-Score e MAD), lead-lag macro-correlato (TIPS real yields e DXY Index), e stop-hunting tramite l'automazione di Liquidity Sweeps / Smart Money Concepts (SMC) con relativi requisiti di latenza (LD4/NY4 VPS) e slippage.
+- **File modificati:**
+  - `index.md` (registrato il concetto nel catalogo)
+  - `log.md` (questo file)
+
+
