@@ -11,10 +11,14 @@
             "id": "375393cc632f2ace",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Vista grafo"
+              "type": "markdown",
+              "state": {
+                "file": "TradingAgents/CHANGELOG.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "CHANGELOG"
             }
           }
         ]
@@ -49,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#concept",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -90,16 +94,17 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "TradingAgents/CHANGELOG.md",
                 "collapseAll": false,
-                "extraContext": true,
+                "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": true,
-                "searchQuery": "perform",
+                "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Riferimenti"
+              "title": "Riferimenti a CHANGELOG"
             }
           },
           {
@@ -162,7 +167,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -172,56 +178,57 @@
       "daily-notes:Apri nota del giorno": false,
       "templates:Inserisci modello": false,
       "command-palette:Apri riquadro comandi": false,
-      "bases:Crea nuova Base": false
+      "bases:Crea nuova Base": false,
+      "obsidian-importer:Open Importer": false
     }
   },
   "active": "375393cc632f2ace",
   "lastOpenFiles": [
-    "wiki/Script/telegram_listener.py",
-    "data/telegram_bridge_state.json",
-    "data/telegram_inbox.json",
-    "wiki/Script/send_telegram.py",
-    "wiki/Script/telegram_bridge.py",
-    "wiki/Concetti/Python_Data_Analysis.md",
-    "wiki/Fonti/Fonte_McKinney_Python_Data_Analysis.md",
-    "wiki/Concetti/Tecniche_di_Data_Mining.md",
-    "wiki/Concetti/Data_Mining_Hub.md",
-    "wiki/Concetti/ETL_Process.md",
-    "wiki/Fonti/Fonte_Elmasri_Cap25_Data_Warehouse.md",
-    "wiki/Concetti/Data_Warehouse.md",
-    "Snowflake Schema.md",
-    "wiki/Master_Page_Corporate_Finance.md",
-    "wiki/Esercitazioni/Esercizio_Svolto_Cash_Budget.md",
-    "wiki/Esercitazioni/Esercizio_Svolto_NPV_Macchinario.md",
-    "wiki/Fonti/Fonte_Slides_Corporate_Finance.md",
-    "raw/Quant ResearcherTraderDeveloper.md",
-    "raw/Quantopian Lectures Saved.md",
-    "raw/Autoregressive conditional heteroskedasticity.md",
-    "raw/20yo Italian Trader, $10k profit in March, 15 funded accounts ($1+ million in capital), almost quit in September. AMA - not selling anything.md",
-    "wiki/Esercitazioni/Guida_Grafici_Formule_Esame.md",
     "index.md",
-    "wiki/Fonti/Fonte_Corporate_Finance_Book.md",
-    "wiki/Concetti/Gold_Speculation_Strategy.md",
-    "wiki/Concetti/Real_Options.md",
-    "wiki/Esercitazioni/Soluzioni_Domande_Corporate_Finance.md",
-    "wiki/Concetti/Corporate_Finance_Hub.md",
+    "wiki/Sociologia/Q2_Digitalization_and_Welfare_State.md",
+    "wiki/Sociologia/Q1_Digitalization_and_Labour_Market.md",
+    "wiki/Sociologia/Caso_Studio_Digitalizzazione_Comparata.md",
+    "wiki/Sociologia/Q3_Comparative_Case_Study_Saudi_vs_South_Korea.md",
+    "scratch/reply_explanation.py",
+    "scratch/test_eurusd_rates.py",
+    "scratch/print_log_lines.py",
+    "scratch/search_any_log.py",
+    "scratch/search_log.py",
+    "scratch/check_deals.py",
+    "wiki/Concetti/Ambivert_Advantage_in_Sales.md",
+    "scratch/reply_status.py",
+    "wiki/Concetti/Seven_Sales_Virtues.md",
+    "scratch/telegram_image_787428081.jpg",
+    "wiki/Concetti/Total_Cost_of_Ownership.md",
+    "scratch/telegram_image_787428080.jpg",
+    "wiki/Fonti/Slide_Sales_Competences_Thomas_Berger.md",
+    "scratch/telegram_image_787428079.jpg",
+    "wiki/Concetti/Technical_to_Financial_Value_Conversion.md",
+    "wiki/Concetti/Classification_of_Financial_Benefits.md",
+    "scratch/telegram_image_787428078.jpg",
+    "scratch/telegram_image_787428077.jpg",
+    "scratch/download_all_recent.py",
+    "wiki/Concetti/Different_Kinds_of_Utility.md",
+    "wiki/Esercitazioni/Guida_Grafici_Formule_Esame.md",
+    "scratch/check_indicators_eurusd.py",
+    "wiki/Concetti/Technical_Sales_vs_Traditional_Sales.md",
+    "scratch/lint_vault.py",
     "wiki/Progetti/Analisi_Portafoglio_Haroun.md",
-    "raw/bytewaxawesome-public-real-time-datasets A list of publicly available datasets with real-time data maintained by the team at bytewax.io.md",
-    "raw/Quantitative_Equity_Portfolio_Management_Chincarini.txt",
-    "raw/Active_Portfolio_Management_Grinold_Kahn.txt",
+    "wiki/Concetti/Gartner_Hype_Cycle_Sales_2024.md",
+    "wiki/Concetti/Current_Challenges_in_Sales.md",
+    "wiki/Progetti/Master_Page_Sales_Competences.md",
+    "wiki/Concetti/Technical_Expert_Sales_Process.md",
+    "raw/Untitled 6.md",
+    "raw/Untitled 5.md",
+    "raw/TradingAgentstradingagentsagentsanalystsnews_analyst.py at main.md",
+    "raw/Untitled 4.md",
+    "raw/Untitled 3.md",
+    "raw/Untitled 2.md",
+    "log.md",
+    "scratch/test_ctrl_n.jpg",
+    "scratch/whatsapp_sent.jpg",
     "_fit/raw/Principles of Biochemistry. Leninger/help/images/glossary1x11x1.jpg",
     "_fit/raw/Principles of Biochemistry. Leninger/help/images/pageup1x1.jpg",
-    "_fit/raw/Principles of Biochemistry. Leninger/help/images/content1x11x1.jpg",
-    "_fit/raw/Principles of Biochemistry. Leninger/help/images/pagebot1x1.jpg",
-    "_fit/raw/Principles of Biochemistry. Leninger/help/images/start1x11x1.gif",
-    "_fit/raw/Principles of Biochemistry. Leninger/help/images",
-    "_fit/raw/Principles of Biochemistry. Leninger/chapt01/10.jpg",
-    "_fit/raw/Principles of Biochemistry. Leninger/chapt01/11-1.jpg",
-    "_fit/raw/Principles of Biochemistry. Leninger/chapt01/11-2.jpg",
-    "_fit/raw/Principles of Biochemistry. Leninger/chapt01/12-1.jpg",
-    "_fit/raw/Principles of Biochemistry. Leninger/chapt01/12-2.jpg",
-    "_fit/raw/Principles of Biochemistry. Leninger/chapt01/bio0.htm",
-    "_fit/raw/Principles of Biochemistry. Leninger/chapt01/bio1.htm",
-    "_fit/raw/Principles of Biochemistry. Leninger/chapt01/bio3.htm"
+    "_fit/raw/Principles of Biochemistry. Leninger/help/images/content1x11x1.jpg"
   ]
 }

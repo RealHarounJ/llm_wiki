@@ -1,4 +1,4 @@
-﻿---
+---
 tags: [sociology, digitalization, case-study, comparative, group-project, source-card]
 aliases: [Fonte Presentazione Gruppo 11]
 date_created: 2026-05-20

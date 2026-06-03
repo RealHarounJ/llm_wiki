@@ -624,3 +624,91 @@ aw/Fundamentals of Database Systems (Elmasri) Cap. 24
   - `log.md` (questo file)
 
 
+
+---
+
+## [2026-06-03] INGEST | Slide Corso Sales Competences (Thomas Berger)
+
+- **Operazione:** Ingestione ed elaborazione dei materiali del corso "Sales Competences" inviati dall'utente tramite Telegram.
+- **File creati:**
+  - `wiki/Fonti/Slide_Sales_Competences_Thomas_Berger.md` [NEW] — Scheda fonte completa con contenuti estratti dalle slide 12, 13, 15 e 16.
+  - `wiki/Concetti/Technical_Sales_vs_Traditional_Sales.md` [NEW] — Scheda di confronto concettuale tra vendita tecnica complessa e vendita tradizionale B2C/B2B.
+  - `wiki/Concetti/Technical_Expert_Sales_Process.md` [NEW] — Scheda sul processo di vendita tecnica e le sue 8 fasi secondo Holopainen et al. (2020), con diagramma Mermaid.
+  - `wiki/Concetti/Current_Challenges_in_Sales.md` [NEW] — Scheda sulle sfide contemporanee nelle vendite basata sullo studio multinazionale di Berger et al., con mappa concettuale Mermaid.
+  - `wiki/Concetti/Gartner_Hype_Cycle_Sales_2024.md` [NEW] — Scheda sul ciclo di maturità delle tecnologie di vendita con focus su AR/VR, Generative AI per le vendite, Sales AI Assistants e Revenue Intelligence.
+  - `wiki/Progetti/Master_Page_Sales_Competences.md` [NEW] — Master Page e cruscotto di studio per la materia Sales Competences.
+- **File modificati:**
+  - `wiki/Home.md` (collegata la nuova Master Page nella tabella delle materie universitarie).
+  - `index.md` (registrate e indicizzate tutte le nuove risorse e concetti nel catalogo generale).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-03] INGEST | Slide 23 Sales Competences (Different Kinds of Utility)
+
+- **Operazione:** Ingestione ed elaborazione della Slide 23 inviata dall'utente tramite Telegram, raffigurante il modello delle utilità e del valore del cliente (Vogel, 2006).
+- **File creati:**
+  - `wiki/Concetti/Different_Kinds_of_Utility.md` [NEW] — Scheda concettuale sul modello delle utilità basato sui benefici totali (prodotto, servizio, brand, relazione) e costi totali (monetari e non-monetari) con diagramma Mermaid.
+- **File modificati:**
+  - `wiki/Fonti/Slide_Sales_Competences_Thomas_Berger.md` (aggiunto il riassunto della Slide 23 e linkata la nuova scheda).
+  - `wiki/Progetti/Master_Page_Sales_Competences.md` (aggiunta la risorsa all'indice delle lezioni e inseriti i punti di controllo nel cruscotto di studio).
+  - `index.md` (indicizzato il nuovo concetto nella sezione Sales Competences).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-03] INGEST | Slide 24-25 Sales Competences (Value Conversion & Financial Benefits)
+
+- **Operazione:** Ingestione ed elaborazione delle Slide 24 e 25 inviate dall'utente tramite Telegram, riguardanti la quantificazione e conversione del valore nei processi di vendita complessi (Jensen, 2013).
+- **File creati:**
+  - `wiki/Concetti/Classification_of_Financial_Benefits.md` [NEW] — Scheda concettuale sulla categorizzazione dei benefici finanziari in 7 classi di risparmio ed incremento fatturato secondo Jensen (2013).
+  - `wiki/Concetti/Technical_to_Financial_Value_Conversion.md` [NEW] — Scheda sul framework a tre stadi (Caratteristica Tecnica $\rightarrow$ Beneficio Operativo $\rightarrow$ Argomento Finanziario) con matrice di esempi industriali.
+- **File modificati:**
+  - `wiki/Fonti/Slide_Sales_Competences_Thomas_Berger.md` (aggiunti i riassunti delle Slide 24 e 25 e linkate le nuove schede).
+  - `wiki/Progetti/Master_Page_Sales_Competences.md` (aggiunte le risorse all'indice delle lezioni e inseriti gli obiettivi nel cruscotto di studio dell'esame).
+  - `index.md` (indicizzati i nuovi concetti nella sezione Sales Competences del catalogo).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-03] INGEST | Slide 30 Sales Competences (Total Cost of Ownership)
+
+- **Operazione:** Ingestione ed elaborazione della Slide 30 inviata dall'utente tramite Telegram, riguardante il calcolo del costo totale sul ciclo di vita dell'asset (TCO).
+- **File creati:**
+  - `wiki/Concetti/Total_Cost_of_Ownership.md` [NEW] — Scheda concettuale sulla formula e l'applicazione pratica del TCO (confronto Competitore vs CLX 350 su orizzonte di 3 anni).
+- **File modificati:**
+  - `wiki/Fonti/Slide_Sales_Competences_Thomas_Berger.md` (aggiunto il riassunto della Slide 30 e linkata la nuova scheda).
+  - `wiki/Progetti/Master_Page_Sales_Competences.md` (aggiunta la risorsa all'indice delle lezioni e inserito il relativo obiettivo di studio nel cruscotto).
+  - `index.md` (indicizzato il nuovo concetto nella sezione Sales Competences del catalogo).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-03] INGEST | Slide 32 Sales Competences (Seven Sales Virtues)
+
+- **Operazione:** Ingestione ed elaborazione della Slide 32 inviata dall'utente tramite Telegram, riguardante il framework delle sette virtù delle vendite (Diephuis & Skiver / FOSTER).
+- **File creati:**
+  - `wiki/Concetti/Seven_Sales_Virtues.md` [NEW] — Scheda concettuale sulle 7 virtù commerciali e i corrispondenti costrutti organizzativi (market orientation, cross-functional integration, ecc.), corredata da mappa concettuale Mermaid.
+- **File modificati:**
+  - `wiki/Fonti/Slide_Sales_Competences_Thomas_Berger.md` (aggiunto il riassunto della Slide 32 e linkata la nuova scheda).
+  - `wiki/Progetti/Master_Page_Sales_Competences.md` (aggiunta la risorsa all'indice delle lezioni e inserito il relativo obiettivo di studio nel cruscotto).
+  - `index.md` (indicizzato il nuovo concetto nella sezione Sales Competences del catalogo).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-03] INGEST | Slide 40 Sales Competences (Ambivert Advantage)
+
+- **Operazione:** Ingestione ed elaborazione della Slide 40 inviata dall'utente tramite Telegram, riguardante lo studio empirico sulla personalità del venditore (Adam Grant, 2013).
+- **File creati:**
+  - `wiki/Concetti/Ambivert_Advantage_in_Sales.md` [NEW] — Scheda concettuale sull'effetto curvilineo (forma a U rovesciata) dell'estroversione sulle performance di vendita, con i risultati statistici della regressione gerarchica.
+- **File modificati:**
+  - `wiki/Fonti/Slide_Sales_Competences_Thomas_Berger.md` (aggiunto il riassunto della Slide 40 e linkata la nuova scheda).
+  - `wiki/Progetti/Master_Page_Sales_Competences.md` (aggiunta la risorsa all'indice delle lezioni e inserito il relativo obiettivo di studio nel cruscotto).
+  - `index.md` (indicizzato il nuovo concetto nella sezione Sales Competences del catalogo).
+  - `log.md` (questo file).
+
+
+
+
+

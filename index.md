@@ -109,6 +109,24 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[IO_07_Platform_Economics]] | Network effects, multihoming, interoperability |
 | [[IO_08_Econometrics]] | OLS, R-squared, P-value, cross-sectional |
 
+### Sales Competences
+| File                                        | Descrizione                                                                                                |
+| ------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| [[Technical_Sales_vs_Traditional_Sales]]    | Differenze chiave tra vendita tradizionale e vendita complessa/tecnica nel B2B                             |
+| [[Technical_Expert_Sales_Process]]          | Il processo di vendita tecnica e le sue 8 fasi (Holopainen et al., 2020)                                   |
+| [[Current_Challenges_in_Sales]]             | Gli 8 cluster di sfide globali nelle vendite contemporanee (Berger et al.)                                 |
+| [[Gartner_Hype_Cycle_Sales_2024]]           | Ciclo di maturità delle tecnologie di vendita con focus su GenAI, AR/VR e Revenue Intelligence             |
+| [[Different_Kinds_of_Utility]]              | Il modello Vogel (2006) per la massimizzazione dei benefici netti per il cliente (rapporto benefici/costi) |
+| [[Classification_of_Financial_Benefits]]    | Le 7 aree di beneficio finanziario (Jensen 2013) per giustificare gli investimenti CAPEX                   |
+| [[Technical_to_Financial_Value_Conversion]] | Framework per convertire specifiche tecniche in benefici operativi e vantaggi finanziari                   |
+| [[Total_Cost_of_Ownership]]                 | Il modello Total Cost of Ownership (TCO) per il calcolo dei costi totali sul ciclo di vita dell'asset      |
+| [[Seven_Sales_Virtues]]                     | Le 7 virtù delle vendite (Diephuis & Skiver) associate ai relativi costrutti organizzativi                 |
+| [[Ambivert_Advantage_in_Sales]]             | Lo studio di Adam Grant (2013) sull'efficacia degli ambiverti nelle vendite rispetto a intro/estroversi    |
+
+
+
+
+
 ---
 
 ## 📁 wiki/Fonti/
@@ -165,6 +183,7 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Fonte_Grinold_Kahn_APM]] | Active Portfolio Management (Grinold & Kahn, 2nd Ed) |
 | [[Fonte_Bytewax_Realtime_Datasets]] | Bytewax Realtime Datasets (GitHub community list, 2026) |
 | [[Fonte_McKinney_Python_Data_Analysis]] | Python for Data Analysis (Wes McKinney) — data wrangling con Pandas, NumPy e IPython |
+| [[Slide_Sales_Competences_Thomas_Berger]] | Slide corso Sales Competences (Prof. Dr. Thomas Berger) |
 
 ---
 
@@ -177,18 +196,19 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Master_Page_AI_LLM]] | Cruscotto studio AI/LLM |
 | [[Master_Page_Industrial_Organization]] | Cruscotto esame Industrial Organization |
 | [[Analisi_Portafoglio_Haroun]] | Analisi quantitativa e strategica del portafoglio personale (Trading 212) |
+| [[wiki/Progetti/Master_Page_Sales_Competences]] | Cruscotto esame Sales Competences — tabella lezioni + checklist |
 
 ---
 
 ## 📖 wiki/Sociologia/
 
 ### Sociologia — Digitalizzazione e Welfare State
-| File | Descrizione |
-|---|---|
-| [[Q1_Digitalization_and_Labour_Market]] | Domanda 1 Esame — Labour Market: RBTC, SBTC, Polarization, Platform Work |
-| [[Q2_Digitalization_and_Welfare_State]] | Domanda 2 Esame — Welfare State: Pensions, ADM/SyRI, UBI, Social Investment |
-| [[Q3_Health_Care_and_Digitalization]] | Domanda 3 Esame — Healthcare: Crowding Out, Cultural Health Capital |
-| [[Caso_Studio_Digitalizzazione_Comparata]] | Studio comparativo Arabia Saudita vs. Corea del Sud (Gruppo 11) |
+| File                                               | Descrizione                                                                                                                             |
+| -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| [[Q1_Digitalization_and_Labour_Market]]            | Domanda 1 Esame — Labour Market: RBTC, SBTC, Polarization, Platform Work                                                                |
+| [[Q2_Digitalization_and_Welfare_State]]            | Domanda 2 Esame — Welfare State: Pensions, ADM/SyRI, UBI, Social Investment                                                             |
+| [[Q3_Comparative_Case_Study_Saudi_vs_South_Korea]] | Domanda 3 Esame — Digitalisation and its consequences on labour market and welfare state: main findings of the research work (Group 11) |
+| [[Caso_Studio_Digitalizzazione_Comparata]]         | Studio comparativo Arabia Saudita vs. Corea del Sud vs. Argentina (Gruppo 11)                                                           |
 
 
 ---
@@ -252,6 +272,7 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | `gold_swing_trader.py` | Python | Strategia speculativa quantitativa multi-day sull'oro spot con trend SMA, Robust Z-score (MAD) e sentiment notizie |
 | `AMSRGoldSpeculator.cs` | C# | Strategia quantitativa per NinjaTrader 8 (Futures Oro GC/MGC) basata su crossover SMA, Robust Z-Score (MAD) e bridge sentiment Python |
 | `run_gold_paper_trading.py` | Python | Bot di auto-trading in tempo reale per conti demo MetaTrader 5 (MT5) con calcolo MAD, Z-score robusto, sentiment e kill-switch di emergenza |
+| `amsr_quantum_portfolio_bot.py` | Python | Bot quantistico multi-asset (XAUUSD, NAS100, US500, EURUSD) e multi-strategia (Z-score + Donchian) con Risk Parity basato su covarianza dinamica |
 | `telegram_bridge.py` | Python | Ingestione automatica dei messaggi di testo Telegram inviati dall'utente |
 | `send_telegram.py` | Python | Invio di messaggi di risposta e comandi formattati al cellulare dell'utente via Telegram |
 | `telegram_listener.py` | Python | Listener ad alta frequenza (5s) per il controllo remoto immediato da smartphone via Telegram |

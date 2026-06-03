@@ -36,17 +36,395 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime
 import MetaTrader5 as mt5
+import numpy as np
+
+# ==============================================================================
+# RETE NEURALE MULTI-LAYER PERCEPTRON E FILTRI QUANTITATIVI (MQL5 NEURAL & LOPEZ)
+# ==============================================================================
+class LightweightMLP:
+    def __init__(self, input_size=6, hidden_size=16, output_size=1):
+        self.input_size = input_size
+        self.hidden_size = hidden_size
+        self.output_size = output_size
+        
+        # Inizializzazione pesi Metodo He
+        self.W1 = np.random.randn(input_size, hidden_size) * np.sqrt(2.0 / input_size)
+        self.b1 = np.zeros((1, hidden_size))
+        self.W2 = np.random.randn(hidden_size, output_size) * np.sqrt(2.0 / hidden_size)
+        self.b2 = np.zeros((1, output_size))
+        
+    def swish(self, x):
+        return x / (1.0 + np.exp(-np.clip(x, -500, 500)))
+        
+    def swish_derivative(self, x):
+        s = 1.0 / (1.0 + np.exp(-np.clip(x, -500, 500)))
+        return s + x * s * (1.0 - s)
+        
+    def sigmoid(self, x):
+        return 1.0 / (1.0 + np.exp(-np.clip(x, -500, 500)))
+        
+    def forward(self, X):
+        self.z1 = np.dot(X, self.W1) + self.b1
+        self.a1 = self.swish(self.z1)
+        self.z2 = np.dot(self.a1, self.W2) + self.b2
+        self.a2 = self.sigmoid(self.z2)
+        return self.a2
+        
+    def train(self, X, y, epochs=200, lr=0.01):
+        m = X.shape[0]
+        if m == 0:
+            return 0.0
+            
+        for epoch in range(epochs):
+            a2 = self.forward(X)
+            
+            # Loss BCE
+            loss = -np.mean(y * np.log(a2 + 1e-15) + (1.0 - y) * np.log(1.0 - a2 + 1e-15))
+            
+            # Backpropagation
+            dz2 = a2 - y
+            dW2 = np.dot(self.a1.T, dz2) / m
+            db2 = np.sum(dz2, axis=0, keepdims=True) / m
+            
+            da1 = np.dot(dz2, self.W2.T)
+            dz1 = da1 * self.swish_derivative(self.z1)
+            dW1 = np.dot(X.T, dz1) / m
+            db1 = np.sum(dz1, axis=0, keepdims=True) / m
+            
+            # Aggiornamento pesi
+            self.W1 -= lr * dW1
+            self.b1 -= lr * db1
+            self.W2 -= lr * dW2
+            self.b2 -= lr * db2
+            
+        final_preds = self.forward(X) > 0.5
+        accuracy = np.mean(final_preds == y)
+        return accuracy
+
+    def save_weights(self, filepath):
+        try:
+            os.makedirs(os.path.dirname(filepath), exist_ok=True)
+            data = {
+                "W1": self.W1.tolist(),
+                "b1": self.b1.tolist(),
+                "W2": self.W2.tolist(),
+                "b2": self.b2.tolist()
+            }
+            with open(filepath, 'w', encoding='utf-8') as f:
+                json.dump(data, f, indent=4)
+            print(f"✅ Pesi della rete neurale salvati in: {filepath}")
+        except Exception as e:
+            print(f"❌ Impossibile salvare i pesi del MLP: {e}")
+
+    def load_weights(self, filepath):
+        try:
+            if os.path.exists(filepath):
+                with open(filepath, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                self.W1 = np.array(data["W1"])
+                self.b1 = np.array(data["b1"])
+                self.W2 = np.array(data["W2"])
+                self.b2 = np.array(data["b2"])
+                print(f"✅ Pesi della rete neurale caricati con successo da: {filepath}")
+                return True
+        except Exception as e:
+            print(f"⚠️ Impossibile caricare i pesi del MLP da file: {e}")
+        return False
+
+def get_atr_h4(symbol, period=14):
+    rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_H4, 0, period + 1)
+    if rates is None or len(rates) < period + 1:
+        return None
+    
+    tr_list = []
+    for i in range(1, len(rates)):
+        high = rates[i]['high']
+        low = rates[i]['low']
+        prev_close = rates[i-1]['close']
+        tr = max(high - low, abs(high - prev_close), abs(low - prev_close))
+        tr_list.append(tr)
+    
+    atr = sum(tr_list[-period:]) / period
+    return atr
+
+def get_dxy_trend():
+    mt5.symbol_select("DXY.cash", True)
+    rates = mt5.copy_rates_from_pos("DXY.cash", mt5.TIMEFRAME_H4, 0, 20)
+    if rates is None or len(rates) < 20:
+        return 0
+    closes = [r['close'] for r in rates]
+    sma_20 = sum(closes) / 20.0
+    current_price = closes[-1]
+    if current_price > sma_20:
+        return 1
+    elif current_price < sma_20:
+        return -1
+    return 0
+
+def train_and_get_mlp(symbol):
+    mlp = LightweightMLP()
+    print("🔄 Avvio dell'auto-addestramento della rete neurale MLP sul database storico H4...")
+    
+    weights_path = "data/amsr_mlp_weights.json"
+    
+    rates_gold = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_H4, 0, 500)
+    rates_dxy = mt5.copy_rates_from_pos("DXY.cash", mt5.TIMEFRAME_H4, 0, 500)
+    
+    if rates_gold is None or rates_dxy is None or len(rates_gold) < 100:
+        print("⚠️ Errore nel recupero dello storico H4 per Gold/DXY. Tentativo di caricare pesi salvati...")
+        if mlp.load_weights(weights_path):
+            return mlp
+        print("⚠️ Nessun peso pre-salvato disponibile. Uso pesi casuali.")
+        return mlp
+        
+    dxy_by_time = {r['time']: r['close'] for r in rates_dxy}
+    
+    X_list = []
+    y_list = []
+    
+    for i in range(50, len(rates_gold) - 24):
+        window = rates_gold[i-49:i+1]
+        closes = [w['close'] for w in window]
+        current_price = closes[-1]
+        
+        sma_20 = sum(closes[-20:]) / 20.0
+        sma_50 = sum(closes[-50:]) / 50.0
+        trend = 1 if sma_20 > sma_50 else -1
+        
+        window_20 = closes[-20:]
+        median_20 = np.median(window_20)
+        mad = np.median([abs(c - median_20) for c in window_20])
+        std_mad = mad * 1.4826 if mad > 0 else 1e-6
+        z_score = (current_price - median_20) / std_mad
+        
+        tr_list = []
+        for k in range(len(window) - 14, len(window)):
+            h = window[k]['high']
+            l = window[k]['low']
+            pc = window[k-1]['close']
+            tr = max(h - l, abs(h - pc), abs(l - pc))
+            tr_list.append(tr)
+        atr_14 = sum(tr_list) / 14.0
+        
+        ret_3 = (current_price - closes[-4]) / closes[-4] if closes[-4] > 0 else 0.0
+        vol_ratio = np.std(closes[-14:]) / (np.std(closes[-50:]) + 1e-6)
+        
+        gold_time = rates_gold[i]['time']
+        dxy_price = dxy_by_time.get(gold_time, None)
+        if dxy_price is None:
+            dxy_price = rates_dxy[0]['close']
+            for r in reversed(rates_dxy):
+                if r['time'] <= gold_time:
+                    dxy_price = r['close']
+                    break
+                    
+        dxy_window = []
+        for w in window[-20:]:
+            t = w['time']
+            p = dxy_by_time.get(t, dxy_price)
+            dxy_window.append(p)
+        dxy_sma_20 = sum(dxy_window) / 20.0
+        dxy_trend = 1 if dxy_price > dxy_sma_20 else -1
+        
+        dxy_median = np.median(dxy_window)
+        dxy_mad = np.median([abs(c - dxy_median) for c in dxy_window])
+        dxy_std_mad = dxy_mad * 1.4826 if dxy_mad > 0 else 1e-6
+        dxy_z_score = (dxy_price - dxy_median) / dxy_std_mad
+        
+        is_buy_signal = (trend == 1 and z_score < -1.0)
+        is_sell_signal = (trend == -1 and z_score > 1.0)
+        
+        if is_buy_signal or is_sell_signal:
+            sl_dist = 1.8 * atr_14
+            tp_dist = 3.0 * atr_14
+            label = 0
+            future_bars = rates_gold[i+1 : i+25]
+            
+            if is_buy_signal:
+                tp_target = current_price + tp_dist
+                sl_target = current_price - sl_dist
+                for fb in future_bars:
+                    if fb['high'] >= tp_target:
+                        label = 1
+                        break
+                    if fb['low'] <= sl_target:
+                        label = 0
+                        break
+                else:
+                    label = 1 if future_bars[-1]['close'] > current_price else 0
+            else:
+                tp_target = current_price - tp_dist
+                sl_target = current_price + sl_dist
+                for fb in future_bars:
+                    if fb['low'] <= tp_target:
+                        label = 1
+                        break
+                    if fb['high'] >= sl_target:
+                        label = 0
+                        break
+                else:
+                    label = 1 if future_bars[-1]['close'] < current_price else 0
+                    
+            features = [z_score, trend, ret_3, vol_ratio, dxy_z_score, dxy_trend]
+            X_list.append(features)
+            y_list.append(label)
+            
+    if len(X_list) >= 10:
+        X = np.array(X_list)
+        y = np.array(y_list).reshape(-1, 1)
+        accuracy = mlp.train(X, y, epochs=150, lr=0.01)
+        print(f"📊 Auto-Addestramento MLP Completato! Campioni: {len(X_list)} | Accuratezza Training: {accuracy*100:.2f}%")
+        mlp.save_weights(weights_path)
+    else:
+        print(f"⚠️ Troppi pochi segnali storici ({len(X_list)}) per un addestramento sicuro. Caricamento pesi salvati...")
+        if not mlp.load_weights(weights_path):
+            print("⚠️ Nessun peso pre-esistente trovato. Uso pesi predefiniti non addestrati.")
+            
+    return mlp
+
+def get_realtime_mlp_features(symbol):
+    rates_gold = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_H4, 0, 50)
+    rates_dxy = mt5.copy_rates_from_pos("DXY.cash", mt5.TIMEFRAME_H4, 0, 50)
+    
+    if rates_gold is None or rates_dxy is None or len(rates_gold) < 50 or len(rates_dxy) < 50:
+        return None
+        
+    closes = [r['close'] for r in rates_gold]
+    current_price = closes[-1]
+    
+    sma_20 = sum(closes[-20:]) / 20.0
+    sma_50 = sum(closes[-50:]) / 50.0
+    trend = 1 if sma_20 > sma_50 else -1
+    
+    window_20 = closes[-20:]
+    median_20 = np.median(window_20)
+    mad = np.median([abs(c - median_20) for c in window_20])
+    std_mad = mad * 1.4826 if mad > 0 else 1e-6
+    z_score = (current_price - median_20) / std_mad
+    
+    ret_3 = (current_price - closes[-4]) / closes[-4] if closes[-4] > 0 else 0.0
+    vol_ratio = np.std(closes[-14:]) / (np.std(closes[-50:]) + 1e-6)
+    
+    dxy_price = rates_dxy[-1]['close']
+    dxy_closes = [r['close'] for r in rates_dxy[-20:]]
+    dxy_sma_20 = sum(dxy_closes) / 20.0
+    dxy_trend = 1 if dxy_price > dxy_sma_20 else -1
+    
+    dxy_median = np.median(dxy_closes)
+    dxy_mad = np.median([abs(c - dxy_median) for c in dxy_closes])
+    dxy_std_mad = dxy_mad * 1.4826 if dxy_mad > 0 else 1e-6
+    dxy_z_score = (dxy_price - dxy_median) / dxy_std_mad
+    
+    return np.array([z_score, trend, ret_3, vol_ratio, dxy_z_score, dxy_trend]).reshape(1, -1)
+
+DASHBOARD_DATA_FILE = "data/dashboard_data.json"
+
+def update_dashboard_file(state, indicators, sentiment):
+    try:
+        # 1. Info Conto
+        acct = mt5.account_info()
+        balance = acct.balance if acct is not None else 10000.0
+        equity = acct.equity if acct is not None else 10000.0
+        daily_pnl = state.get("daily_pnl", 0.0)
+        
+        # 2. Indicatori correnti
+        price = indicators["price"]
+        z_score = indicators["z_score"]
+        
+        # 3. Calcola Volume Profile
+        profile = []
+        poc = price
+        rates = mt5.copy_rates_from_pos(SYMBOL, mt5.TIMEFRAME_H1, 0, 100)
+        if rates is not None and len(rates) >= 10:
+            highs = [r['high'] for r in rates]
+            lows = [r['low'] for r in rates]
+            min_price = min(lows)
+            max_price = max(highs)
+            if max_price == min_price:
+                max_price += 1.0
+                
+            num_bins = 40
+            bin_size = (max_price - min_price) / num_bins
+            bins = [min_price + i * bin_size for i in range(num_bins)]
+            volumes = [0.0 for _ in range(num_bins)]
+            
+            for r in rates:
+                high = r['high']
+                low = r['low']
+                vol = r['tick_volume']
+                start_idx = max(0, int((low - min_price) / bin_size))
+                end_idx = min(num_bins - 1, int((high - min_price) / bin_size))
+                steps = (end_idx - start_idx) + 1
+                vol_per_step = vol / steps if steps > 0 else vol
+                for idx in range(start_idx, end_idx + 1):
+                    volumes[idx] += vol_per_step
+                    
+            max_vol_idx = int(np.argmax(volumes))
+            poc = bins[max_vol_idx] + (bin_size / 2.0)
+            
+            for i in range(num_bins):
+                profile.append({
+                    "price": bins[i],
+                    "volume": int(volumes[i]),
+                    "is_poc": (i == max_vol_idx)
+                })
+            profile.reverse()
+            
+        # 4. Calcola Order Flow Delta
+        delta = 0.0
+        ticks = mt5.copy_ticks_from(SYMBOL, int(time.time()) - 120, 300, mt5.COPY_TICKS_ALL)
+        if ticks is not None and len(ticks) >= 10:
+            buy_aggressive = 0
+            sell_aggressive = 0
+            for i in range(1, len(ticks)):
+                p = ticks[i]['last'] if ticks[i]['last'] > 0 else ticks[i]['bid']
+                bid = ticks[i]['bid']
+                ask = ticks[i]['ask']
+                if ask > bid:
+                    mid = (ask + bid) / 2.0
+                    if p > mid:
+                        buy_aggressive += 1
+                    elif p < mid:
+                        sell_aggressive += 1
+            total = buy_aggressive + sell_aggressive
+            if total > 0:
+                delta = (buy_aggressive - sell_aggressive) / total
+                
+        # 5. Struttura dati
+        data = {
+            "balance": balance,
+            "equity": equity,
+            "daily_pnl": daily_pnl,
+            "price": price,
+            "z_score": z_score,
+            "delta_imbalance": delta,
+            "geo_sentiment": sentiment,
+            "volume_profile": profile,
+            "poc": poc
+        }
+        
+        # Scrittura atomica per prevenire file vuoti / letti a metà
+        temp_file = DASHBOARD_DATA_FILE + ".tmp"
+        with open(temp_file, 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=4)
+        if os.path.exists(DASHBOARD_DATA_FILE):
+            os.remove(DASHBOARD_DATA_FILE)
+        os.rename(temp_file, DASHBOARD_DATA_FILE)
+        
+    except Exception as e:
+        print(f"\n⚠️ Errore nel salvataggio dei dati per la dashboard: {e}")
 
 # ==============================================================================
 # CONFIGURAZIONE PARAMETRI OPERATIVI
 # ==============================================================================
-MT5_LOGIN = 10011042813          # ID del conto di trading (demo/reale)
-MT5_PASSWORD = "_6XmOxUc"        # Password del conto di trading
-MT5_SERVER = "MetaQuotes-Demo"  # Server del broker MT5
+MT5_LOGIN = 1513562873           # ID del conto di trading (demo/reale)
+MT5_PASSWORD = "Q?5X*?1m8S1"     # Password master o investor (lo script proverà entrambe)
+ALT_PASSWORD = "sR*fy!rz4?"     # Seconda password fornita per fallback
+MT5_SERVER = "FTMO-Demo"        # Server del broker MT5
 
 SYMBOL = "XAUUSD"               # Simbolo attivo: XAUUSD (Oro spot)
-RISK_PER_TRADE_USD = 500.0      # Rischio Fast-Pass challenge ($500, pari all'1.0% del conto)
-KILLSWITCH_LOSS_USD = 1000.0    # Soglia di blocco giornaliero ($1.000, pari al 2% del conto)
+RISK_PER_TRADE_USD = 100.0      # Rischio per trade ($100 per challenge da $10k)
+KILLSWITCH_LOSS_USD = 200.0     # Soglia di blocco giornaliero ($200 per challenge da $10k)
 MAGIC_NUMBER = 888168           # Magic Number unico per tracciare le posizioni del bot AMSR
 
 # NOTIFICHE TELEGRAM (FACOLTATIVE)
@@ -64,7 +442,7 @@ BEARISH_WORDS = ["recovery", "growth", "hike", "hikes", "hawkish", "tightening",
 # ==============================================================================
 # GESTIONE STATO PERSISTENTE (PRODUCTION-GRADE)
 # ==============================================================================
-STATE_FILE = "data/amsr_bot_state.json"
+STATE_FILE = "data/amsr_bot_state_ftmo.json"
 
 def load_bot_state():
     default_state = {
@@ -268,6 +646,7 @@ def modify_position_sl(ticket, new_sl):
     return True
 
 def run_paper_trader():
+    global MT5_PASSWORD
     # Inizializza MT5 con le credenziali del conto demo configurate in alto
     # Prova prima a lanciare automaticamente MT5 dal percorso standard rilevato
     mt5_path = r"C:\Program Files\MetaTrader 5\terminal64.exe"
@@ -277,11 +656,21 @@ def run_paper_trader():
         print(f"🤖 Rilevato MetaTrader 5 installato in: {mt5_path}")
         print("🔄 Tentativo di avvio automatico di MetaTrader 5 e connessione...")
         initialized = mt5.initialize(path=mt5_path, login=MT5_LOGIN, password=MT5_PASSWORD, server=MT5_SERVER)
+        if not initialized and ALT_PASSWORD:
+            print("⚠️ Connessione con prima password fallita. Tentativo con seconda password...")
+            initialized = mt5.initialize(path=mt5_path, login=MT5_LOGIN, password=ALT_PASSWORD, server=MT5_SERVER)
+            if initialized:
+                MT5_PASSWORD = ALT_PASSWORD
     
     if not initialized:
         # Fallback generico se già aperto o se installato in un percorso personalizzato
         print("🔄 Tentativo di connessione generica (assicurati che MT5 sia già aperto)...")
         initialized = mt5.initialize(login=MT5_LOGIN, password=MT5_PASSWORD, server=MT5_SERVER)
+        if not initialized and ALT_PASSWORD:
+            print("⚠️ Connessione con prima password fallita. Tentativo con seconda password...")
+            initialized = mt5.initialize(login=MT5_LOGIN, password=ALT_PASSWORD, server=MT5_SERVER)
+            if initialized:
+                MT5_PASSWORD = ALT_PASSWORD
         
     if not initialized:
         print("❌ Inizializzazione di MetaTrader 5 fallita.")
@@ -310,6 +699,9 @@ def run_paper_trader():
         return
     else:
         print(f"• Simbolo Attivo: {SYMBOL} (Abilitato con successo in Market Watch)")
+    
+    # Auto-addestramento o caricamento della rete neurale MLP all'avvio
+    mlp_model = train_and_get_mlp(SYMBOL)
     
     # Carica lo stato persistente locale
     state = load_bot_state()
@@ -356,6 +748,9 @@ def run_paper_trader():
             # 3. Scarica il sentiment
             sentiment = fetch_sentiment_rss()
             
+            # 3b. Aggiorna i dati per la dashboard
+            update_dashboard_file(state, indicators, sentiment)
+            
             # Calcola la soglia sentiment-adjusted
             adjusted_z = Z_THRESHOLD - (sentiment * 0.3)
             z_score = indicators["z_score"]
@@ -401,83 +796,129 @@ def run_paper_trader():
                 symbol_info = mt5.symbol_info(SYMBOL)
                 contract_size = symbol_info.trade_contract_size if symbol_info is not None else 1.0
                 
+                # Calcolo ATR H4 per dimensionamento e stop
+                atr_h4 = get_atr_h4(SYMBOL, 14)
+                
                 # LONG Entry (Trend rialzista e Z-Score ipervenduto)
                 if trend == 1 and z_score < -adjusted_z:
-                    # Calcolo parametri SL/TP
-                    stop_loss_points = 2.0 * std_mad
-                    take_profit_points = 3.5 * std_mad
-                    
-                    # Calcolo Lotti dinamici per rischiare esattamente $200 basato su contract_size
-                    lots = RISK_PER_TRADE_USD / (stop_loss_points * contract_size)
-                    lots = round(max(0.01, min(lots, 1.0)), 2) # Limita a max 1.0 lotto e min 0.01 lotto
-                    
-                    print(f"\n🚀 SEGNALE LONG RILEVATO! Prezzo: ${price:.2f}, Z-Score: {z_score:.2f}, Sentiment: {sentiment:.2f}")
-                    print(f"📊 Calcolo Size: {lots} Lotti (Rischio: ${RISK_PER_TRADE_USD:.2f}, SL: ${stop_loss_points:.2f} Punti, Contratto: {contract_size})")
-                    
-                    # Invio ordine Buy
-                    ticket = send_market_order("BUY", price, lots, stop_loss_points, take_profit_points)
-                    if ticket is not None:
-                        state["active_trade_ticket"] = ticket
-                        state["daily_trades_count"] += 1
-                        state["last_trade_time"] = time.time()
-                        save_bot_state(state)
+                    # 1. Filtro US Dollar Index (DXY)
+                    dxy_tr = get_dxy_trend()
+                    if dxy_tr > 0:
+                        print(f"\n⚠️ SEGNALE LONG FILTRATO (DXY): Il dollaro americano (DXY) è in trend rialzista. Ingresso Gold evitato.")
+                    else:
+                        # 2. Calcolo parametri SL/TP dinamici con H4 ATR
+                        if atr_h4 is not None:
+                            stop_loss_points = 1.8 * atr_h4
+                            take_profit_points = 3.0 * atr_h4
+                        else:
+                            stop_loss_points = 2.0 * std_mad
+                            take_profit_points = 3.5 * std_mad
                         
-                        # Invia notifica Telegram
-                        msg_entry = (
-                            f"🚀 <b>Segnale LONG Rilevato! (BUY)</b>\n"
-                            f"• Simbolo: <code>{SYMBOL}</code>\n"
-                            f"• Prezzo d'Ingresso: <code>${price:.2f}</code>\n"
-                            f"• Dimensione: <code>{lots} Lotti</code>\n"
-                            f"• Stop Loss: <code>${price - stop_loss_points:.2f}</code>\n"
-                            f"• Take Profit: <code>${price + take_profit_points:.2f}</code>\n"
-                            f"• Rischio Stimato: <code>${RISK_PER_TRADE_USD}</code>"
-                        )
-                        send_telegram_message(msg_entry)
+                        # 3. Calcolo Lotti dinamici per rischiare esattamente $100
+                        lots = RISK_PER_TRADE_USD / (stop_loss_points * contract_size)
+                        lots = round(max(0.01, min(lots, 1.0)), 2)
+                        
+                        # 4. Validazione MLP Perceptron
+                        mlp_features = get_realtime_mlp_features(SYMBOL)
+                        score = 1.0
+                        if mlp_features is not None:
+                            score = mlp_model.forward(mlp_features)[0][0]
+                        
+                        if score < 0.55:
+                            print(f"\n⚠️ SEGNALE LONG FILTRATO (MLP): Probabilità di successo insufficiente ({score*100:.1f}% < 55%).")
+                        else:
+                            print(f"\n🧠 SEGNALE LONG CONFERMATO (MLP): Probabilità di successo di {score*100:.1f}%. Procedo con l'ordine.")
+                            print(f"🚀 SEGNALE LONG ESEGUITO! Prezzo: ${price:.2f}, Z-Score: {z_score:.2f}, Sentiment: {sentiment:.2f}")
+                            print(f"📊 Size: {lots} Lotti (Rischio: ${RISK_PER_TRADE_USD:.2f}, SL: ${stop_loss_points:.2f} Punti)")
+                            
+                            # Invio ordine Buy
+                            ticket = send_market_order("BUY", price, lots, stop_loss_points, take_profit_points)
+                            if ticket is not None:
+                                state["active_trade_ticket"] = ticket
+                                state["daily_trades_count"] += 1
+                                state["last_trade_time"] = time.time()
+                                save_bot_state(state)
+                                
+                                # Invia notifica Telegram
+                                msg_entry = (
+                                    f"🚀 <b>Segnale LONG Rilevato! (BUY)</b>\n"
+                                    f"• Simbolo: <code>{SYMBOL}</code>\n"
+                                    f"• Prezzo d'Ingresso: <code>${price:.2f}</code>\n"
+                                    f"• Dimensione: <code>{lots} Lotti</code>\n"
+                                    f"• Stop Loss: <code>${price - stop_loss_points:.2f}</code>\n"
+                                    f"• Take Profit: <code>${price + take_profit_points:.2f}</code>\n"
+                                    f"• Rischio Stimato: <code>${RISK_PER_TRADE_USD}</code>\n"
+                                    f"• Validazione MLP: <code>{score*100:.1f}%</code>"
+                                )
+                                send_telegram_message(msg_entry)
                     
                 # SHORT Entry (Trend ribassista e Z-Score ipercomprato)
                 elif trend == -1 and z_score > adjusted_z:
-                    stop_loss_points = 2.0 * std_mad
-                    take_profit_points = 3.5 * std_mad
-                    
-                    lots = RISK_PER_TRADE_USD / (stop_loss_points * contract_size)
-                    lots = round(max(0.01, min(lots, 1.0)), 2)
-                    
-                    print(f"\n📉 SEGNALE SHORT RILEVATO! Prezzo: ${price:.2f}, Z-Score: {z_score:.2f}, Sentiment: {sentiment:.2f}")
-                    print(f"📊 Calcolo Size: {lots} Lotti (Rischio: ${RISK_PER_TRADE_USD:.2f}, SL: ${stop_loss_points:.2f} Punti, Contratto: {contract_size})")
-                    
-                    ticket = send_market_order("SELL", price, lots, stop_loss_points, take_profit_points)
-                    if ticket is not None:
-                        state["active_trade_ticket"] = ticket
-                        state["daily_trades_count"] += 1
-                        state["last_trade_time"] = time.time()
-                        save_bot_state(state)
+                    # 1. Filtro US Dollar Index (DXY)
+                    dxy_tr = get_dxy_trend()
+                    if dxy_tr < 0:
+                        print(f"\n⚠️ SEGNALE SHORT FILTRATO (DXY): Il dollaro americano (DXY) è in trend ribassista. Ingresso Gold evitato.")
+                    else:
+                        # 2. Calcolo parametri SL/TP dinamici con H4 ATR
+                        if atr_h4 is not None:
+                            stop_loss_points = 1.8 * atr_h4
+                            take_profit_points = 3.0 * atr_h4
+                        else:
+                            stop_loss_points = 2.0 * std_mad
+                            take_profit_points = 3.5 * std_mad
                         
-                        # Invia notifica Telegram
-                        msg_entry = (
-                            f"📉 <b>Segnale SHORT Rilevato! (SELL)</b>\n"
-                            f"• Simbolo: <code>{SYMBOL}</code>\n"
-                            f"• Prezzo d'Ingresso: <code>${price:.2f}</code>\n"
-                            f"• Dimensione: <code>{lots} Lotti</code>\n"
-                            f"• Stop Loss: <code>${price + stop_loss_points:.2f}</code>\n"
-                            f"• Take Profit: <code>${price - take_profit_points:.2f}</code>\n"
-                            f"• Rischio Stimato: <code>${RISK_PER_TRADE_USD}</code>"
-                        )
-                        send_telegram_message(msg_entry)
+                        # 3. Calcolo Lotti dinamici per rischiare esattamente $100
+                        lots = RISK_PER_TRADE_USD / (stop_loss_points * contract_size)
+                        lots = round(max(0.01, min(lots, 1.0)), 2)
+                        
+                        # 4. Validazione MLP Perceptron
+                        mlp_features = get_realtime_mlp_features(SYMBOL)
+                        score = 1.0
+                        if mlp_features is not None:
+                            score = mlp_model.forward(mlp_features)[0][0]
+                        
+                        if score < 0.55:
+                            print(f"\n⚠️ SEGNALE SHORT FILTRATO (MLP): Probabilità di successo insufficiente ({score*100:.1f}% < 55%).")
+                        else:
+                            print(f"\n🧠 SEGNALE SHORT CONFERMATO (MLP): Probabilità di successo di {score*100:.1f}%. Procedo con l'ordine.")
+                            print(f"📉 SEGNALE SHORT ESEGUITO! Prezzo: ${price:.2f}, Z-Score: {z_score:.2f}, Sentiment: {sentiment:.2f}")
+                            print(f"📊 Size: {lots} Lotti (Rischio: ${RISK_PER_TRADE_USD:.2f}, SL: ${stop_loss_points:.2f} Punti)")
+                            
+                            ticket = send_market_order("SELL", price, lots, stop_loss_points, take_profit_points)
+                            if ticket is not None:
+                                state["active_trade_ticket"] = ticket
+                                state["daily_trades_count"] += 1
+                                state["last_trade_time"] = time.time()
+                                save_bot_state(state)
+                                
+                                # Invia notifica Telegram
+                                msg_entry = (
+                                    f"📉 <b>Segnale SHORT Rilevato! (SELL)</b>\n"
+                                    f"• Simbolo: <code>{SYMBOL}</code>\n"
+                                    f"• Prezzo d'Ingresso: <code>${price:.2f}</code>\n"
+                                    f"• Dimensione: <code>{lots} Lotti</code>\n"
+                                    f"• Stop Loss: <code>${price + stop_loss_points:.2f}</code>\n"
+                                    f"• Take Profit: <code>${price - take_profit_points:.2f}</code>\n"
+                                    f"• Rischio Stimato: <code>${RISK_PER_TRADE_USD}</code>\n"
+                                    f"• Validazione MLP: <code>{score*100:.1f}%</code>"
+                                )
+                                send_telegram_message(msg_entry)
             
             else:
                 # ── GESTIONE POSIZIONI APERTE (TRAILING STOP & INVERSIONE TREND) ──────────
                 for pos in positions:
-                    # 1. Trailing Stop Loss Dinamico basato su Volatilità (MAD)
+                    # 1. Trailing Stop Loss Dinamico basato su Volatilità H4 ATR
                     tick = mt5.symbol_info_tick(SYMBOL)
                     if tick is not None:
                         current_price = tick.bid if pos.type == mt5.ORDER_TYPE_BUY else tick.ask
-                        # Distanza di sicurezza SL calibrata sulla volatilità MAD
-                        sl_distance = 2.0 * std_mad
+                        atr_h4 = get_atr_h4(SYMBOL, 14)
+                        sl_distance = 1.8 * atr_h4 if atr_h4 is not None else 2.0 * std_mad
+                        step_threshold = 0.4 * atr_h4 if atr_h4 is not None else 0.5 * std_mad
                         
                         if pos.type == mt5.ORDER_TYPE_BUY:
                             new_sl = round(current_price - sl_distance, 2)
-                            # Sposta lo SL solo verso l'alto ed evita micro-modifiche (soglia minima di 0.5 * std_mad)
-                            if new_sl > pos.sl + (0.5 * std_mad):
+                            # Sposta lo SL solo verso l'alto ed evita micro-modifiche
+                            if new_sl > pos.sl + step_threshold:
                                 if modify_position_sl(pos.ticket, new_sl):
                                     msg_trailing = (
                                         f"🔄 <b>Trailing Stop Aggiornato! (BUY)</b>\n"
@@ -490,8 +931,8 @@ def run_paper_trader():
                                     
                         elif pos.type == mt5.ORDER_TYPE_SELL:
                             new_sl = round(current_price + sl_distance, 2)
-                            # Sposta lo SL solo verso il basso ed evita micro-modifiche (soglia minima di 0.5 * std_mad)
-                            if pos.sl == 0.0 or new_sl < pos.sl - (0.5 * std_mad):
+                            # Sposta lo SL solo verso il basso ed evita micro-modifiche
+                            if pos.sl == 0.0 or new_sl < pos.sl - step_threshold:
                                 if modify_position_sl(pos.ticket, new_sl):
                                     msg_trailing = (
                                         f"🔄 <b>Trailing Stop Aggiornato! (SELL)</b>\n"

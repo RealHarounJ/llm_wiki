@@ -1,4 +1,4 @@
-﻿---
+---
 tags: [home, second-brain, index]
 date_created: 2026-05-07
 ---
@@ -12,6 +12,8 @@ Benvenuto nel tuo Second Brain. Questa è la pagina di accesso principale a tutt
 |---|---|---|
 | **Corporate Finance** | [[wiki/Master_Page_Corporate_Finance]] | 🟢 Attivo |
 | **Data Mining & Database** | [[Master_Page_Data_Mining]] | 🟢 Attivo |
+| **Industrial Organization** | [[Master_Page_Industrial_Organization]] | 🟢 Attivo |
+| **Sales Competences** | [[Master_Page_Sales_Competences]] | 🟢 Attivo |
 
 ## 🤖 Intelligenza Artificiale
 | Argomento | Master Page | Stato |
