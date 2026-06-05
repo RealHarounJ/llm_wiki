@@ -198,3 +198,10 @@ Cost of Capital (%)
 1. **Always label your axes immediately.** The professor will dock points if you draw a line without defining $X$ and $Y$.
 2. **Write the governing formula next to the graph.** It shows that your drawing is mathematically backed.
 3. **Talk while you draw.** Don't draw in silence. Explain what every line means *as* your hand is moving. It projects immense confidence.
+
+---
+
+## Fonti
+* [[Fonte_Corporate_Finance_Book]] — Berk & DeMarzo, Corporate Finance
+* [[Fonte_Slides_Corporate_Finance]] — Slides corso Corporate Finance UNIVPM 2025/2026
+* [[Fonte_Corporate_Finance_Libro_Professore]] — Libro del Professore, Finanza Aziendale

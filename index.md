@@ -150,7 +150,7 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Fonte_Heywood_Motori]] | Heywood - Internal Combustion Engine Fundamentals |
 | [[Fonte_Milliken_Dinamica]] | Milliken - Race Car Vehicle Dynamics |
 | [[Data Mining Techniques]] | Tecniche DM — scheda fonte |
-| [[wiki/Fonti/Data mining]] | Data mining sessione estesa |
+| [[Data_Mining_Full_Session]] | Data mining sessione estesa |
 | [[GeeksforGeeks_Data_Mining]] | GeeksforGeeks Data Mining Concepts |
 | [[Wikipedia_Data_Mining]] | Wikipedia - Data Mining page |
 | [[Google_Gemini_Session]] | Sessione Gemini — simulazione cap.28 Elmasri |
@@ -191,12 +191,12 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 
 | File | Descrizione |
 |---|---|
-| [[wiki/Master_Page_Corporate_Finance]] | Cruscotto esame CF — tabella topic + domande |
+| [[Master_Page_Corporate_Finance]] | Cruscotto esame CF — tabella topic + domande |
 | [[Master_Page_Data_Mining]] | Cruscotto studio Data Mining + domande esame |
 | [[Master_Page_AI_LLM]] | Cruscotto studio AI/LLM |
 | [[Master_Page_Industrial_Organization]] | Cruscotto esame Industrial Organization |
 | [[Analisi_Portafoglio_Haroun]] | Analisi quantitativa e strategica del portafoglio personale (Trading 212) |
-| [[wiki/Progetti/Master_Page_Sales_Competences]] | Cruscotto esame Sales Competences — tabella lezioni + checklist |
+| [[Master_Page_Sales_Competences]] | Cruscotto esame Sales Competences — tabella lezioni + checklist |
 
 ---
 
@@ -276,6 +276,28 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | `telegram_bridge.py` | Python | Ingestione automatica dei messaggi di testo Telegram inviati dall'utente |
 | `send_telegram.py` | Python | Invio di messaggi di risposta e comandi formattati al cellulare dell'utente via Telegram |
 | `telegram_listener.py` | Python | Listener ad alta frequenza (5s) per il controllo remoto immediato da smartphone via Telegram |
+| `amsr_ai_brain_v4.py` | Python | Bot di trading adattivo multi-asset e multi-strategia v4 con Human-Like Variable Engine e modello ML |
+| `human_variable_engine.py` | Python | Calcolatore di 47 variabili psicologiche e di sentiment in tempo reale (Layer 2 di AMSR v4) |
+| `signal_fusion_engine.py` | Python | Motore di fusione dei segnali con pesi dinamici basati sul regime di mercato (Layer 3 di AMSR v4) |
+| `ml_model.py` | Python | Modello adattivo di Machine Learning (Random Forest / Logistic Regression) per la predizione dei segnali (Layer 4 di AMSR v4) |
+| `knowledge_extractor.py` | Python | Estrattore e scraper della base di conoscenza per l'ingestione di news e sentiment (Layer 1 di AMSR v4) |
+
+---
+
+## 📐 wiki/Math/
+
+### Matematica — Preparazione Esame
+| File | Descrizione |
+|---|---|
+| [[Math_Home]] | Hub centrale Matematica — struttura esame e piano di studio |
+| [[Math_Algebra_Lineare]] | Algebra Lineare: vettori, matrici, determinanti, sistemi, autovalori |
+| [[Math_Studio_Funzioni]] | Studio di Funzione: limiti, derivate, monotonia, asintoti |
+| [[Math_Integrali]] | Integrali: tecniche di integrazione, teorema fondamentale |
+| [[Math_Funzioni_Due_Variabili]] | Funzioni di due variabili: derivate parziali, Hessiano, Lagrange |
+| [[Math_Formulario]] | Formulario completo da memorizzare per l'esame |
+| [[Math_Esercizi_Tipo]] | Esercizi tipici d'esame con soluzioni |
+| [[Math_Esami_Passati]] | Tracce di esami passati con soluzioni |
+| [[Math_Piano_Studio]] | Piano di studio settimanale per la preparazione |
 
 ---
 
@@ -283,9 +305,9 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 
 | Simulazione | Percorso | Descrizione |
 |---|---|---|
-| **Cash Budgeting Simulator** | [simulation_cash_budget/index.html](file:///c:/Users/jaafa/Downloads/llm_wiki-main/simulation_cash_budget/index.html) | Simulatore interattivo di flussi di cassa, riserva minima ed EFN a breve termine (Scenario d'esame) |
-| **NoSQL Universe** | [simulation_models/index.html](file:///c:/Users/jaafa/Downloads/llm_wiki-main/simulation_models/index.html) | Simulatore interattivo di modelli dati Key-Value, Document, Column-Family e Graph |
-| **NoSQL Operations** | [simulation_nosql/index.html](file:///c:/Users/jaafa/Downloads/llm_wiki-main/simulation_nosql/index.html) | Simulatore pratico di operazioni CRUD ed architetture NoSQL distribuite |
-| **Scalability & Load Balancing** | [simulation_scalability/index.html](file:///c:/Users/jaafa/Downloads/llm_wiki-main/simulation_scalability/index.html) | Simulatore di architetture distribuite, bilanciamento del carico e replicazione |
-| **Data Mining Workflows** | [simulation_workflow/index.html](file:///c:/Users/jaafa/Downloads/llm_wiki-main/simulation_workflow/index.html) | Simulatore dei workflow di data mining (ETL, classificazione, clustering) |
+| **Cash Budgeting Simulator** | [simulation_cash_budget/index.html](file:///c:/Users/Haroun_Jaafar/Desktop/llm_wiki/simulation_cash_budget/index.html) | Simulatore interattivo di flussi di cassa, riserva minima ed EFN a breve termine (Scenario d'esame) |
+| **NoSQL Universe** | [simulation_models/index.html](file:///c:/Users/Haroun_Jaafar/Desktop/llm_wiki/simulation_models/index.html) | Simulatore interattivo di modelli dati Key-Value, Document, Column-Family e Graph |
+| **NoSQL Operations** | [simulation_nosql/index.html](file:///c:/Users/Haroun_Jaafar/Desktop/llm_wiki/simulation_nosql/index.html) | Simulatore pratico di operazioni CRUD ed architetture NoSQL distribuite |
+| **Scalability & Load Balancing** | [simulation_scalability/index.html](file:///c:/Users/Haroun_Jaafar/Desktop/llm_wiki/simulation_scalability/index.html) | Simulatore di architetture distribuite, bilanciamento del carico e replicazione |
+| **Data Mining Workflows** | [simulation_workflow/index.html](file:///c:/Users/Haroun_Jaafar/Desktop/llm_wiki/simulation_workflow/index.html) | Simulatore dei workflow di data mining (ETL, classificazione, clustering) |
 

@@ -111,5 +111,15 @@ source_count: 1
 *   [[Ambivert_Advantage_in_Sales]]
 *   [[Master_Page_Sales_Competences]]
 
+---
+
+## Fonti
+* Slides ed esercitazioni del corso *Sales Competences* (A.A. 2025/2026) — Prof. Dr. Thomas Berger, UNIVPM.
+* Studi accademici citati:
+  * *Holopainen et al. (2020)* — Processo di vendita tecnica.
+  * *Vogel (2006)* — Modello di utilità netta.
+  * *Jensen (2013)* — Framework di conversione del valore finanziario e benefici.
+  * *Adam Grant (2013)* — Studio empirico sull'ambiverto nelle vendite (*The Ambivert Advantage*).
+
 
 
