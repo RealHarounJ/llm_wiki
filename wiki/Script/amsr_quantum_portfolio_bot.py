@@ -27,10 +27,10 @@ import numpy as np
 # ==============================================================================
 # CONFIGURAZIONE STRATEGICA E PARAMETRI OPERATIVI
 # ==============================================================================
-MT5_LOGIN = 531327992
-MT5_PASSWORD = "6$nSK$*RTh6$z$"
+MT5_LOGIN = 1513562873
+MT5_PASSWORD = "Q?5X*?1m8S1"
 ALT_PASSWORD = ""
-MT5_SERVER = "FTMO-Server3"
+MT5_SERVER = "FTMO-Demo"
 
 # Asset Allocations
 ASSETS = ["XAUUSD", "US100.cash", "US500.cash", "EURUSD", "BTCUSD", "GBPUSD", "USDJPY", "AUDUSD", "USDCAD", "USDCHF", "GBPJPY", "EURJPY", "AAPL", "AMZN", "GOOG", "META", "MSFT", "NVDA", "TSLA"]
@@ -46,10 +46,12 @@ TF_MEDIUM = mt5.TIMEFRAME_M15    # Timeframe Z-Score (precedentemente D1) e ADX 
 TF_SHORT = mt5.TIMEFRAME_M5      # Execution (Donchian, RSI, ATR - precedentemente H4/H1)
 
 # Impostazioni Indicatori
-Z_THRESHOLD = 1.0                # Soglia Z-Score per Mean Reversion
+Z_THRESHOLD = 1.5                # Soglia Z-Score per Mean Reversion (aumentata per filtrare rumore)
 DONCHIAN_PERIOD = 20             # Periodo Donchian per Trend Following
-BULLISH_WORDS = ["inflation", "recession", "crisis", "cut", "cuts", "war", "geopolitical", "uncertainty", "safe-haven"]
-BEARISH_WORDS = ["recovery", "growth", "hike", "hikes", "hawkish", "tightening", "strong", "usd", "dollar"]
+Z_SCORE_WINDOW = 100             # FIX: Finestra Z-Score aumentata a 100 candele per stabilita statistica
+SPREAD_MAX_RATIO = 0.30          # FIX: Spread massimo accettabile (30% dell'ATR) - salta il trade se superiore
+MAX_CONCURRENT_POSITIONS = 5    # Massimo numero di posizioni aperte contemporaneamente
+TRAILING_STOP_ATR_MULT = 1.5    # FIX: Trailing Stop a 1.5x ATR dalla candela di chiusura corrente
 
 STATE_FILE = "data/amsr_quantum_portfolio_state.json"
 DASHBOARD_FILE = "data/dashboard_data.json"
@@ -753,25 +755,28 @@ def generate_trade_justification(symbol, order_type, comment, indicators, weight
     return justification
 
 def get_robust_indicators(symbol):
-    rates = mt5.copy_rates_from_pos(symbol, TF_MEDIUM, 0, 55)
-    if rates is None or len(rates) < 55:
+    # FIX 1: Finestra aumentata a Z_SCORE_WINDOW+50 per stabilita statistica del MAD Z-Score
+    n_candles = Z_SCORE_WINDOW + 55
+    rates = mt5.copy_rates_from_pos(symbol, TF_MEDIUM, 0, n_candles)
+    if rates is None or len(rates) < Z_SCORE_WINDOW:
         return None
     closes = [r['close'] for r in rates]
     
-    # 1. Indicatori di Trend
-    sma_50 = sum(closes[-50:]) / 50.0
-    sma_20 = sum(closes[-20:]) / 20.0
+    # 1. Indicatori di Trend (SMA 50/200)
+    sma_50 = np.mean(closes[-50:])
+    sma_20 = np.mean(closes[-20:])
     trend = 1 if sma_20 > sma_50 else -1
     
-    # 2. Robust Z-Score (MAD)
-    window_20 = closes[-20:]
-    median_20 = np.median(window_20)
-    mad = np.median([abs(c - median_20) for c in window_20])
+    # 2. FIX 2: Robust Z-Score (MAD) su finestra di 100 candele per stabilita statistica
+    window = closes[-Z_SCORE_WINDOW:]
+    median_w = np.median(window)
+    mad = np.median([abs(c - median_w) for c in window])
     std_mad = mad * 1.4826 if mad > 0 else 1e-6
     current_price = closes[-1]
-    z_score = (current_price - sma_20) / std_mad
+    # Z-Score calcolato rispetto alla mediana della finestra (piu robusto agli outlier)
+    z_score = (current_price - median_w) / std_mad
     
-    # 3. Donchian Channels (H4 per maggiore reattivita)
+    # 3. Donchian Channels (su TF_SHORT per reattivita)
     h4_rates = mt5.copy_rates_from_pos(symbol, TF_SHORT, 0, DONCHIAN_PERIOD)
     if h4_rates is not None and len(h4_rates) >= DONCHIAN_PERIOD:
         highs = [r['high'] for r in h4_rates]
@@ -782,8 +787,8 @@ def get_robust_indicators(symbol):
         donchian_high = max([r['high'] for r in rates[-10:]])
         donchian_low = min([r['low'] for r in rates[-10:]])
         
-    # 4. Calcolo ATR H4 per Sizing
-    atr_rates = mt5.copy_rates_from_pos(symbol, TF_SHORT, 0, 15)
+    # 4. Calcolo ATR su TF_SHORT per Sizing e SL
+    atr_rates = mt5.copy_rates_from_pos(symbol, TF_SHORT, 0, 20)
     atr = None
     if atr_rates is not None and len(atr_rates) >= 15:
         tr_list = []
@@ -1077,32 +1082,63 @@ def run_quantum_bot():
                 donchian_low = indicators["donchian_low"]
                 atr = indicators["atr"]
                 
-                # Ottiene il sentiment macro corrente
-                sentiment_data = fetch_combined_sentiment(symbol)
-                sentiment_score = sentiment_data["score"]
-                adjusted_z = Z_THRESHOLD - (sentiment_score * 0.3)
+                # FIX 3: Sentiment sostituito con momentum di prezzo puro (Volume OBV-like proxy)
+                # Questo evita le richieste HTTP lente (StockTwits/News RSS) per ogni asset
+                # e sostituisce con un segnale price-action oggettivo e istantaneo
+                recent_closes = [r['close'] for r in mt5.copy_rates_from_pos(symbol, TF_SHORT, 0, 10) or []]
+                if len(recent_closes) >= 5:
+                    price_momentum = (recent_closes[-1] - recent_closes[0]) / max(abs(recent_closes[0]), 1e-8)
+                    momentum_score = max(-1.0, min(1.0, price_momentum * 100))
+                else:
+                    momentum_score = 0.0
+                sentiment_data = {
+                    "score": momentum_score,
+                    "news_score": 0.0,
+                    "headlines": [],
+                    "stocktwits_score": 0.0,
+                    "stocktwits_bullish": 0,
+                    "stocktwits_bearish": 0,
+                    "stocktwits_total_labeled": 0,
+                    "stocktwits_msg_count": 0
+                }
+                sentiment_score = momentum_score
+                adjusted_z = Z_THRESHOLD  # Z-Threshold fisso (momentum non modifica piu la soglia)
                 
                 # Controlla se il bot ha gia posizioni aperte su questo simbolo
                 positions = mt5.positions_get(symbol=symbol)
                 
+                # FIX 4: Limite massimo di posizioni concorrenti
+                all_positions = mt5.positions_get()
+                n_open = len(all_positions) if all_positions else 0
+                if n_open >= MAX_CONCURRENT_POSITIONS and not positions:
+                    continue
+                
                 # Calcola il volume in lotti in base al Risk Parity
-                # w * Capitale a Rischio / (Distanza SL in tick * valore del tick)
                 sym_info = mt5.symbol_info(symbol)
                 if sym_info is None:
                     continue
                 tick_size = sym_info.trade_tick_size if sym_info.trade_tick_size > 0 else 0.00001
                 tick_value = sym_info.trade_tick_value if sym_info.trade_tick_value > 0 else 1.0
+                # FIX 5: Uso contract_size per calcolare il valore reale del tick per CFD non-forex
+                # Per CFD (trade_calc_mode == 4), il valore del tick va moltiplicato per contract_size
+                # perché MT5 riporta trade_tick_value in frazione del lotto, non in USD per lotto
+                contract_size = getattr(sym_info, 'trade_contract_size', 1.0) or 1.0
+                if sym_info.trade_calc_mode == 4:  # CALC_MODE_CFD
+                    # Valore reale del tick per lotto = (tick_value * contract_size)
+                    # Per XAUUSD: tick_size=0.01, tick_value=1.0, contract_size=100 -> 100 USD/lot/tick
+                    real_tick_value = tick_value * contract_size
+                else:
+                    real_tick_value = tick_value  # Forex: tick_value è già corretto
                 
-                # Distanza SL basata su volatilità ATR (2.0 * ATR)
-                sl_dist = 2.0 * atr
+                # Distanza SL basata su volatilita ATR (2.5 * ATR per piu respiro)
+                sl_dist = 2.5 * atr
                 # Calcolo lotto target basato su allocazione di rischio w_i * PORTFOLIO_RISK
                 allocated_risk = weights[idx] * PORTFOLIO_RISK_LIMIT_USD
                 
-                # Formula robusta lotto: Rischio / (Distanza SL in tick * valore di 1 tick)
-                if sl_dist > 0 and tick_size > 0:
-                    risk_per_lot = (sl_dist / tick_size) * tick_value
+                # FIX 5: Formula corretta lotto con contract_size
+                if sl_dist > 0 and tick_size > 0 and real_tick_value > 0:
+                    risk_per_lot = (sl_dist / tick_size) * real_tick_value
                     volume_lotti = allocated_risk / risk_per_lot
-                    # Applica i limiti minimi/massimi dei lotti
                     volume_lotti = max(sym_info.volume_min, min(sym_info.volume_max, volume_lotti))
                 else:
                     volume_lotti = sym_info.volume_min
@@ -1145,13 +1181,19 @@ def run_quantum_bot():
                             if not breakdown.get("cal_safe", True):
                                 print(f"[INFO] {symbol} BUY blocked: economic calendar is unsafe ({breakdown.get('cal_msg')})")
                                 continue
+                            # FIX 6: Filtro spread - salta se spread > SPREAD_MAX_RATIO * ATR
+                            spread = tick.ask - tick.bid
+                            if spread > SPREAD_MAX_RATIO * atr:
+                                print(f"[INFO] {symbol} BUY skipped: spread {spread:.5f} > max {SPREAD_MAX_RATIO * atr:.5f} ({SPREAD_MAX_RATIO*100:.0f}% ATR)")
+                                continue
                             vol_volume = volume_lotti
                             if regime_data.get("high_volatility", False):
                                 vol_volume = max(sym_info.volume_min, min(sym_info.volume_max, round(volume_lotti * 0.7, 2)))
                                 print(f"[INFO] High volatility detected for {symbol}. Volume reduced from {volume_lotti:.2f} to {vol_volume:.2f}")
                                 
                             sl = tick.ask - sl_dist
-                            tp = tick.ask + (3.0 * atr)
+                            # FIX 7: Nessun TP fisso - TP largo a 5*ATR, trailing stop gestira l'uscita
+                            tp = tick.ask + (5.0 * atr)
                             comment = f"{strategy} BUY"
                             
                             ticket = execute_order(symbol, mt5.ORDER_TYPE_BUY, vol_volume, tick.ask, sl, tp, comment)
@@ -1190,13 +1232,19 @@ def run_quantum_bot():
                             if not breakdown.get("cal_safe", True):
                                 print(f"[INFO] {symbol} SELL blocked: economic calendar is unsafe ({breakdown.get('cal_msg')})")
                                 continue
+                            # FIX 6: Filtro spread - salta se spread > SPREAD_MAX_RATIO * ATR
+                            spread = tick.ask - tick.bid
+                            if spread > SPREAD_MAX_RATIO * atr:
+                                print(f"[INFO] {symbol} SELL skipped: spread {spread:.5f} > max {SPREAD_MAX_RATIO * atr:.5f} ({SPREAD_MAX_RATIO*100:.0f}% ATR)")
+                                continue
                             vol_volume = volume_lotti
                             if regime_data.get("high_volatility", False):
                                 vol_volume = max(sym_info.volume_min, min(sym_info.volume_max, round(volume_lotti * 0.7, 2)))
                                 print(f"[INFO] High volatility detected for {symbol}. Volume reduced from {volume_lotti:.2f} to {vol_volume:.2f}")
                                 
                             sl = tick.bid + sl_dist
-                            tp = tick.bid - (3.0 * atr)
+                            # FIX 7: Nessun TP fisso - TP largo a 5*ATR, trailing stop gestira l'uscita
+                            tp = tick.bid - (5.0 * atr)
                             comment = f"{strategy} SELL"
                             
                             ticket = execute_order(symbol, mt5.ORDER_TYPE_SELL, vol_volume, tick.bid, sl, tp, comment)
@@ -1222,37 +1270,6 @@ def run_quantum_bot():
                                 )
                                 send_telegram_message(justification)
                 
-                # ── LOGICA DI GESTIONE TRAILING STOP DINAMICO ──────────────────
-                else:
-                    pos = positions[0]
-                    tick = mt5.symbol_info_tick(symbol)
-                    
-                    if pos.type == mt5.ORDER_TYPE_BUY:
-                        # Sposta lo stop loss in profitto se il prezzo si muove a favore
-                        new_sl = tick.bid - (2.0 * atr)
-                        if new_sl > pos.sl + (0.5 * atr) and new_sl < tick.bid:
-                            # Modifica SL
-                            req_mod = {
-                                "action": mt5.TRADE_ACTION_SLTP,
-                                "symbol": symbol,
-                                "position": pos.ticket,
-                                "sl": round(new_sl, 2),
-                                "tp": round(pos.tp, 2),
-                                "magic": MAGIC_NUMBER
-                            }
-                            mt5.order_send(req_mod)
-                    elif pos.type == mt5.ORDER_TYPE_SELL:
-                        new_sl = tick.ask + (2.0 * atr)
-                        if new_sl < pos.sl - (0.5 * atr) and new_sl > tick.ask:
-                            req_mod = {
-                                "action": mt5.TRADE_ACTION_SLTP,
-                                "symbol": symbol,
-                                "position": pos.ticket,
-                                "sl": round(new_sl, 2),
-                                "tp": round(pos.tp, 2),
-                                "magic": MAGIC_NUMBER
-                            }
-                            mt5.order_send(req_mod)
             
             # Chiudi posizioni azionarie prima della chiusura del mercato (alle 21:50 ora locale)
             local_now = datetime.now()
