@@ -46,12 +46,14 @@ TF_MEDIUM = mt5.TIMEFRAME_M15    # Timeframe Z-Score (precedentemente D1) e ADX 
 TF_SHORT = mt5.TIMEFRAME_M5      # Execution (Donchian, RSI, ATR - precedentemente H4/H1)
 
 # Impostazioni Indicatori
-Z_THRESHOLD = 1.5                # Soglia Z-Score per Mean Reversion (aumentata per filtrare rumore)
+Z_THRESHOLD = 1.8                # Soglia Z-Score alzata: segnale piu forte richiesto (meno trade, migliore qualita)
 DONCHIAN_PERIOD = 20             # Periodo Donchian per Trend Following
-Z_SCORE_WINDOW = 100             # FIX: Finestra Z-Score aumentata a 100 candele per stabilita statistica
-SPREAD_MAX_RATIO = 0.30          # FIX: Spread massimo accettabile (30% dell'ATR) - salta il trade se superiore
-MAX_CONCURRENT_POSITIONS = 5    # Massimo numero di posizioni aperte contemporaneamente
-TRAILING_STOP_ATR_MULT = 1.5    # FIX: Trailing Stop a 1.5x ATR dalla candela di chiusura corrente
+Z_SCORE_WINDOW = 100             # Finestra Z-Score a 100 candele per stabilita statistica
+SPREAD_MAX_RATIO = 0.25          # Spread massimo accettabile (25% ATR) - soglia piu stretta
+MAX_CONCURRENT_POSITIONS = 3    # FIX BACKTEST: ridotto a 3 per evitare overtrading
+TRAILING_STOP_ATR_MULT = 2.0    # FIX BACKTEST: Trail a 2.0x ATR per dare respiro ai vincitori
+TRAIL_PROFIT_GATE_ATR = 1.0     # FIX BACKTEST: Trail si attiva SOLO dopo 1.0x ATR di profitto
+CONFLUENCE_THRESHOLD = 75       # FIX BACKTEST: Alzato da 65 a 75 per ridurre falsi segnali
 
 STATE_FILE = "data/amsr_quantum_portfolio_state.json"
 DASHBOARD_FILE = "data/dashboard_data.json"
@@ -1085,7 +1087,8 @@ def run_quantum_bot():
                 # FIX 3: Sentiment sostituito con momentum di prezzo puro (Volume OBV-like proxy)
                 # Questo evita le richieste HTTP lente (StockTwits/News RSS) per ogni asset
                 # e sostituisce con un segnale price-action oggettivo e istantaneo
-                recent_closes = [r['close'] for r in mt5.copy_rates_from_pos(symbol, TF_SHORT, 0, 10) or []]
+                recent_rates = mt5.copy_rates_from_pos(symbol, TF_SHORT, 0, 10)
+                recent_closes = [r['close'] for r in recent_rates] if recent_rates is not None and len(recent_rates) > 0 else []
                 if len(recent_closes) >= 5:
                     price_momentum = (recent_closes[-1] - recent_closes[0]) / max(abs(recent_closes[0]), 1e-8)
                     momentum_score = max(-1.0, min(1.0, price_momentum * 100))
@@ -1177,11 +1180,11 @@ def run_quantum_bot():
                         
                         print(f"[INFO] {symbol} BUY {strategy} Confluence Score: {score}/100 (Threshold: 65)")
                         
-                        if score >= 65:
+                        if score >= CONFLUENCE_THRESHOLD:
                             if not breakdown.get("cal_safe", True):
                                 print(f"[INFO] {symbol} BUY blocked: economic calendar is unsafe ({breakdown.get('cal_msg')})")
                                 continue
-                            # FIX 6: Filtro spread - salta se spread > SPREAD_MAX_RATIO * ATR
+                            # Filtro spread - salta se spread > SPREAD_MAX_RATIO * ATR
                             spread = tick.ask - tick.bid
                             if spread > SPREAD_MAX_RATIO * atr:
                                 print(f"[INFO] {symbol} BUY skipped: spread {spread:.5f} > max {SPREAD_MAX_RATIO * atr:.5f} ({SPREAD_MAX_RATIO*100:.0f}% ATR)")
@@ -1192,7 +1195,7 @@ def run_quantum_bot():
                                 print(f"[INFO] High volatility detected for {symbol}. Volume reduced from {volume_lotti:.2f} to {vol_volume:.2f}")
                                 
                             sl = tick.ask - sl_dist
-                            # FIX 7: Nessun TP fisso - TP largo a 5*ATR, trailing stop gestira l'uscita
+                            # TP largo a 5*ATR - il trailing stop gestisce l'uscita ottimale
                             tp = tick.ask + (5.0 * atr)
                             comment = f"{strategy} BUY"
                             
@@ -1228,11 +1231,11 @@ def run_quantum_bot():
                         
                         print(f"[INFO] {symbol} SELL {strategy} Confluence Score: {score}/100 (Threshold: 65)")
                         
-                        if score >= 65:
+                        if score >= CONFLUENCE_THRESHOLD:
                             if not breakdown.get("cal_safe", True):
                                 print(f"[INFO] {symbol} SELL blocked: economic calendar is unsafe ({breakdown.get('cal_msg')})")
                                 continue
-                            # FIX 6: Filtro spread - salta se spread > SPREAD_MAX_RATIO * ATR
+                            # Filtro spread - salta se spread > SPREAD_MAX_RATIO * ATR
                             spread = tick.ask - tick.bid
                             if spread > SPREAD_MAX_RATIO * atr:
                                 print(f"[INFO] {symbol} SELL skipped: spread {spread:.5f} > max {SPREAD_MAX_RATIO * atr:.5f} ({SPREAD_MAX_RATIO*100:.0f}% ATR)")
@@ -1243,7 +1246,7 @@ def run_quantum_bot():
                                 print(f"[INFO] High volatility detected for {symbol}. Volume reduced from {volume_lotti:.2f} to {vol_volume:.2f}")
                                 
                             sl = tick.bid + sl_dist
-                            # FIX 7: Nessun TP fisso - TP largo a 5*ATR, trailing stop gestira l'uscita
+                            # TP largo a 5*ATR - il trailing stop gestisce l'uscita ottimale
                             tp = tick.bid - (5.0 * atr)
                             comment = f"{strategy} SELL"
                             
