@@ -1,0 +1,21 @@
+{
+  "short_name": "AMSR Quant",
+  "name": "AMSR Quant Suite & Control",
+  "icons": [
+    {
+      "src": "/static/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/static/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#070913",
+  "theme_color": "#FFD700",
+  "display": "standalone",
+  "orientation": "portrait"
+}

@@ -66,6 +66,37 @@ TRAIL_PROFIT_GATE_ATR = 1.0     # Attivazione trail dopo 1.0x ATR di profitto
 
 STATE_FILE = "data/amsr_ai_brain_state.json"
 DASHBOARD_FILE = "data/dashboard_data.json"
+CONTROL_FILE = "data/bot_control.json"
+
+def load_bot_control():
+    default_control = {
+        "trading_enabled": True,
+        "confluence_threshold": CONFLUENCE_THRESHOLD,
+        "portfolio_risk_limit_usd": PORTFOLIO_RISK_LIMIT_USD,
+        "manual_close_tickets": [],
+        "emergency_stop": False
+    }
+    os.makedirs(os.path.dirname(CONTROL_FILE), exist_ok=True)
+    if not os.path.exists(CONTROL_FILE):
+        try:
+            with open(CONTROL_FILE, 'w', encoding='utf-8') as f:
+                json.dump(default_control, f, indent=4)
+        except Exception:
+            pass
+        return default_control
+    try:
+        with open(CONTROL_FILE, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception:
+        return default_control
+
+def save_bot_control(control):
+    try:
+        with open(CONTROL_FILE, 'w', encoding='utf-8') as f:
+            json.dump(control, f, indent=4)
+    except Exception as e:
+        print(f"[ERROR] Impossibile salvare il controllo bot: {e}")
+
 
 FEATURE_KEYS = [
     "price", "sma20", "sma50", "trend", "atr", "z_score", "donchian_high", "donchian_low",
@@ -425,8 +456,54 @@ def run_quantum_bot_v4():
     
     try:
         while True:
-            # 1. Ricarica lo stato
+            # 1. Ricarica lo stato e i controlli remoti
             state = load_bot_state()
+            control = load_bot_control()
+            
+            # Applica override dinamici
+            current_confluence_threshold = control.get("confluence_threshold", CONFLUENCE_THRESHOLD)
+            current_portfolio_risk_limit = control.get("portfolio_risk_limit_usd", PORTFOLIO_RISK_LIMIT_USD)
+            trading_enabled = control.get("trading_enabled", True)
+            
+            # Gestione Emergency Stop
+            if control.get("emergency_stop", False):
+                print("\n[ALERT] EMERGENZA RILEVATA DA PANNELLO REMOTO! Chiusura di tutte le posizioni...")
+                close_all_positions()
+                control["emergency_stop"] = False
+                control["trading_enabled"] = False
+                save_bot_control(control)
+                send_telegram_message("⚠️ <b>EMERGENCY STOP RILEVATO!</b> Tutte le posizioni sono state chiuse e il trading è stato disabilitato.")
+                
+            # Gestione Chiusure Manuali
+            manual_close_tickets = control.get("manual_close_tickets", [])
+            if manual_close_tickets:
+                positions = mt5.positions_get(magic=MAGIC_NUMBER)
+                for pos in (positions or []):
+                    if pos.ticket in manual_close_tickets:
+                        print(f"\n[INFO] Chiusura manuale richiesta da remoto per Ticket: {pos.ticket}")
+                        tick = mt5.symbol_info_tick(pos.symbol)
+                        trade_type = mt5.ORDER_TYPE_SELL if pos.type == mt5.ORDER_TYPE_BUY else mt5.ORDER_TYPE_BUY
+                        price = tick.bid if pos.type == mt5.ORDER_TYPE_BUY else tick.ask
+                        req = {
+                            "action": mt5.TRADE_ACTION_DEAL,
+                            "symbol": pos.symbol,
+                            "volume": pos.volume,
+                            "type": trade_type,
+                            "position": pos.ticket,
+                            "price": price,
+                            "deviation": 20,
+                            "magic": MAGIC_NUMBER,
+                            "comment": "MANUAL CLOSE REMOTE",
+                            "type_time": mt5.ORDER_TIME_GTC,
+                            "type_filling": mt5.ORDER_FILLING_IOC
+                        }
+                        res = mt5.order_send(req)
+                        if res.retcode == mt5.TRADE_RETCODE_DONE:
+                            print(f"[OK] Posizione remota {pos.ticket} chiusa.")
+                            send_telegram_message(f"⏹️ <b>Chiusura Manuale da Remoto!</b>\n• Asset: <code>{pos.symbol}</code>\n• Ticket: <code>{pos.ticket}</code>")
+                
+                control["manual_close_tickets"] = []
+                save_bot_control(control)
             
             # 2. Controllo Kill-Switch
             if check_emergency_killswitch():
@@ -453,6 +530,9 @@ def run_quantum_bot_v4():
             # 6. Ciclo operativo per ogni asset
             active_positions = mt5.positions_get(magic=MAGIC_NUMBER)
             n_active = len(active_positions) if active_positions else 0
+            
+            symbol_watchlist_stats = {}
+            features = None
             
             for idx, symbol in enumerate(ASSETS):
                 # Filtro orario azioni
@@ -527,8 +607,19 @@ def run_quantum_bot_v4():
                 ml_pred = ml_model.predict(features)
                 ml_probs = ml_model.predict_probability(features)
                 
+                # Salva statistiche per la dashboard
+                symbol_watchlist_stats[symbol] = {
+                    "price": float(closes[-1]),
+                    "buy_score": float(buy_score),
+                    "sell_score": float(sell_score),
+                    "regime": regime,
+                    "confidence": float(confidence),
+                    "ml_pred": int(ml_pred),
+                    "ml_probs": [float(p) for p in ml_probs]
+                }
+                
                 # Logica di ingresso a Confluenza & ML Alignment
-                if n_active < MAX_CONCURRENT_POSITIONS:
+                if trading_enabled and n_active < MAX_CONCURRENT_POSITIONS:
                     # Controlla se abbiamo posizioni già aperte su questo simbolo
                     already_open = False
                     if active_positions:
@@ -541,12 +632,12 @@ def run_quantum_bot_v4():
                         # ──────────────────────────────────────────────────────
                         # SEGNALE BUY
                         # ──────────────────────────────────────────────────────
-                        if buy_score >= CONFLUENCE_THRESHOLD:
+                        if buy_score >= current_confluence_threshold:
                             # ML Alignment Check: l'ML deve supportare il segnale (non deve predire -1)
                             if ml_pred >= 0:
                                 # Calcolo lot size con Risk Parity e Covarianza
                                 weight = weights[idx]
-                                risk_usd = PORTFOLIO_RISK_LIMIT_USD * weight
+                                risk_usd = current_portfolio_risk_limit * weight
                                 
                                 # SL a 2.5x ATR
                                 sl_dist = atr * 2.5
@@ -586,11 +677,11 @@ def run_quantum_bot_v4():
                         # ──────────────────────────────────────────────────────
                         # SEGNALE SELL
                         # ──────────────────────────────────────────────────────
-                        elif sell_score >= CONFLUENCE_THRESHOLD:
+                        elif sell_score >= current_confluence_threshold:
                             # ML Alignment Check: l'ML non deve predire +1
                             if ml_pred <= 0:
                                 weight = weights[idx]
-                                risk_usd = PORTFOLIO_RISK_LIMIT_USD * weight
+                                risk_usd = current_portfolio_risk_limit * weight
                                 
                                 sl_dist = atr * 2.5
                                 point_value = sym_info.trade_tick_value / sym_info.trade_tick_size
@@ -657,9 +748,8 @@ def run_quantum_bot_v4():
             for pos in (active_positions or []):
                 if pos.ticket not in state["active_tickets"]:
                     state["active_tickets"].append(pos.ticket)
-                    # Se non abbiamo le feature registrate per questo ticket (aperto a mano o all'avvio),
-                    # usiamo le feature correnti come stima
-                    state["ticket_features"][str(pos.ticket)] = features
+                    if features:
+                        state["ticket_features"][str(pos.ticket)] = features
                     state_updated = True
             if state_updated:
                 save_bot_state(state)
@@ -671,15 +761,14 @@ def run_quantum_bot_v4():
                     time.sleep(1.0)
                     history = mt5.history_deals_get(position=t)
                     trade_pnl = 0.0
+                    symbol_closed = ""
                     if history:
                         for deal in history:
                             if deal.entry in [mt5.DEAL_ENTRY_OUT, mt5.DEAL_ENTRY_OUT_BY]:
                                 trade_pnl += deal.profit + deal.commission + deal.swap
+                                symbol_closed = deal.symbol
                                 
                     # Genera la label per il Triple-Barrier Method
-                    # +1: Profitto positivo (TP)
-                    # -1: Perdita negativa (SL)
-                    # 0: Breakeven / Timeout / Chiusura manuale
                     label = 0
                     if trade_pnl > 5.0:
                         label = 1
@@ -689,8 +778,7 @@ def run_quantum_bot_v4():
                     # Estrae le feature salvate all'apertura del trade
                     saved_features = state["ticket_features"].get(str(t))
                     if saved_features:
-                        # Salva nel database del modello per l'online learning
-                        ml_model.add_to_history(symbol, saved_features, label)
+                        ml_model.add_to_history(symbol_closed if symbol_closed else "UNKNOWN", saved_features, label)
                         del state["ticket_features"][str(t)]
                         
                     # Aggiorna lo stato
@@ -706,6 +794,39 @@ def run_quantum_bot_v4():
                         f"• PnL Giornaliero Accumulato: <code>${state['daily_pnl']:+.2f}</code>"
                     )
                     send_telegram_message(msg)
+            
+            # Salva i dati per la Dashboard
+            active_list = []
+            for p in (active_positions or []):
+                active_list.append({
+                    "ticket": int(p.ticket),
+                    "symbol": p.symbol,
+                    "type": "BUY" if p.type == mt5.ORDER_TYPE_BUY else "SELL",
+                    "volume": float(p.volume),
+                    "open_price": float(p.price_open),
+                    "current_price": float(p.price_current),
+                    "pnl": float(p.profit + p.swap),
+                    "sl": float(p.sl),
+                    "tp": float(p.tp)
+                })
+                
+            dashboard_data = {
+                "balance": float(acct.balance) if acct else INITIAL_BALANCE,
+                "equity": float(acct.equity) if acct else INITIAL_BALANCE,
+                "daily_pnl": float(state["daily_pnl"]),
+                "daily_trades_count": int(state["daily_trades_count"]),
+                "active_positions": active_list,
+                "watchlist": symbol_watchlist_stats,
+                "trading_enabled": trading_enabled,
+                "confluence_threshold": current_confluence_threshold,
+                "portfolio_risk_limit_usd": current_portfolio_risk_limit,
+                "last_updated": datetime.now().isoformat()
+            }
+            try:
+                with open(DASHBOARD_FILE, 'w', encoding='utf-8') as f:
+                    json.dump(dashboard_data, f, indent=4)
+            except Exception as e:
+                print(f"\n[ERROR] Scrittura dashboard fallita: {e}")
             
             # Console log
             print(f"\r[AMSR AI v4] Attivi: {len(active_positions) if active_positions else 0} | PnL Oggi: ${state['daily_pnl']:+.2f} | ML: {'Trained' if ml_model.is_trained else 'Awaiting'}", end="", flush=True)
