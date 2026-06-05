@@ -708,6 +708,13 @@ aw/Fundamentals of Database Systems (Elmasri) Cap. 24
   - `index.md` (indicizzato il nuovo concetto nella sezione Sales Competences del catalogo).
   - `log.md` (questo file).
 
+## [2026-06-04] UPDATE | Upgrade Bot di Trading (Forex Scalping)
+
+- **Operazione:** Transizione del bot quantistico `amsr_quantum_portfolio_bot.py` a una configurazione di scalping a breve termine (timeframe H1 / M15 / M5) ed espansione da 5 a 12 asset totali (aggiunta di GBPUSD, USDJPY, AUDUSD, USDCAD, USDCHF, GBPJPY, EURJPY).
+- **File modificati:**
+  - `wiki/Script/amsr_quantum_portfolio_bot.py` (modificati parametri timeframe, pesi dinamici e risk target a $40).
+  - `log.md` (questo file).
+
 
 
 

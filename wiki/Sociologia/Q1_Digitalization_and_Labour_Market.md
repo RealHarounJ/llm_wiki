@@ -5,7 +5,7 @@ date_created: 2026-05-16
 last_modified: 2026-05-16
 source_count: 3
 ---
-
+kn
 # Q1: The Effects of Digitalization on Labour Market Dynamics
 
 ## 1. The Two Main Analytical Perspectives

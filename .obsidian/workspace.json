@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TradingAgents/CHANGELOG.md",
+                "file": "wiki/Sociologia/Caso_Studio_Digitalizzazione_Comparata.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CHANGELOG"
+              "title": "Caso_Studio_Digitalizzazione_Comparata"
             }
           }
         ]
@@ -185,10 +185,15 @@
   "active": "375393cc632f2ace",
   "lastOpenFiles": [
     "index.md",
-    "wiki/Sociologia/Q2_Digitalization_and_Welfare_State.md",
-    "wiki/Sociologia/Q1_Digitalization_and_Labour_Market.md",
-    "wiki/Sociologia/Caso_Studio_Digitalizzazione_Comparata.md",
     "wiki/Sociologia/Q3_Comparative_Case_Study_Saudi_vs_South_Korea.md",
+    "wiki/Sociologia/Q2_Digitalization_and_Welfare_State.md",
+    "scratch/move_btc_be.py",
+    "scratch/manage_quantum_btc.py",
+    "scratch/manage_btc_trade.py",
+    "scratch/check_specs.py",
+    "wiki/Sociologia/Q1_Digitalization_and_Labour_Market.md",
+    "TradingAgents/CHANGELOG.md",
+    "wiki/Sociologia/Caso_Studio_Digitalizzazione_Comparata.md",
     "scratch/reply_explanation.py",
     "scratch/test_eurusd_rates.py",
     "scratch/print_log_lines.py",
@@ -196,7 +201,6 @@
     "scratch/search_log.py",
     "scratch/check_deals.py",
     "wiki/Concetti/Ambivert_Advantage_in_Sales.md",
-    "scratch/reply_status.py",
     "wiki/Concetti/Seven_Sales_Virtues.md",
     "scratch/telegram_image_787428081.jpg",
     "wiki/Concetti/Total_Cost_of_Ownership.md",
@@ -207,12 +211,9 @@
     "wiki/Concetti/Classification_of_Financial_Benefits.md",
     "scratch/telegram_image_787428078.jpg",
     "scratch/telegram_image_787428077.jpg",
-    "scratch/download_all_recent.py",
     "wiki/Concetti/Different_Kinds_of_Utility.md",
     "wiki/Esercitazioni/Guida_Grafici_Formule_Esame.md",
-    "scratch/check_indicators_eurusd.py",
     "wiki/Concetti/Technical_Sales_vs_Traditional_Sales.md",
-    "scratch/lint_vault.py",
     "wiki/Progetti/Analisi_Portafoglio_Haroun.md",
     "wiki/Concetti/Gartner_Hype_Cycle_Sales_2024.md",
     "wiki/Concetti/Current_Challenges_in_Sales.md",
@@ -223,8 +224,6 @@
     "raw/TradingAgentstradingagentsagentsanalystsnews_analyst.py at main.md",
     "raw/Untitled 4.md",
     "raw/Untitled 3.md",
-    "raw/Untitled 2.md",
-    "log.md",
     "scratch/test_ctrl_n.jpg",
     "scratch/whatsapp_sent.jpg",
     "_fit/raw/Principles of Biochemistry. Leninger/help/images/glossary1x11x1.jpg",

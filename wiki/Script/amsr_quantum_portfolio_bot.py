@@ -33,12 +33,17 @@ ALT_PASSWORD = ""
 MT5_SERVER = "FTMO-Server3"
 
 # Asset Allocations
-ASSETS = ["XAUUSD", "US100.cash", "US500.cash", "EURUSD", "BTCUSD"]
-PORTFOLIO_RISK_LIMIT_USD = 80.0   # Rischio massimo per trade aggregato (conservativo per challenge)
+ASSETS = ["XAUUSD", "US100.cash", "US500.cash", "EURUSD", "BTCUSD", "GBPUSD", "USDJPY", "AUDUSD", "USDCAD", "USDCHF", "GBPJPY", "EURJPY", "AAPL", "AMZN", "GOOG", "META", "MSFT", "NVDA", "TSLA"]
+PORTFOLIO_RISK_LIMIT_USD = 40.0   # Rischio massimo per trade aggregato (ridotto per diversificazione)
 DAILY_KILLSWITCH_USD = 400.0      # Kill-Switch giornaliero ($400 < limite FTMO $500)
 TOTAL_KILLSWITCH_USD = 800.0      # Kill-Switch totale ($800 < limite FTMO $1000)
 INITIAL_BALANCE = 10000.0         # Saldo iniziale del conto challenge
 MAGIC_NUMBER = 999888             # Magic Number unico per il portafoglio quantistico
+
+# Strategic Timeframes (Pure Scalping Configuration: H1 / M15 / M5)
+TF_LONG = mt5.TIMEFRAME_H1       # Filtro trend lungo termine (precedentemente D1)
+TF_MEDIUM = mt5.TIMEFRAME_M15    # Timeframe Z-Score (precedentemente D1) e ADX (precedentemente H4)
+TF_SHORT = mt5.TIMEFRAME_M5      # Execution (Donchian, RSI, ATR - precedentemente H4/H1)
 
 # Impostazioni Indicatori
 Z_THRESHOLD = 1.0                # Soglia Z-Score per Mean Reversion
@@ -235,7 +240,7 @@ def calculate_rsi(symbol, timeframe, period=14):
     return 100.0 - (100.0 / (1.0 + rs))
 
 def get_mtf_analysis(symbol):
-    rates_d1 = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_D1, 0, 250)
+    rates_d1 = mt5.copy_rates_from_pos(symbol, TF_LONG, 0, 250)
     d1_trend = 0
     if rates_d1 is not None and len(rates_d1) >= 200:
         closes_d1 = np.array([r['close'] for r in rates_d1], dtype=float)
@@ -243,7 +248,7 @@ def get_mtf_analysis(symbol):
         sma_200 = np.mean(closes_d1[-200:])
         d1_trend = 1 if sma_50 > sma_200 else -1
         
-    rates_h4 = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_H4, 0, 60)
+    rates_h4 = mt5.copy_rates_from_pos(symbol, TF_MEDIUM, 0, 60)
     h4_trend = 0
     if rates_h4 is not None and len(rates_h4) >= 50:
         closes_h4 = np.array([r['close'] for r in rates_h4], dtype=float)
@@ -251,7 +256,7 @@ def get_mtf_analysis(symbol):
         sma_50 = np.mean(closes_h4[-50:])
         h4_trend = 1 if sma_20 > sma_50 else -1
         
-    rates_h1 = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_H1, 0, 30)
+    rates_h1 = mt5.copy_rates_from_pos(symbol, TF_SHORT, 0, 30)
     h1_trend = 0
     if rates_h1 is not None and len(rates_h1) >= 20:
         closes_h1 = np.array([r['close'] for r in rates_h1], dtype=float)
@@ -344,9 +349,9 @@ def calculate_adx(symbol, timeframe=mt5.TIMEFRAME_H4, period=14):
     return adx[-1]
 
 def detect_market_regime(symbol):
-    adx_val = calculate_adx(symbol, mt5.TIMEFRAME_H4, 14)
+    adx_val = calculate_adx(symbol, TF_MEDIUM, 14)
     
-    rates_d1 = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_D1, 0, 75)
+    rates_d1 = mt5.copy_rates_from_pos(symbol, TF_MEDIUM, 0, 75)
     relative_volatility = 1.0
     current_atr = 0.0
     avg_atr_50 = 0.0
@@ -461,7 +466,7 @@ def check_economic_calendar():
     return True, "No upcoming high-impact events"
 
 def get_intermarket_signal(symbol, order_type):
-    rates = mt5.copy_rates_from_pos("EURUSD", mt5.TIMEFRAME_H4, 0, 20)
+    rates = mt5.copy_rates_from_pos("EURUSD", TF_MEDIUM, 0, 20)
     if rates is None or len(rates) < 20:
         return 0, "No EURUSD data"
         
@@ -557,8 +562,8 @@ def calculate_confluence_score(symbol, order_type, strategy, indicators, tick, s
             h1_s = "^" if mtf["h1_trend"] == 1 else "v"
             mtf_desc = f"D1{d1_s} H4{h4_s} H1{h1_s}"
             
-    rsi_h4 = calculate_rsi(symbol, mt5.TIMEFRAME_H4, 14)
-    rsi_h1 = calculate_rsi(symbol, mt5.TIMEFRAME_H1, 14)
+    rsi_h4 = calculate_rsi(symbol, TF_MEDIUM, 14)
+    rsi_h1 = calculate_rsi(symbol, TF_SHORT, 14)
     
     rsi_pts = 0
     if order_type == mt5.ORDER_TYPE_BUY:
@@ -748,7 +753,7 @@ def generate_trade_justification(symbol, order_type, comment, indicators, weight
     return justification
 
 def get_robust_indicators(symbol):
-    rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_D1, 0, 55)
+    rates = mt5.copy_rates_from_pos(symbol, TF_MEDIUM, 0, 55)
     if rates is None or len(rates) < 55:
         return None
     closes = [r['close'] for r in rates]
@@ -767,7 +772,7 @@ def get_robust_indicators(symbol):
     z_score = (current_price - sma_20) / std_mad
     
     # 3. Donchian Channels (H4 per maggiore reattivita)
-    h4_rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_H4, 0, DONCHIAN_PERIOD)
+    h4_rates = mt5.copy_rates_from_pos(symbol, TF_SHORT, 0, DONCHIAN_PERIOD)
     if h4_rates is not None and len(h4_rates) >= DONCHIAN_PERIOD:
         highs = [r['high'] for r in h4_rates]
         lows = [r['low'] for r in h4_rates]
@@ -778,7 +783,7 @@ def get_robust_indicators(symbol):
         donchian_low = min([r['low'] for r in rates[-10:]])
         
     # 4. Calcolo ATR H4 per Sizing
-    atr_rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_H4, 0, 15)
+    atr_rates = mt5.copy_rates_from_pos(symbol, TF_SHORT, 0, 15)
     atr = None
     if atr_rates is not None and len(atr_rates) >= 15:
         tr_list = []
@@ -804,13 +809,14 @@ def get_robust_indicators(symbol):
 # RISOLUZIONE COVARIANZA E DYNAMIC RISK PARITY SIZING
 # ==============================================================================
 def calculate_portfolio_weights():
-    # Raccoglie i rendimenti giornalieri degli ultimi 30 giorni per tutti gli asset
+    # Raccoglie i rendimenti degli ultimi 30 periodi per tutti gli asset
     asset_returns = []
     for symbol in ASSETS:
-        rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_D1, 0, 30)
+        rates = mt5.copy_rates_from_pos(symbol, TF_MEDIUM, 0, 30)
         if rates is None or len(rates) < 20:
-            # Fallback se mancano dati storico
-            return np.array([0.25, 0.25, 0.25, 0.25])
+            # Fallback se mancano dati storico (pesi uguali per tutti gli asset)
+            n_assets = len(ASSETS)
+            return np.ones(n_assets) / n_assets
         closes = np.array([r['close'] for r in rates])
         rets = np.diff(closes) / closes[:-1]
         asset_returns.append(rets)
@@ -921,7 +927,7 @@ def check_emergency_killswitch():
     return False
 
 def close_all_positions():
-    positions = mt5.positions_get(magic=MAGIC_NUMBER)
+    positions = mt5.positions_get()
     if positions:
         for pos in positions:
             tick = mt5.symbol_info_tick(pos.symbol)
@@ -1016,7 +1022,7 @@ def run_quantum_bot():
     state = load_bot_state()
     
     # Sincronizzazione active_tickets con le posizioni reali del conto all'avvio
-    active_positions = mt5.positions_get(magic=MAGIC_NUMBER)
+    active_positions = mt5.positions_get()
     if active_positions:
         updated = False
         for pos in active_positions:
@@ -1052,6 +1058,14 @@ def run_quantum_bot():
             
             # 3. Ciclo operativo per ogni asset
             for idx, symbol in enumerate(ASSETS):
+                # Filtro orario specifico per le azioni (15:45 - 21:30 CEST)
+                is_stock = symbol in ["AAPL", "AMZN", "GOOG", "META", "MSFT", "NVDA", "TSLA"]
+                if is_stock:
+                    local_now = datetime.now()
+                    current_time_val = local_now.hour + local_now.minute / 60.0
+                    if current_time_val < 15.75 or current_time_val > 21.5:
+                        continue
+                        
                 indicators = get_robust_indicators(symbol)
                 if indicators is None:
                     continue
@@ -1069,7 +1083,7 @@ def run_quantum_bot():
                 adjusted_z = Z_THRESHOLD - (sentiment_score * 0.3)
                 
                 # Controlla se il bot ha gia posizioni aperte su questo simbolo
-                positions = mt5.positions_get(symbol=symbol, magic=MAGIC_NUMBER)
+                positions = mt5.positions_get(symbol=symbol)
                 
                 # Calcola il volume in lotti in base al Risk Parity
                 # w * Capitale a Rischio / (Distanza SL in tick * valore del tick)
@@ -1240,9 +1254,49 @@ def run_quantum_bot():
                             }
                             mt5.order_send(req_mod)
             
+            # Chiudi posizioni azionarie prima della chiusura del mercato (alle 21:50 ora locale)
+            local_now = datetime.now()
+            if local_now.hour == 21 and local_now.minute >= 50:
+                stock_symbols = ["AAPL", "AMZN", "GOOG", "META", "MSFT", "NVDA", "TSLA"]
+                open_positions = mt5.positions_get()
+                if open_positions:
+                    for pos in open_positions:
+                        if pos.symbol in stock_symbols:
+                            print(f"\n[INFO] Chiusura intraday automatica per azione: {pos.symbol}")
+                            tick = mt5.symbol_info_tick(pos.symbol)
+                            trade_type = mt5.ORDER_TYPE_SELL if pos.type == mt5.ORDER_TYPE_BUY else mt5.ORDER_TYPE_BUY
+                            price = tick.bid if pos.type == mt5.ORDER_TYPE_BUY else tick.ask
+                            req = {
+                                "action": mt5.TRADE_ACTION_DEAL,
+                                "symbol": pos.symbol,
+                                "volume": pos.volume,
+                                "type": trade_type,
+                                "position": pos.ticket,
+                                "price": price,
+                                "deviation": 20,
+                                "magic": MAGIC_NUMBER,
+                                "comment": "STOCK INTRADAY CLOSE",
+                                "type_time": mt5.ORDER_TIME_GTC,
+                                "type_filling": mt5.ORDER_FILLING_IOC
+                            }
+                            res = mt5.order_send(req)
+                            if res.retcode == mt5.TRADE_RETCODE_DONE:
+                                print(f"[OK] Chiusa posizione intraday {pos.ticket} su {pos.symbol}.")
+                                send_telegram_message(f"⏹️ <b>Chiusura Intraday Azione!</b>\n• Ticker: <code>{pos.symbol}</code>\n• Ticket: <code>{pos.ticket}</code>\n• Chiusura automatica prima del market close.")
+
             # Sincronizzazione PnL e riconciliazione posizioni chiuse nello stato locale
-            active_positions = mt5.positions_get(magic=MAGIC_NUMBER)
-            current_active_tickets = [p.ticket for p in active_positions]
+            active_positions = mt5.positions_get()
+            current_active_tickets = [p.ticket for p in active_positions] if active_positions else []
+            
+            # Sincronizzazione dinamica di nuove posizioni rilevate in corso d'opera
+            state_updated = False
+            for pos in active_positions:
+                if pos.ticket not in state["active_tickets"]:
+                    print(f"\n[INFO] Rilevata nuova posizione attiva sul conto: Ticket {pos.ticket} ({pos.symbol}). Aggiunta allo stato.")
+                    state["active_tickets"].append(pos.ticket)
+                    state_updated = True
+            if state_updated:
+                save_bot_state(state)
             
             for t in list(state["active_tickets"]):
                 if t not in current_active_tickets:

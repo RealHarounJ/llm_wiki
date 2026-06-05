@@ -124,3 +124,4 @@ Ultimately, the comparative triad reveals that digitalization is not a technolog
 - **Fonte_Presentazione_Gruppo_11** (Dati comparati e slide)
 - **Fonte_Sociologia_Digitalizzazione** (Teorie di Picot, Jensen & Kersbergen)
 - **WIFO / ILO Reports (2024/2025)** (Dati sulla digitalizzazione e informaticizzazione in America Latina)
+
