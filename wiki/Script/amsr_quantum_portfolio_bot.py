@@ -34,9 +34,9 @@ MT5_SERVER = "FTMO-Server3"
 
 # Asset Allocations
 ASSETS = ["XAUUSD", "US100.cash", "US500.cash", "EURUSD", "BTCUSD", "GBPUSD", "USDJPY", "AUDUSD", "USDCAD", "USDCHF", "GBPJPY", "EURJPY", "AAPL", "AMZN", "GOOG", "META", "MSFT", "NVDA", "TSLA"]
-PORTFOLIO_RISK_LIMIT_USD = 40.0   # Rischio massimo per trade aggregato (ridotto per diversificazione)
-DAILY_KILLSWITCH_USD = 400.0      # Kill-Switch giornaliero ($400 < limite FTMO $500)
-TOTAL_KILLSWITCH_USD = 800.0      # Kill-Switch totale ($800 < limite FTMO $1000)
+PORTFOLIO_RISK_LIMIT_USD = 150.0  # Rischio massimo per trade aggregato (aumentato per prop)
+DAILY_KILLSWITCH_USD = 450.0      # Kill-Switch giornaliero ($450 < limite FTMO $500)
+TOTAL_KILLSWITCH_USD = 900.0      # Kill-Switch totale ($900 < limite FTMO $1000)
 INITIAL_BALANCE = 10000.0         # Saldo iniziale del conto challenge
 MAGIC_NUMBER = 999888             # Magic Number unico per il portafoglio quantistico
 

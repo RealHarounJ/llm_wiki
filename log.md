@@ -715,6 +715,15 @@ aw/Fundamentals of Database Systems (Elmasri) Cap. 24
   - `wiki/Script/amsr_quantum_portfolio_bot.py` (modificati parametri timeframe, pesi dinamici e risk target a $40).
   - `log.md` (questo file).
 
+---
+
+## [2026-06-05] UPDATE | Incremento Rischio ed Analisi Drawdown
+
+- **Operazione:** Analisi della violazione del drawdown causata da operazioni manuali e incremento dei parametri di rischio del bot per velocizzare il superamento della prop challenge.
+- **File modificati:**
+  - `wiki/Script/amsr_quantum_portfolio_bot.py` (aumentato `PORTFOLIO_RISK_LIMIT_USD` da `40.0` a `150.0`, `DAILY_KILLSWITCH_USD` da `400.0` a `450.0`, e `TOTAL_KILLSWITCH_USD` da `800.0` a `900.0`).
+  - `log.md` (questo file).
+
 
 
 
