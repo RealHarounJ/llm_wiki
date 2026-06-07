@@ -724,7 +724,164 @@ aw/Fundamentals of Database Systems (Elmasri) Cap. 24
   - `wiki/Script/amsr_quantum_portfolio_bot.py` (aumentato `PORTFOLIO_RISK_LIMIT_USD` da `40.0` a `150.0`, `DAILY_KILLSWITCH_USD` da `400.0` a `450.0`, e `TOTAL_KILLSWITCH_USD` da `800.0` a `900.0`).
   - `log.md` (questo file).
 
+---
 
+- ## [2026-06-05] UPDATE | Creazione Diario Alimentare e Ingestione Pasti
 
+- **Operazione:** Creazione della scheda per il tracciamento dei pasti quotidiani e inserimento dei pasti della giornata odierna (uova, tacchino, avocado, gnocchi, sgombro, tonno, panini, mozzarella, pesca, pollo, patate e spinaci) con stima quantitativa dei macronutrienti e delle calorie totali.
+- **File creati:**
+  - `wiki/Concetti/Diario_Alimentare.md` [NEW] — Diario alimentare con registro pasti quotidiano e calcolo dei macronutrienti e calorie.
+- **File modificati:**
+  - `index.md` (aggiunta la sezione Salute & Nutrizione e indicizzato il Diario Alimentare).
+  - `log.md` (questo file).
 
+---
 
+## [2026-06-05] UPDATE | Creazione Scheda Cavitazione e Crepitii Articolari
+
+- **Operazione:** Creazione della scheda di analisi kinesiologica ed anatomica per il crepitio e la cavitazione articolare (rumori di "bollicine che scoppiano" nelle ginocchia e nei piedi), fornendo spiegazioni fisiologiche e protocolli per ridurli.
+- **File creati:**
+  - `wiki/Concetti/Crepitio_e_Cavitazione_Articolare.md` [NEW] — Scheda sui rumori articolari, meccanismi di cavitazione del liquido sinoviale e attrito tendineo.
+- **File modificati:**
+  - `index.md` (indicizzato il nuovo concetto nella sezione Salute & Nutrizione).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-05] UPDATE | Analisi Restrizione Flessione Ginocchio Destro
+
+- **Operazione:** Analisi dell'asimmetria di flessione della gamba destra rispetto alla sinistra e della sensazione di tensione simile ad un "osso che tira" nella piega posteriore del ginocchio. Aggiornato con il feedback dell'utente (assenza di dolore, solo rigidità meccanica).
+- **File creati/modificati:**
+  - `wiki/Concetti/Restrizione_Flessione_Ginocchio.md` [NEW] — Scheda concettuale kinesiologica con fisiopatologia della rigidità degli ischiocrurali (hamstrings) e protocolli di allungamento e rilascio miofasciale.
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-05] UPDATE | Aggiornamento Esercizi Stretching Timer
+
+- **Operazione:** Aggiunta di due nuovi esercizi kinesiologici specifici (Allungamento Ischiocrurali per la catena posteriore e Allungamento Psoas per i flessori dell'anca) nel timer delle pause studio.
+- **File modificati:**
+  - `wiki/Script/stretching_timer.py` (aggiunti i due nuovi esercizi all'array `self.exercises`).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-06] STUDY | Prima Lezione Cambridge C1 — Part 4 & Inversion
+
+- **Operazione:** Creazione della prima lezione di preparazione per l'esame Cambridge C1, focalizzata sulla grammatica dell'inversione enfatica ed esercizi di Key Word Transformation. Estesa successivamente introducendo le regole sull'Inversione nei Condizionali e le strutture di Wish e If Only.
+- **File creati/modificati:**
+  - `wiki/Concetti/Lezione_1_C1_Key_Word_Transformation.md` [NEW] — Lezione teorica con spiegazione dell'inversione, inversione condizionale, Wish & If Only, tre phrasal verbs comuni e tre esercizi pratici.
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-06] STUDY | Creazione Percorso Studio C1 in Stile Duolingo
+
+- **Operazione:** Creazione del piano di studi completo (roadmap) a lungo termine per il raggiungimento della certificazione C1, strutturato in stile di apprendimento "Duolingo" con tappe e obiettivi (Stage 1-4, Unit 1-7). Generazione ed inserimento di una mappa visiva/infografica dedicata.
+- **File creati:**
+  - `wiki/Progetti/Percorso_Studio_C1.md` [NEW] — Pagina master per il percorso di studio con descrizione delle unità, obiettivi, milestones e riferimenti visivi.
+- **File modificati:**
+  - `index.md` (indicizzato il nuovo piano master sotto Progetti).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-06] STUDY | Creazione Percorso Studio Matematica Generale
+
+- **Operazione:** Creazione del piano di studi completo (roadmap) a lungo termine per il superamento dell'esame di Matematica Generale (senza calcolatrice), strutturato in stile di apprendimento "Duolingo" (Stage 1-5, Unit 1-7). Generazione di una mappa visiva/infografica dedicata e allineamento con i formulari esistenti.
+- **File creati:**
+  - `wiki/Progetti/Percorso_Studio_Matematica.md` [NEW] — Pagina master per il percorso di studio con tappe, milestones e riferimenti ai concetti di algebra lineare, limiti, derivate, integrali e ottimizzazione.
+  - `wiki/Progetti/math_learning_path.png` [NEW] — Infografica del sentiero di apprendimento per l'esame.
+- **File modificati:**
+  - `index.md` (indicizzata la nuova Master Page sotto Progetti).
+  - `wiki/Math/Math_Home.md` (collegata la mappa interattiva nella sezione del piano di studi e nei quick links).
+  - `wiki/Math/Math_Piano_Studio.md` (collegata la mappa interattiva nella testata della nota).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-06] STUDY | Creazione Percorso Studio Tedesco A1 e Schede di Riferimento
+
+- **Operazione:** Creazione della struttura completa per lo studio accademico da zero del Tedesco A1 (Start Deutsch 1), organizzato in stile di apprendimento "Duolingo" (Stage 1-4, Unit 1-11). Creazione di schede grammaticali di riferimento complete per pronomi, verbi, articoli e casi (Nominativo/Accusativo).
+- **File creati:**
+  - `wiki/Progetti/Percorso_Studio_Tedesco.md` [NEW] — Pagina master per la roadmap del tedesco, obiettivi di vocabolario/grammatica e milestones.
+  - `wiki/Progetti/german_learning_path.png` [NEW] — Infografica del sentiero di apprendimento in stile Duolingo.
+  - `wiki/German/German_Home.md` [NEW] — Hub centrale per lo studio del tedesco con struttura dell'esame ufficiale, consigli del professore e quick links.
+  - `wiki/German/German_Pronomi_e_Verbi.md` [NEW] — Scheda di riferimento per pronomi personali e coniugazione dei verbi (regolari, ausiliari, cambio vocalico e modali A1).
+  - `wiki/German/German_Articoli_e_Casi.md` [NEW] — Scheda di riferimento per il genere, articoli determinativi/indeterminativi/negativi e declinazioni al Nominativo e Accusativo.
+- **File modificati:**
+  - `index.md` (indicizzato il percorso sotto Progetti e creata la nuova sezione per i file in wiki/German/).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-06] STUDY | Prima Lezione Matematica Generale — Operazioni con Matrici e Vettori
+
+- **Operazione:** Avvio dello STAGE 1 - UNIT 1 di Matematica Generale. Creazione della prima lezione di algebra lineare su vettori, matrici e operazioni fondamentali.
+- **File creati:**
+  - `wiki/Concetti/Lezione_1_Matematica_Operazioni_Matrici.md` [NEW] — Lezione teorica e pratica su vettori, matrici, trasposizione, simmetria, prodotto riga per colonna (non commutativo) ed esercizi pratici per il calcolo mentale veloce.
+- **File modificati:**
+  - `wiki/Progetti/Percorso_Studio_Matematica.md` (collegata la lezione all'interno della prima unità).
+  - `index.md` (indicizzata la nuova lezione nella sezione wiki/Math/).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-06] STUDY | Lezione Zero Matematica Generale — Prerequisiti Algebrici
+
+- **Operazione:** Inserimento dello STAGE 0 (Prerequisiti Algebrici) ed avvio della relativa lezione per consolidare le fondamenta matematiche.
+- **File creati/modificati:**
+  - `wiki/Concetti/Lezione_0_Matematica_Basi_Algebriche.md` [NEW] — Lezione teorica e pratica su prodotti notevoli, potenze, radici, equazioni/disequazioni di 2° grado, disequazioni fratte, logaritmi ed esponenziali con esercizi svolti.
+  - `wiki/Progetti/Percorso_Studio_Matematica.md` (inserito lo STAGE 0 prima dello STAGE 1 e collegata la lezione).
+  - `index.md` (indicizzata la Lezione 0 nella sezione wiki/Math/).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-06] STUDY | Seconda Lezione Cambridge C1 — Sentence Flexing & Emphasis
+
+- **Operazione:** Avvio della seconda lezione di preparazione Cambridge C1 (STAGE 1 - UNIT 2).
+- **File creati/modificati:**
+  - `wiki/Concetti/Lezione_2_C1_Sentence_Flexing_Emphasis.md` [NEW] — Lezione teorica e pratica su frasi scisse (Cleft Sentences), passivi complessi (Reporting Passives), causativo passivo (have/get something done) e phrasal verbs con Take/Get.
+  - `wiki/Progetti/Percorso_Studio_C1.md` (aggiornato lo stato dell'UNIT 1 a completato e dell'UNIT 2 a in corso, e collegata la Lezione 2).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-06] STUDY | Prima Lezione Tedesco A1 — Sich Vorstellen
+
+- **Operazione:** Avvio della prima lezione di tedesco A1 (STAGE 1 - UNIT 1).
+- **File creati/modificati:**
+  - `wiki/Concetti/Lezione_1_Tedesco_Sich_Vorstellen.md` [NEW] — Lezione teorica e pratica su saluti formali/informali, presentazione personale (nome, provenienza, residenza, lingue, professione), pronomi personali al nominativo e coniugazione al presente dei verbi regolari e di "sein".
+  - `index.md` (indicizzata la Lezione 1 nella sezione wiki/German/).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-07] INGEST | Le 48 leggi del potere & Le armi della persuasione
+
+- **Operazione:** Ingestione ed elaborazione dei libri in formato EPUB presenti in `raw/` per strutturare il "Protocollo Relazionale Haroun".
+- **File creati:**
+  - `wiki/Fonti/Fonte_48_Leggi_Potere.md` [NEW] — Scheda fonte riassuntiva di "Le 48 Leggi Del Potere" di Robert Greene con focus su difesa relazionale e autocontrollo.
+  - `wiki/Fonti/Fonte_Armi_Persuasione.md` [NEW] — Scheda fonte di "Le armi della persuasione" di Robert Cialdini con i 6 principi di persuasione.
+  - `wiki/Concetti/Protocollo_Relazionale_Haroun.md` [NEW] — Modello operativo per "Haroun Preparato", finalizzato all'autocontrollo, alla disinnescazione delle provocazioni in sala ristorante e alla pianificazione strategica.
+- **File modificati:**
+  - `wiki/Home.md` (aggiunto il link "Psicologia & Relazioni" alla navigazione rapida per concetto).
+  - `index.md` (indicizzati i nuovi file concettuali e di fonte nel catalogo centrale).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-07] INGEST | Integrazione Strategica e Politica del Protocollo Relazionale
+
+- **Operazione:** Ingestione teorica ed elaborazione delle fonti classiche di strategia, realismo politico e comportamento organizzativo per espandere il "Protocollo Relazionale Haroun" a livello professionale.
+- **File creati:**
+  - `wiki/Fonti/Fonte_Arte_Guerra.md` [NEW] — Scheda fonte su "L'arte della guerra" di Sun Tzu (de-escalation e posizionamento).
+  - `wiki/Fonti/Fonte_Il_Principe.md` [NEW] — Scheda fonte su "Il Principe" di Niccolò Machiavelli (reputazione ed evitamento dell'odio/disprezzo).
+  - `wiki/Fonti/Fonte_Power_Pfeffer.md` [NEW] — Scheda fonte su "Power" di Jeffrey Pfeffer (potere informale e risorse critiche nelle organizzazioni).
+  - `wiki/Fonti/Fonte_Eristica_Schopenhauer.md` [NEW] — Scheda fonte su "L'arte di ottenere ragione" di Arthur Schopenhauer (retorica eristica e neutralizzazione delle fallacie).
+  - `wiki/Fonti/Fonte_Stupidita_Cipolla.md` [NEW] — Scheda fonte su "Le leggi fondamentali della stupidità umana" di Carlo M. Cipolla (categorizzazione del comportamento irrazionale).
+- **File modificati:**
+  - `wiki/Concetti/Protocollo_Relazionale_Haroun.md` (riscritta ed espansa a livello professionale ed organizzativo inserendo le nuove fonti strategiche).
+  - `index.md` (indicizzati i 5 nuovi file di fonte nel catalogo centrale).
+  - `log.md` (questo file).

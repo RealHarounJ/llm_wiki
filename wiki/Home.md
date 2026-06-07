@@ -24,6 +24,7 @@ Benvenuto nel tuo Second Brain. Questa è la pagina di accesso principale a tutt
 - **Finanza:** [[Corporate_Finance_Hub]] → tutti i concetti collegati
 - **Data/AI:** [[Data_Mining_Hub]] → classificazione, clustering, associazione
 - **LLM:** [[LLM_Hub]] → GPT, RAG, Semantic Search
+- **Psicologia & Relazioni:** [[Protocollo_Relazionale_Haroun]] → autocontrollo e gestione conflitti (Kiro Kiro)
 
 ## 📁 Struttura del Vault
 ```

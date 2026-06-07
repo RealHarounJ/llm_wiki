@@ -123,11 +123,19 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Seven_Sales_Virtues]]                     | Le 7 virtù delle vendite (Diephuis & Skiver) associate ai relativi costrutti organizzativi                 |
 | [[Ambivert_Advantage_in_Sales]]             | Lo studio di Adam Grant (2013) sull'efficacia degli ambiverti nelle vendite rispetto a intro/estroversi    |
 
+### Salute & Nutrizione
+| File | Descrizione |
+| --- | --- |
+| [[Diario_Alimentare]]                       | Registro pasto giornaliero, calcolo dei macro e analisi metabolica |
+| [[Crepitio_e_Cavitazione_Articolare]]       | Fisiologia dei rumori articolari, cavitazione sinoviale e protocolli di mobilità |
+| [[Restrizione_Flessione_Ginocchio]]         | Analisi kinesiologica dell'asimmetria di flessione del ginocchio e della tensione posteriore |
 
+### Psicologia & Relazioni
+| File | Descrizione |
+| --- | --- |
+| [[Protocollo_Relazionale_Haroun]]           | Protocollo di autocontrollo e gestione strategica dei conflitti in sala |
 
-
-
----
+----
 
 ## 📁 wiki/Fonti/
 
@@ -184,6 +192,13 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Fonte_Bytewax_Realtime_Datasets]] | Bytewax Realtime Datasets (GitHub community list, 2026) |
 | [[Fonte_McKinney_Python_Data_Analysis]] | Python for Data Analysis (Wes McKinney) — data wrangling con Pandas, NumPy e IPython |
 | [[Slide_Sales_Competences_Thomas_Berger]] | Slide corso Sales Competences (Prof. Dr. Thomas Berger) |
+| [[Fonte_48_Leggi_Potere]] | Robert Greene — Le 48 Leggi Del Potere (Tattiche di autocontrollo e difesa) |
+| [[Fonte_Armi_Persuasione]] | Robert B. Cialdini — Le armi della persuasione (Meccanismi psicologici dell'assenso) |
+| [[Fonte_Arte_Guerra]] | Sun Tzu — L'arte della guerra (Strategia di posizionamento e de-escalation) |
+| [[Fonte_Il_Principe]] | Niccolò Machiavelli — Il Principe (Gestione reputazione e stabilità di potere) |
+| [[Fonte_Power_Pfeffer]] | Jeffrey Pfeffer — Power (Analisi del potere informale e delle alleanze aziendali) |
+| [[Fonte_Eristica_Schopenhauer]] | Arthur Schopenhauer — L'arte di ottenere ragione (Strategie retoriche e confutazione) |
+| [[Fonte_Stupidita_Cipolla]] | Carlo M. Cipolla — Le leggi fondamentali della stupidità umana (Gestione razionale dell'irrazionalità) |
 
 ---
 
@@ -197,6 +212,9 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Master_Page_Industrial_Organization]] | Cruscotto esame Industrial Organization |
 | [[Analisi_Portafoglio_Haroun]] | Analisi quantitativa e strategica del portafoglio personale (Trading 212) |
 | [[Master_Page_Sales_Competences]] | Cruscotto esame Sales Competences — tabella lezioni + checklist |
+| [[Percorso_Studio_C1]] | Mappa interattiva e piano di studio stile Duolingo per la preparazione al C1 Advanced |
+| [[Percorso_Studio_Matematica]] | Mappa interattiva e piano di studio stile Duolingo per la preparazione a Matematica Generale |
+| [[Percorso_Studio_Tedesco]] | Mappa interattiva e piano di studio stile Duolingo per la preparazione al Tedesco A1 |
 
 ---
 
@@ -242,6 +260,7 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Menu_Cucina]] | Menu Cucina - Ristorante Kiro Kiro |
 | [[Menu_Sushi]] | Menu Sushi - Ristorante Kiro Kiro |
 | [[Carta_dei_Vini]] | Carta dei Vini - Ristorante Kiro Kiro |
+| [[Guida_Abbinamento_Vini]] | Guida Sommelier e abbinamento vini |
 
 ---
 
@@ -253,6 +272,8 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Source_Master_IELTS_Writing]] | Masterclass IELTS Academic Writing Task 1 & 2 |
 | [[Source_Spoken_English_Fluency]] | Spoken English and Functional Grammar |
 | [[Source_Use_of_English_Masterclass]] | Use of English Masterclass C1/C2 |
+| [[Lezione_1_C1_Key_Word_Transformation]] | Lezione 1: C1 Key Word Transformation ed Inversion grammaticale |
+| [[Lezione_2_C1_Sentence_Flexing_Emphasis]] | Lezione 2: Complex Passives, Cleft Sentences & Phrasal Verbs |
 
 ---
 
@@ -298,6 +319,19 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Math_Esercizi_Tipo]] | Esercizi tipici d'esame con soluzioni |
 | [[Math_Esami_Passati]] | Tracce di esami passati con soluzioni |
 | [[Math_Piano_Studio]] | Piano di studio settimanale per la preparazione |
+| [[Lezione_0_Matematica_Basi_Algebriche]] | Lezione 0: Prerequisiti algebrici e basi (Disequazioni, Potenze, Logaritmi) |
+| [[Lezione_1_Matematica_Operazioni_Matrici]] | Lezione 1: Vettori, matrici e operazioni fondamentali (Somma, Prodotto, Trasposta) |
+
+---
+
+## 🇩🇪 wiki/German/
+
+| File | Descrizione |
+|---|---|
+| [[German_Home]] | Hub centrale Tedesco — struttura esame, risorse e consigli |
+| [[German_Pronomi_e_Verbi]] | Pronomi personali e coniugazione verbi regolari, irregolari e modali |
+| [[German_Articoli_e_Casi]] | Genere dei sostantivi, articoli nom/acc e regole sui casi |
+| [[Lezione_1_Tedesco_Sich_Vorstellen]] | Lezione 1: Sich vorstellen — Saluti e Presentazione Personale |
 
 ---
 

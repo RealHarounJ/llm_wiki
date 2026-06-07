@@ -12,7 +12,7 @@ last_modified: 2026-05-30
 > **Target:** 30/30 on written exam (5 exercises in 60 min) + pass multiple choice.
 > **Strategy:** Learn each topic → practice exercises → drill past exam questions.
 
-Back to [[Math_Home]]
+Back to [[Math_Home]] | 🗺️ Vai alla mappa stile Duolingo: **[[Percorso_Studio_Matematica]]**
 
 ---
 

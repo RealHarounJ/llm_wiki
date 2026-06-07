@@ -1,4 +1,4 @@
-﻿---
+---
 tags: [general]
 aliases: [README]
 date_created: 2026-05-21

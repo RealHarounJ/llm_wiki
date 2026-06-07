@@ -75,6 +75,9 @@ last_modified: 2026-05-30
 
 ## 📈 Study Plan
 
+> [!TIP]
+> 🗺️ È disponibile la nuova mappa interattiva stile Duolingo: **[[Percorso_Studio_Matematica]]**.
+
 | Week | Focus | Goal |
 |:---|:---|:---|
 | Week 1 | Linear Algebra | Master matrices, determinants, linear systems |
@@ -86,9 +89,12 @@ last_modified: 2026-05-30
 ---
 
 ## 🔗 Quick Links
+- **[[Percorso_Studio_Matematica]]** ← *Mappa interattiva stile Duolingo*
+- [[Math_Piano_Studio]] ← *Piano di studio dettagliato fase per fase*
 - [[Math_Algebra_Lineare]]
 - [[Math_Studio_Funzioni]]
 - [[Math_Integrali]]
 - [[Math_Funzioni_Due_Variabili]]
 - [[Math_Formulario]] ← *Formulario completo da memorizzare*
 - [[Math_Esercizi_Tipo]] ← *Esercizi tipici d'esame*
+- [[Math_Esami_Passati]]

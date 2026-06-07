@@ -1,4 +1,4 @@
-﻿---
+---
 tags: [corporate-finance, corporate-governance, IPO, agency-problem, ESG, exam-prep]
 aliases: [Financial Lifecycle, Agency Theory, Stakeholder Capitalism]
 ---

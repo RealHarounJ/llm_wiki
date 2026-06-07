@@ -1,5 +1,8 @@
 import tkinter as tk
 import winsound
+import os
+from PIL import Image, ImageTk
+
 
 # ─── CONFIGURAZIONE ────────────────────────────────────────────────
 BREAK_MINUTES = 45  # Intervallo tra una sessione e l'altra (minuti)
@@ -9,17 +12,20 @@ class StretchingApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Biohacking Stretching (Neumann Protocol)")
-        self.root.geometry("580x430")
+        self.root.geometry("580x630")
         self.root.configure(bg='#1e1e1e')
         self.root.attributes('-topmost', True)  # Sempre in primo piano durante gli alert
 
         # Basati sulla Kinesiology of the Musculoskeletal System
+        # Formato: (Titolo, Descrizione, Durata in secondi, Nome file immagine)
         self.exercises = [
-            ("Estensione Toracica (Neumann)", "Seduto. Incrocia le mani dietro la testa, inarca la parte alta della schiena all'indietro. Contrasta la postura cifotica da studente.", 45),
-            ("Allungamento Cervicale Laterale", "Mantieni la spalla destra bassa. Inclina lentamente la testa verso sinistra aiutandoti con la mano sinistra.", 30),
-            ("Allungamento Cervicale Laterale (Cambio)", "Mantieni la spalla sinistra bassa. Inclina lentamente la testa verso destra aiutandoti con la mano destra.", 30),
-            ("Allungamento Polsi (Decompressione Tunnel Carpale)", "Braccio teso in avanti. Con l'altra mano, tira delicatamente le dita verso di te per allungare i flessori.", 30),
-            ("Squat Isometrico sul Posto", "Alzati dalla sedia. Scendi a metà squat e mantieni la posizione. L'obiettivo è pompare sangue ai glutei e riattivare l'AMPK.", 45)
+            ("Estensione Toracica (Neumann)", "Seduto. Incrocia le mani dietro la testa, inarca la parte alta della schiena all'indietro. Contrasta la postura cifotica da studente.", 45, "thoracic_extension.png"),
+            ("Allungamento Cervicale Laterale", "Mantieni la spalla destra bassa. Inclina lentamente la testa verso sinistra aiutandoti con la mano sinistra.", 30, "neck_stretch.png"),
+            ("Allungamento Cervicale Laterale (Cambio)", "Mantieni la spalla sinistra bassa. Inclina lentamente la testa verso destra aiutandoti con la mano destra.", 30, "neck_stretch.png"),
+            ("Allungamento Polsi (Decompressione Tunnel Carpale)", "Braccio teso in avanti. Con l'altra mano, tira delicatamente le dita verso di te per allungare i flessori.", 30, "wrist_stretch.png"),
+            ("Squat Isometrico sul Posto", "Alzati dalla sedia. Scendi a metà squat e mantieni la posizione. L'obiettivo è pompare sangue ai glutei e riattivare l'AMPK.", 45, "isometric_squat.png"),
+            ("Allungamento Ischiocrurali (Catena Posteriore)", "In piedi. Fletti il busto in avanti mantenendo le ginocchia leggermente sbloccate (non tese al massimo) per allungare i muscoli posteriori delle cosce.", 40, "hamstring_stretch.png"),
+            ("Allungamento Flessori Anca (Psoas)", "Fai un affondo basso portando una gamba indietro. Spingi il bacino in avanti per allungare l'anca. Contrasta l'accorciamento dovuto alla sedia.", 40, "psoas_stretch.png")
         ]
 
         self.current_ex = 0
@@ -40,16 +46,20 @@ class StretchingApp:
 
         self.ex_title = tk.Label(root, text="Premi Inizia per sbloccare la colonna",
                                  fg='white', bg='#1e1e1e', font=('Helvetica', 13, 'bold'))
-        self.ex_title.pack(pady=10)
+        self.ex_title.pack(pady=8)
 
         self.ex_desc = tk.Label(root, text="Eviterai la degenerazione dei dischi intervertebrali (Harrison).",
                                 fg='#aaaaaa', bg='#1e1e1e', font=('Helvetica', 11),
                                 wraplength=490, justify="center")
-        self.ex_desc.pack(pady=10)
+        self.ex_desc.pack(pady=8)
+
+        # Contenitore per l'immagine illustrativa
+        self.img_lbl = tk.Label(root, bg='#1e1e1e')
+        self.img_lbl.pack(pady=8)
 
         self.time_lbl = tk.Label(root, text="00:00", fg='#ff3333', bg='#1e1e1e',
-                                 font=('Helvetica', 52, 'bold'))
-        self.time_lbl.pack(pady=15)
+                                 font=('Helvetica', 46, 'bold'))
+        self.time_lbl.pack(pady=8)
 
         self.btn = tk.Button(root, text="INIZIA ROUTINE", command=self.start_routine,
                              bg='#00d2ff', fg='black', font=('Helvetica', 13, 'bold'),
@@ -79,17 +89,35 @@ class StretchingApp:
 
     def next_exercise(self):
         if self.current_ex < len(self.exercises):
-            title, desc, duration = self.exercises[self.current_ex]
+            title, desc, duration, img_file = self.exercises[self.current_ex]
             self.ex_title.config(
                 text=f"Esercizio {self.current_ex + 1}/{len(self.exercises)}: {title}",
                 fg='white')
             self.ex_desc.config(text=desc, fg='#aaaaaa')
+            
+            # Caricamento e visualizzazione immagine illustrativa tramite Pillow
+            img_path = os.path.join(os.path.dirname(__file__), img_file)
+            if os.path.exists(img_path):
+                try:
+                    pil_img = Image.open(img_path)
+                    # Ridimensiona l'immagine proporzionalmente a max 180x180 pixel
+                    pil_img.thumbnail((180, 180), Image.Resampling.LANCZOS)
+                    photo_resized = ImageTk.PhotoImage(pil_img)
+                    self.img_lbl.config(image=photo_resized)
+                    self.img_lbl.image = photo_resized  # riferimento persistente per evitare garbage collection
+                except Exception as e:
+                    self.img_lbl.config(image='')
+                    print(f"Errore nel caricamento dell'immagine {img_file}: {e}")
+            else:
+                self.img_lbl.config(image='')
+
             self.time_left = duration
             self.timer_running = True
             self.time_lbl.config(fg='#ff3333')
             self.update_timer()
             self.current_ex += 1
         else:
+            self.img_lbl.config(image='') # cancella l'immagine alla fine
             self._on_routine_complete()
 
     def update_timer(self):
