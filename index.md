@@ -58,6 +58,10 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Guida_Selezione_Prop_Firm]]                 | Valutazione quantitativa delle Prop Firm (EOD vs Trailing, regole di consistenza) |
 | [[Strategia_Lungo_Termine_Systematic]]         | Teoria sistematica a lungo termine (Starter System di Carver, Kelly e bias di Chan) |
 | [[Bridge_Esecuzione_Automatica]]               | Codici e blueprint tecnici per MT5 (Python) e NinjaTrader 8 (C#) |
+| [[AFML_Triple_Barrier_Method]]                 | Metodo a Tripla Barriera (TP, SL, Orizzonte Temporale) da de Prado |
+| [[AFML_Fractional_Differentiation]]            | Differenziazione Frazionaria per stazionarietà e memoria da de Prado |
+| [[Carver_Volatility_Targeting]]                | Dynamic Position Sizing basato su ATR di Robert Carver |
+| [[FTMO_Prop_Challenge_Rules]]                  | Regole di drawdown e soglie di rischio per conti Prop FTMO |
 
 ### Python & Data Analysis
 | File | Descrizione |
@@ -78,6 +82,10 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[SQL_Basics]] | SELECT, JOIN, aggregazioni, subquery |
 | [[Modellazione_ER]] | Entità, Relazioni, cardinalità, attributi |
 | [[Mappatura_ER_Relazionale]] | Trasformazione ER → Schema Relazionale |
+| [[Git]] | Concetti e comandi fondamentali del controllo di versione Git |
+| [[Git_Lezione_1_Intro]] | Lezione 1: Basi del controllo di versione, importanza e comandi shell iniziali |
+| [[Git_Lezione_2_Creazione_Repo]] | Lezione 2: Struttura del repository (.git), git init e avvertimento sui repository annidati |
+| [[Git_Lezione_3_Staging_Commit]] | Lezione 3: Workflow in tre fasi (add/commit), metafora della busta da lettere e uso del flag -m |
 | [[Architettura_DBMS]] | Struttura interna DBMS, 3 livelli di astrazione |
 | [[Data_Warehouse]] | Schema stellare, fatti e dimensioni |
 | [[ETL_Process]] | Extract, Transform, Load |
@@ -96,6 +104,14 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Large_Language_Models]] | Overview LLM |
 | [[GPT]] | Scheda base GPT |
 | [[Transformer_Architecture]] | Architettura Transformer |
+| [[Fine_Tuning_LLM]] | Fine-tuning LLM: LoRA, QLoRA, RLHF, tecniche e requisiti GPU |
+| [[Training_Modelli_AI]] | Come si addestra un modello AI: loss, backpropagation, optimizer |
+
+### Startup & Business AI
+| File | Descrizione |
+|---|---|
+| [[AI_Business_Scalabile]] | Framework strategico SaaS per il mercato italiano — BuroBot, PMI, metriche |
+| [[Learning_Path_Founder_AI]] | Percorso di studio strutturato (40+ libri) per founder Finanza+AI |
 
 ### Industrial Organization
 | File | Descrizione |
@@ -141,6 +157,7 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 
 | File | Fonte Originale |
 |---|---|
+| [[Sessione_AI_Business_Scalabile_2026]] | Sessione conversazionale Antigravity — AI Business Scalabile (17/06/2026) |
 | [[Fonte_Corporate_Finance_Book]] | Berk & DeMarzo — Corporate Finance |
 | [[Fonte_Slides_Corporate_Finance]] | Slide corso CF UNIVPM 2025/2026 |
 | [[Slides_Corporate_Finance_2025_2026]] | Slides Corporate Finance 2025/2026 UNIVPM |
@@ -194,6 +211,7 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Slide_Sales_Competences_Thomas_Berger]] | Slide corso Sales Competences (Prof. Dr. Thomas Berger) |
 | [[Fonte_48_Leggi_Potere]] | Robert Greene — Le 48 Leggi Del Potere (Tattiche di autocontrollo e difesa) |
 | [[Fonte_Armi_Persuasione]] | Robert B. Cialdini — Le armi della persuasione (Meccanismi psicologici dell'assenso) |
+| [[Fonte_DataCamp_Intro_Git]] | George — DataCamp: Introduction to Git (Corso e comandi base) |
 | [[Fonte_Arte_Guerra]] | Sun Tzu — L'arte della guerra (Strategia di posizionamento e de-escalation) |
 | [[Fonte_Il_Principe]] | Niccolò Machiavelli — Il Principe (Gestione reputazione e stabilità di potere) |
 | [[Fonte_Power_Pfeffer]] | Jeffrey Pfeffer — Power (Analisi del potere informale e delle alleanze aziendali) |
@@ -211,10 +229,14 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Master_Page_AI_LLM]] | Cruscotto studio AI/LLM |
 | [[Master_Page_Industrial_Organization]] | Cruscotto esame Industrial Organization |
 | [[Analisi_Portafoglio_Haroun]] | Analisi quantitativa e strategica del portafoglio personale (Trading 212) |
+| [[Strategia_Diversificazione_Portafoglio]] | Modello strategico Core-Satellite, razionale di tutti i 19 asset e analisi di diversificazione |
 | [[Master_Page_Sales_Competences]] | Cruscotto esame Sales Competences — tabella lezioni + checklist |
 | [[Percorso_Studio_C1]] | Mappa interattiva e piano di studio stile Duolingo per la preparazione al C1 Advanced |
 | [[Percorso_Studio_Matematica]] | Mappa interattiva e piano di studio stile Duolingo per la preparazione a Matematica Generale |
 | [[Percorso_Studio_Tedesco]] | Mappa interattiva e piano di studio stile Duolingo per la preparazione al Tedesco A1 |
+| [[Percorso_Studio_Kiro_Kiro]] | Progetto software di monitoraggio prezzi, trend e abbinamenti per Kiro Kiro |
+| [[Percorso_Studio_Git]] | Mappa interattiva e piano di studio stile Duolingo per la preparazione a Git e GitHub |
+| [[Quant_Data_Pipeline]] | Progetto di data engineering: ETL e orchestrazione di portafoglio quantitativo con Apache Airflow, PostgreSQL e Docker |
 
 ---
 
@@ -274,6 +296,7 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | [[Source_Use_of_English_Masterclass]] | Use of English Masterclass C1/C2 |
 | [[Lezione_1_C1_Key_Word_Transformation]] | Lezione 1: C1 Key Word Transformation ed Inversion grammaticale |
 | [[Lezione_2_C1_Sentence_Flexing_Emphasis]] | Lezione 2: Complex Passives, Cleft Sentences & Phrasal Verbs |
+| [[C1_Collocations_Masterclass]] | Tabella masterclass di tutte le collocazioni C1 (Verbo+Nome, Aggettivo+Nome, Binomi, Preposizioni) |
 
 ---
 
@@ -289,19 +312,10 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | `streaming_musicale.sql` | SQL | Schema DB streaming musicale |
 | `yacht_charter.sql` | SQL | Schema DB simulazione Yacht Charter |
 | `ST_1_IO_Dataframe.py` | Python | Input/Output DataFrame |
-| `fetch_market_data.py` | Python | Ingestione dati di mercato in tempo reale da Polygon.io (Stocks, ETF, Forex, Gold) con calcolo MAD e Z-score robusti |
-| `gold_swing_trader.py` | Python | Strategia speculativa quantitativa multi-day sull'oro spot con trend SMA, Robust Z-score (MAD) e sentiment notizie |
-| `AMSRGoldSpeculator.cs` | C# | Strategia quantitativa per NinjaTrader 8 (Futures Oro GC/MGC) basata su crossover SMA, Robust Z-Score (MAD) e bridge sentiment Python |
-| `run_gold_paper_trading.py` | Python | Bot di auto-trading in tempo reale per conti demo MetaTrader 5 (MT5) con calcolo MAD, Z-score robusto, sentiment e kill-switch di emergenza |
-| `amsr_quantum_portfolio_bot.py` | Python | Bot quantistico multi-asset (XAUUSD, NAS100, US500, EURUSD) e multi-strategia (Z-score + Donchian) con Risk Parity basato su covarianza dinamica |
+| `prop_trader_afml.py` | Python | Bot quantitativo per XAUUSD con Volatility Targeting (Carver), Triple-Barrier Method e Kill-Switch FTMO (de Prado) |
 | `telegram_bridge.py` | Python | Ingestione automatica dei messaggi di testo Telegram inviati dall'utente |
 | `send_telegram.py` | Python | Invio di messaggi di risposta e comandi formattati al cellulare dell'utente via Telegram |
 | `telegram_listener.py` | Python | Listener ad alta frequenza (5s) per il controllo remoto immediato da smartphone via Telegram |
-| `amsr_ai_brain_v4.py` | Python | Bot di trading adattivo multi-asset e multi-strategia v4 con Human-Like Variable Engine e modello ML |
-| `human_variable_engine.py` | Python | Calcolatore di 47 variabili psicologiche e di sentiment in tempo reale (Layer 2 di AMSR v4) |
-| `signal_fusion_engine.py` | Python | Motore di fusione dei segnali con pesi dinamici basati sul regime di mercato (Layer 3 di AMSR v4) |
-| `ml_model.py` | Python | Modello adattivo di Machine Learning (Random Forest / Logistic Regression) per la predizione dei segnali (Layer 4 di AMSR v4) |
-| `knowledge_extractor.py` | Python | Estrattore e scraper della base di conoscenza per l'ingestione di news e sentiment (Layer 1 di AMSR v4) |
 
 ---
 
@@ -335,6 +349,16 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 
 ---
 
+## ⚙️ wiki/System/Skills/
+
+| File | Descrizione |
+|---|---|
+| [[Skill_Grill_Me]] | Skill: Grill Me — Workflow per allineamento requisiti e intervista attiva |
+| [[Skill_TDD_Learning]] | Skill: TDD Learning — Workflow per lezioni e tutoring interattivo in chat |
+| [[Skill_Vault_Audit]] | Skill: Vault Audit — Workflow per manutenzione, linting e salute del vault |
+
+---
+
 ## 🌐 Simulazioni Interattive Web (HTML/JS)
 
 | Simulazione | Percorso | Descrizione |
@@ -344,4 +368,5 @@ Catalogo centrale di tutte le pagine del vault. Aggiornato ad ogni operazione IN
 | **NoSQL Operations** | [simulation_nosql/index.html](file:///c:/Users/Haroun_Jaafar/Desktop/llm_wiki/simulation_nosql/index.html) | Simulatore pratico di operazioni CRUD ed architetture NoSQL distribuite |
 | **Scalability & Load Balancing** | [simulation_scalability/index.html](file:///c:/Users/Haroun_Jaafar/Desktop/llm_wiki/simulation_scalability/index.html) | Simulatore di architetture distribuite, bilanciamento del carico e replicazione |
 | **Data Mining Workflows** | [simulation_workflow/index.html](file:///c:/Users/Haroun_Jaafar/Desktop/llm_wiki/simulation_workflow/index.html) | Simulatore dei workflow di data mining (ETL, classificazione, clustering) |
+| **Kiro Kiro Price & Trend Optimizer** | [simulation_kiro_kiro/index.html](file:///c:/Users/Haroun_Jaafar/Desktop/llm_wiki/simulation_kiro_kiro/index.html) | Software di ottimizzazione dei profitti in tempo reale: monitor prezzi materie prime, trend piatti e upselling vini |
 

@@ -5,6 +5,23 @@ Registro **append-only** di tutte le operazioni sul Second Brain. Ogni entry seg
 
 ---
 
+## [2026-06-17] INGEST | Sessione AI Business Scalabile — Nuove Pagine Wiki
+
+**Operazione:** Acquisizione e archiviazione dei concetti emersi dalla sessione conversazionale con Antigravity su AI, fine-tuning, training modelli e business scalabile.
+
+**Pagine create:**
+- `wiki/Concetti/AI_Business_Scalabile.md` [NEW] — Framework SaaS per il mercato italiano (BuroBot, metriche MRR/CAC/LTV, competitor analysis)
+- `wiki/Concetti/Fine_Tuning_LLM.md` [NEW] — Guida completa al fine-tuning: LoRA, QLoRA, RLHF, casi d'uso e requisiti hardware
+- `wiki/Concetti/Training_Modelli_AI.md` [NEW] — Pipeline di addestramento AI: forward pass, loss, backpropagation, optimizer, costi
+- `wiki/Concetti/Learning_Path_Founder_AI.md` [NEW] — Percorso di studio strutturato (40+ libri) in 4 fasi per founder Finanza+AI
+- `wiki/Fonti/Sessione_AI_Business_Scalabile_2026.md` [NEW] — Scheda fonte della sessione conversazionale
+
+**Aggiornamenti:**
+- `index.md` — Aggiunte 2 nuove voci in "AI & LLM" e nuova sezione "Startup & Business AI"
+- `log.md` — Questa entry
+
+---
+
 ## [2026-05-07] REBUILD | Ricostruzione completa Second Brain da zero
 
 **Operazione:** Reset totale e ricostruzione struttura wiki
@@ -876,6 +893,200 @@ aw/Fundamentals of Database Systems (Elmasri) Cap. 24
 
 - **Operazione:** Ingestione teorica ed elaborazione delle fonti classiche di strategia, realismo politico e comportamento organizzativo per espandere il "Protocollo Relazionale Haroun" a livello professionale.
 - **File creati:**
+---
+
+## [2026-06-03] INGEST | Slide 32 Sales Competences (Seven Sales Virtues)
+
+- **Operazione:** Ingestione ed elaborazione della Slide 32 inviata dall'utente tramite Telegram, riguardante il framework delle sette virtù delle vendite (Diephuis & Skiver / FOSTER).
+- **File creati:**
+  - `wiki/Concetti/Seven_Sales_Virtues.md` [NEW] — Scheda concettuale sulle 7 virtù commerciali e i corrispondenti costrutti organizzativi (market orientation, cross-functional integration, ecc.), corredata da mappa concettuale Mermaid.
+- **File modificati:**
+  - `wiki/Fonti/Slide_Sales_Competences_Thomas_Berger.md` (aggiunto il riassunto della Slide 32 e linkata la nuova scheda).
+  - `wiki/Progetti/Master_Page_Sales_Competences.md` (aggiunta la risorsa all'indice delle lezioni e inserito il relativo obiettivo di studio nel cruscotto).
+  - `index.md` (indicizzato il nuovo concetto nella sezione Sales Competences del catalogo).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-03] INGEST | Slide 40 Sales Competences (Ambivert Advantage)
+
+- **Operazione:** Ingestione ed elaborazione della Slide 40 inviata dall'utente tramite Telegram, riguardante lo studio empirico sulla personalità del venditore (Adam Grant, 2013).
+- **File creati:**
+  - `wiki/Concetti/Ambivert_Advantage_in_Sales.md` [NEW] — Scheda concettuale sull'effetto curvilineo (forma a U rovesciata) dell'estroversione sulle performance di vendita, con i risultati statistici della regressione gerarchica.
+- **File modificati:**
+  - `wiki/Fonti/Slide_Sales_Competences_Thomas_Berger.md` (aggiunto il riassunto della Slide 40 e linkata la nuova scheda).
+  - `wiki/Progetti/Master_Page_Sales_Competences.md` (aggiunta la risorsa all'indice delle lezioni e inserito il relativo obiettivo di studio nel cruscotto).
+  - `index.md` (indicizzato il nuovo concetto nella sezione Sales Competences del catalogo).
+  - `log.md` (questo file).
+
+## [2026-06-04] UPDATE | Upgrade Bot di Trading (Forex Scalping)
+
+- **Operazione:** Transizione del bot quantistico `amsr_quantum_portfolio_bot.py` a una configurazione di scalping a breve termine (timeframe H1 / M15 / M5) ed espansione da 5 a 12 asset totali (aggiunta di GBPUSD, USDJPY, AUDUSD, USDCAD, USDCHF, GBPJPY, EURJPY).
+- **File modificati:**
+  - `wiki/Script/amsr_quantum_portfolio_bot.py` (modificati parametri timeframe, pesi dinamici e risk target a $40).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-05] UPDATE | Incremento Rischio ed Analisi Drawdown
+
+- **Operazione:** Analisi della violazione del drawdown causata da operazioni manuali e incremento dei parametri di rischio del bot per velocizzare il superamento della prop challenge.
+- **File modificati:**
+  - `wiki/Script/amsr_quantum_portfolio_bot.py` (aumentato `PORTFOLIO_RISK_LIMIT_USD` da `40.0` a `150.0`, `DAILY_KILLSWITCH_USD` da `400.0` a `450.0`, e `TOTAL_KILLSWITCH_USD` da `800.0` a `900.0`).
+  - `log.md` (questo file).
+
+---
+
+- ## [2026-06-05] UPDATE | Creazione Diario Alimentare e Ingestione Pasti
+
+- **Operazione:** Creazione della scheda per il tracciamento dei pasti quotidiani e inserimento dei pasti della giornata odierna (uova, tacchino, avocado, gnocchi, sgombro, tonno, panini, mozzarella, pesca, pollo, patate e spinaci) con stima quantitativa dei macronutrienti e delle calorie totali.
+- **File creati:**
+  - `wiki/Concetti/Diario_Alimentare.md` [NEW] — Diario alimentare con registro pasti quotidiano e calcolo dei macronutrienti e calorie.
+- **File modificati:**
+  - `index.md` (aggiunta la sezione Salute & Nutrizione e indicizzato il Diario Alimentare).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-05] UPDATE | Creazione Scheda Cavitazione e Crepitii Articolari
+
+- **Operazione:** Creazione della scheda di analisi kinesiologica ed anatomica per il crepitio e la cavitazione articolare (rumori di "bollicine che scoppiano" nelle ginocchia e nei piedi), fornendo spiegazioni fisiologiche e protocolli per ridurli.
+- **File creati:**
+  - `wiki/Concetti/Crepitio_e_Cavitazione_Articolare.md` [NEW] — Scheda sui rumori articolari, meccanismi di cavitazione del liquido sinoviale e attrito tendineo.
+- **File modificati:**
+  - `index.md` (indicizzato il nuovo concetto nella sezione Salute & Nutrizione).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-05] UPDATE | Analisi Restrizione Flessione Ginocchio Destro
+
+- **Operazione:** Analisi dell'asimmetria di flessione della gamba destra rispetto alla sinistra e della sensazione di tensione simile ad un "osso che tira" nella piega posteriore del ginocchio. Aggiornato con il feedback dell'utente (assenza di dolore, solo rigidità meccanica).
+- **File creati/modificati:**
+  - `wiki/Concetti/Restrizione_Flessione_Ginocchio.md` [NEW] — Scheda concettuale kinesiologica con fisiopatologia della rigidità degli ischiocrurali (hamstrings) e protocolli di allungamento e rilascio miofasciale.
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-05] UPDATE | Aggiornamento Esercizi Stretching Timer
+
+- **Operazione:** Aggiunta di due nuovi esercizi kinesiologici specifici (Allungamento Ischiocrurali per la catena posteriore e Allungamento Psoas per i flessori dell'anca) nel timer delle pause studio.
+- **File modificati:**
+  - `wiki/Script/stretching_timer.py` (aggiunti i due nuovi esercizi all'array `self.exercises`).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-06] STUDY | Prima Lezione Cambridge C1 — Part 4 & Inversion
+
+- **Operazione:** Creazione della prima lezione di preparazione per l'esame Cambridge C1, focalizzata sulla grammatica dell'inversione enfatica ed esercizi di Key Word Transformation. Estesa successivamente introducendo le regole sull'Inversione nei Condizionali e le strutture di Wish e If Only.
+- **File creati/modificati:**
+  - `wiki/Concetti/Lezione_1_C1_Key_Word_Transformation.md` [NEW] — Lezione teorica con spiegazione dell'inversione, inversione condizionale, Wish & If Only, tre phrasal verbs comuni e tre esercizi pratici.
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-06] STUDY | Creazione Percorso Studio C1 in Stile Duolingo
+
+- **Operazione:** Creazione del piano di studi completo (roadmap) a lungo termine per il raggiungimento della certificazione C1, strutturato in stile di apprendimento "Duolingo" con tappe e obiettivi (Stage 1-4, Unit 1-7). Generazione ed inserimento di una mappa visiva/infografica dedicata.
+- **File creati:**
+  - `wiki/Progetti/Percorso_Studio_C1.md` [NEW] — Pagina master per il percorso di studio con descrizione delle unità, obiettivi, milestones e riferimenti visivi.
+- **File modificati:**
+  - `index.md` (indicizzato il nuovo piano master sotto Progetti).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-06] STUDY | Creazione Percorso Studio Matematica Generale
+
+- **Operazione:** Creazione del piano di studi completo (roadmap) a lungo termine per il superamento dell'esame di Matematica Generale (senza calcolatrice), strutturato in stile di apprendimento "Duolingo" (Stage 1-5, Unit 1-7). Generazione di una mappa visiva/infografica dedicata e allineamento con i formulari esistenti.
+- **File creati:**
+  - `wiki/Progetti/Percorso_Studio_Matematica.md` [NEW] — Pagina master per il percorso di studio con tappe, milestones e riferimenti ai concetti di algebra lineare, limiti, derivate, integrali e ottimizzazione.
+  - `wiki/Progetti/math_learning_path.png` [NEW] — Infografica del sentiero di apprendimento per l'esame.
+- **File modificati:**
+  - `index.md` (indicizzata la nuova Master Page sotto Progetti).
+  - `wiki/Math/Math_Home.md` (collegata la mappa interattiva nella sezione del piano di studi e nei quick links).
+  - `wiki/Math/Math_Piano_Studio.md` (collegata la mappa interattiva nella testata della nota).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-06] STUDY | Creazione Percorso Studio Tedesco A1 e Schede di Riferimento
+
+- **Operazione:** Creazione della struttura completa per lo studio accademico da zero del Tedesco A1 (Start Deutsch 1), organizzato in stile di apprendimento "Duolingo" (Stage 1-4, Unit 1-11). Creazione di schede grammaticali di riferimento complete per pronomi, verbi, articoli e casi (Nominativo/Accusativo).
+- **File creati:**
+  - `wiki/Progetti/Percorso_Studio_Tedesco.md` [NEW] — Pagina master per la roadmap del tedesco, obiettivi di vocabolario/grammatica e milestones.
+  - `wiki/Progetti/german_learning_path.png` [NEW] — Infografica del sentiero di apprendimento in stile Duolingo.
+  - `wiki/German/German_Home.md` [NEW] — Hub centrale per lo studio del tedesco con struttura dell'esame ufficiale, consigli del professore e quick links.
+  - `wiki/German/German_Pronomi_e_Verbi.md` [NEW] — Scheda di riferimento per pronomi personali e coniugazione dei verbi (regolari, ausiliari, cambio vocalico e modali A1).
+  - `wiki/German/German_Articoli_e_Casi.md` [NEW] — Scheda di riferimento per il genere, articoli determinativi/indeterminativi/negativi e declinazioni al Nominativo e Accusativo.
+- **File modificati:**
+  - `index.md` (indicizzato il percorso sotto Progetti e creata la nuova sezione per i file in wiki/German/).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-06] STUDY | Prima Lezione Matematica Generale — Operazioni con Matrici e Vettori
+
+- **Operazione:** Avvio dello STAGE 1 - UNIT 1 di Matematica Generale. Creazione della prima lezione di algebra lineare su vettori, matrici e operazioni fondamentali.
+- **File creati:**
+  - `wiki/Concetti/Lezione_1_Matematica_Operazioni_Matrici.md` [NEW] — Lezione teorica e pratica su vettori, matrici, trasposizione, simmetria, prodotto riga per colonna (non commutativo) ed esercizi pratici per il calcolo mentale veloce.
+- **File modificati:**
+  - `wiki/Progetti/Percorso_Studio_Matematica.md` (collegata la lezione all'interno della prima unità).
+  - `index.md` (indicizzata la nuova lezione nella sezione wiki/Math/).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-06] STUDY | Lezione Zero Matematica Generale — Prerequisiti Algebrici
+
+- **Operazione:** Inserimento dello STAGE 0 (Prerequisiti Algebrici) ed avvio della relativa lezione per consolidare le fondamenta matematiche.
+- **File creati/modificati:**
+  - `wiki/Concetti/Lezione_0_Matematica_Basi_Algebriche.md` [NEW] — Lezione teorica e pratica su prodotti notevoli, potenze, radici, equazioni/disequazioni di 2° grado, disequazioni fratte, logaritmi ed esponenziali con esercizi svolti.
+  - `wiki/Progetti/Percorso_Studio_Matematica.md` (inserito lo STAGE 0 prima dello STAGE 1 e collegata la lezione).
+  - `index.md` (indicizzata la Lezione 0 nella sezione wiki/Math/).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-06] STUDY | Seconda Lezione Cambridge C1 — Sentence Flexing & Emphasis
+
+- **Operazione:** Avvio della seconda lezione di preparazione Cambridge C1 (STAGE 1 - UNIT 2).
+- **File creati/modificati:**
+  - `wiki/Concetti/Lezione_2_C1_Sentence_Flexing_Emphasis.md` [NEW] — Lezione teorica e pratica su frasi scisse (Cleft Sentences), passivi complessi (Reporting Passives), causativo passivo (have/get something done) e phrasal verbs con Take/Get.
+  - `wiki/Progetti/Percorso_Studio_C1.md` (aggiornato lo stato dell'UNIT 1 a completato e dell'UNIT 2 a in corso, e collegata la Lezione 2).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-06] STUDY | Prima Lezione Tedesco A1 — Sich Vorstellen
+
+- **Operazione:** Avvio della prima lezione di tedesco A1 (STAGE 1 - UNIT 1).
+- **File creati/modificati:**
+  - `wiki/Concetti/Lezione_1_Tedesco_Sich_Vorstellen.md` [NEW] — Lezione teorica e pratica su saluti formali/informali, presentazione personale (nome, provenienza, residenza, lingue, professione), pronomi personali al nominativo e coniugazione al presente dei verbi regolari e di "sein".
+  - `index.md` (indicizzata la Lezione 1 nella sezione wiki/German/).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-07] INGEST | Le 48 leggi del potere & Le armi della persuasione
+
+- **Operazione:** Ingestione ed elaborazione dei libri in formato EPUB presenti in `raw/` per strutturare il "Protocollo Relazionale Haroun".
+- **File creati:**
+  - `wiki/Fonti/Fonte_48_Leggi_Potere.md` [NEW] — Scheda fonte riassuntiva di "Le 48 Leggi Del Potere" di Robert Greene con focus su difesa relazionale e autocontrollo.
+  - `wiki/Fonti/Fonte_Armi_Persuasione.md` [NEW] — Scheda fonte di "Le armi della persuasione" di Robert Cialdini con i 6 principi di persuasione.
+  - `wiki/Concetti/Protocollo_Relazionale_Haroun.md` [NEW] — Modello operativo per "Haroun Preparato", finalizzato all'autocontrollo, alla disinnescazione delle provocazioni in sala ristorante e alla pianificazione strategica.
+- **File modificati:**
+  - `wiki/Home.md` (aggiunto il link "Psicologia & Relazioni" alla navigazione rapida per concetto).
+  - `index.md` (indicizzati i nuovi file concettuali e di fonte nel catalogo centrale).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-07] INGEST | Integrazione Strategica e Politica del Protocollo Relazionale
+
+- **Operazione:** Ingestione teorica ed elaborazione delle fonti classiche di strategia, realismo politico e comportamento organizzativo per espandere il "Protocollo Relazionale Haroun" a livello professionale.
+- **File creati:**
   - `wiki/Fonti/Fonte_Arte_Guerra.md` [NEW] — Scheda fonte su "L'arte della guerra" di Sun Tzu (de-escalation e posizionamento).
   - `wiki/Fonti/Fonte_Il_Principe.md` [NEW] — Scheda fonte su "Il Principe" di Niccolò Machiavelli (reputazione ed evitamento dell'odio/disprezzo).
   - `wiki/Fonti/Fonte_Power_Pfeffer.md` [NEW] — Scheda fonte su "Power" di Jeffrey Pfeffer (potere informale e risorse critiche nelle organizzazioni).
@@ -884,4 +1095,170 @@ aw/Fundamentals of Database Systems (Elmasri) Cap. 24
 - **File modificati:**
   - `wiki/Concetti/Protocollo_Relazionale_Haroun.md` (riscritta ed espansa a livello professionale ed organizzativo inserendo le nuove fonti strategiche).
   - `index.md` (indicizzati i 5 nuovi file di fonte nel catalogo centrale).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-08] DEV | Integrazione Workflow AI Matt Pocock nel Second Brain
+
+- **Operazione:** Upgrade strutturale e procedurale del Second Brain integrando i principi del workflow di AI coding di Matt Pocock (Grill Me, TDD Learning, Vault Audit).
+- **File creati:**
+  - `wiki/System/Skills/Skill_Grill_Me.md` [NEW] — Istruzioni per condurre interviste attive pre-progetto con l'utente.
+  - `wiki/System/Skills/Skill_TDD_Learning.md` [NEW] — Modello procedurale per lezioni interattive (spiegazione, micro-test in chat, correzione, ripetizione).
+  - `wiki/System/Skills/Skill_Vault_Audit.md` [NEW] — Checklist per la manutenzione periodica del vault (YAML, link interrotti, orfani, duplicati).
+- **File modificati:**
+  - `CLAUDE.md` (aggiornata l'architettura delle cartelle e codificati i workflow di PROJECT, STUDY e LINT secondo i nuovi standard delle Skills).
+  - `index.md` (creata la sezione wiki/System/Skills/ e indicizzati i 3 nuovi file).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-08] DEV | Sviluppo e Integrazione Completa Kiro Kiro Price & Trend Optimizer
+
+- **Operazione:** Sviluppo, ottimizzazione e merge totale di tutti e 3 i menù del Ristorante Kiro Kiro (Cucina, Sushi e Carta dei Vini) in un'unica applicazione web interattiva locale. Il database unificato mappa ciascun piatto a materie prime ittiche locali, con calcolo dei margini in tempo reale basato su fluttuazioni simulate e script di upselling in sala focalizzati sul contesto locale (Marche / Porto Recanati).
+- **File modificati:**
+- `simulation_kiro_kiro/menu_data.js` (unificati interamente i 3 menù storici in un database JavaScript di 103 piatti e 71 vini).
+- `simulation_kiro_kiro/app.js` (implementata logica di calcolo, aggiornamento, ricerca globale e filtri per categorie/sottocategorie).
+- `simulation_kiro_kiro/index.html` (rinnovata l'interfaccia con filtri rapidi, casella di ricerca e alloggiamento per tutti gli elementi del menù).
+- `simulation_kiro_kiro/styles.css` (aggiornato il foglio di stile con classi per i filtri di disponibilità e per la griglia di ricerca).
+- `log.md` (questo file).
+
+---
+
+## [2026-06-11] DEV | Sviluppo Trading Bot AFML e Setup Portfolio GitHub
+
+- **Operazione:** Sviluppo completo del nuovo bot quantitativo avanzato `prop_trader_afml.py` integrando le metodologie di López de Prado (FFD, LZ Entropy, Triple-Barrier, Spread Filter), Robert Carver (Trend Score, Volatility Sizing) e Nassim Taleb (Winsorizzazione), predisposto con kill-switch FTMO. Creazione di schede wiki dedicate a ciascun metodo e strutturazione di 5 repository Git locali pronti per il push su GitHub per presentare al meglio il profilo a potenziali recruiter.
+- **File creati:**
+  - `wiki/Script/prop_trader_afml.py` [NEW] — Codice sorgente completo del trading bot quantitativo per MT5.
+  - `wiki/Concetti/AFML_Triple_Barrier_Method.md` [NEW] — Nota di studio sul metodo a tripla barriera.
+  - `wiki/Concetti/AFML_Fractional_Differentiation.md` [NEW] — Nota di studio sulla stazionarietà con memoria.
+  - `wiki/Concetti/Carver_Volatility_Targeting.md` [NEW] — Nota di studio sul dimensionamento basato sulla volatilità.
+  - `wiki/Concetti/FTMO_Prop_Challenge_Rules.md` [NEW] — Nota sulle regole di gestione del rischio FTMO.
+  - `wiki/Concetti/capm_wacc_npv.md` [NEW] — Nota consolidata su CAPM, WACC e NPV.
+  - `wiki/Progetti/GitHub_Profile_README.md` [NEW] — Contenuto del README per la homepage del profilo.
+  - `github_repos/setup_github.ps1` [NEW] — Script PowerShell per automatizzare la creazione dei repo locali e la copia dei file.
+  - `github_repos/RealHarounJ/README.md` [NEW] — README profilo GitHub.
+  - `github_repos/afml-prop-trader/README.md` [NEW] — README specifico del bot di trading.
+  - `github_repos/portfolio-optimizer/README.md` [NEW] — README per l'ottimizzazione del portafoglio.
+  - `github_repos/financial-db-design/README.md` [NEW] — README per la progettazione database.
+  - `github_repos/quant-finance-notes/README.md` [NEW] — README per le note di finanza quantitativa.
+- **File modificati:**
+  - `index.md` (indicizzati i nuovi concetti, lo script del trading bot, e i progetti di setup del portfolio).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-12] STUDY | Completamento Unit 2 di Inglese C1
+
+- **Operazione:** Completamento dello STAGE 1 - UNIT 2 di Inglese C1. Svolti ed eseguiti con successo tutti i micro-test pratici in chat su Cleft Sentences (strutture con It e All), Complex Passives (reporting passives con infiniti presenti e perfetti) e Phrasal Verbs con Take/Get (tra cui *get round to*).
+- **File modificati:**
+  - `wiki/Progetti/Percorso_Studio_C1.md` (aggiornato lo stato dell'UNIT 2 a Completata).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-16] DEV | Inizializzazione Quant Data Pipeline & Portfolio Orchestrator
+
+- **Operazione:** Sviluppo completo dell'architettura e del codice sorgente per la nuova pipeline dati quantitativa orchestrata con Apache Airflow, Docker Compose e PostgreSQL.
+- **File creati:**
+  - `github_repos/quant-data-pipeline/dags/quant_portfolio_dag.py` [NEW] — DAG Airflow per l'orchestrazione dei task.
+  - `github_repos/quant-data-pipeline/scripts/ingest_data.py` [NEW] — Script ETL per l'ingestione prezzi con yfinance e upsert Postgres.
+  - `github_repos/quant-data-pipeline/scripts/run_optimization.py` [NEW] — Ottimizzazione di portafoglio (Markowitz Sharpe ratio) via Scipy.
+  - `github_repos/quant-data-pipeline/scripts/run_simulation.py` [NEW] — Simulazione Monte Carlo 10.000 scenari (GBM) e calcolo VaR/Drawdown con report finale.
+  - `github_repos/quant-data-pipeline/sql/init_db.sql` [NEW] — Schema SQL DDL per data warehouse Postgres.
+  - `github_repos/quant-data-pipeline/docker-compose.yml` [NEW] — Configurazione dell'ambiente containerizzato (Airflow scheduler, webserver, init e Postgres).
+  - `github_repos/quant-data-pipeline/requirements.txt` [NEW] — Dipendenze Python.
+  - `github_repos/quant-data-pipeline/README.md` [NEW] — Documentazione del progetto in inglese per recruiter.
+  - `wiki/Progetti/Quant_Data_Pipeline.md` [NEW] — Master page nel Second Brain per monitorare il progetto e collegare i sorgenti.
+- **File modificati:**
+  - `index.md` (indicizzato il nuovo progetto nel catalogo centrale).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-17] STUDY | Creazione Guida di Riferimento Git
+
+- **Operazione:** Creazione della scheda di studio e consultazione su Git.
+- **File creati:**
+  - `wiki/Concetti/Git.md` [NEW] — Guida completa a Git: Working Directory, Staging Area, Local Repository, Branching, Merging e Push/Pull.
+- **File modificati:**
+  - `index.md` (indicizzata la nuova pagina Git).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-17] INGEST | DataCamp: Introduction to version control
+
+- **Operazione:** Ingestione ed elaborazione della Lezione 1 del corso DataCamp su Git.
+- **File creati:**
+  - `wiki/Fonti/Fonte_DataCamp_Intro_Git.md` [NEW] — Scheda della fonte del corso.
+  - `wiki/Concetti/Git_Lezione_1_Intro.md` [NEW] — Dispensa concettuale con la definizione di controllo di versione e comandi shell base (`pwd`, `ls`, `cd`, `git --version`).
+- **File modificati:**
+  - `index.md` (indicizzati i due nuovi file).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-17] INGEST | DataCamp: Creating repos
+
+- **Operazione:** Ingestione ed elaborazione della Lezione 2 del corso DataCamp su Git.
+- **File creati:**
+  - `wiki/Concetti/Git_Lezione_2_Creazione_Repo.md` [NEW] — Dispensa concettuale sulla struttura di un repository (la cartella nascosta `.git`), l'uso di `git init` per cartelle vuote ed esistenti, e il warning sui repository annidati.
+- **File modificati:**
+  - `index.md` (indicizzato il nuovo file).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-17] STUDY | Creazione Roadmap Percorso Studio Git
+
+- **Operazione:** Creazione del piano di studi per Git e GitHub da livello principiante a lavorativo.
+- **File creati:**
+  - `wiki/Progetti/Percorso_Studio_Git.md` [NEW] — Roadmap strutturata in 6 stage (fondamenta locali, inizializzazione, branching/merging, remotes/cloud, conflitti/reset, workflow aziendali).
+- **File modificati:**
+  - `index.md` (indicizzato il nuovo file).
+  - `log.md` (questo file).
+
+
+---
+
+## [2026-06-17] INGEST | DataCamp: Staging and committing files
+
+- **Operazione:** Ingestione ed elaborazione della Lezione 3 del corso DataCamp su Git.
+- **File creati:**
+  - `wiki/Concetti/Git_Lezione_3_Staging_Commit.md` [NEW] — Dispensa concettuale sulla metafora della busta da lettere (staging vs commit), l'uso di `git add` e `git commit -m` e i warning sull'apertura accidentale di editor interni.
+- **File modificati:**
+  - `index.md` (indicizzato il nuovo file).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-17] DEV | Configurazione Live API Trading 212 e Aggiornamento Portafoglio
+
+- **Operazione:** Inserite le chiavi API reali fornite dall'utente nel file `.env` per sbloccare la connessione in tempo reale con le API di Trading 212. Eseguiti con successo gli script di status ed ottimizzazione per recuperare i valori correnti. Aggiornato lo snapshot analitico del portafoglio allineando i dati della wiki con la situazione reale di mercato.
+- **File creati/modificati:**
+  - `.env` [NEW] — File di configurazione delle credenziali API (escluso dal tracking Git).
+  - `wiki/Progetti/Analisi_Portafoglio_Haroun.md` (aggiornati i valori correnti, pesi, P&L delle 19 posizioni live).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-17] DEV | Documentazione Strategia e Razionale Portafoglio (Core-Satellite)
+
+- **Operazione:** Creazione di una pagina wiki approfondita e dettagliata sulla strategia di diversificazione del portafoglio. Inserito il razionale macroeconomico e strategico per ciascuna delle 19 posizioni attive su Trading 212, mappando l'allocazione geografica, valutaria, settoriale e per asset class del modello Core-Satellite. Spiegato teoricamente il meccanismo del No-Sell Rebalancing.
+- **File creati/modificati:**
+  - `wiki/Progetti/Strategia_Diversificazione_Portafoglio.md` [NEW] — Pagina wiki sulla strategia di diversificazione e il razionale degli asset.
+  - `index.md` (indicizzato il nuovo file).
+  - `log.md` (questo file).
+
+---
+
+## [2026-06-17] DEV | Esecuzione Riallineamento Portafoglio con Deposito di €150.00
+
+- **Operazione:** Eseguito il riallineamento del portafoglio Trading 212 tramite API per allocare i nuovi €150.00 depositati dall'utente. Sono stati calcolati ed eseguiti gli acquisti a mercato per ridurre la sovraesposizione a Freedom Holding Corp (FIG) tramite l'incremento delle quote degli ETF passivi globali (Core-Satellite).
+- **Dettagli Ordini Inoltrati:**
+  - **EIMI** (`EIMIl_EQ` — iShares Core MSCI EM IMI): Inserito ordine di **0.58 unità** (ID: 52811717458, controvalore stimato ~€28.64).
+  - **SWDA** (`SWDAl_EQ` — iShares Core MSCI World): Inserito ordine di **0.91 unità** (ID: 52811718256, controvalore stimato ~€120.00).
+- **Stato del Capitale Liquidità:** €148.64 allocati e bloccati negli ordini attivi, €1.36 rimasti come liquidità libera di sicurezza.
+- **File modificati:**
   - `log.md` (questo file).
