@@ -52,6 +52,16 @@ function initMap() {
   
   // Auto-refresh every 60 seconds
   setInterval(loadOsmData, 60000);
+
+  // Risolve il bug delle dimensioni iniziali con Flexbox
+  setTimeout(() => {
+    if (map) map.invalidateSize();
+  }, 300);
+
+  // Aggiorna le dimensioni quando l'utente ridimensiona o zooma
+  window.addEventListener('resize', () => {
+    if (map) map.invalidateSize();
+  });
 }
 
 function loadOsmData() {
@@ -350,6 +360,11 @@ function selectCompany(id) {
 
   document.getElementById('detail-panel').classList.add('open');
   activateTab('overview');
+  
+  // Forza Leaflet a ricalcolare le dimensioni dopo che il pannello si è aperto
+  setTimeout(() => {
+    if (map) map.invalidateSize();
+  }, 400);
 }
 
 function fitColor(pct) {
