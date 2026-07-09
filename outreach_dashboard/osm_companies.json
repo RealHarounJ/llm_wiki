@@ -29119,5 +29119,22 @@
     "program": "yes",
     "fit": "high",
     "note": "Posizione: Quantitative Risk Intern. Leader mondiale nella riassicurazione."
+  },
+  {
+    "name": "Julius Baer",
+    "city": "Zurigo",
+    "country": "CH",
+    "coords": [
+      47.38,
+      8.53
+    ],
+    "sector": "Finance",
+    "address": "LinkedIn Corporate Hub, Zurigo",
+    "email": "careers@juliusbaer.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Julius Baer+careers",
+    "program": "yes",
+    "fit": "high",
+    "note": "Posizione: Wealth Management Intern. Banca privata svizzera."
   }
 ]
