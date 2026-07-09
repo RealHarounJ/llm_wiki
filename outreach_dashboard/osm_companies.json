@@ -29051,5 +29051,22 @@
     "program": "yes",
     "fit": "high",
     "note": "Posizione: Quantitative Researcher Intern. Elite market maker."
+  },
+  {
+    "name": "Booking.com",
+    "city": "Amsterdam",
+    "country": "NL",
+    "coords": [
+      52.36,
+      4.91
+    ],
+    "sector": "Data",
+    "address": "LinkedIn Corporate Hub, Amsterdam",
+    "email": "graduates@booking.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Booking.com+careers",
+    "program": "yes",
+    "fit": "high",
+    "note": "Posizione: Data Analyst Intern. Focus su A/B testing e database SQL."
   }
 ]
