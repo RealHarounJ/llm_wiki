@@ -29034,5 +29034,22 @@
     "program": "yes",
     "fit": "high",
     "note": "Posizione: Product Analyst Intern. Software di lavagna collaborativa."
+  },
+  {
+    "name": "Optiver",
+    "city": "Amsterdam",
+    "country": "NL",
+    "coords": [
+      52.37,
+      4.89
+    ],
+    "sector": "Finance",
+    "address": "LinkedIn Corporate Hub, Amsterdam",
+    "email": "recruitment@optiver.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Optiver+careers",
+    "program": "yes",
+    "fit": "high",
+    "note": "Posizione: Quantitative Researcher Intern. Elite market maker."
   }
 ]
