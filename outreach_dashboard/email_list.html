@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EU Companies Master List — Haroun Jaafar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07090f;
+      --bg1: #0d1117;
+      --bg2: #111827;
+      --bg3: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.07);
+      --text1: #f0f4ff;
+      --text2: #94a3b8;
+      --text3: #64748b;
+      --blue: #3b82f6;
+      --green: #10b981;
+      --yellow: #f59e0b;
+      --red: #ef4444;
+      --purple: #a78bfa;
+      --cyan: #06b6d4;
+      --font: 'Outfit', sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    ::-webkit-scrollbar { width: 6px; } ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text1); min-height: 100vh; }
+
+    /* Header */
+    .header {
+      background: var(--bg1);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .header-title { font-size: 20px; font-weight: 700; background: linear-gradient(135deg, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .header-sub { font-size: 12px; color: var(--text3); margin-top: 2px; }
+    .export-btn { padding: 9px 18px; background: var(--green); border: none; border-radius: 8px; color: #fff; font-family: var(--font); font-size: 13px; font-weight: 600; cursor: pointer; }
+    .export-btn:hover { opacity: 0.85; }
+
+    /* Controls */
+    .controls {
+      padding: 20px 32px;
+      background: var(--bg1);
+      border-bottom: 1px solid var(--border);
+      display: flex; gap: 12px; flex-wrap: wrap; align-items: center;
+    }
+    .search-box {
+      padding: 10px 16px; background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 8px; color: var(--text1); font-family: var(--font); font-size: 13px; outline: none;
+      width: 280px;
+    }
+    .search-box:focus { border-color: var(--blue); }
+    .filter-select {
+      padding: 10px 14px; background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 8px; color: var(--text1); font-family: var(--font); font-size: 13px; outline: none; cursor: pointer;
+    }
+    .count-badge {
+      padding: 6px 12px; background: var(--blue); border-radius: 99px;
+      font-size: 12px; font-weight: 700; color: #fff;
+    }
+
+    /* Stats row */
+    .stats-bar {
+      display: flex; gap: 16px; padding: 12px 32px;
+      background: var(--bg); border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .stat-item { font-size: 12px; color: var(--text2); }
+    .stat-item strong { font-size: 16px; font-weight: 800; margin-right: 4px; }
+
+    /* Table */
+    .table-wrap { padding: 0 32px 40px; overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    thead th {
+      text-align: left; padding: 12px 14px;
+      font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--text3);
+      background: var(--bg1); border-bottom: 1px solid var(--border);
+      position: sticky; top: 72px; cursor: pointer; user-select: none;
+      white-space: nowrap;
+    }
+    thead th:hover { color: var(--text2); }
+    tr { border-bottom: 1px solid var(--border); transition: background 0.1s; }
+    tr:hover td { background: var(--bg3); }
+    td {
+      padding: 12px 14px; font-size: 13px; color: var(--text2);
+      vertical-align: middle;
+    }
+    td:first-child { font-weight: 600; color: var(--text1); }
+
+    /* Tags */
+    .tag {
+      display: inline-block; padding: 2px 8px; border-radius: 99px;
+      font-size: 10px; font-weight: 600; margin: 1px;
+    }
+    .tag-finance { background: rgba(59,130,246,0.15); color: #93c5fd; }
+    .tag-fintech { background: rgba(167,139,250,0.15); color: #c4b5fd; }
+    .tag-consulting { background: rgba(245,158,11,0.15); color: #fcd34d; }
+    .tag-data { background: rgba(6,182,212,0.15); color: #67e8f9; }
+    .tag-tech { background: rgba(16,185,129,0.15); color: #6ee7b7; }
+    .tag-boutique { background: rgba(239,68,68,0.15); color: #fca5a5; }
+
+    /* Country flags */
+    .flag { font-size: 16px; margin-right: 4px; }
+
+    /* Email cell */
+    .email-cell {
+      font-family: var(--mono); font-size: 11px; color: var(--cyan);
+      cursor: pointer; transition: color 0.15s;
+    }
+    .email-cell:hover { color: #fff; }
+    .email-cell.portal { color: var(--text3); font-style: italic; font-family: var(--font); font-size: 11px; }
+
+    /* Program badge */
+    .prog-yes { color: var(--green); font-weight: 600; }
+    .prog-no { color: var(--text3); }
+    .prog-unknown { color: var(--yellow); }
+
+    /* Fit badge */
+    .fit-tag {
+      display: inline-block; padding: 3px 10px; border-radius: 99px;
+      font-size: 11px; font-weight: 600;
+    }
+    .fit-high { background: rgba(16,185,129,0.15); color: var(--green); }
+    .fit-med { background: rgba(245,158,11,0.15); color: var(--yellow); }
+    .fit-low { background: rgba(239,68,68,0.15); color: var(--red); }
+
+    /* Copy toast */
+    .toast {
+      position: fixed; bottom: 24px; right: 24px;
+      padding: 10px 18px; border-radius: 8px;
+      background: var(--bg2); border: 1px solid var(--green);
+      color: var(--green); font-size: 13px; font-weight: 500;
+      z-index: 9999; opacity: 0; transform: translateY(20px);
+      transition: all 0.25s;
+    }
+    .toast.show { opacity: 1; transform: translateY(0); }
+
+    /* Section dividers in table */
+    .section-row td {
+      background: rgba(59,130,246,0.06);
+      color: var(--blue);
+      font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
+      padding: 8px 14px;
+      border-top: 1px solid rgba(59,130,246,0.15);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div>
+    <div class="header-title">🌍 EU Companies Master List</div>
+    <div class="header-sub">Lista completa aziende europee con email HR, settore, paese e programma stage</div>
+  </div>
+  <button class="export-btn" onclick="exportCSV()">⬇️ Scarica CSV</button>
+</div>
+
+<!-- Controls -->
+<div class="controls">
+  <input type="text" class="search-box" id="search" placeholder="🔍 Cerca azienda, città, paese...">
+  <select class="filter-select" id="filter-sector">
+    <option value="">📂 Tutti i settori</option>
+    <option value="Finance">💰 Finance / Asset Management</option>
+    <option value="FinTech">💳 FinTech & Payments</option>
+    <option value="Consulting">🤝 Consulting & Big 4</option>
+    <option value="Data">📊 Data & Analytics</option>
+    <option value="Tech">⚙️ Tech & Engineering</option>
+    <option value="Boutique">🏦 Boutique AM</option>
+  </select>
+  <select class="filter-select" id="filter-country">
+    <option value="">🌍 Tutti i paesi</option>
+    <option value="NL">🇳🇱 Netherlands</option>
+    <option value="DE">🇩🇪 Germany</option>
+    <option value="BE">🇧🇪 Belgium</option>
+    <option value="FR">🇫🇷 France</option>
+    <option value="CH">🇨🇭 Switzerland</option>
+    <option value="UK">🇬🇧 United Kingdom</option>
+    <option value="LU">🇱🇺 Luxembourg</option>
+    <option value="SE">🇸🇪 Sweden</option>
+    <option value="DK">🇩🇰 Denmark</option>
+    <option value="IT">🇮🇹 Italy</option>
+    <option value="ES">🇪🇸 Spain</option>
+    <option value="AT">🇦🇹 Austria</option>
+  </select>
+  <select class="filter-select" id="filter-fit">
+    <option value="">🎯 Tutti i fit</option>
+    <option value="high">✅ Alto fit (Digital Economics)</option>
+    <option value="med">⚠️ Medio fit</option>
+    <option value="low">🔴 Basso fit</option>
+  </select>
+  <select class="filter-select" id="filter-email">
+    <option value="">📧 Tutte le email</option>
+    <option value="direct">✅ Email diretta disponibile</option>
+    <option value="portal">🔗 Solo portale</option>
+  </select>
+  <div class="count-badge" id="count-badge">0 aziende</div>
+</div>
+
+<!-- Stats -->
+<div class="stats-bar" id="stats-bar"></div>
+
+<!-- Table -->
+<div class="table-wrap">
+  <table id="main-table">
+    <thead>
+      <tr>
+        <th onclick="sortTable(0)">#</th>
+        <th onclick="sortTable(1)">Azienda ↕</th>
+        <th onclick="sortTable(2)">Paese ↕</th>
+        <th onclick="sortTable(3)">Città</th>
+        <th onclick="sortTable(4)">Settore ↕</th>
+        <th onclick="sortTable(5)">Email / Contatto</th>
+        <th>Portale Carriere</th>
+        <th onclick="sortTable(7)">Prog. Stage ↕</th>
+        <th onclick="sortTable(8)">Fit ↕</th>
+        <th>Note</th>
+      </tr>
+    </thead>
+    <tbody id="table-body"></tbody>
+  </table>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ═══════════════════════════════════════════
+// MASTER COMPANY DATABASE
+// ═══════════════════════════════════════════
+const COMPANIES = [
+
+  // ════════════════════════════════════════
+  // STRATEGIA 1: MAASTRICHT / EUREGIO
+  // ════════════════════════════════════════
+  { name: "LIOF", country: "NL", city: "Maastricht", sector: "Finance", email: "hr@liof.nl", emailType: "direct", careers: "https://werkenbijliof.nl", program: "yes", fit: "high", note: "Open applications encouraged. Erasmus+ friendly. Small team = real responsibility." },
+  { name: "APG Asset Management", country: "NL", city: "Heerlen", sector: "Finance", email: "apg.nl/en/careers/", emailType: "portal", careers: "https://apg.nl/en/careers/", program: "yes", fit: "high", note: "€601B AUM. Feb 2027 intake: vacancies open Nov 2026. €650/mo intern allowance." },
+  { name: "Axians Netherlands", country: "NL", city: "Heerlen", sector: "Data", email: "werkenbijaxians.nl", emailType: "portal", careers: "https://werkenbijaxians.nl", program: "yes", fit: "high", note: "IT & BI consulting. Direct outreach to Heerlen office recommended." },
+  { name: "dsm-firmenich", country: "NL", city: "Heerlen", sector: "Tech", email: "dsm-firmenich.com/careers", emailType: "portal", careers: "https://www.dsm-firmenich.com/corporate/careers.html", program: "yes", fit: "med", note: "Global HQ in Heerlen. Finance & Digital internships. English working language." },
+  { name: "Qubit Analytics", country: "BE", city: "Liège", sector: "Data", email: "careers@qubitanalytics.be", emailType: "direct", careers: "https://qubitanalytics.be", program: "unknown", fit: "high", note: "Data science boutique, 30 min from Maastricht by train." },
+
+  // ════════════════════════════════════════
+  // NETHERLANDS — AMSTERDAM / ROTTERDAM
+  // ════════════════════════════════════════
+  { name: "Robeco", country: "NL", city: "Rotterdam", sector: "Finance", email: "recruitment@robeco.com", emailType: "direct", careers: "https://www.robeco.com/en-int/careers", program: "yes", fit: "high", note: "Super Quant Internship opens Oct 2026. One of Europe's best quant shops." },
+  { name: "Adyen", country: "NL", city: "Amsterdam", sector: "FinTech", email: "adyen.com/careers", emailType: "portal", careers: "https://www.adyen.com/careers", program: "yes", fit: "high", note: "NextGen Program, rolling intake. Elite FinTech brand. Highest intern pay in NL FinTech." },
+  { name: "Flow Traders", country: "NL", city: "Amsterdam", sector: "Finance", email: "internship@flowtraders.com", emailType: "direct", careers: "https://www.flowtraders.com/join-us/careers", program: "yes", fit: "med", note: "Trading Intern opens Aug-Sep 2026. Brainteaser interviews. Very high pay." },
+  { name: "ING Bank", country: "NL", city: "Amsterdam", sector: "Finance", email: "ing.jobs", emailType: "portal", careers: "https://www.ing.jobs/", program: "yes", fit: "high", note: "Rolling internships year-round. Portal: ing.jobs → Student → Netherlands." },
+  { name: "ABN AMRO", country: "NL", city: "Amsterdam", sector: "Finance", email: "it.stages@nl.abnamro.com", emailType: "direct", careers: "https://www.abnamro.com/en/careers", program: "yes", fit: "high", note: "IT internships direct email. Finance roles via portal only." },
+  { name: "Rabobank", country: "NL", city: "Utrecht", sector: "Finance", email: "campusrecruitment@rabobank.nl", emailType: "direct", careers: "https://www.rabobank.nl/over-rabobank/werken-bij/", program: "yes", fit: "med", note: "Cooperative bank. Campus recruitment direct email confirmed." },
+  { name: "ASML", country: "NL", city: "Eindhoven", sector: "Tech", email: "internships@asml.com", emailType: "direct", careers: "https://www.asml.com/en/careers/students-graduates", program: "yes", fit: "med", note: "Most important tech company in Europe. Apply 3 months ahead. €600-1,000/mo." },
+  { name: "Philips", country: "NL", city: "Eindhoven", sector: "Tech", email: "support.careercenter@philips.com", emailType: "direct", careers: "https://www.careers.philips.com/", program: "yes", fit: "med", note: "Health technology. Finance, IT, Data Analytics intern roles." },
+  { name: "NXP Semiconductors", country: "NL", city: "Eindhoven", sector: "Tech", email: "nxp.com/careers", emailType: "portal", careers: "https://careers.nxp.com/", program: "yes", fit: "low", note: "Semiconductor company. More engineering than finance/data." },
+  { name: "Booking.com", country: "NL", city: "Amsterdam", sector: "Data", email: "careers.booking.com", emailType: "portal", careers: "https://careers.booking.com/", program: "yes", fit: "med", note: "Data-heavy culture. Business Analyst and Data Analyst intern roles." },
+  { name: "TomTom", country: "NL", city: "Amsterdam", sector: "Tech", email: "jobs.tomtom.com", emailType: "portal", careers: "https://jobs.tomtom.com/", program: "yes", fit: "med", note: "Data & mapping tech. Business analytics intern roles." },
+  { name: "Wolters Kluwer", country: "NL", city: "Amsterdam", sector: "Data", email: "careers.wolterskluwer.com", emailType: "portal", careers: "https://careers.wolterskluwer.com/", program: "yes", fit: "med", note: "Financial & legal information services. Data and finance roles." },
+  { name: "NN Investment Partners", country: "NL", city: "The Hague", sector: "Finance", email: "nnip.com/careers", emailType: "portal", careers: "https://www.nnip.com/en-INT/professional/about-us/careers.htm", program: "yes", fit: "high", note: "Asset manager, part of Goldman Sachs AM. Good for finance/ESG internships." },
+  { name: "Aegon Asset Management", country: "NL", city: "The Hague", sector: "Finance", email: "aegon.com/careers", emailType: "portal", careers: "https://www.aegon.com/careers/", program: "yes", fit: "high", note: "Global insurance and AM. Data analytics and finance intern roles." },
+  { name: "Van Lanschot Kempen", country: "NL", city: "Amsterdam", sector: "Boutique", email: "d.estanto@vanlanschotkempen.com", emailType: "direct", careers: "https://www.vanlanschotkempen.com/en/careers", program: "yes", fit: "high", note: "Private banking & asset management boutique. Confirmed recruiter email." },
+  { name: "ACTIAM", country: "NL", city: "Amstelveen", sector: "Boutique", email: "actiam.com/careers", emailType: "portal", careers: "https://www.actiam.com/en/careers/", program: "unknown", fit: "high", note: "Sustainable investment manager. Good ESG finance profile fit." },
+  { name: "Mollie", country: "NL", city: "Amsterdam", sector: "FinTech", email: "jobs.mollie.com", emailType: "portal", careers: "https://jobs.mollie.com/", program: "yes", fit: "high", note: "Fast-growing EU payments FinTech. Data and business analyst roles." },
+  { name: "Backbase", country: "NL", city: "Amsterdam", sector: "FinTech", email: "careers.backbase.com", emailType: "portal", careers: "https://careers.backbase.com/", program: "yes", fit: "med", note: "Banking software platform. Business analyst intern roles." },
+  { name: "Mambu", country: "NL", city: "Amsterdam", sector: "FinTech", email: "mambu.com/careers", emailType: "portal", careers: "https://www.mambu.com/careers", program: "unknown", fit: "med", note: "Cloud banking platform. Fast-growing, global." },
+  { name: "Deloitte Netherlands", country: "NL", city: "Amsterdam", sector: "Consulting", email: "nl_campus@deloitte.nl", emailType: "direct", careers: "https://werkenbijdeloitte.nl", program: "yes", fit: "high", note: "Rolling hiring. Financial Advisory & Data Analytics traineeship." },
+  { name: "PwC Netherlands", country: "NL", city: "Amsterdam", sector: "Consulting", email: "recruitment@pwc.nl", emailType: "direct", careers: "https://www.pwc.nl/en/careers.html", program: "yes", fit: "high", note: "Data & Deals practices. Thesis internships available." },
+  { name: "KPMG Netherlands", country: "NL", city: "Amsterdam", sector: "Consulting", email: "recruitment@kpmg.nl", emailType: "direct", careers: "https://home.kpmg/nl/nl/home/careers.html", program: "yes", fit: "high", note: "Confirmed direct recruitment email. Data Advisory & Finance roles." },
+  { name: "EY Netherlands", country: "NL", city: "Amsterdam", sector: "Consulting", email: "careers.ey.com/nl", emailType: "portal", careers: "https://careers.ey.com/ey/go/Netherlands", program: "yes", fit: "high", note: "Financial Services & Strategy & Transactions practice." },
+  { name: "Accenture Netherlands", country: "NL", city: "Amsterdam", sector: "Consulting", email: "candidate.queries@accenture.com", emailType: "direct", careers: "https://www.accenture.com/nl-en/careers", program: "yes", fit: "med", note: "Tech & consulting. Data Engineering and Strategy Analytics roles." },
+
+  // ════════════════════════════════════════
+  // GERMANY
+  // ════════════════════════════════════════
+  { name: "Deutsche Bank", country: "DE", city: "Frankfurt", sector: "Finance", email: "hr.direct@db.com", emailType: "direct", careers: "https://careers.db.com/", program: "yes", fit: "med", note: "Global IB. Internship in Risk, Technology, Corporate Bank. Very competitive." },
+  { name: "Commerzbank", country: "DE", city: "Frankfurt", sector: "Finance", email: "info-recruiting@commerzbank.com", emailType: "direct", careers: "https://karriere.commerzbank.de/", program: "yes", fit: "med", note: "Confirmed direct email. Corporate Banking & Data internships." },
+  { name: "DWS Group", country: "DE", city: "Frankfurt", sector: "Finance", email: "careers.dws.com", emailType: "portal", careers: "https://careers.dws.com/", program: "yes", fit: "high", note: "Deutsche Bank's AM arm. Quantitative research & data roles available." },
+  { name: "Union Investment", country: "DE", city: "Frankfurt", sector: "Finance", email: "karriere.union-investment.de", emailType: "portal", careers: "https://karriere.union-investment.de/", program: "yes", fit: "high", note: "Large German AM. Portfolio management & data analytics intern roles." },
+  { name: "Flossbach von Storch", country: "DE", city: "Cologne", sector: "Boutique", email: "karriere@fvsag.com", emailType: "direct", careers: "https://www.flossbachvonstorch.de/de/karriere/", program: "yes", fit: "high", note: "Prestigious independent AM boutique. €85B AUM. Investment research interns." },
+  { name: "Quoniam Asset Management", country: "DE", city: "Frankfurt", sector: "Boutique", email: "karriere@quoniam.com", emailType: "direct", careers: "https://www.quoniam.com/en/career", program: "unknown", fit: "high", note: "Quantitative systematic AM. Python/data skills highly valued." },
+  { name: "MainFirst", country: "DE", city: "Frankfurt", sector: "Boutique", email: "hr@mainfirst.com", emailType: "direct", careers: "https://www.mainfirst.com/en/career.html", program: "unknown", fit: "high", note: "European equity & fixed income boutique." },
+  { name: "Patrizia AG", country: "DE", city: "Augsburg", sector: "Finance", email: "careers@patrizia.ag", emailType: "direct", careers: "https://www.patrizia.ag/en/careers/", program: "yes", fit: "med", note: "Real estate & infrastructure investment. Data and finance intern roles." },
+  { name: "SAP", country: "DE", city: "Walldorf", sector: "Tech", email: "sap.com/careers", emailType: "portal", careers: "https://jobs.sap.com/", program: "yes", fit: "med", note: "Global ERP leader. Finance, Data, and Business Analysis student programs." },
+  { name: "Siemens", country: "DE", city: "Munich", sector: "Tech", email: "siemens.com/careers", emailType: "portal", careers: "https://www.siemens.com/global/en/company/jobs.html", program: "yes", fit: "med", note: "Large conglomerate. Finance and Data analytics intern roles." },
+  { name: "Bosch", country: "DE", city: "Stuttgart", sector: "Tech", email: "bosch.com/careers", emailType: "portal", careers: "https://www.bosch.com/careers/", program: "yes", fit: "med", note: "Engineering/tech giant. Finance controlling and data analyst intern roles." },
+  { name: "Roland Berger", country: "DE", city: "Munich", sector: "Consulting", email: "careers.rolandberger.com", emailType: "portal", careers: "https://www.rolandberger.com/en/Career/", program: "yes", fit: "med", note: "European strategy consulting leader. Case interview required." },
+  { name: "Oliver Wyman", country: "DE", city: "Frankfurt", sector: "Consulting", email: "oliverwyman.com/careers", emailType: "portal", careers: "https://www.oliverwyman.com/careers.html", program: "yes", fit: "med", note: "Financial services consulting. Strong in banking & insurance." },
+  { name: "Kearney", country: "DE", city: "Munich", sector: "Consulting", email: "kearney.com/careers", emailType: "portal", careers: "https://www.kearney.com/careers", program: "yes", fit: "med", note: "Operations & strategy consulting. German office is large and active." },
+  { name: "Accenture Germany", country: "DE", city: "Frankfurt", sector: "Consulting", email: "candidate.queries@accenture.com", emailType: "direct", careers: "https://www.accenture.com/de-de/careers", program: "yes", fit: "med", note: "Finance & Analytics consulting tracks." },
+  { name: "McKinsey Germany", country: "DE", city: "Frankfurt", sector: "Consulting", email: "mckinsey.com/careers", emailType: "portal", careers: "https://www.mckinsey.com/careers", program: "yes", fit: "low", note: "Top strategy firm. BSc accepted for Junior Fellow. Very competitive (<2%)." },
+  { name: "BCG Germany", country: "DE", city: "Munich", sector: "Consulting", email: "careers.bcg.com", emailType: "portal", careers: "https://careers.bcg.com/", program: "yes", fit: "low", note: "BCG X has data/AI intern roles. 4 campaigns/year. Competitive." },
+
+  // ════════════════════════════════════════
+  // BELGIUM
+  // ════════════════════════════════════════
+  { name: "KBC Bank & Asset Management", country: "BE", city: "Brussels", sector: "Finance", email: "jobs@kbc.be", emailType: "direct", careers: "https://jobs.kbc.be/", program: "yes", fit: "high", note: "Confirmed direct email. Large Belgian bank with AM division. Data and finance roles." },
+  { name: "Degroof Petercam", country: "BE", city: "Brussels", sector: "Boutique", email: "careers@degroofpetercam.com", emailType: "direct", careers: "https://www.degroofpetercam.com/en/careers", program: "yes", fit: "high", note: "Belgian private banking & asset management. DPAM: dpam@degroofpetercam.com" },
+  { name: "Triodos Investment Management", country: "BE", city: "Brussels/NL", sector: "Boutique", email: "careers@triodos.com", emailType: "direct", careers: "https://www.triodos.com/careers", program: "yes", fit: "high", note: "Impact/sustainable investing. Confirmed direct email. Good for ESG finance." },
+  { name: "ING Belgium", country: "BE", city: "Brussels", sector: "Finance", email: "ing.be/careers", emailType: "portal", careers: "https://www.ing.be/en/retail/discover-ing/careers", program: "yes", fit: "high", note: "Belgian arm of ING. Finance & data analyst roles." },
+  { name: "BNP Paribas Belgium", country: "BE", city: "Brussels", sector: "Finance", email: "bnpparibas.be/jobs", emailType: "portal", careers: "https://group.bnpparibas/en/careers", program: "yes", fit: "high", note: "Large French bank with major BE presence. CIB and data analytics roles." },
+  { name: "Belfius", country: "BE", city: "Brussels", sector: "Finance", email: "careers.belfius.be", emailType: "portal", careers: "https://careers.belfius.be/", program: "yes", fit: "high", note: "Belgian public bank. Finance and IT data roles. Dutch/French required." },
+  { name: "Capgemini Belgium", country: "BE", city: "Brussels", sector: "Consulting", email: "capgemini.com/be-en/careers", emailType: "portal", careers: "https://www.capgemini.com/be-en/careers/", program: "yes", fit: "med", note: "Data & Analytics consulting. Relatively accessible for students." },
+  { name: "IMEC", country: "BE", city: "Leuven", sector: "Tech", email: "student@imec.be", emailType: "direct", careers: "https://www.imec-int.com/en/careers", program: "yes", fit: "low", note: "Nanoelectronics research. Also NL: jobs@imec.nl. More engineering profile." },
+
+  // ════════════════════════════════════════
+  // FRANCE
+  // ════════════════════════════════════════
+  { name: "BNP Paribas", country: "FR", city: "Paris", sector: "Finance", email: "group.bnpparibas/careers", emailType: "portal", careers: "https://group.bnpparibas/en/careers", program: "yes", fit: "med", note: "Largest EU bank. CIB & Asset Management tracks. French language required for Paris." },
+  { name: "Société Générale", country: "FR", city: "Paris", sector: "Finance", email: "societegenerale.com/careers", emailType: "portal", careers: "https://careers.societegenerale.com/", program: "yes", fit: "med", note: "Global bank. Strong quant and markets teams. French required." },
+  { name: "Amundi", country: "FR", city: "Paris", sector: "Finance", email: "amundi.com/careers", emailType: "portal", careers: "https://careers.amundi.com/", program: "yes", fit: "high", note: "Europe's largest AM (€2T AUM). Strong data and quant teams. French preferred." },
+  { name: "AXA Investment Managers", country: "FR", city: "Paris", sector: "Finance", email: "axa-im.com/careers", emailType: "portal", careers: "https://careers.axa-im.com/", program: "yes", fit: "high", note: "Leading insurance AM. Quantitative research and data analyst internships." },
+  { name: "Natixis Investment Managers", country: "FR", city: "Paris", sector: "Finance", email: "recruitment@natixis.com", emailType: "direct", careers: "https://natixis.com/careers", program: "yes", fit: "high", note: "Confirmed direct email. Multi-boutique AM model. Paris office internships." },
+  { name: "Crédit Agricole CIB", country: "FR", city: "Paris", sector: "Finance", email: "cacib.com/careers", emailType: "portal", careers: "https://careers.ca-cib.com/", program: "yes", fit: "med", note: "CIB division of Crédit Agricole group. Markets, financing, data roles." },
+  { name: "Capgemini France", country: "FR", city: "Paris", sector: "Consulting", email: "capgemini.com/fr-fr/carrieres", emailType: "portal", careers: "https://www.capgemini.com/fr-fr/carrieres/", program: "yes", fit: "med", note: "Largest IT and consulting group in France. Data engineering roles." },
+  { name: "Worldline", country: "FR", city: "Paris", sector: "FinTech", email: "worldline.com/careers", emailType: "portal", careers: "https://worldline.com/en/home/careers.html", program: "yes", fit: "med", note: "Europe's largest payment services company. Data and business analyst roles." },
+
+  // ════════════════════════════════════════
+  // SWITZERLAND
+  // ════════════════════════════════════════
+  { name: "Pictet Asset Management", country: "CH", city: "Geneva", sector: "Finance", email: "pictet.com/careers", emailType: "portal", careers: "https://www.pictet.com/careers", program: "yes", fit: "med", note: "Only accepts applications via their portal. French language often required." },
+  { name: "Vontobel Asset Management", country: "CH", city: "Zurich", sector: "Finance", email: "careers@vontobel.com", emailType: "direct", careers: "https://www.vontobel.com/en-int/about-vontobel/careers/", program: "yes", fit: "high", note: "Swiss AM. Direct email available. English working language for internships." },
+  { name: "Julius Baer", country: "CH", city: "Zurich", sector: "Finance", email: "juliusbaer.com/careers", emailType: "portal", careers: "https://www.juliusbaer.com/en/careers/", program: "yes", fit: "med", note: "Swiss private bank. Finance and data analyst intern roles." },
+  { name: "Lombard Odier", country: "CH", city: "Geneva", sector: "Boutique", email: "careers@lombardodier.com", emailType: "direct", careers: "https://www.lombardodier.com/en/our-group/careers.html", program: "yes", fit: "med", note: "Swiss private banking boutique. Finance and technology internships." },
+  { name: "Zurich Insurance", country: "CH", city: "Zurich", sector: "Finance", email: "careers.zurich.com", emailType: "portal", careers: "https://careers.zurich.com/", program: "yes", fit: "med", note: "Large insurance group. Actuarial, data analytics and finance intern roles." },
+
+  // ════════════════════════════════════════
+  // UNITED KINGDOM
+  // ════════════════════════════════════════
+  { name: "BlackRock EMEA", country: "UK", city: "London", sector: "Finance", email: "careers.blackrock.com", emailType: "portal", careers: "https://careers.blackrock.com/", program: "yes", fit: "med", note: "⚠️ DEADLINE: Sept 29, 2026 for 2027 Summer. Apply NOW at careers.blackrock.com." },
+  { name: "Berenberg Bank", country: "UK", city: "London", sector: "Finance", email: "graduates@berenberg.com", emailType: "direct", careers: "https://careers.berenberg.com/", program: "yes", fit: "med", note: "Germany's oldest private bank. Summer IB internship cycle opens Autumn 2026." },
+  { name: "Rothschild & Co", country: "UK", city: "London", sector: "Finance", email: "applications@rothschild.com", emailType: "direct", careers: "https://www.rothschildandco.com/en/careers/", program: "yes", fit: "med", note: "Independent advisory boutique. Analyst internship program. Very competitive." },
+  { name: "Man Group", country: "UK", city: "London", sector: "Finance", email: "careers@man.com", emailType: "direct", careers: "https://www.man.com/careers", program: "yes", fit: "med", note: "Leading systematic hedge fund. Quant research and tech internships." },
+  { name: "Schroders", country: "UK", city: "London", sector: "Finance", email: "schroders.com/careers", emailType: "portal", careers: "https://www.schroders.com/en/global/individual/careers/", program: "yes", fit: "high", note: "Major AM. Quant research, data and investment analyst intern roles." },
+  { name: "Jupiter Asset Management", country: "UK", city: "London", sector: "Finance", email: "careers@jupiteram.com", emailType: "direct", careers: "https://www.jupiteram.com/uk/en/institutional/about-jupiter/careers/", program: "yes", fit: "high", note: "Active equity AM. Investment analyst and data roles. Direct email available." },
+  { name: "GoCardless", country: "UK", city: "London", sector: "FinTech", email: "jobs.gocardless.com", emailType: "portal", careers: "https://gocardless.com/about/jobs/", program: "yes", fit: "high", note: "B2B payments FinTech. Data analyst and business analyst intern roles." },
+  { name: "TrueLayer", country: "UK", city: "London", sector: "FinTech", email: "careers@truelayer.com", emailType: "direct", careers: "https://truelayer.com/careers/", program: "unknown", fit: "med", note: "Open Banking FinTech. Data and business roles. Growing fast." },
+  { name: "Checkout.com", country: "UK", city: "London", sector: "FinTech", email: "checkout.com/careers", emailType: "portal", careers: "https://www.checkout.com/careers", program: "yes", fit: "med", note: "Global payments platform. Data and analytics intern roles." },
+  { name: "Klarna", country: "UK", city: "London", sector: "FinTech", email: "careers@klarna.com", emailType: "direct", careers: "https://jobs.lever.co/klarna", program: "yes", fit: "high", note: "BNPL FinTech. Business Analyst and Data Analyst intern roles. Portal preferred." },
+  { name: "Palantir Technologies", country: "UK", city: "London", sector: "Data", email: "palantir.com/careers", emailType: "portal", careers: "https://www.palantir.com/careers/", program: "yes", fit: "med", note: "Data/AI for enterprise and government. Strong Python skills needed." },
+
+  // ════════════════════════════════════════
+  // LUXEMBOURG
+  // ════════════════════════════════════════
+  { name: "Quintet Private Bank", country: "LU", city: "Luxembourg City", sector: "Finance", email: "careers@quintet.com", emailType: "direct", careers: "https://www.quintet.com/en/join-us/careers", program: "yes", fit: "high", note: "Pan-European private banking group. Finance and data analytics intern roles." },
+  { name: "Pictet Luxembourg", country: "LU", city: "Luxembourg City", sector: "Finance", email: "pictet.com/careers", emailType: "portal", careers: "https://www.group.pictet/careers", program: "yes", fit: "med", note: "Luxembourg branch of Pictet Group. Fund administration and finance roles." },
+  { name: "Clearstream (Deutsche Börse)", country: "LU", city: "Luxembourg City", sector: "Finance", email: "deutsche-boerse.com/careers", emailType: "portal", careers: "https://www.deutsche-boerse.com/dbg-en/careers", program: "yes", fit: "med", note: "Post-trade services provider. Finance and IT intern roles." },
+
+  // ════════════════════════════════════════
+  // SCANDINAVIA
+  // ════════════════════════════════════════
+  { name: "Nordea Asset Management", country: "SE", city: "Stockholm", sector: "Finance", email: "nordea.com/careers", emailType: "portal", careers: "https://www.nordea.com/en/careers", program: "yes", fit: "high", note: "Largest Nordic bank and AM. Quant and data analyst intern roles. English OK." },
+  { name: "SEB Bank", country: "SE", city: "Stockholm", sector: "Finance", email: "careers@sebgroup.com", emailType: "direct", careers: "https://www.sebgroup.com/about-seb/our-people/working-at-seb", program: "yes", fit: "high", note: "Nordic corporate and investment bank. Finance and data intern roles." },
+  { name: "Handelsbanken", country: "SE", city: "Stockholm", sector: "Finance", email: "handelsbanken.se/careers", emailType: "portal", careers: "https://www.handelsbanken.se/en/about-the-bank/work-for-us", program: "yes", fit: "med", note: "Conservative Swedish bank. More traditional banking culture." },
+  { name: "Elo Mutual Pension Insurance", country: "DK", city: "Copenhagen", sector: "Finance", email: "elomutual.com", emailType: "portal", careers: "https://www.elomutual.fi/en/careers/", program: "unknown", fit: "med", note: "Nordic pension fund. Finance and investment analyst intern roles." },
+  { name: "Danske Bank", country: "DK", city: "Copenhagen", sector: "Finance", email: "danskebank.com/careers", emailType: "portal", careers: "https://danskebank.com/careers", program: "yes", fit: "high", note: "Major Nordic bank. Finance, risk and data analyst intern roles. English OK." },
+
+  // ════════════════════════════════════════
+  // ITALY
+  // ════════════════════════════════════════
+  { name: "Intesa Sanpaolo", country: "IT", city: "Milan", sector: "Finance", email: "recruit@intesasanpaolo.com", emailType: "direct", careers: "https://careers.group.intesasanpaolo.com/", program: "yes", fit: "med", note: "Confirmed direct email. Italy's largest bank. Data and corporate banking roles." },
+  { name: "UniCredit", country: "IT", city: "Milan", sector: "Finance", email: "helpdesk.recruiting@unicredit.eu", emailType: "direct", careers: "https://careers.unicredit.eu/", program: "yes", fit: "med", note: "Pan-European bank. Technical helpdesk email for issues, portal for applications." },
+  { name: "Mediobanca", country: "IT", city: "Milan", sector: "Finance", email: "mediobanca.com/careers", emailType: "portal", careers: "https://mediobanca.com/en/careers/", program: "yes", fit: "med", note: "Italian IB and wealth management leader. Finance and research intern roles." },
+  { name: "Eurizon Capital", country: "IT", city: "Milan", sector: "Finance", email: "eurizoncapital.com/careers", emailType: "portal", careers: "https://www.eurizoncapital.com/en/about-us/careers.html", program: "yes", fit: "high", note: "Intesa Sanpaolo's AM arm. €380B AUM. Quant and portfolio analyst intern roles." },
+  { name: "Azimut Group", country: "IT", city: "Milan", sector: "Finance", email: "careers@azimut.it", emailType: "direct", careers: "https://www.azimut.it/en/careers", program: "yes", fit: "high", note: "Italian AM boutique. Independent, growing. Finance and data roles." },
+
+  // ════════════════════════════════════════
+  // SPAIN
+  // ════════════════════════════════════════
+  { name: "Santander Global", country: "ES", city: "Madrid", sector: "Finance", email: "santander.com/careers", emailType: "portal", careers: "https://www.santanderjobs.com/", program: "yes", fit: "med", note: "Global bank. Internships in data, risk and finance. Spanish preferred." },
+  { name: "BBVA", country: "ES", city: "Madrid", sector: "FinTech", email: "bbva.com/careers", emailType: "portal", careers: "https://careers.bbva.com/", program: "yes", fit: "high", note: "Highly digitalized bank. Strong data science and AI internship programs." },
+  { name: "CaixaBank", country: "ES", city: "Barcelona", sector: "Finance", email: "caixabank.com/careers", emailType: "portal", careers: "https://www.caixabank.com/en/careers.html", program: "yes", fit: "med", note: "Largest retail bank in Spain. Data analytics and finance intern roles." },
+
+  // ════════════════════════════════════════
+  // AUSTRIA
+  // ════════════════════════════════════════
+  { name: "Raiffeisen Bank International", country: "AT", city: "Vienna", sector: "Finance", email: "rbi.eu/careers", emailType: "portal", careers: "https://www.rbinternational.com/en/career.html", program: "yes", fit: "med", note: "Pan-European bank with strong CEE focus. Finance and data intern roles." },
+  { name: "UNIQA Insurance Group", country: "AT", city: "Vienna", sector: "Finance", email: "careers@uniqa.at", emailType: "direct", careers: "https://uniqa.at/karriere", program: "yes", fit: "med", note: "Austrian insurance group with actuarial and data analytics intern roles." },
+
+  // ════════════════════════════════════════
+  // NORDIC FINTECH & DATA
+  // ════════════════════════════════════════
+  { name: "Klarna (SE HQ)", country: "SE", city: "Stockholm", sector: "FinTech", email: "careers@klarna.com", emailType: "direct", careers: "https://jobs.lever.co/klarna", program: "yes", fit: "high", note: "BNPL leader. Data and business analyst intern roles. Portal preferred." },
+  { name: "Trustly", country: "SE", city: "Stockholm", sector: "FinTech", email: "careers@trustly.com", emailType: "direct", careers: "https://careers.trustly.com/", program: "yes", fit: "high", note: "Open banking payments. Data analyst intern roles. English OK." },
+  { name: "iZettle / PayPal", country: "SE", city: "Stockholm", sector: "FinTech", email: "paypal.com/careers", emailType: "portal", careers: "https://www.paypal.com/us/webapps/mpp/jobs", program: "yes", fit: "med", note: "PayPal-owned card payments. Business analyst intern roles." },
+  { name: "Paysafe", country: "UK", city: "London/Sofia", sector: "FinTech", email: "paysafe.com/careers", emailType: "portal", careers: "https://www.paysafe.com/en/careers/", program: "yes", fit: "med", note: "Digital payments. Data and finance analyst intern roles." },
+  { name: "Solaris Bank", country: "DE", city: "Berlin", sector: "FinTech", email: "careers@solarisgroup.com", emailType: "direct", careers: "https://careers.solarisgroup.com/", program: "yes", fit: "high", note: "German Banking-as-a-Service platform. Data and business analyst roles." },
+  { name: "N26", country: "DE", city: "Berlin", sector: "FinTech", email: "n26.com/en-eu/careers", emailType: "portal", careers: "https://n26.com/en-eu/careers", program: "yes", fit: "high", note: "European neobank. Data analyst and business operations intern roles." },
+  { name: "Vivid Money", country: "DE", city: "Berlin", sector: "FinTech", email: "careers@vivid.money", emailType: "direct", careers: "https://vivid.money/careers/", program: "unknown", fit: "high", note: "EU neobank with investment features. Data and finance analyst profiles." },
+  { name: "Nexi Group", country: "IT", city: "Milan", sector: "FinTech", email: "careers@nexigroup.com", emailType: "direct", careers: "https://www.nexigroup.com/en/about-us/careers.html", program: "yes", fit: "high", note: "Europe's leading PayTech. Data and business analytics intern roles." },
+  { name: "Ingenico", country: "FR", city: "Paris", sector: "FinTech", email: "ingenico.com/careers", emailType: "portal", careers: "https://worldline.com/en/home/careers.html", program: "yes", fit: "med", note: "Merged with Worldline. Payment terminals leader. Tech and data roles." },
+];
+
+// ════════════════════════════════════════
+// APP LOGIC
+// ════════════════════════════════════════
+
+const SECTOR_TAG = {
+  Finance: "tag-finance", FinTech: "tag-fintech", Consulting: "tag-consulting",
+  Data: "tag-data", Tech: "tag-tech", Boutique: "tag-boutique"
+};
+
+const COUNTRY_FLAG = {
+  NL:"🇳🇱", DE:"🇩🇪", BE:"🇧🇪", FR:"🇫🇷", CH:"🇨🇭", UK:"🇬🇧",
+  LU:"🇱🇺", SE:"🇸🇪", DK:"🇩🇰", IT:"🇮🇹", ES:"🇪🇸", AT:"🇦🇹"
+};
+
+let sortCol = -1;
+let sortDir = 1;
+
+function render() {
+  const q = document.getElementById('search').value.toLowerCase();
+  const sector = document.getElementById('filter-sector').value;
+  const country = document.getElementById('filter-country').value;
+  const fit = document.getElementById('filter-fit').value;
+  const emailF = document.getElementById('filter-email').value;
+
+  let filtered = COMPANIES.filter(c => {
+    const matchQ = !q || c.name.toLowerCase().includes(q) || c.city.toLowerCase().includes(q) || c.country.toLowerCase().includes(q) || c.note.toLowerCase().includes(q);
+    const matchS = !sector || c.sector === sector;
+    const matchC = !country || c.country === country;
+    const matchFit = !fit || c.fit === fit;
+    const matchEmail = !emailF || c.emailType === emailF;
+    return matchQ && matchS && matchC && matchFit && matchEmail;
+  });
+
+  if (sortCol >= 0) {
+    const keys = ['', 'name', 'country', 'city', 'sector', 'email', 'careers', '', 'program', 'fit'];
+    const k = keys[sortCol];
+    if (k) filtered.sort((a, b) => (a[k] > b[k] ? 1 : -1) * sortDir);
+  }
+
+  // Update count
+  document.getElementById('count-badge').textContent = `${filtered.length} aziende`;
+
+  // Update stats
+  const statsEl = document.getElementById('stats-bar');
+  const direct = filtered.filter(c => c.emailType === 'direct').length;
+  const portal = filtered.filter(c => c.emailType === 'portal').length;
+  const highFit = filtered.filter(c => c.fit === 'high').length;
+  const progYes = filtered.filter(c => c.program === 'yes').length;
+  statsEl.innerHTML = `
+    <div class="stat-item"><strong style="color:var(--green)">${direct}</strong> Email Dirette</div>
+    <div class="stat-item"><strong style="color:var(--blue)">${portal}</strong> Solo Portale</div>
+    <div class="stat-item"><strong style="color:var(--green)">${highFit}</strong> Alto Fit</div>
+    <div class="stat-item"><strong style="color:var(--yellow)">${progYes}</strong> Programma Stage</div>
+    <div class="stat-item"><strong style="color:var(--text2)">${filtered.length}</strong> Totali Filtrate</div>
+  `;
+
+  // Render rows
+  const tbody = document.getElementById('table-body');
+  tbody.innerHTML = '';
+
+  filtered.forEach((c, i) => {
+    const row = document.createElement('tr');
+    const fitClass = {high:'fit-high', med:'fit-med', low:'fit-low'}[c.fit] || 'fit-low';
+    const fitLabel = {high:'✅ Alto', med:'⚠️ Medio', low:'🔴 Basso'}[c.fit] || '';
+    const progClass = {yes:'prog-yes', no:'prog-no', unknown:'prog-unknown'}[c.program];
+    const progLabel = {yes:'✅ Sì', no:'❌ No', unknown:'❓ N/D'}[c.program];
+    const flag = COUNTRY_FLAG[c.country] || '';
+    const isEmailDirect = c.emailType === 'direct';
+
+    row.innerHTML = `
+      <td style="color:var(--text3);font-size:11px">${i + 1}</td>
+      <td>${c.name}</td>
+      <td><span class="flag">${flag}</span>${c.country}</td>
+      <td>${c.city}</td>
+      <td><span class="tag ${SECTOR_TAG[c.sector] || ''}">${c.sector}</span></td>
+      <td>
+        ${isEmailDirect
+          ? `<span class="email-cell" title="Copia email" onclick="copyEmail('${c.email}')">📧 ${c.email}</span>`
+          : `<span class="email-cell portal">🔗 Solo Portale</span>`}
+      </td>
+      <td><a href="${c.careers}" target="_blank" style="color:var(--blue);font-size:11px;text-decoration:none;">Vai al portale →</a></td>
+      <td><span class="${progClass}">${progLabel}</span></td>
+      <td><span class="fit-tag ${fitClass}">${fitLabel}</span></td>
+      <td style="font-size:11px;color:var(--text3);max-width:260px;">${c.note}</td>
+    `;
+    tbody.appendChild(row);
+  });
+}
+
+function sortTable(col) {
+  if (sortCol === col) sortDir *= -1;
+  else { sortCol = col; sortDir = 1; }
+  render();
+}
+
+function copyEmail(email) {
+  navigator.clipboard.writeText(email).then(() => toast(`✅ Copiato: ${email}`));
+}
+
+let toastTimer;
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 2500);
+}
+
+function exportCSV() {
+  const q = document.getElementById('search').value.toLowerCase();
+  const sector = document.getElementById('filter-sector').value;
+  const country = document.getElementById('filter-country').value;
+  const fit = document.getElementById('filter-fit').value;
+  const emailF = document.getElementById('filter-email').value;
+
+  let filtered = COMPANIES.filter(c => {
+    const matchQ = !q || c.name.toLowerCase().includes(q) || c.city.toLowerCase().includes(q);
+    const matchS = !sector || c.sector === sector;
+    const matchC = !country || c.country === country;
+    const matchFit = !fit || c.fit === fit;
+    const matchEmail = !emailF || c.emailType === emailF;
+    return matchQ && matchS && matchC && matchFit && matchEmail;
+  });
+
+  const headers = ['Azienda','Paese','Città','Settore','Email/Contatto','Tipo Email','Portale Carriere','Programma Stage','Fit','Note'];
+  const rows = filtered.map(c => [
+    c.name, c.country, c.city, c.sector, c.email, c.emailType,
+    c.careers, c.program, c.fit, `"${c.note.replace(/"/g,'""')}"`
+  ].join(','));
+
+  const csv = [headers.join(','), ...rows].join('\n');
+  const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'EU_Companies_Haroun_Jaafar.csv';
+  a.click();
+  toast('✅ CSV esportato!');
+}
+
+// Event listeners
+['search','filter-sector','filter-country','filter-fit','filter-email'].forEach(id => {
+  document.getElementById(id).addEventListener('input', render);
+  document.getElementById(id).addEventListener('change', render);
+});
+
+render();
+</script>
+</body>
+</html>

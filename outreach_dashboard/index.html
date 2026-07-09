@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internship Command Center — Haroun Jaafar</title>
+  <meta name="description" content="Interactive internship outreach tracker with EU company map, personalized email generator and skill gap analyzer.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+
+  <!-- App styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ═══════════════ SIDEBAR ═══════════════ -->
+  <div class="sidebar">
+
+    <!-- Header -->
+    <div class="s-header">
+      <div class="s-title">🎯 Internship Command Center</div>
+      <div class="s-sub">Seleziona un'azienda sulla mappa o nella lista per vedere email personalizzate, posizioni aperte e corsi per colmare i gap.</div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-row">
+      <div class="stat-box">
+        <div class="stat-num all" id="stat-total">0</div>
+        <div class="stat-label">Totali</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num sent" id="stat-sent">0</div>
+        <div class="stat-label">Inviate</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num ok" id="stat-ok">0</div>
+        <div class="stat-label">Accettate</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num no" id="stat-no">0</div>
+        <div class="stat-label">Rifiutate</div>
+      </div>
+    </div>
+
+    <!-- Search + Filters -->
+    <div class="search-area">
+      <input type="text" id="search-input" class="search-input" placeholder="🔍  Cerca azienda, città, settore...">
+      <div class="chips" id="filter-chips">
+        <div class="chip active" data-filter="all">Tutte</div>
+        <div class="chip" data-filter="Maastricht">📍 Maastricht</div>
+        <div class="chip" data-filter="Global">🌍 Global</div>
+        <div class="chip" data-filter="Finance">💰 Finance</div>
+        <div class="chip" data-filter="Data">📊 Data & Tech</div>
+        <div class="chip" data-filter="urgent">⚡ Urgenti</div>
+      </div>
+    </div>
+
+    <!-- Company list -->
+    <div class="company-list" id="company-list"></div>
+  </div>
+
+  <!-- ═══════════════ MAP ═══════════════ -->
+  <div class="map-area">
+    <div id="map"></div>
+
+    <!-- ═══════════════ DETAIL PANEL ═══════════════ -->
+    <div class="detail-panel" id="detail-panel">
+
+      <!-- Header -->
+      <div class="d-header" id="d-header">
+        <button class="d-close" id="d-close-btn" title="Chiudi">✕</button>
+        <div class="d-name" id="d-name">Azienda</div>
+        <div class="d-meta" id="d-meta"></div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="dtabs">
+        <div class="dtab active" data-tab="overview">📋 Overview</div>
+        <div class="dtab" data-tab="positions">💼 Posizioni</div>
+        <div class="dtab" data-tab="gaps">📚 Gap & Corsi</div>
+        <div class="dtab" data-tab="email">✉️ Email</div>
+      </div>
+
+      <!-- Body -->
+      <div class="d-body">
+
+        <!-- TAB 1: OVERVIEW -->
+        <div class="tab-panel active" id="tab-overview">
+          <div class="sec-title">Descrizione</div>
+          <p class="company-desc" id="d-desc"></p>
+
+          <div class="sec-title">Cultura & Ambiente</div>
+          <p class="company-desc" id="d-culture"></p>
+
+          <div class="sec-title">Valutazione</div>
+          <div class="rating-row" id="d-rating-row">
+            <div class="stars" id="d-stars">★★★★☆</div>
+            <div class="rating-num" id="d-rating-num">4.0</div>
+            <div class="rating-label">/5 — Employee Reviews</div>
+          </div>
+
+          <div class="sec-title">Pro & Contro</div>
+          <div class="pros-cons-grid" id="d-pros-cons"></div>
+
+          <div class="sec-title">Portale Carriere</div>
+          <a class="careers-link" id="d-careers-link" href="#" target="_blank">
+            <span class="careers-link-icon">🔗</span>
+            <div>
+              <div class="careers-link-text">Visita il portale ufficiale</div>
+              <div class="careers-link-url" id="d-careers-url"></div>
+            </div>
+          </a>
+
+          <div class="sec-title">Stato Candidatura</div>
+          <select id="d-status-select" class="status-selector">
+            <option value="new">⬜ Non contattata</option>
+            <option value="sent">📤 Email inviata</option>
+            <option value="accepted">✅ Accettata!</option>
+            <option value="rejected">❌ Rifiutata / No risposta</option>
+          </select>
+        </div>
+
+        <!-- TAB 2: POSITIONS -->
+        <div class="tab-panel" id="tab-positions">
+          <div id="d-positions-list"></div>
+        </div>
+
+        <!-- TAB 3: SKILL GAPS -->
+        <div class="tab-panel" id="tab-gaps">
+          <div id="d-fit-score-box" style="background:var(--bg-3);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:16px;">
+            <div style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--text-3);margin-bottom:6px;">Il tuo fit stimato per questa azienda</div>
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div id="d-fit-bar-wrap" style="flex:1;background:var(--bg-2);border-radius:99px;height:8px;overflow:hidden;">
+                <div id="d-fit-bar" style="height:100%;border-radius:99px;transition:width 0.8s var(--ease);"></div>
+              </div>
+              <div id="d-fit-pct" style="font-size:22px;font-weight:800;"></div>
+            </div>
+          </div>
+          <div id="d-gaps-list"></div>
+        </div>
+
+        <!-- TAB 4: EMAIL -->
+        <div class="tab-panel" id="tab-email">
+          <div class="email-toolbar">
+            <button class="e-btn e-btn-ghost" id="btn-copy-email">📋 Copia Email</button>
+            <button class="e-btn e-btn-ghost" id="btn-copy-all">📄 Copia Tutto</button>
+            <button class="e-btn e-btn-primary" id="btn-open-gmail">📨 Apri Gmail</button>
+          </div>
+
+          <div style="margin-bottom:8px;">
+            <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-3);margin-bottom:4px;">A:</div>
+            <div class="email-to-addr" id="d-email-to"></div>
+          </div>
+
+          <div style="margin-bottom:8px;">
+            <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-3);margin-bottom:4px;">Oggetto:</div>
+            <input type="text" id="d-email-subject" style="width:100%;padding:9px 12px;background:var(--bg-3);border:1px solid var(--border);border-radius:7px;color:var(--text-1);font-family:var(--font);font-size:12px;outline:none;">
+          </div>
+
+          <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-3);margin-bottom:4px;">Corpo:</div>
+          <textarea class="email-body" id="d-email-body" rows="14" spellcheck="false"></textarea>
+        </div>
+
+      </div><!-- /.d-body -->
+    </div><!-- /.detail-panel -->
+  </div><!-- /.map-area -->
+</div><!-- /.app -->
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
