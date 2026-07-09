@@ -29085,5 +29085,22 @@
     "program": "yes",
     "fit": "high",
     "note": "Posizione: Supply Chain Data Intern. Gestione database e script Python."
+  },
+  {
+    "name": "Euroclear",
+    "city": "Bruxelles",
+    "country": "BE",
+    "coords": [
+      50.8503,
+      4.3517
+    ],
+    "sector": "Finance",
+    "address": "LinkedIn Corporate Hub, Bruxelles",
+    "email": "careers@euroclear.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Euroclear+careers",
+    "program": "yes",
+    "fit": "high",
+    "note": "Posizione: Risk Management Intern. Importante società di servizi finanziari."
   }
 ]
