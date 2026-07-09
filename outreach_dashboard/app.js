@@ -447,6 +447,54 @@ function showToast(msg) {
   toastTimer = setTimeout(() => t.classList.remove('show'), 2500);
 }
 
+// ─── MOBILE LOGIC ───
+const sidebar = document.querySelector('.sidebar');
+const menuBtn = document.getElementById('mobile-menu-btn');
+
+function isMobile() {
+  return window.innerWidth <= 768;
+}
+
+// Hamburger toggle: apre/chiude la sidebar come bottom sheet
+if (menuBtn) {
+  menuBtn.addEventListener('click', () => {
+    const isOpen = sidebar.classList.toggle('mobile-open');
+    menuBtn.textContent = isOpen ? '✕' : '☰';
+  });
+}
+
+// Chiudi sidebar mobile quando si clicca su un'azienda
+const origSelectCompany = selectCompany;
+function selectCompany(id) {
+  origSelectCompany(id);
+  if (isMobile()) {
+    // Chiudi la sidebar e apri il detail panel
+    sidebar.classList.remove('mobile-open');
+    if (menuBtn) menuBtn.textContent = '☰';
+  }
+}
+
+// Chiudi detail panel su mobile con il pulsante X già esistente
+document.getElementById('d-close-btn').addEventListener('click', () => {
+  document.getElementById('detail-panel').classList.remove('open');
+  if (isMobile() && map) map.invalidateSize();
+});
+
+// Aggiorna stats mobile
+function updateMobileStats() {
+  const mobTotal = document.getElementById('mob-total');
+  const mobOk = document.getElementById('mob-ok');
+  if (mobTotal) mobTotal.textContent = db.length;
+  if (mobOk) mobOk.textContent = db.filter(c => getStatus(c.id) === 'accepted').length;
+}
+
+// Intercetta updateStats per aggiornare anche la topbar mobile
+const _origUpdateStats = updateStats;
+function updateStats() {
+  _origUpdateStats();
+  updateMobileStats();
+}
+
 // Startup
 window.addEventListener('load', () => {
   initMap();
