@@ -29017,5 +29017,22 @@
     "program": "yes",
     "fit": "high",
     "note": "Azienda di servizi operante nel settore Finance a Londra. Disponibile per progetti Erasmus+."
+  },
+  {
+    "name": "Miro",
+    "city": "Amsterdam",
+    "country": "NL",
+    "coords": [
+      52.3676,
+      4.9041
+    ],
+    "sector": "Tech",
+    "address": "LinkedIn Corporate Hub, Amsterdam",
+    "email": "careers@miro.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Miro+careers",
+    "program": "yes",
+    "fit": "high",
+    "note": "Posizione: Product Analyst Intern. Software di lavagna collaborativa."
   }
 ]
