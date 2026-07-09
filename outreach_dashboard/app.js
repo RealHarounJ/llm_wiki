@@ -42,14 +42,26 @@ function initMap() {
   // Load curated first
   loadDatabase(COMPANIES);
   
-  // Try to load OSM database
-  fetch('osm_companies.json')
+  // Auto-select first company on boot to ensure the right panel is visible
+  if (COMPANIES.length > 0) {
+    selectCompany(COMPANIES[0].id);
+  }
+  
+  // Load OSM data immediately
+  loadOsmData();
+  
+  // Auto-refresh every 60 seconds
+  setInterval(loadOsmData, 60000);
+}
+
+function loadOsmData() {
+  console.log("Polling for new companies database update...");
+  fetch('osm_companies.json?t=' + new Date().getTime()) // Query string prevents browser caching
     .then(response => {
       if (!response.ok) throw new Error('OSM data not generated yet');
       return response.json();
     })
     .then(osmData => {
-      // Map OSM items to include unique IDs
       const mappedOsm = osmData.map((c, index) => {
         const id = 'osm_' + index;
         return {
@@ -85,15 +97,22 @@ function initMap() {
         };
       });
       
-      console.log(`Caricate ${mappedOsm.length} aziende da OpenStreetMap!`);
-      showToast(`⚡ Caricate ${mappedOsm.length} aziende da OSM!`);
-      
-      // Merge databases
       const combined = [...COMPANIES, ...mappedOsm];
+      
+      // Update database and map without losing current selection
+      const currentSelected = selectedId;
       loadDatabase(combined);
+      if (currentSelected) {
+        selectedId = currentSelected;
+        // Keep active class in list
+        const activeCard = document.getElementById(`ccard-${selectedId}`);
+        if (activeCard) activeCard.classList.add('active');
+      }
+      
+      console.log(`Aggiornato! ${combined.length} aziende totali.`);
     })
     .catch(err => {
-      console.log("OSM database non ancora pronto, uso solo le curate.", err);
+      console.log("OSM database loading error / not ready: ", err);
     });
 }
 
