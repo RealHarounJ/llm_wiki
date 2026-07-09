@@ -267,6 +267,11 @@ function updateStats() {
   document.getElementById('stat-sent').textContent = db.filter(c => getStatus(c.id) === 'sent').length;
   document.getElementById('stat-ok').textContent = db.filter(c => getStatus(c.id) === 'accepted').length;
   document.getElementById('stat-no').textContent = db.filter(c => getStatus(c.id) === 'rejected').length;
+  // Aggiorna stats mobile topbar
+  const mobTotal = document.getElementById('mob-total');
+  const mobOk = document.getElementById('mob-ok');
+  if (mobTotal) mobTotal.textContent = db.length;
+  if (mobOk) mobOk.textContent = db.filter(c => getStatus(c.id) === 'accepted').length;
 }
 
 // ─── SELECTION & DETAIL PANEL ───
@@ -365,6 +370,14 @@ function selectCompany(id) {
   setTimeout(() => {
     if (map) map.invalidateSize();
   }, 400);
+
+  // Su mobile: chiudi la sidebar e apri il pannello
+  if (window.innerWidth <= 768) {
+    const mob_sidebar = document.querySelector('.sidebar');
+    const mob_btn = document.getElementById('mobile-menu-btn');
+    if (mob_sidebar) mob_sidebar.classList.remove('mobile-open');
+    if (mob_btn) mob_btn.textContent = '☰';
+  }
 }
 
 function fitColor(pct) {
@@ -448,51 +461,14 @@ function showToast(msg) {
 }
 
 // ─── MOBILE LOGIC ───
-const sidebar = document.querySelector('.sidebar');
-const menuBtn = document.getElementById('mobile-menu-btn');
+const mob_menuBtn = document.getElementById('mobile-menu-btn');
+const mob_sidebar = document.querySelector('.sidebar');
 
-function isMobile() {
-  return window.innerWidth <= 768;
-}
-
-// Hamburger toggle: apre/chiude la sidebar come bottom sheet
-if (menuBtn) {
-  menuBtn.addEventListener('click', () => {
-    const isOpen = sidebar.classList.toggle('mobile-open');
-    menuBtn.textContent = isOpen ? '✕' : '☰';
+if (mob_menuBtn && mob_sidebar) {
+  mob_menuBtn.addEventListener('click', () => {
+    const isOpen = mob_sidebar.classList.toggle('mobile-open');
+    mob_menuBtn.textContent = isOpen ? '✕' : '☰';
   });
-}
-
-// Chiudi sidebar mobile quando si clicca su un'azienda
-const origSelectCompany = selectCompany;
-function selectCompany(id) {
-  origSelectCompany(id);
-  if (isMobile()) {
-    // Chiudi la sidebar e apri il detail panel
-    sidebar.classList.remove('mobile-open');
-    if (menuBtn) menuBtn.textContent = '☰';
-  }
-}
-
-// Chiudi detail panel su mobile con il pulsante X già esistente
-document.getElementById('d-close-btn').addEventListener('click', () => {
-  document.getElementById('detail-panel').classList.remove('open');
-  if (isMobile() && map) map.invalidateSize();
-});
-
-// Aggiorna stats mobile
-function updateMobileStats() {
-  const mobTotal = document.getElementById('mob-total');
-  const mobOk = document.getElementById('mob-ok');
-  if (mobTotal) mobTotal.textContent = db.length;
-  if (mobOk) mobOk.textContent = db.filter(c => getStatus(c.id) === 'accepted').length;
-}
-
-// Intercetta updateStats per aggiornare anche la topbar mobile
-const _origUpdateStats = updateStats;
-function updateStats() {
-  _origUpdateStats();
-  updateMobileStats();
 }
 
 // Startup
