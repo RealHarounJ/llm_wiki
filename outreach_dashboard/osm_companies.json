@@ -29068,5 +29068,22 @@
     "program": "yes",
     "fit": "high",
     "note": "Posizione: Data Analyst Intern. Focus su A/B testing e database SQL."
+  },
+  {
+    "name": "ASML",
+    "city": "Veldhoven",
+    "country": "NL",
+    "coords": [
+      51.4416,
+      5.4697
+    ],
+    "sector": "Tech",
+    "address": "LinkedIn Corporate Hub, Veldhoven",
+    "email": "internships@asml.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=ASML+careers",
+    "program": "yes",
+    "fit": "high",
+    "note": "Posizione: Supply Chain Data Intern. Gestione database e script Python."
   }
 ]
