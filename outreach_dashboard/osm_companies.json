@@ -1204,5 +1204,23 @@
     "fit": "high",
     "note": "Posizione: Process Mining Analyst Intern. Leader globale nella data intelligence.",
     "status": "sent"
+  },
+  {
+    "name": "Swift",
+    "city": "Bruxelles",
+    "country": "BE",
+    "coords": [
+      50.8,
+      4.4
+    ],
+    "sector": "FinTech",
+    "address": "LinkedIn Corporate Hub, Bruxelles",
+    "email": "careers@swift.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Swift+careers",
+    "program": "yes",
+    "fit": "high",
+    "note": "Posizione: FinTech Operations Intern. Rete globale di messaggistica finanziaria.",
+    "status": "sent"
   }
 ]
