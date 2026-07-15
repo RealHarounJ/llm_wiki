@@ -520,5 +520,653 @@
     "fit": "high",
     "note": "La banca mobile leader in Olanda. Ambiente dinamico, molto orientato alle soluzioni tecnologiche.",
     "status": "sent"
+  },
+  {
+    "name": "INFORM GmbH",
+    "city": "Aachen",
+    "country": "DE",
+    "coords": [
+      50.7753,
+      6.0839
+    ],
+    "sector": "IT / Optimization Software / Data Analytics",
+    "address": "Aachen Corporate Center, DE",
+    "email": "career@inform-software.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=INFORM GmbH+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Aachen analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "FEV Consulting",
+    "city": "Aachen",
+    "country": "DE",
+    "coords": [
+      50.757,
+      6.136
+    ],
+    "sector": "IT / Management & Tech Consulting",
+    "address": "Aachen Corporate Center, DE",
+    "email": "consulting@fev.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=FEV Consulting+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Aachen analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "DSA Daten- und Systemtechnik GmbH",
+    "city": "Aachen",
+    "country": "DE",
+    "coords": [
+      50.776,
+      6.084
+    ],
+    "sector": "IT / Automotive Software",
+    "address": "Aachen Corporate Center, DE",
+    "email": "jobs@dsa.de",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=DSA Daten- und Systemtechnik GmbH+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Aachen analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "KISTERS AG",
+    "city": "Aachen",
+    "country": "DE",
+    "coords": [
+      50.731,
+      6.16
+    ],
+    "sector": "IT / Energy & Water Management Software",
+    "address": "Aachen Corporate Center, DE",
+    "email": "jobs@kisters.de",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=KISTERS AG+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Aachen analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "Cologne Intelligence",
+    "city": "Cologne",
+    "country": "DE",
+    "coords": [
+      50.9413,
+      6.9583
+    ],
+    "sector": "IT / Software Engineering & IT Consulting",
+    "address": "Cologne Corporate Center, DE",
+    "email": "antoine.feis@cologne-intelligence.de",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Cologne Intelligence+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Cologne analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "VDL Groep",
+    "city": "Eindhoven",
+    "country": "NL",
+    "coords": [
+      51.4172,
+      5.4746
+    ],
+    "sector": "IT / Engineering / High Tech Manufacturing",
+    "address": "Eindhoven Corporate Center, NL",
+    "email": "recruitment@vdl.nl",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=VDL Groep+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Eindhoven analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "Prodrive Technologies",
+    "city": "Eindhoven",
+    "country": "NL",
+    "coords": [
+      51.493,
+      5.485
+    ],
+    "sector": "IT / Electronics / Robotics / Software",
+    "address": "Eindhoven Corporate Center, NL",
+    "email": "recruitment@prodrive-technologies.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Prodrive Technologies+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Eindhoven analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "Keylane",
+    "city": "Utrecht",
+    "country": "NL",
+    "coords": [
+      52.0907,
+      5.1214
+    ],
+    "sector": "IT / Fintech / Insurance & Pension Software",
+    "address": "Utrecht Corporate Center, NL",
+    "email": "careers@keylane.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Keylane+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Utrecht analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "Ordina Belgium",
+    "city": "Brussels/Antwerp",
+    "country": "BE",
+    "coords": [
+      50.8503,
+      4.3517
+    ],
+    "sector": "IT / Tech Consulting",
+    "address": "Brussels/Antwerp Corporate Center, BE",
+    "email": "jobs@ordina.be",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Ordina Belgium+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Brussels/Antwerp analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "Eneco",
+    "city": "Rotterdam",
+    "country": "NL",
+    "coords": [
+      51.9427,
+      4.5492
+    ],
+    "sector": "IT / Sustainable Energy / Data Analytics",
+    "address": "Rotterdam Corporate Center, NL",
+    "email": "careers@eneco.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Eneco+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Rotterdam analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "Coolblue",
+    "city": "Rotterdam",
+    "country": "NL",
+    "coords": [
+      51.9225,
+      4.4792
+    ],
+    "sector": "IT / E-commerce / Data Analytics",
+    "address": "Rotterdam Corporate Center, NL",
+    "email": "solliciteren@coolblue.nl",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Coolblue+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Rotterdam analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "KBC Group",
+    "city": "Brussels",
+    "country": "BE",
+    "coords": [
+      50.8466,
+      4.3528
+    ],
+    "sector": "Finance / Banking / IT / Data Analytics",
+    "address": "Brussels Corporate Center, BE",
+    "email": "jobs@kbc.be",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=KBC Group+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Brussels analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "PureLoX SOLUTIONS GmbH",
+    "city": "Aachen",
+    "country": "DE",
+    "coords": [
+      50.7753,
+      6.0839
+    ],
+    "sector": "IT / Software Development",
+    "address": "Aachen Corporate Center, DE",
+    "email": "jobs@pure-lox.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=PureLoX SOLUTIONS GmbH+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Aachen analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "IME Aachen GmbH",
+    "city": "Aachen",
+    "country": "DE",
+    "coords": [
+      50.7753,
+      6.0839
+    ],
+    "sector": "IT / Engineering Solutions",
+    "address": "Aachen Corporate Center, DE",
+    "email": "jobs@ime-aachen-gmbh.de",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=IME Aachen GmbH+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Aachen analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "tetys GmbH & Co. KG",
+    "city": "Aachen",
+    "country": "DE",
+    "coords": [
+      50.7753,
+      6.0839
+    ],
+    "sector": "IT / Manufacturing Software (MES/APS)",
+    "address": "Aachen Corporate Center, DE",
+    "email": "careers@tetys.de",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=tetys GmbH & Co. KG+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Aachen analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "DocMorris",
+    "city": "Heerlen",
+    "country": "NL",
+    "coords": [
+      50.8882,
+      5.9788
+    ],
+    "sector": "IT / E-commerce / Pharma Logistics",
+    "address": "Heerlen Corporate Center, NL",
+    "email": "jobs@docmorris.de",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=DocMorris+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Heerlen analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "ProRail",
+    "city": "Utrecht",
+    "country": "NL",
+    "coords": [
+      52.0898,
+      5.1102
+    ],
+    "sector": "IT / Rail Infrastructure / Data Analytics",
+    "address": "Utrecht Corporate Center, NL",
+    "email": "recruitment@prorail.nl",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=ProRail+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Utrecht analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "Klarrio",
+    "city": "Antwerp",
+    "country": "BE",
+    "coords": [
+      51.2194,
+      4.4025
+    ],
+    "sector": "IT / Cloud & Data Engineering",
+    "address": "Antwerp Corporate Center, BE",
+    "email": "hr@klarrio.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Klarrio+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Antwerp analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "PwC Belgium",
+    "city": "Brussels",
+    "country": "BE",
+    "coords": [
+      50.8466,
+      4.3528
+    ],
+    "sector": "Finance / Consulting / IT / Data Analytics",
+    "address": "Brussels Corporate Center, BE",
+    "email": "careers@pwc.be",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=PwC Belgium+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Brussels analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "KPMG Belgium",
+    "city": "Brussels",
+    "country": "BE",
+    "coords": [
+      50.8872,
+      4.4699
+    ],
+    "sector": "Finance / Accounting / IT / Data Analytics",
+    "address": "Brussels Corporate Center, BE",
+    "email": "jobs@kpmg.be",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=KPMG Belgium+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Brussels analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "AXA Germany",
+    "city": "Cologne",
+    "country": "DE",
+    "coords": [
+      50.9634,
+      7.0142
+    ],
+    "sector": "Finance / Insurance / IT / Data Analytics",
+    "address": "Cologne Corporate Center, DE",
+    "email": "recruiting@axa.de",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=AXA Germany+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Cologne analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "S Immobilienpartner GmbH",
+    "city": "Cologne",
+    "country": "DE",
+    "coords": [
+      50.9413,
+      6.9583
+    ],
+    "sector": "Finance / Real Estate / Mortgage Tech",
+    "address": "Cologne Corporate Center, DE",
+    "email": "karriere@s-immobilienpartner.de",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=S Immobilienpartner GmbH+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Cologne analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "National Express Rail GmbH",
+    "city": "Cologne",
+    "country": "DE",
+    "coords": [
+      50.9413,
+      6.9583
+    ],
+    "sector": "IT / Logistics / Transportation Management",
+    "address": "Cologne Corporate Center, DE",
+    "email": "karriere@nationalexpress.de",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=National Express Rail GmbH+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Cologne analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "aixigo AG",
+    "city": "Aachen",
+    "country": "DE",
+    "coords": [
+      50.7753,
+      6.0839
+    ],
+    "sector": "IT / Fintech / Wealth Management Software",
+    "address": "Aachen Corporate Center, DE",
+    "email": "bewerbung@aixigo.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=aixigo AG+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Aachen analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "regio iT GmbH",
+    "city": "Aachen",
+    "country": "DE",
+    "coords": [
+      50.785,
+      6.095
+    ],
+    "sector": "IT Services & Public Sector Solutions",
+    "address": "Aachen Corporate Center, DE",
+    "email": "bewerbung@regioit.de",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=regio iT GmbH+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Aachen analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "Achmea",
+    "city": "Zeist",
+    "country": "NL",
+    "coords": [
+      52.0872,
+      5.2415
+    ],
+    "sector": "Finance / Insurance / IT / Data Analytics",
+    "address": "Zeist Corporate Center, NL",
+    "email": "recruitment@achmea.nl",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Achmea+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Zeist analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "CGI Netherlands",
+    "city": "Rotterdam",
+    "country": "NL",
+    "coords": [
+      51.9427,
+      4.5492
+    ],
+    "sector": "IT Consulting / Software Engineering / Data Analytics",
+    "address": "Rotterdam Corporate Center, NL",
+    "email": "recruitment.nl@cgi.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=CGI Netherlands+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Rotterdam analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "Sopra Steria Belgium",
+    "city": "Brussels",
+    "country": "BE",
+    "coords": [
+      50.8466,
+      4.3528
+    ],
+    "sector": "IT / Digital Transformation Consulting",
+    "address": "Brussels Corporate Center, BE",
+    "email": "HR.Recruitment.BE@soprasteria.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Sopra Steria Belgium+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Brussels analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "Capgemini Netherlands",
+    "city": "Utrecht",
+    "country": "NL",
+    "coords": [
+      52.0945,
+      5.0746
+    ],
+    "sector": "IT Consulting / Software Engineering / Data",
+    "address": "Utrecht Corporate Center, NL",
+    "email": "recruitment.nl@capgemini.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Capgemini Netherlands+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Utrecht analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "sent"
+  },
+  {
+    "name": "Triodos Bank",
+    "city": "Utrecht",
+    "country": "NL",
+    "coords": [
+      52.062,
+      5.281
+    ],
+    "sector": "Finance / Ethical Banking / IT / Data Analytics",
+    "address": "Utrecht Corporate Center, NL",
+    "email": "careers@triodos.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Triodos Bank+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Utrecht analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "new"
+  },
+  {
+    "name": "Infrabel",
+    "city": "Brussels",
+    "country": "BE",
+    "coords": [
+      50.8354,
+      4.3366
+    ],
+    "sector": "IT / Rail Infrastructure / Data Analytics",
+    "address": "Brussels Corporate Center, BE",
+    "email": "talent@infrabel.be",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Infrabel+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Brussels analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "new"
+  },
+  {
+    "name": "Port of Antwerp-Bruges International (POABI)",
+    "city": "Antwerp",
+    "country": "BE",
+    "coords": [
+      51.2194,
+      4.4025
+    ],
+    "sector": "IT / Logistics / Port Consulting",
+    "address": "Antwerp Corporate Center, BE",
+    "email": "pai@portofantwerpbruges.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Port of Antwerp-Bruges International (POABI)+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Antwerp analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "new"
+  },
+  {
+    "name": "Telenet",
+    "city": "Brussels",
+    "country": "BE",
+    "coords": [
+      50.8466,
+      4.3528
+    ],
+    "sector": "IT / Telecom / Data Analytics / Early Careers",
+    "address": "Brussels Corporate Center, BE",
+    "email": "earlycareers@telenetgroup.be",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Telenet+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Brussels analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "new"
+  },
+  {
+    "name": "AH Labs (Albert Heijn Tech)",
+    "city": "Amsterdam",
+    "country": "NL",
+    "coords": [
+      52.3676,
+      4.9041
+    ],
+    "sector": "IT / Software / Data / E-commerce",
+    "address": "Amsterdam Corporate Center, NL",
+    "email": "techlabs@ah.nl",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=AH Labs (Albert Heijn Tech)+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Amsterdam analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "new"
+  },
+  {
+    "name": "Ahold Delhaize",
+    "city": "Zaandam",
+    "country": "NL",
+    "coords": [
+      52.442,
+      4.8292
+    ],
+    "sector": "IT / Finance / E-commerce / Data Analytics",
+    "address": "Zaandam Corporate Center, NL",
+    "email": "stage@aholddelhaize.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Ahold Delhaize+careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda reale in Zaandam analizzata e aggiunta al database. Invio email automatico supportato.",
+    "status": "new"
+  },
+  {
+    "name": "Swiss Re",
+    "city": "Zurigo",
+    "country": "CH",
+    "coords": [
+      47.3769,
+      8.5417
+    ],
+    "sector": "Finance",
+    "address": "LinkedIn Corporate Hub, Zurigo",
+    "email": "jobs@swissre.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Swiss Re+careers",
+    "program": "yes",
+    "fit": "high",
+    "note": "Posizione: Quantitative Risk Intern. Leader mondiale nella riassicurazione.",
+    "status": "sent"
   }
 ]
