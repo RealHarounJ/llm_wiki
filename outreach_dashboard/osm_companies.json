@@ -1222,5 +1222,23 @@
     "fit": "high",
     "note": "Posizione: FinTech Operations Intern. Rete globale di messaggistica finanziaria.",
     "status": "sent"
+  },
+  {
+    "name": "Miro",
+    "city": "Amsterdam",
+    "country": "NL",
+    "coords": [
+      52.3676,
+      4.9041
+    ],
+    "sector": "Tech",
+    "address": "LinkedIn Corporate Hub, Amsterdam",
+    "email": "careers@miro.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Miro+careers",
+    "program": "yes",
+    "fit": "high",
+    "note": "Posizione: Product Analyst Intern. Software di lavagna collaborativa.",
+    "status": "sent"
   }
 ]
