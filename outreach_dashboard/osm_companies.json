@@ -1186,5 +1186,23 @@
     "fit": "high",
     "note": "Posizione: Market Data Analyst Intern. Gestione flussi dati di borsa.",
     "status": "sent"
+  },
+  {
+    "name": "Celonis",
+    "city": "Monaco",
+    "country": "DE",
+    "coords": [
+      48.1351,
+      11.582
+    ],
+    "sector": "Data",
+    "address": "LinkedIn Corporate Hub, Monaco",
+    "email": "jobs@celonis.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Celonis+careers",
+    "program": "yes",
+    "fit": "high",
+    "note": "Posizione: Process Mining Analyst Intern. Leader globale nella data intelligence.",
+    "status": "sent"
   }
 ]
