@@ -1,22 +1,5 @@
 [
   {
-    "name": "Casali IT Solutions",
-    "city": "Castelfidardo",
-    "country": "IT",
-    "coords": [
-      43.4632,
-      13.5469
-    ],
-    "sector": "Tech",
-    "address": "Via Manlio Mercatali 6, 60022 Castelfidardo (AN)",
-    "email": "info@casalisolutions.it",
-    "emailType": "direct",
-    "careers": "https://www.casalisolutions.it",
-    "program": "unknown",
-    "fit": "high",
-    "note": "Azienda ICT locale (Casali Computers) a Castelfidardo. Punto di partenza ideale."
-  },
-  {
     "name": "Apra",
     "city": "Jesi",
     "country": "IT",
