@@ -1240,5 +1240,23 @@
     "fit": "high",
     "note": "Posizione: Product Analyst Intern. Software di lavagna collaborativa.",
     "status": "sent"
+  },
+  {
+    "name": "Euroclear",
+    "city": "Bruxelles",
+    "country": "BE",
+    "coords": [
+      50.8503,
+      4.3517
+    ],
+    "sector": "Finance",
+    "address": "LinkedIn Corporate Hub, Bruxelles",
+    "email": "careers@euroclear.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Euroclear+careers",
+    "program": "yes",
+    "fit": "high",
+    "note": "Posizione: Risk Management Intern. Società di servizi finanziari.",
+    "status": "sent"
   }
 ]
