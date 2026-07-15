@@ -104,7 +104,7 @@
     "careers": "https://www.clementoni.com/it/corporate/lavora-con-noi/",
     "program": "yes",
     "fit": "medium",
-    "note": "Azienda storica di giocattoli educativi. Ottima sede a Recanati per tirocini in IT e analisi dati vendite.",
+    "note": "Azienda storica di giocattoli educativi. Sede a Recanati per tirocini in IT e analisi dati vendite.",
     "status": "sent"
   },
   {
@@ -122,7 +122,7 @@
     "careers": "https://www.werkenbijconclusion.nl",
     "program": "yes",
     "fit": "high",
-    "note": "Ottima società di consulenza IT e Data Science a Maastricht. Collaborano attivamente con università e offrono tirocini formativi strutturati.",
+    "note": "Società di consulenza IT e Data Science a Maastricht. Collaborano con università per stage.",
     "status": "sent"
   },
   {
@@ -140,7 +140,7 @@
     "careers": "https://werkenbijliof.nl/",
     "program": "yes",
     "fit": "high",
-    "note": "Agenzia regionale dello sviluppo economico del Limburgo. Perfetta per Business Analyst e Data Analyst focalizzati sull'innovazione delle startup locali.",
+    "note": "Agenzia regionale di sviluppo economico del Limburgo.",
     "status": "sent"
   },
   {
@@ -158,7 +158,7 @@
     "careers": "https://careers.vodafoneziggo.com",
     "program": "yes",
     "fit": "medium",
-    "note": "Grande operatore di telecomunicazioni. Il centro di Maastricht gestisce servizi IT e analisi dati di performance di rete.",
+    "note": "Grande operatore di telecomunicazioni.",
     "status": "sent"
   },
   {
@@ -176,7 +176,7 @@
     "careers": "https://cac.mercedes-benz.com/",
     "program": "yes",
     "fit": "medium",
-    "note": "L'HQ europeo del supporto clienti Mercedes-Benz. Offre costantemente posizioni di stage IT, Data Quality e Business Support in lingua inglese.",
+    "note": "HQ europeo supporto clienti Mercedes-Benz. Stage in lingua inglese.",
     "status": "sent"
   },
   {
@@ -194,7 +194,7 @@
     "careers": "https://werkenbijapg.nl/",
     "program": "yes",
     "fit": "high",
-    "note": "Gestisce oltre 600 miliardi di euro in fondi pensione. L'HQ tecnologico di Heerlen ha team di Quantitative Investing, Risk Management e Data Science.",
+    "note": "Gestore fondi pensione. Sede IT/Quant ad Heerlen.",
     "status": "sent"
   },
   {
@@ -212,7 +212,7 @@
     "careers": "https://www.werkenbijaxians.nl/",
     "program": "yes",
     "fit": "high",
-    "note": "Braccio IT Consulting del gruppo Vinci. Focalizzati su Business Intelligence e Power BI per clienti aziendali in Euregio. Contatto diretto: Jasper Both.",
+    "note": "BI e Power BI ad Heerlen.",
     "status": "sent"
   },
   {
@@ -230,7 +230,7 @@
     "careers": "https://careers.booking.com",
     "program": "yes",
     "fit": "high",
-    "note": "Indirizzo e-mail diretto per il team Early Careers. Azienda leader nel turismo online, eccellente per Data Analyst ed esperti SQL/Python.",
+    "note": "Indirizzo e-mail diretto per il team Early Careers/Tirocinanti.",
     "status": "sent"
   },
   {
@@ -248,7 +248,7 @@
     "careers": "https://www.flowtraders.com/careers",
     "program": "yes",
     "fit": "high",
-    "note": "Uno dei principali market maker quantitativi al mondo. Ambiente ad altissime performance, ottimo per programmatori Python e matematici finanziari.",
+    "note": "Market maker quantitativo.",
     "status": "sent"
   },
   {
@@ -266,7 +266,7 @@
     "careers": "https://www.optiver.com/join-us/",
     "program": "yes",
     "fit": "medium",
-    "note": "Prestigiosa società di market making e trading ad alta frequenza. Stage super retribuiti per studenti con forti basi quantitative.",
+    "note": "Trading ad alta frequenza.",
     "status": "sent"
   },
   {
@@ -284,7 +284,7 @@
     "careers": "https://www.ing.jobs",
     "program": "yes",
     "fit": "high",
-    "note": "Indirizzo email specifico per tirocini e programmi campus studenti. Ottima banca per ruoli di Data Analyst e Financial Management.",
+    "note": "Tirocini universitari e programmi campus studenti.",
     "status": "sent"
   },
   {
@@ -302,59 +302,8 @@
     "careers": "https://rabobank.jobs",
     "program": "yes",
     "fit": "high",
-    "note": "Canale email diretto per i programmi stage universitari. Seconda banca olandese, molto orientata all'analisi dati agricoli e sostenibilità.",
+    "note": "Canale email diretto per i programmi stage.",
     "status": "sent"
-  },
-  {
-    "name": "dsm-firmenich",
-    "city": "Heerlen",
-    "country": "NL",
-    "coords": [
-      50.894,
-      5.985
-    ],
-    "sector": "Corporate Finance",
-    "address": "Barack Nachf. 5, 6411 EX Heerlen, NL",
-    "email": "portal-only",
-    "emailType": "portal",
-    "careers": "https://careers.dsm-firmenich.com/",
-    "program": "yes",
-    "fit": "medium",
-    "note": "Colosso della nutrizione e salute. Candidatura da inviare esclusivamente tramite il loro portale per motivi di privacy (non accettano email dirette)."
-  },
-  {
-    "name": "Adyen",
-    "city": "Amsterdam",
-    "country": "NL",
-    "coords": [
-      52.3676,
-      4.9041
-    ],
-    "sector": "FinTech / Payments",
-    "address": "Simon Carmiggeltstraat 6, 1011 DJ Amsterdam, NL",
-    "email": "portal-only",
-    "emailType": "portal",
-    "careers": "https://careers.adyen.com",
-    "program": "yes",
-    "fit": "high",
-    "note": "La tech-fintech più importante d'Europa. Stage ottimamente pagati. Candidature da fare esclusivamente sul portale ufficiale."
-  },
-  {
-    "name": "Miro",
-    "city": "Amsterdam",
-    "country": "NL",
-    "coords": [
-      52.3676,
-      4.9041
-    ],
-    "sector": "Tech",
-    "address": "Singel 542, 1017 AZ Amsterdam, NL",
-    "email": "portal-only",
-    "emailType": "portal",
-    "careers": "https://miro.com/careers",
-    "program": "yes",
-    "fit": "medium",
-    "note": "Famoso software di lavagna collaborativa. Offre ottimi tirocini in Data Analytics e Product Management. Candidatura sul portale."
   },
   {
     "name": "ASML",
@@ -371,7 +320,223 @@
     "careers": "https://www.asml.com/en/careers",
     "program": "yes",
     "fit": "medium",
-    "note": "L'azienda tecnologica di maggior valore in Europa (macchine per microchip). Offre centinaia di stage in IT, Data Analysis e Supply Chain.",
+    "note": "Semiconduttori. Stage IT, Data Analysis e Supply Chain.",
+    "status": "sent"
+  },
+  {
+    "name": "ABN AMRO",
+    "city": "Amsterdam",
+    "country": "NL",
+    "coords": [
+      52.3375,
+      4.8732
+    ],
+    "sector": "Finance / Data Analyst",
+    "address": "Gustav Mahlerlaan 10, 1082 PP Amsterdam, NL",
+    "email": "it.internships@nl.abnamro.com",
+    "emailType": "direct",
+    "careers": "https://www.abnamro.com/en/careers",
+    "program": "yes",
+    "fit": "high",
+    "note": "Forte dipartimento IT ed economico. Questa email è specifica per i tirocini in area tecnologica/dati.",
+    "status": "sent"
+  },
+  {
+    "name": "d-fine NL",
+    "city": "Utrecht",
+    "country": "NL",
+    "coords": [
+      52.0908,
+      5.1213
+    ],
+    "sector": "Finance Consulting / Quantitative",
+    "address": "Utrecht HQ, NL",
+    "email": "careers.nl@d-fine.com",
+    "emailType": "direct",
+    "careers": "https://www.d-fine.com",
+    "program": "yes",
+    "fit": "high",
+    "note": "Firma europea prestigiosa in risk consulting quantitativo e data science. Accetta email dirette.",
+    "status": "sent"
+  },
+  {
+    "name": "KPN",
+    "city": "Rotterdam",
+    "country": "NL",
+    "coords": [
+      51.9054,
+      4.4842
+    ],
+    "sector": "IT / Support / Data",
+    "address": "Wilhelminakade 123, 3072 AP Rotterdam, NL",
+    "email": "talentacquisition@kpn.com",
+    "emailType": "direct",
+    "careers": "https://werkenbij.kpn.com/",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Operatore telecomunicazioni leader in Olanda. Email diretta del team di acquisizione talenti per studenti.",
+    "status": "sent"
+  },
+  {
+    "name": "ORTEC",
+    "city": "Eindhoven",
+    "country": "NL",
+    "coords": [
+      51.4408,
+      5.4777
+    ],
+    "sector": "Tech / Data Science / Optimization",
+    "address": "Eindhoven Office, NL",
+    "email": "recruitment@ortec.com",
+    "emailType": "direct",
+    "careers": "https://ortec.com",
+    "program": "yes",
+    "fit": "high",
+    "note": "Leader internazionale nello sviluppo di software di ottimizzazione e data science. Forte dipartimento tesi/stage.",
+    "status": "new"
+  },
+  {
+    "name": "Audi Brussels",
+    "city": "Bruxelles",
+    "country": "BE",
+    "coords": [
+      50.8124,
+      4.3215
+    ],
+    "sector": "IT / Software engineering",
+    "address": "Heidestrasse, 1190 Bruxelles, BE",
+    "email": "jobs.audibrussels@audi.de",
+    "emailType": "direct",
+    "careers": "https://www.audibrussels.brussels",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Sito produttivo e ingegneristico di Audi. Offre tirocini per lo sviluppo di software di automazione industriale.",
+    "status": "new"
+  },
+  {
+    "name": "Backbase",
+    "city": "Amsterdam",
+    "country": "NL",
+    "coords": [
+      52.3732,
+      4.8912
+    ],
+    "sector": "FinTech / Software",
+    "address": "Jacob Bontiusplaats 9, 1018 LL Amsterdam, NL",
+    "email": "recruitment@backbase.com",
+    "emailType": "direct",
+    "careers": "http://careers.backbase.com",
+    "program": "yes",
+    "fit": "high",
+    "note": "Leader globale nel settore Engagement Banking software. Ottimo ambiente fintech per programmatori e data specialist.",
+    "status": "new"
+  },
+  {
+    "name": "SCOOP Software",
+    "city": "Colonia",
+    "country": "DE",
+    "coords": [
+      50.9413,
+      6.9583
+    ],
+    "sector": "Tech / Software development",
+    "address": "Cologne HQ, DE",
+    "email": "jobs@scoop-software.de",
+    "emailType": "direct",
+    "careers": "https://www.scoop-software.de",
+    "program": "yes",
+    "fit": "high",
+    "note": "Software house tedesca specializzata in Java e sistemi complessi. Molto vicina a Maastricht, accetta solo PDF via email.",
+    "status": "new"
+  },
+  {
+    "name": "Scalian Germany (Tagueri)",
+    "city": "Colonia",
+    "country": "DE",
+    "coords": [
+      50.9385,
+      6.9412
+    ],
+    "sector": "IT / Tech Consulting",
+    "address": "Cologne Office, DE",
+    "email": "bewerbung@scalian.de",
+    "emailType": "direct",
+    "careers": "https://www.scalian.de",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Firma di consulenza ingegneristica e IT (ex Tagueri). Progetti su sistemi complessi e sviluppo software.",
+    "status": "new"
+  },
+  {
+    "name": "Woodmark Consulting",
+    "city": "Düsseldorf",
+    "country": "DE",
+    "coords": [
+      51.2277,
+      6.7735
+    ],
+    "sector": "Data Science / Consulting",
+    "address": "Düsseldorf Office, DE",
+    "email": "karriere@woodmark.de",
+    "emailType": "direct",
+    "careers": "https://www.woodmark.de",
+    "program": "yes",
+    "fit": "high",
+    "note": "Società specializzata in Data & Analytics, Business Intelligence e consulenza IT. Candidatura diretta via email.",
+    "status": "new"
+  },
+  {
+    "name": "PROMOS consult",
+    "city": "Aquisgrana",
+    "country": "DE",
+    "coords": [
+      50.7753,
+      6.0839
+    ],
+    "sector": "IT / Software",
+    "address": "Aachen Office, DE",
+    "email": "jobs@promos-consult.de",
+    "emailType": "direct",
+    "careers": "https://www.promos-consult.de",
+    "program": "yes",
+    "fit": "medium",
+    "note": "IT consulting per il settore immobiliare. Sede ad Aquisgrana, a soli 20 minuti di treno da Maastricht.",
+    "status": "new"
+  },
+  {
+    "name": "Bunq",
+    "city": "Amsterdam",
+    "country": "NL",
+    "coords": [
+      52.3702,
+      4.8952
+    ],
+    "sector": "FinTech / Banking",
+    "address": "Amsterdam, NL",
+    "email": "recruiters@bunq.com",
+    "emailType": "direct",
+    "careers": "https://careers.bunq.com",
+    "program": "yes",
+    "fit": "high",
+    "note": "La banca mobile leader in Olanda. Ambiente dinamico, molto orientato alle soluzioni tecnologiche.",
+    "status": "new"
+  },
+  {
+    "name": "Euroclear",
+    "city": "Bruxelles",
+    "country": "BE",
+    "coords": [
+      50.8503,
+      4.3517
+    ],
+    "sector": "Finance",
+    "address": "LinkedIn Corporate Hub, Bruxelles",
+    "email": "careers@euroclear.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Euroclear+careers",
+    "program": "yes",
+    "fit": "high",
+    "note": "Posizione: Risk Management Intern. Società di servizi finanziari.",
     "status": "sent"
   }
 ]
