@@ -1258,5 +1258,23 @@
     "fit": "high",
     "note": "Posizione: Risk Management Intern. Società di servizi finanziari.",
     "status": "sent"
+  },
+  {
+    "name": "Swiss Re",
+    "city": "Zurigo",
+    "country": "CH",
+    "coords": [
+      47.3769,
+      8.5417
+    ],
+    "sector": "Finance",
+    "address": "LinkedIn Corporate Hub, Zurigo",
+    "email": "jobs@swissre.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Swiss Re+careers",
+    "program": "yes",
+    "fit": "high",
+    "note": "Posizione: Quantitative Risk Intern. Leader mondiale nella riassicurazione.",
+    "status": "sent"
   }
 ]
