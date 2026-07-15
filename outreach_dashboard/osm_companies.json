@@ -1168,5 +1168,23 @@
     "fit": "high",
     "note": "Posizione: Wealth Management Intern. Banca privata svizzera.",
     "status": "sent"
+  },
+  {
+    "name": "Deutsche Boerse",
+    "city": "Francoforte",
+    "country": "DE",
+    "coords": [
+      50.1109,
+      8.6821
+    ],
+    "sector": "Finance",
+    "address": "LinkedIn Corporate Hub, Francoforte",
+    "email": "careers@deutsche-boerse.com",
+    "emailType": "direct",
+    "careers": "https://www.google.com/search?q=Deutsche Boerse+careers",
+    "program": "yes",
+    "fit": "high",
+    "note": "Posizione: Market Data Analyst Intern. Gestione flussi dati di borsa.",
+    "status": "sent"
   }
 ]
