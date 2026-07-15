@@ -393,7 +393,7 @@
     "program": "yes",
     "fit": "high",
     "note": "Leader internazionale nello sviluppo di software di ottimizzazione e data science. Forte dipartimento tesi/stage.",
-    "status": "new"
+    "status": "sent"
   },
   {
     "name": "Audi Brussels",
@@ -411,7 +411,7 @@
     "program": "yes",
     "fit": "medium",
     "note": "Sito produttivo e ingegneristico di Audi. Offre tirocini per lo sviluppo di software di automazione industriale.",
-    "status": "new"
+    "status": "sent"
   },
   {
     "name": "Backbase",
@@ -429,7 +429,7 @@
     "program": "yes",
     "fit": "high",
     "note": "Leader globale nel settore Engagement Banking software. Ottimo ambiente fintech per programmatori e data specialist.",
-    "status": "new"
+    "status": "sent"
   },
   {
     "name": "SCOOP Software",
@@ -447,7 +447,7 @@
     "program": "yes",
     "fit": "high",
     "note": "Software house tedesca specializzata in Java e sistemi complessi. Molto vicina a Maastricht, accetta solo PDF via email.",
-    "status": "new"
+    "status": "sent"
   },
   {
     "name": "Scalian Germany (Tagueri)",
@@ -465,7 +465,7 @@
     "program": "yes",
     "fit": "medium",
     "note": "Firma di consulenza ingegneristica e IT (ex Tagueri). Progetti su sistemi complessi e sviluppo software.",
-    "status": "new"
+    "status": "sent"
   },
   {
     "name": "Woodmark Consulting",
@@ -483,7 +483,7 @@
     "program": "yes",
     "fit": "high",
     "note": "Società specializzata in Data & Analytics, Business Intelligence e consulenza IT. Candidatura diretta via email.",
-    "status": "new"
+    "status": "sent"
   },
   {
     "name": "PROMOS consult",
@@ -501,7 +501,7 @@
     "program": "yes",
     "fit": "medium",
     "note": "IT consulting per il settore immobiliare. Sede ad Aquisgrana, a soli 20 minuti di treno da Maastricht.",
-    "status": "new"
+    "status": "sent"
   },
   {
     "name": "Bunq",
@@ -519,24 +519,6 @@
     "program": "yes",
     "fit": "high",
     "note": "La banca mobile leader in Olanda. Ambiente dinamico, molto orientato alle soluzioni tecnologiche.",
-    "status": "new"
-  },
-  {
-    "name": "Euroclear",
-    "city": "Bruxelles",
-    "country": "BE",
-    "coords": [
-      50.8503,
-      4.3517
-    ],
-    "sector": "Finance",
-    "address": "LinkedIn Corporate Hub, Bruxelles",
-    "email": "careers@euroclear.com",
-    "emailType": "direct",
-    "careers": "https://www.google.com/search?q=Euroclear+careers",
-    "program": "yes",
-    "fit": "high",
-    "note": "Posizione: Risk Management Intern. Società di servizi finanziari.",
     "status": "sent"
   }
 ]
