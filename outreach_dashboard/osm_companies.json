@@ -1,5 +1,113 @@
 [
   {
+    "name": "Apra",
+    "city": "Jesi",
+    "country": "IT",
+    "coords": [
+      43.5226,
+      13.2438
+    ],
+    "sector": "Tech",
+    "address": "Via Sandro Pertini 4, 60035 Jesi (AN)",
+    "email": "apra@apra.it",
+    "emailType": "direct",
+    "careers": "https://www.apra.it",
+    "program": "yes",
+    "fit": "high",
+    "note": "Importante software house a Jesi. Specializzata in ERP gestionali e IT consulting.",
+    "status": "sent"
+  },
+  {
+    "name": "Logical System",
+    "city": "Jesi",
+    "country": "IT",
+    "coords": [
+      43.52,
+      13.23
+    ],
+    "sector": "Tech",
+    "address": "Via dell'Industria 50, Jesi (AN)",
+    "email": "info@logicalsystem.it",
+    "emailType": "direct",
+    "careers": "https://www.logicalsystem.it",
+    "program": "yes",
+    "fit": "high",
+    "note": "Software house e System Integrator a Jesi. Ottimo ambiente per data integration.",
+    "status": "sent"
+  },
+  {
+    "name": "Namirial",
+    "city": "Senigallia",
+    "country": "IT",
+    "coords": [
+      43.7145,
+      13.2185
+    ],
+    "sector": "Tech",
+    "address": "Via Caduti sul Lavoro 4, Senigallia (AN)",
+    "email": "hr@namirial.com",
+    "emailType": "direct",
+    "careers": "https://www.namirial.com",
+    "program": "yes",
+    "fit": "high",
+    "note": "Leader nazionale nei servizi fiduciari digitali (firma digitale, PEC). Enorme sede a Senigallia.",
+    "status": "sent"
+  },
+  {
+    "name": "TeamSystem",
+    "city": "Pesaro",
+    "country": "IT",
+    "coords": [
+      43.9,
+      12.9
+    ],
+    "sector": "Tech",
+    "address": "Via Sandro Pertini 88, Pesaro (PU)",
+    "email": "careers@teamsystem.com",
+    "emailType": "direct",
+    "careers": "https://www.teamsystem.com",
+    "program": "yes",
+    "fit": "high",
+    "note": "Una delle più grandi software house italiane. Leader in gestionali ERP e cloud software.",
+    "status": "sent"
+  },
+  {
+    "name": "Ariston Group",
+    "city": "Fabriano",
+    "country": "IT",
+    "coords": [
+      43.3333,
+      12.9
+    ],
+    "sector": "Tech",
+    "address": "Fabriano (AN)",
+    "email": "recruitment@ariston.com",
+    "emailType": "direct",
+    "careers": "https://www.aristongroup.com/careers",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Multinazionale leader del riscaldamento. Enorme divisione IT, IoT e Data Science.",
+    "status": "sent"
+  },
+  {
+    "name": "Clementoni",
+    "city": "Recanati",
+    "country": "IT",
+    "coords": [
+      43.4333,
+      13.55
+    ],
+    "sector": "Tech",
+    "address": "Recanati (MC)",
+    "email": "risorse.umane@clementoni.it",
+    "emailType": "direct",
+    "careers": "https://www.clementoni.com/it/corporate/lavora-con-noi/",
+    "program": "yes",
+    "fit": "medium",
+    "note": "Azienda storica di giocattoli educativi. Ottima sede a Recanati per tirocini in IT e analisi dati vendite.",
+    "status": "sent"
+  },
+  {
     "name": "Mediaan Conclusion",
     "city": "Maastricht",
     "country": "NL",
